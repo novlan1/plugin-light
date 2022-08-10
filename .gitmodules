@@ -1,0 +1,3 @@
+[submodule "src/common"]
+	path = src/common
+	url = git@git.code.oa.com:pmd-mobile/pmd-h5/common.git

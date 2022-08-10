@@ -1,0 +1,8 @@
+{
+  // 针对以下必要插件进行安装提示
+  "recommendations": [
+    "dbaeumer.vscode-eslint", // eslint
+    "stylelint.vscode-stylelint", // stylelint
+    "octref.vetur" // vetur
+  ]
+}

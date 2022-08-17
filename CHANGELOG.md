@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://git.woa.com/pmd-mobile/support/uni-plugin-light/compare/v0.0.6...v0.0.7) (2022-08-17)
+
+
+### Features
+
+* 增加loader ([68f1f5b](https://git.woa.com/pmd-mobile/support/uni-plugin-light/commit/68f1f5b5a09c6208909bc8671496961408471d58))
+
 ### [0.0.6](https://git.woa.com/pmd-mobile/support/uni-plugin-light/compare/v0.0.3...v0.0.6) (2022-08-17)
 
 

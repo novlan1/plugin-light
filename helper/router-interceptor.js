@@ -1,31 +1,5 @@
 import pathToRegexp from 'path-to-regexp';
 
-let newRouterMap
-function genRouterRegexp(rawRouterMap) {
-  const newRouterMap = rawRouterMap.map((item) => {
-    // eslint-disable-next-line prefer-const
-    let keys = [];
-    const regexp = pathToRegexp(item.path, keys);
-
-    /**
-     * keys
-     * {name: "childid", prefix: "/", delimiter: "/", optional: false, repeat: false, …},
-     * {name: "posterid", prefix: "/", delimiter: "/", optional: false, repeat: false, …}
-     */
-    // console.log('item', item);
-    // console.log('keys', keys);
-    // console.log('regexp', regexp);
-
-    return {
-      ...item,
-      regexp,
-      keys,
-    };
-  });
-  return newRouterMap;
-}
-
-
 
 function getQueryBaseStr(str = '') {
   return str.split('&').reduce((acc, item) => {
@@ -35,11 +9,33 @@ function getQueryBaseStr(str = '') {
   }, {});
 }
 
-function findRouteName(path, newRouterMap = []) {
-  // console.log('path', path);
-  for (let i = 0;i < newRouterMap.length;i++) {
-    const item = newRouterMap[i];
-    const { name, regexp, keys } = item;
+function isMatchPath(meta = {}, path) {
+  const { rawPath } = meta;
+  if (!rawPath?.length) return;
+  for (const item of rawPath) {
+    // eslint-disable-next-line prefer-const
+    let keys = [];
+    const regexp = pathToRegexp(item, keys);
+    const match = path.match(regexp);
+
+    if (match) {
+      return {
+        match,
+        regexp,
+        keys,
+      };
+    }
+  }
+
+  return;
+}
+
+
+function findRouteName(path) {
+  const routes = ROUTES || [];
+  for (let i = 0;i < routes.length;i++) {
+    const item = routes[i];
+    const { name,  meta = {} } = item;
 
     let purePath = path;
     let queryStr = '';
@@ -49,20 +45,18 @@ function findRouteName(path, newRouterMap = []) {
       queryStr = path.slice(idx + 1);
     }
 
-    const match = purePath.match(regexp);
-    const queryBasePath = getQueryBaseStr(queryStr);
+    const match = isMatchPath(meta, purePath);
 
-    if (match?.[0]) {
-      console.log('match', match, regexp);
+    const queryBasePath = getQueryBaseStr(queryStr);
+    if (match) {
+      const { match: iMatch, keys } = match;
 
       const params = keys.reduce((acc, key, index) => {
         const { name } = key;
-        acc[name] =  match[index + 1];
+        acc[name] =  iMatch[index + 1];
         return acc;
       }, {});
 
-
-      // console.log('params', name, params);
 
       return {
         name,
@@ -78,8 +72,6 @@ function findRouteName(path, newRouterMap = []) {
 
 function interceptorOriginFunc(router, FuncName, originFunc) {
   router[FuncName] = function (...args) {
-    // console.log('...args', args);
-
     let rawPath;
     let rawQuery = {};
     if (args.length === 1 && !args[0].name && args[0].path) {
@@ -90,7 +82,7 @@ function interceptorOriginFunc(router, FuncName, originFunc) {
     }
 
     if (rawPath) {
-      const { name, params } = findRouteName(rawPath, newRouterMap) || {};
+      const { name, params } = findRouteName(rawPath) || {};
 
       if (name) {
         originFunc.call(this, {
@@ -120,9 +112,7 @@ function interceptorOriginFunc(router, FuncName, originFunc) {
  *
  * replace同上
  */
-function routerInterCeptor(router, rawRouterMap) {
-  newRouterMap = genRouterRegexp(rawRouterMap);
-  
+function routerInterCeptor(router) {
   const originPush = router.push;
   const originReplace = router.replace;
 

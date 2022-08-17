@@ -1,3 +1,19 @@
+/**
+ * 替换动态组件，比如：
+ * components: {
+ *   xxComp(resolve) {
+       require(['xx.comp'], resolve);
+     },
+   }
+
+    会被转为：
+
+    import xxComp from 'xx.comp';
+
+    components: {
+      xxComp,
+    }
+ */
 function transformDynamicComp(source = '') {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin') {
     return source;

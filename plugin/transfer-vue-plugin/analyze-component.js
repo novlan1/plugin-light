@@ -85,8 +85,8 @@ function handleComponentMap(map, pageSet) {
 function analyzeUsingComponents(options = []) {
   if (!process.env.UNI_OPT_SUBPACKAGES) return;
   console.log('transfer.Vue.options', options);
-  MOVE_COMPONENT_MIN_USE_TIMES = options?.[0]?.moveComponents?.minUseTimes || MOVE_COMPONENT_MIN_USE_TIMES;
-  MOVE_COMPONENT_MIN_DISABLE_LIST = options?.[0]?.moveComponents?.disableList || [];
+  MOVE_COMPONENT_MIN_USE_TIMES = options?.moveComponents?.minUseTimes || MOVE_COMPONENT_MIN_USE_TIMES;
+  MOVE_COMPONENT_MIN_DISABLE_LIST = options?.moveComponents?.disableList || [];
   console.log('MOVE_COMPONENT_MIN_DISABLE_LIST', MOVE_COMPONENT_MIN_DISABLE_LIST);
 
   let subPackages = [];

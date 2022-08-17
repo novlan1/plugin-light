@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://git.woa.com/pmd-mobile/support/uni-plugin-light/compare/v0.0.7...v0.0.8) (2022-08-17)
+
+
+### Features
+
+* 路由拦截 ([dd6570a](https://git.woa.com/pmd-mobile/support/uni-plugin-light/commit/dd6570a2d4b0adde16d6310d7eb2544d16a21692))
+* 移除lockjson ([55d319c](https://git.woa.com/pmd-mobile/support/uni-plugin-light/commit/55d319cf583b6ddacf3bc59b2dbaacdbd2ed86e9))
+
 ### [0.0.7](https://git.woa.com/pmd-mobile/support/uni-plugin-light/compare/v0.0.6...v0.0.7) (2022-08-17)
 
 

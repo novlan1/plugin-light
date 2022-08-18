@@ -3,7 +3,8 @@ const { getOptions } = require('loader-utils');
 
 const hyphenateRE = /\B([A-Z])/g;
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
-const htmlReg = /(?<=<template>[\s\n]*<div)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
+const notFirstDivReg = /(?<=<template>\s*)(<(?!div)[^>]+>[\s\S]*)(?=\s*<\/template>)/
+const htmlReg = /(?<=<template>[\s\n]*<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
 
 const hyphenate = function (str) {
   return str.replace(hyphenateRE, '-$1').toLowerCase();
@@ -28,11 +29,30 @@ function insertGlobalComponent(source) {
   return res;
 }
 
-function composeCompStr(components) {
+function getExtraStr(props, events) {
+  let extra = props.reduce((acc, prop) => {
+    const { key, value, custom} = prop;
+    acc += `${custom ? ':' : ''}${key}="${value}" `
+    return acc;
+  }, '')
+
+  extra += events.reduce((acc, e) => {
+    const { name, event} = e;
+    acc += ` @${name}="${event}" `
+    return acc;
+  }, '')
+
+  return extra;
+}
+
+function composeCompStr(components, isOnTop) {
+  components = components.filter(item => !!item.isOnTop === !!isOnTop)
   let str = '<template>';
   str += components.map((item) => {
-    const { name, id } = item;
-    return `<${name} id="${id}"/>`;
+    const { name, id, props = [], events = [] } = item;
+    const extra = getExtraStr(props, events)
+
+    return `<${name} id="${id}" ${extra}/>`;
   }).join('\n');
   str += '</template>';
   return str;
@@ -48,13 +68,18 @@ function insertComp(source, components) {
     return source;
   }
 
-  const insertStr = composeCompStr(newComponents);
+  const insertTopStr = composeCompStr(newComponents, true);
+  const insertBottomStr = composeCompStr(newComponents, false);
 
   if (source.match(oneTagReg)) {
-    return source.replace(oneTagReg, (a, b) => `<div>${b} ${insertStr}</div>`);
+    return source.replace(oneTagReg, (a, b) => `<div>${insertTopStr} ${b} ${insertBottomStr}</div>`);
   }
 
-  const res = source.replace(htmlReg, (a, b) => b + insertStr);
+  if (source.match(notFirstDivReg)) {
+    return source.replace(notFirstDivReg, (a, b) => `<div>${insertTopStr} ${b} ${insertBottomStr}</div>`);
+  }
+
+  const res = source.replace(htmlReg, (a, b) => insertTopStr + b + insertBottomStr );
 
   return res;
 }

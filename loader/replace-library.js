@@ -8,26 +8,27 @@ const { getOptions } = require('loader-utils');
  * import 'vant/lib/list/index.css'  转为：import 'test'
  */
 function replaceLibrary(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin') {
+  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
   const options = getOptions(this) || {};
-  const { libraryList = [], fakeLibraryList = [] } = options;
-  if (!libraryList.length
-    || !fakeLibraryList.length
-    || libraryList.length !== fakeLibraryList.length) {
+  const { replaceLibraryList = [] } = options;
+  if (!replaceLibraryList.length) {
     return source;
   }
   let res = source;
 
-  for (let i = 0;i < libraryList.length;i++) {
-    const library = libraryList[i];
-    const fakeLibrary = fakeLibraryList[i];
+  for (let i = 0;i < replaceLibraryList.length;i++) {
+    const { from, to, exact } = replaceLibraryList[i];
 
-    const importRe = new RegExp(`(?<=import(?:[\\s\\S]+from)?\\s+)(?:'|")(${library}[\\w\\/\\-\\.]*)(?:'|")`);
+    if (exact) {
+      res = res.replaceAll(`'${from}'`, `'${to}'`);
+    } else {
+      const importRe = new RegExp(`(?<=import(?:[\\s\\S]+from)?\\s+)(?:'|")(${from}[\\w\\/\\-\\.]*)(?:'|")`);
 
-    if (importRe.test(res)) {
-      res = res.replace(importRe, () => `'${fakeLibrary}'`);
+      if (importRe.test(res)) {
+        res = res.replace(importRe, () => `'${to}'`);
+      }
     }
   }
 
@@ -35,4 +36,3 @@ function replaceLibrary(source) {
 }
 
 module.exports = replaceLibrary;
-

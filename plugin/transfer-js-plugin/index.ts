@@ -11,6 +11,18 @@ const mainPath = normalizePath(path.resolve(process.env.UNI_INPUT_DIR, 'main.'))
 //   cb();
 // }
 
+
+function getForceMovePkgs(configList, moduleName) {
+  if (!moduleName) return;
+  try {
+    const findItem = configList.find(item => moduleName.indexOf(item.moduleName) > -1);
+    if (!findItem) return;
+    return new Set(findItem.pkgs);
+  } catch (err) {
+    console.log('err.err: ', err);
+  }
+}
+
 // 基础检测，vue和css类型不处理，只处理js类型
 function baseTest(module) {
   if (module.type === 'css/mini-extract') {
@@ -28,6 +40,7 @@ function baseTest(module) {
   }
   return true;
 }
+// @ts-ignore
 const subPackageRoots = Object.keys(process.UNI_SUBPACKAGES).map(root => `${root}/`);
 const findSubPackages = function (chunks) {
   return chunks.reduce((pkgs, item) => {
@@ -50,9 +63,15 @@ const findNameChunk = function (chunks, name) {
 
 const VENDER_PATH = 'common/vendor';
 
-class SplitUtilPlugin {
-  constructor() {
+export class SplitUtilPlugin {
+  moveFiles: Map<any, any>
+  forceToMoveModuleList: Array<object>
+
+  constructor(options: {
+    forceToMoveModuleList?: Array<object>
+  } = {}) {
     this.moveFiles = new Map();
+    this.forceToMoveModuleList = options.forceToMoveModuleList || [];
   }
 
   apply(compiler) {
@@ -73,8 +92,17 @@ class SplitUtilPlugin {
 
           const matchSubPackages = findSubPackages(chunks);
           const isMain = hasMainPackage(chunks);
-          // 只用处理大于一个分包在使用的情况，一个使用的情况uni已经处理好了，但是要考虑3的情况
-          if (matchSubPackages.size > 0 && !isMain) {
+          const forceMovePkgs = getForceMovePkgs(this.forceToMoveModuleList, module.resource);
+          console.log('module.resource: ', module.resource);
+          console.log('forceMovePkgs: ', forceMovePkgs);
+          console.log('isMain: ', !!isMain);
+          if (forceMovePkgs?.size) {
+            this.moveFiles.set(module, {
+              name: module.resource,
+              pkgSet: matchSubPackages,
+            });
+          } else if (matchSubPackages.size > 0 && !isMain) {
+            // 只用处理大于一个分包在使用的情况，一个使用的情况uni已经处理好了，但是要考虑3的情况
             this.moveFiles.set(module, {
               name: module.resource,
               pkgSet: matchSubPackages,
@@ -92,7 +120,17 @@ class SplitUtilPlugin {
               const moveFileInfo = this.moveFiles.get(module);
               const chunkNames = [];
               moveFileInfo.pkgSet.forEach((value) => {
-                chunkNames.push(normalizePath(path.join(value, VENDER_PATH)));
+                /**
+                 * pkgSet.value 举例：
+                 *
+                 * views/room/
+                 * views/match/
+                 * views/edit/
+                 * views/setting/
+                 */
+                const aPath = path.join(value, VENDER_PATH) as any;
+                // @ts-ignore
+                chunkNames.push(normalizePath(aPath));
               });
               chunkNames.forEach((chunkName) => {
                 let pkgChunk = findNameChunk(chunks, chunkName);
@@ -111,4 +149,3 @@ class SplitUtilPlugin {
     });
   }
 }
-module.exports = SplitUtilPlugin;

@@ -4,7 +4,6 @@ const {
   getPageSet,
   getJsonFileMap,
 } = require('@dcloudio/uni-cli-shared/lib/cache');
-const { execSync } = require('child_process');
 
 
 let MOVE_COMPONENT_MIN_DISABLE_LIST = [];
@@ -84,19 +83,11 @@ function handleComponentMap(map, pageSet) {
 
 function analyzeUsingComponents(options = []) {
   if (!process.env.UNI_OPT_SUBPACKAGES) return;
-  console.log('transfer.Vue.options', options);
+  if (!fs.existsSync('./log')) {
+    fs.mkdirSync('./log');
+  }
   MOVE_COMPONENT_MIN_USE_TIMES = options?.moveComponents?.minUseTimes || MOVE_COMPONENT_MIN_USE_TIMES;
   MOVE_COMPONENT_MIN_DISABLE_LIST = options?.moveComponents?.disableList || [];
-  console.log('MOVE_COMPONENT_MIN_DISABLE_LIST', MOVE_COMPONENT_MIN_DISABLE_LIST);
-
-  let subPackages = [];
-  try {
-    subPackages = require(path.resolve(process.env.UNI_INPUT_DIR, './config')).subPackageRoots;
-  } catch (err) {
-    console.log('err', err);
-  }
-
-  if (!subPackages?.length) return;
 
   const pageSet = getPageSet();
   const jsonFileMap = getJsonFileMap();
@@ -187,47 +178,11 @@ function analyzeUsingComponents(options = []) {
 
   function getNewPosName(component) {
     const list = component.split('/').filter(item => item !== '..');
-    return [list.slice(0, list.length - 1).join('-'), list[list.length - 1]];
-  }
-
-  function mvComp(source, target) {
-    if (fs.existsSync(source)) {
-      execSync(`cp -f ${source} ${target}`, {
-        stdio: 'inherit',
-      });
-    } else {
-      console.log(`源文件${source}不存在`)
-    }
-  }
-
-  function getAllFiles(dirPath, arrayOfFiles) {
-    const files = fs.readdirSync(dirPath);
-
-    arrayOfFiles = arrayOfFiles || [];
-
-    files.forEach((file) => {
-      if (fs.statSync(`${dirPath}/${file}`).isDirectory()) {
-        arrayOfFiles = getAllFiles(`${dirPath}/${file}`, arrayOfFiles);
-      } else {
-        if (file.endsWith('.json') || file.endsWith('.js')) {
-          arrayOfFiles.push(path.join(dirPath, '/', file));
-        }
-      }
-    });
-
-    return arrayOfFiles;
-  }
-
-  function modifyRef(adapterDirs) {
-    adapterDirs.forEach((item) => {
-      const jsonFiles = getAllFiles(path.resolve(process.env.UNI_OUTPUT_DIR, item[2]));
-      jsonFiles.forEach((file) => {
-        let source = fs.readFileSync(file).toString();
-        source = source.replaceAll(`${item[0]}'`, `${item[1]}'`);
-        source = source.replaceAll(`${item[0]}"`, `${item[1]}"`);
-        fs.writeFileSync(file, source);
-      });
-    });
+    const folderName = list.slice(0, list.length - 1).join('-')
+      .replaceAll('tip-match', 'tm')
+      .replaceAll('local-component-module', 'lcm')
+      .replaceAll('local-component-ui', 'lcu');
+    return [folderName, list[list.length - 1]];
   }
 
   function mvComponent(component, subPackage) {
@@ -242,20 +197,15 @@ function analyzeUsingComponents(options = []) {
     const compWxml = `${comp}.wxml`;
     const compWxss = `${comp}.wxss`;
 
-    const sourceRef = path.resolve(target.replace(outputDir, ''), fileName);
+    const sourceRef = path.join(target.replace(outputDir, ''), fileName)
+      .split(path.sep)
+      .join('/');
 
-    if (!fs.existsSync(target)) {
-      execSync(`mkdir ${target}`, {
-        stdio: 'inherit',
-      });
-    }
     console.log(`正在移动组件 ${comp} 到 ${target} 中`);
-    mvComp(compJson, target);
-    mvComp(compJs, target);
-    mvComp(compWxml, target);
-    mvComp(compWxss, target);
 
     return {
+      target,
+      newPosName,
       originRef,
       sourceRef,
       compJs,
@@ -287,6 +237,8 @@ function analyzeUsingComponents(options = []) {
             compJson,
             compWxml,
             compWxss,
+            target,
+            newPosName,
           } = mvComponent(componentName, subPackage);
 
           replaceRefList.push([originRef, sourceRef, subPackage]);
@@ -296,6 +248,12 @@ function analyzeUsingComponents(options = []) {
             compJson,
             compWxml,
             compWxss,
+            target,
+            newPosName,
+            originRef,
+            sourceRef,
+            subPackage,
+            subPackages,
           });
         }
       });
@@ -305,36 +263,17 @@ function analyzeUsingComponents(options = []) {
   const parsedReplaceRefList = Array.from(new Set(replaceRefList.map(item => JSON.stringify(item))))
     .map(item => JSON.parse(item));
 
-  modifyRef(parsedReplaceRefList);
   fs.writeFileSync('./log/parsedReplaceRefList.json', JSON.stringify(parsedReplaceRefList, null, 2));
 
   const parsedMovingComponents = Array.from(new Set(movingComponents.map(item => JSON.stringify(item))))
     .map(item => JSON.parse(item));
-  deleteOriginComponent(parsedMovingComponents);
   fs.writeFileSync('./log/movingComponents.json', JSON.stringify(parsedMovingComponents, null, 2));
+
+  return {
+    parsedReplaceRefList,
+    movingComponents,
+  };
 }
 
-function deleteOriginComponent(movingComponents = []) {
-  movingComponents.map((item) => {
-    const {
-      compJs,
-      compJson,
-      compWxml,
-      compWxss,
-    } = item;
-    deleteFile(compJs);
-    deleteFile(compJson);
-    deleteFile(compWxml);
-    deleteFile(compWxss);
-  });
-}
-
-function deleteFile(target) {
-  if (fs.existsSync(target)) {
-    execSync(`rm -rf ${target}`, {
-      stdio: 'inherit',
-    });
-  }
-}
 
 module.exports = analyzeUsingComponents;

@@ -12,10 +12,10 @@
  * ```
  */
 function transformKey(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin') {
+  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
-  
+
   const re = /:key="'(\w+)'\s*\+\s*(\w+)\s*"/g;
   const reBack = /:key="(\w+)\s*\+\s*'(\w+)'\s*"/g;
 

@@ -6,7 +6,7 @@ const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
 
 function insertPageMeta(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin') {
+  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
   const options = getOptions(this) || {};

@@ -15,9 +15,10 @@
     }
  */
 function transformDynamicComp(source = '') {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin') {
+  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
+  source = source.replaceAll(/\(\)\s*=>\s*import\('.*?'\)/, '1');
 
   const reg = new RegExp(/(([a-zA-Z]+?)\(resolve\)(?:\s*?)\{(?:\n\s*)require\(\['(.*?)'\],(?:\s*?)resolve\);(?:\n\s*)\})+/, 'g');
   const match = [...source.matchAll(reg)];
@@ -46,3 +47,4 @@ function transformDynamicComp(source = '') {
 }
 
 module.exports = transformDynamicComp;
+

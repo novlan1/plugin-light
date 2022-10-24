@@ -32,6 +32,7 @@ function isMatchPath(meta = {}, path) {
 
 
 function findRouteName(path) {
+  // eslint-disable-next-line no-undef
   const routes = ROUTES || [];
   for (let i = 0;i < routes.length;i++) {
     const item = routes[i];

@@ -2,7 +2,7 @@
 
 ## 安装
 ```
-npm install -D @tencent/uni-plugin-light
+npm install -D uni-plugin-light
 ```
 
 
@@ -10,7 +10,7 @@ npm install -D @tencent/uni-plugin-light
 
 ```js
 // vue.config.js中直接引入
-var uniPluginLight = require('@tencent/uni-plugin-light/plugin');
+var uniPluginLight = require('uni-plugin-light/plugin');
 module.exports = {
     chainWebpack: config => {
         uniPluginLight(config)
@@ -22,7 +22,7 @@ module.exports = {
 
 ```js
 // vue.config.js中直接引入
-const TransferVuePlugin = require('@tencent/uni-plugin-light/plugin/transfer-vue-plugin');
+const TransferVuePlugin = require('uni-plugin-light/plugin/transfer-vue-plugin');
 plugins.push(new TransferVuePlugin());
 module.exports = {
   plugins

@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 String.prototype.replaceAll = function (s1, s2) {
   return this.replace(new RegExp(s1, 'gm'), s2);
 };
 
-function replaceTmpTag(source) {
+export function replaceTmpTag(source) {
+  // @ts-ignore
   const options = getOptions(this) || {};
   const { replaceTmpTagMap = {} } = options;
 
@@ -21,7 +23,5 @@ function replaceTmpTag(source) {
   }
   return res;
 }
-
-module.exports = replaceTmpTag;
 
 

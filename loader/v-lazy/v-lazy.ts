@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 
 const htmlReg = /(?<=<template>)([\s\S]+)(?=<\/template>)/;
@@ -25,10 +26,11 @@ const heightReg = /(?<=[\s\n]+(?:data-)?)height=(?:"|')(\d+)(?:"|')/;
  * <img v-lazy="src" width="50" height="100">
  * <img v-lazy="src" data-width="50" data-height="100">
  */
-function lazyLoader(source) {
+export function lazyLoader(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
+  // @ts-ignore
   const options = getOptions(this) || {};
   const { urlHandler } = options;
 
@@ -102,8 +104,6 @@ function handleImg(str = '', urlHandler = '') {
   return res;
 }
 
-
-module.exports = lazyLoader;
 
 // function test() {
 //   const a = '<img v-lazy="img" size="50">';

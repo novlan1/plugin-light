@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 // const { parseComponent } = require('vue-template-compiler');
 
@@ -12,13 +13,15 @@ const hyphenate = function (str) {
 };
 
 
-function insertGlobalComponent(source) {
+export function insertGlobalComponent(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
 
+  // @ts-ignore
   const options = getOptions(this) || {};
   const { pages = [], components = [] } = options;
+  // @ts-ignore
   const { resourcePath } = this;
   if (!pages.includes(resourcePath)) {
     return source;
@@ -95,8 +98,6 @@ function isAlreadyInPage(source, comp) {
   return false;
 }
 
-
-module.exports = insertGlobalComponent;
 
 // const a = '<template></template>';
 // insertComp(a, [

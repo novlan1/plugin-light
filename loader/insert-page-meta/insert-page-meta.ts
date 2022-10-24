@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('path');
 const { getOptions } = require('loader-utils');
 const htmlReg = /<template>[\s\n]*<page-meta>([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;
@@ -5,12 +6,14 @@ const htmlReg = /<template>[\s\n]*<page-meta>([\s\S]+)<\/page-meta>[\s\n]*<\/tem
 const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
 
-function insertPageMeta(source) {
+export function insertPageMeta(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
+  // @ts-ignore
   const options = getOptions(this) || {};
   const { pages = [] } = options;
+  // @ts-ignore
   const { resourcePath } = this;
   const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR);
 
@@ -28,7 +31,4 @@ function insertPageMeta(source) {
   });
   return res;
 }
-
-
-module.exports = insertPageMeta;
 

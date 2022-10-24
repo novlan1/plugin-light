@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 
 
@@ -7,10 +8,11 @@ const { getOptions } = require('loader-utils');
  * import List from 'vant/lib/list'  转为：import List from 'test';
  * import 'vant/lib/list/index.css'  转为：import 'test'
  */
-function replaceLibrary(source) {
+export function replaceLibrary(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
+  // @ts-ignore
   const options = getOptions(this) || {};
   const { replaceLibraryList = [] } = options;
   if (!replaceLibraryList.length) {
@@ -35,4 +37,3 @@ function replaceLibrary(source) {
   return res;
 }
 
-module.exports = replaceLibrary;

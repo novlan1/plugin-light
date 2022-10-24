@@ -64,7 +64,7 @@ const findNameChunk = function (chunks, name) {
 
 const VENDER_PATH = 'common/vendor';
 
-export class DispatchJsPlugin {
+export class DispatchScriptPlugin {
   moveFiles: Map<any, any>;
   forceToMoveModuleList: Array<object>;
 
@@ -76,8 +76,8 @@ export class DispatchJsPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.thisCompilation.tap('DispatchJsPlugin', (compilation) => {
-      compilation.hooks.optimizeChunksAdvanced.tap('DispatchJsPlugin', () => {
+    compiler.hooks.thisCompilation.tap('DispatchScriptPlugin', (compilation) => {
+      compilation.hooks.optimizeChunksAdvanced.tap('DispatchScriptPlugin', () => {
         /**
          *  有以下几种情况
          * 1 主包js => 一个分包在用   uni已经处理好了，可以不管
@@ -111,7 +111,7 @@ export class DispatchJsPlugin {
           }
         });
       });
-      compilation.hooks.optimizeChunkModules.tap('DispatchJsPlugin', (chunks, modules) => {
+      compilation.hooks.optimizeChunkModules.tap('DispatchScriptPlugin', (chunks, modules) => {
         modules.forEach((module) => {
           if (this.moveFiles.has(module)) {
             const mainChunks = module.getChunks();

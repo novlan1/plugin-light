@@ -1,1 +1,1 @@
-export { DispatchJsPlugin } from './dispatch-script';
+export { DispatchScriptPlugin } from './dispatch-script';

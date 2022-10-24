@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
-// const { parseComponent } = require('vue-template-compiler');
 
 const hyphenateRE = /\B([A-Z])/g;
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
@@ -20,15 +19,12 @@ export default function insertGlobalComponent(source) {
 
   // @ts-ignore
   const options = getOptions(this) || {};
-  console.log('options', options);
   const { pages = [], components = [] } = options;
   // @ts-ignore
   const { resourcePath } = this;
   if (!pages.includes(resourcePath)) {
     return source;
   }
-  // const parsed = parseComponent(source);
-  // console.log('parsed', parsed);
 
   const res = insertComp(source, components);
   return res;
@@ -100,49 +96,3 @@ function isAlreadyInPage(source, comp) {
 }
 
 
-// const a = '<template></template>';
-// insertComp(a, [
-//   {
-//     name: 'xxxComp',
-//     id: 'xxx-comp',
-//   },
-// ]);
-
-// const a = `
-// <template>
-//   <ModuleCustomGroupType
-//     :game-info-key="gameInfoKey"
-//   />
-// </template>
-// `;
-
-
-// console.log(a.match(oneTagReg));
-
-// a.replace(oneTagReg, (a, b) => {
-
-// });
-
-
-// const res = a.replace(oneTagReg, (a, b) => `<div>${b} 123123</div>`);
-// console.log('res', res);
-
-// const a = `<template>
-// <!-- 战后数据和直播页面 -->
-// <div
-//   class="battle-detail-wrap"
-//   style="width:100%;height: 100%;"
-// >
-//   <page-loading v-if="mShowPageLoading" />
-//   <BattleDetailModule v-else-if="isScheEnd" />
-//   <VideoRoomModule v-else />
-// </div>
-// </template>
-// <script>`;
-
-
-// console.log(insertComp(a, [
-//   {
-//     name: '123',
-//   },
-// ]));

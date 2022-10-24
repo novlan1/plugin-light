@@ -26,7 +26,7 @@ const heightReg = /(?<=[\s\n]+(?:data-)?)height=(?:"|')(\d+)(?:"|')/;
  * <img v-lazy="src" width="50" height="100">
  * <img v-lazy="src" data-width="50" data-height="100">
  */
-export function lazyLoader(source) {
+export default function lazyLoader(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

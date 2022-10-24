@@ -8,7 +8,7 @@ const { getOptions } = require('loader-utils');
  * import List from 'vant/lib/list'  转为：import List from 'test';
  * import 'vant/lib/list/index.css'  转为：import 'test'
  */
-export function replaceLibrary(source) {
+export default function replaceLibrary(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

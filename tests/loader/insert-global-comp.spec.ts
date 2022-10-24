@@ -1,4 +1,4 @@
-import { insertGlobalComponent } from '../../loader/insert-global-comp';
+import insertGlobalComponent from '../../loader/insert-global-comp';
 
 describe('insertGlobalComponent', () => {
   it('insertGlobalComponent', () => {

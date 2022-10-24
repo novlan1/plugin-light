@@ -51,34 +51,36 @@ function getLoaderFiles() {
 
 function getLoaderConfig() {
   const files = getLoaderFiles();
-  const res = files.map(file => ({
-    input: file.path,
-    output: {
-      dir: 'dist/loader',
-      format: 'cjs',
-      entryFileNames: `${file.name}.cjs.js`,
-    },
-    external: [
-      't-comm',
-    ],
-    plugins: [
-      ...DEFAULT_PLUGINS,
-    ],
-  })).concat(files.map(file => ({
-    input: file.path,
-    output: {
-      dir: 'dist/loader',
-      format: 'cjs',
-      entryFileNames: `${file.name}.prod.cjs.js`,
-    },
-    external: [
-      't-comm',
-    ],
-    plugins: [
-      ...DEFAULT_PLUGINS,
-      terser(),
-    ],
-  })));
+  const res = files
+    .map(file => ({
+      input: file.path,
+      output: {
+        dir: 'dist/loader',
+        format: 'cjs',
+        entryFileNames: `${file.name}.js`,
+      },
+      external: [
+        't-comm',
+      ],
+      plugins: [
+        ...DEFAULT_PLUGINS,
+      ],
+    }))
+    .concat(files.map(file => ({
+      input: file.path,
+      output: {
+        dir: 'dist/loader',
+        format: 'cjs',
+        entryFileNames: `${file.name}.prod.js`,
+      },
+      external: [
+        't-comm',
+      ],
+      plugins: [
+        ...DEFAULT_PLUGINS,
+        terser(),
+      ],
+    })));
   return res;
 }
 
@@ -89,7 +91,7 @@ export default [
     output: {
       dir: 'dist',
       format: 'cjs',
-      entryFileNames: 'plugin.cjs.js',
+      entryFileNames: 'plugin.js',
     },
     external: [
       't-comm',
@@ -103,7 +105,7 @@ export default [
     output: {
       dir: 'dist',
       format: 'cjs',
-      entryFileNames: 'plugin.prod.cjs.js',
+      entryFileNames: 'plugin.prod.js',
     },
     external: [
       't-comm',

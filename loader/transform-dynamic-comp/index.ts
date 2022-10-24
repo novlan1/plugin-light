@@ -14,7 +14,7 @@
       xxComp,
     }
  */
-export function transformDynamicComp(source = '') {
+export default function transformDynamicComp(source = '') {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

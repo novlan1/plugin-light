@@ -4,7 +4,7 @@ String.prototype.replaceAll = function (s1, s2) {
   return this.replace(new RegExp(s1, 'gm'), s2);
 };
 
-export function replaceTmpTag(source) {
+export default function replaceTmpTag(source) {
   // @ts-ignore
   const options = getOptions(this) || {};
   const { replaceTmpTagMap = {} } = options;

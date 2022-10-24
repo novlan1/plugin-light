@@ -6,7 +6,7 @@ const htmlReg = /<template>[\s\n]*<page-meta>([\s\S]+)<\/page-meta>[\s\n]*<\/tem
 const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
 
-export function insertPageMeta(source) {
+export default function insertPageMeta(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

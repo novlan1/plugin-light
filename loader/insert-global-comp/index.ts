@@ -13,7 +13,7 @@ const hyphenate = function (str) {
 };
 
 
-export function insertGlobalComponent(source) {
+export default function insertGlobalComponent(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

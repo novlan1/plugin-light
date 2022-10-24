@@ -11,7 +11,7 @@
    transformKey(testC);
  * ```
  */
-export function transformKey(source) {
+export default function transformKey(source) {
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

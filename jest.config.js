@@ -1,0 +1,17 @@
+// process.env.TZ = 'GMT+0800';
+
+module.exports = {
+  preset: 'ts-jest',
+  transform: {
+    '^.+\\.[t|j]sx?$': [
+      'babel-jest',
+      {
+        presets: ['@babel/preset-env', '@babel/preset-typescript'],
+      },
+    ],
+  },
+  testMatch: [
+    '**/tests/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
+  ],
+  testEnvironment: 'jsdom',
+};

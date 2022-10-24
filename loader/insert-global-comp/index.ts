@@ -20,6 +20,7 @@ export default function insertGlobalComponent(source) {
 
   // @ts-ignore
   const options = getOptions(this) || {};
+  console.log('options', options);
   const { pages = [], components = [] } = options;
   // @ts-ignore
   const { resourcePath } = this;

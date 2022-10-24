@@ -2,5 +2,6 @@ package-lock.json
 node_modules
 .env.local
 .npmrc
-/dist/
 /coverage/
+/dist/
+/lib/

@@ -11,6 +11,7 @@ import { DEFAULT_EXTENSIONS } from '@babel/core';
 
 
 const LOADER_DIR = './loader';
+const BUNDLE_DIR = 'lib';
 const DEFAULT_PLUGINS = [
   resolve(),
   commonjs(),
@@ -55,9 +56,10 @@ function getLoaderConfig() {
     .map(file => ({
       input: file.path,
       output: {
-        dir: 'dist/loader',
+        dir: `${BUNDLE_DIR}/loader`,
         format: 'cjs',
         entryFileNames: `${file.name}.js`,
+        exports: 'auto',
       },
       external: [
         't-comm',
@@ -69,9 +71,10 @@ function getLoaderConfig() {
     .concat(files.map(file => ({
       input: file.path,
       output: {
-        dir: 'dist/loader',
+        dir: `${BUNDLE_DIR}/loader`,
         format: 'cjs',
         entryFileNames: `${file.name}.prod.js`,
+        exports: 'auto',
       },
       external: [
         't-comm',
@@ -89,7 +92,7 @@ export default [
   {
     input: './plugin/index.ts',
     output: {
-      dir: 'dist',
+      dir: BUNDLE_DIR,
       format: 'cjs',
       entryFileNames: 'plugin.js',
     },
@@ -103,7 +106,7 @@ export default [
   {
     input: './plugin/index.ts',
     output: {
-      dir: 'dist',
+      dir: BUNDLE_DIR,
       format: 'cjs',
       entryFileNames: 'plugin.prod.js',
     },

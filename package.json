@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "npm run release-patch && git push --follow-tags origin master && npm publish",
-    "build": "rm -rf dist && rollup -c",
+    "release": "npm run build && npm run release-patch && git push --follow-tags origin master && npm publish",
+    "build": "rm -rf lib && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",
     "release:first": "standard-version --first-release",
     "release-major": "standard-version --release-as major",
@@ -49,11 +49,11 @@
     "rollup": "^2.79.1",
     "rollup-plugin-terser": "^7.0.2",
     "standard-version": "^9.5.0",
+    "@commitlint/config-conventional": "^17.1.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^17.1.0",
     "htmlparser2": "^8.0.1",
     "t-comm": "^0.1.10",
     "vue-template-compiler": "^2.6.14"

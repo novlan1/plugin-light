@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://github.com/novlan1/uni-plugin-light/compare/v0.0.44...v0.0.45) (2022-10-24)
+
+
+### ✨ Features | 新功能
+
+* 更新导出方式 ([46ea85c](https://github.com/novlan1/uni-plugin-light/commit/46ea85c435dd346f96f8c2583c37a09d387fc15b))
+
 ### [0.0.44](https://github.com/novlan1/uni-plugin-light/compare/v0.0.43...v0.0.44) (2022-10-24)
 
 ### 0.0.43 (2022-10-24)

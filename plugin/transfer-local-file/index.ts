@@ -1,11 +1,19 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+import { replaceSource } from './core';
+
 const fs = require('fs');
-const { replaceSource } = require('./core');
+
 
 String.prototype.replaceAll = function (s1, s2) {
   return this.replace(new RegExp(s1, 'gm'), s2);
 };
 
-class TransferLocalFilePlugin {
+export class TransferLocalFilePlugin {
+  options?: {
+    isModifyRef?: boolean
+    adapterDirs: Array<string>
+  };
+
   constructor(options) {
     this.options = options;
   }
@@ -66,4 +74,3 @@ class TransferLocalFilePlugin {
   }
 }
 
-module.exports = TransferLocalFilePlugin;

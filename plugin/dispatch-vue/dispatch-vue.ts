@@ -1,4 +1,4 @@
-const analyzeComponent = require('./analyze-component');
+import { analyzeComponent } from './analyze-component';
 
 String.prototype.replaceAll = function (s1, s2) {
   return this.replace(new RegExp(s1, 'gm'), s2);
@@ -15,7 +15,9 @@ const findReplaceMap = (key, refMap = {}) => {
 };
 
 
-class myTestPlugin {
+export class DispatchVuePlugin {
+  options: object;
+
   constructor(options) {
     this.options = options;
   }
@@ -28,7 +30,7 @@ class myTestPlugin {
         const {
           parsedReplaceRefList,
           movingComponents,
-        } = analyzeComponent(this.options);
+        } = analyzeComponent(this.options) || {};
 
         this.copyComponents(assets, movingComponents);
         this.modifyRef(assets, parsedReplaceRefList);
@@ -138,4 +140,3 @@ class myTestPlugin {
   }
 }
 
-module.exports = myTestPlugin;

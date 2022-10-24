@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('path');
 const GraphHelpers = require('webpack/lib/GraphHelpers');
 const { normalizePath } = require('@dcloudio/uni-cli-shared');
@@ -63,9 +64,9 @@ const findNameChunk = function (chunks, name) {
 
 const VENDER_PATH = 'common/vendor';
 
-export class SplitUtilPlugin {
-  moveFiles: Map<any, any>
-  forceToMoveModuleList: Array<object>
+export class DispatchJsPlugin {
+  moveFiles: Map<any, any>;
+  forceToMoveModuleList: Array<object>;
 
   constructor(options: {
     forceToMoveModuleList?: Array<object>
@@ -75,8 +76,8 @@ export class SplitUtilPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.thisCompilation.tap('SplitUtilPlugin', (compilation) => {
-      compilation.hooks.optimizeChunksAdvanced.tap('SplitUtilPlugin', () => {
+    compiler.hooks.thisCompilation.tap('DispatchJsPlugin', (compilation) => {
+      compilation.hooks.optimizeChunksAdvanced.tap('DispatchJsPlugin', () => {
         /**
          *  有以下几种情况
          * 1 主包js => 一个分包在用   uni已经处理好了，可以不管
@@ -110,7 +111,7 @@ export class SplitUtilPlugin {
           }
         });
       });
-      compilation.hooks.optimizeChunkModules.tap('SplitUtilPlugin', (chunks, modules) => {
+      compilation.hooks.optimizeChunkModules.tap('DispatchJsPlugin', (chunks, modules) => {
         modules.forEach((module) => {
           if (this.moveFiles.has(module)) {
             const mainChunks = module.getChunks();

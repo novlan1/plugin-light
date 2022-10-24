@@ -2,7 +2,7 @@ const ignoreFileList = ['vendor.js'];
 const isIgnore = str => ignoreFileList.find(item => str.startsWith(item));
 
 
-function replaceSource(source, adapterDirs) {
+export function replaceSource(source, adapterDirs) {
   const replaceReg = new RegExp(`\\.\\./\\.\\./(${adapterDirs.join('|')})(/)(.+?)('|"|/)`, 'g');
   source = source.replace(replaceReg, (...args) => {
     const { 0: a, 1: b, 2: c, 3: d, 4: e } = args;
@@ -14,8 +14,3 @@ function replaceSource(source, adapterDirs) {
 
   return source;
 }
-
-module.exports = {
-  replaceSource,
-};
-

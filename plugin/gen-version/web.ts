@@ -1,8 +1,8 @@
-import { getVersionCode, getCommitCode } from './helper'
+import { getVersionCode, getCommitCode } from './helper';
 
 export class GenVersionWebPlugin {
   options: object;
-  
+
   constructor(options) {
     this.options = options;
   }

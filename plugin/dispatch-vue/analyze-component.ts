@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('path');
 const fs = require('fs');
 const {
@@ -6,7 +7,7 @@ const {
 } = require('@dcloudio/uni-cli-shared/lib/cache');
 
 
-let MOVE_COMPONENT_MIN_DISABLE_LIST = [];
+let MOVE_COMPONENT_MIN_DISABLE_LIST: Array<string> = [];
 let MOVE_COMPONENT_MIN_USE_TIMES = 100;
 
 const outputDir = process.env.UNI_OUTPUT_DIR;
@@ -38,7 +39,7 @@ function mapToJson(map) {
 
 function flattenUsingComponentMap(map) {
   const res = {};
-  function cursive(obj = {}, list = []) {
+  function cursive(obj = {}, list: Array<string> = []) {
     Object.keys(obj).map((key) => {
       const value = map[key];
       if (value) {
@@ -50,7 +51,7 @@ function flattenUsingComponentMap(map) {
   }
 
   Object.keys(map).map((key) => {
-    const temp = [];
+    const temp: Array<string> = [];
     const value = map[key];
 
     if (value) {
@@ -81,8 +82,18 @@ function handleComponentMap(map, pageSet) {
   return res;
 }
 
-function analyzeUsingComponents(options = []) {
-  if (!process.env.UNI_OPT_SUBPACKAGES) return;
+export function analyzeComponent(options: {
+  moveComponents?: {
+    minUseTimes: number
+    disableList: Array<string>
+  }
+} = {}): {
+    parsedReplaceRefList?: Array<any>
+    movingComponents?: Array<any>
+  } {
+  if (!process.env.UNI_OPT_SUBPACKAGES) {
+    return {};
+  }
   if (!fs.existsSync('./log')) {
     fs.mkdirSync('./log');
   }
@@ -116,8 +127,10 @@ function analyzeUsingComponents(options = []) {
   }
 
   function formatComponentPath(comps = [], curPath) {
-    return comps.reduce((acc, item) => {
-      let key = item;
+    return comps.reduce((acc: {
+      [key: string]: string
+    }, item) => {
+      let key: string = item;
       if (!key.startsWith('/')) {
         const list = curPath.split('/');
 
@@ -159,11 +172,13 @@ function analyzeUsingComponents(options = []) {
     console.log('err', err);
   }
 
+  // @ts-ignore
   const subPackageRoots = Object.keys(process.UNI_SUBPACKAGES);
+  // @ts-ignore
   fs.writeFileSync('./log/UNI_SUBPACKAGES.json', JSON.stringify(process.UNI_SUBPACKAGES, null, 2));
 
   const findSubPackages = function (pages) {
-    const pkgs = [];
+    const pkgs: Array<string> = [];
     for (let i = 0; i < pages.length; i++) {
       const pagePath = pages[i];
       //  subPackageRoots，形如views/match, views/sche
@@ -214,11 +229,22 @@ function analyzeUsingComponents(options = []) {
       compWxss,
     };
   }
-  const replaceRefList = [];
+  const replaceRefList: Array<Array<string>> = [];
 
   savingUsingComponentMap('./log/allUsingComponentMap.json', allUsingComponentMap);
 
-  const movingComponents = [];
+  const movingComponents: Array<{
+    compJs: string
+    compJson: string
+    compWxml: string
+    compWxss: string
+    target: string
+    newPosName: string
+    originRef: string
+    sourceRef: string
+    subPackage: string
+    subPackages: Array<string>
+  }> = [];
 
   Object.keys(allUsingComponentMap).forEach((componentName) => {
     const subPackages = findSubPackages([...allUsingComponentMap[componentName]]);
@@ -276,4 +302,3 @@ function analyzeUsingComponents(options = []) {
 }
 
 
-module.exports = analyzeUsingComponents;

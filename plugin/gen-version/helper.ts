@@ -1,4 +1,4 @@
-import { getGitCommitInfo, timeStampFormat, getGitCurBranch, getGitAuthor } from 't-comm'
+import { getGitCommitInfo, timeStampFormat, getGitCurBranch, getGitAuthor } from 't-comm';
 
 export function getVersionCode() {
   let author = '';

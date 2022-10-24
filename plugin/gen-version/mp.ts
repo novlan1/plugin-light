@@ -1,4 +1,4 @@
-import { getCommitCode, getVersionCode, getMpVersionCode } from './helper'
+import { getCommitCode, getVersionCode, getMpVersionCode } from './helper';
 
 const insertCode = `
 try {

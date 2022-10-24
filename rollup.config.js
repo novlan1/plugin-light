@@ -23,11 +23,11 @@ const plugins = [
 
 export default [
   {
-    input: './plugin/gen-version-plugin/index.ts',
+    input: './plugin/index.ts',
     output: {
       dir: 'dist',
       format: 'cjs',
-      entryFileNames: '[name].cjs.js',
+      entryFileNames: 'plugin.cjs.js',
     },
     external: [
       't-comm',
@@ -37,11 +37,11 @@ export default [
     ],
   },
   {
-    input: './plugin/gen-version-plugin/index.ts',
+    input: './plugin/index.ts',
     output: {
       dir: 'dist',
       format: 'cjs',
-      entryFileNames: '[name].prod.cjs.js',
+      entryFileNames: 'plugin.prod.cjs.js',
     },
     external: [
       't-comm',

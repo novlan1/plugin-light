@@ -1,3 +1,7 @@
+
+import fs from 'fs';
+import path from 'path';
+
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
@@ -5,7 +9,9 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 
-const plugins = [
+
+const LOADER_DIR = './loader';
+const DEFAULT_PLUGINS = [
   resolve(),
   commonjs(),
   babel({
@@ -21,6 +27,62 @@ const plugins = [
   }),
 ];
 
+
+function getLoaderFiles() {
+  const files = fs.readdirSync(LOADER_DIR);
+  const loaderFiles = files.map((file) => {
+    const cur = `${LOADER_DIR}/${file}`;
+
+    if (fs.statSync(cur).isDirectory()) {
+      return {
+        path: path.resolve(cur, 'index.ts'),
+        name: file,
+      };
+    }
+
+    return {
+      path: path.resolve(cur),
+      name: file,
+    };
+  });
+  return loaderFiles;
+}
+
+
+function getLoaderConfig() {
+  const files = getLoaderFiles();
+  const res = files.map(file => ({
+    input: file.path,
+    output: {
+      dir: 'dist/loader',
+      format: 'cjs',
+      entryFileNames: `${file.name}.cjs.js`,
+    },
+    external: [
+      't-comm',
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+    ],
+  })).concat(files.map(file => ({
+    input: file.path,
+    output: {
+      dir: 'dist/loader',
+      format: 'cjs',
+      entryFileNames: `${file.name}.prod.cjs.js`,
+    },
+    external: [
+      't-comm',
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+      terser(),
+    ],
+  })));
+  return res;
+}
+
+
 export default [
   {
     input: './plugin/index.ts',
@@ -33,7 +95,7 @@ export default [
       't-comm',
     ],
     plugins: [
-      ...plugins,
+      ...DEFAULT_PLUGINS,
     ],
   },
   {
@@ -47,27 +109,9 @@ export default [
       't-comm',
     ],
     plugins: [
-      ...plugins,
+      ...DEFAULT_PLUGINS,
       terser(),
     ],
   },
-  // {
-  //   input: './plugin/gen-version-plugin/index.js',
-  //   output: {
-  //     dir: 'dist',
-  //     format: 'esm',
-  //     entryFileNames: '[name].esm.js',
-  //   },
-  //   external: [
-  //     't-comm',
-  //   ],
-  //   plugins: [
-  //     resolve(),
-  //     commonjs(),
-  //     typescript({
-  //       sourceMap: false,
-  //     }),
-  //     terser(),
-  //   ],
-  // },
+  ...getLoaderConfig(),
 ];

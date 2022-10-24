@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "release": "npm run release-patch && git push --follow-tags origin master && npm publish",
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",
     "release:first": "standard-version --first-release",
     "release-major": "standard-version --release-as major",
@@ -22,9 +22,7 @@
   },
   "files": [
     "README.md",
-    "dist/",
-    "helper/",
-    "plugin/"
+    "dist/"
   ],
   "keywords": [],
   "author": "",

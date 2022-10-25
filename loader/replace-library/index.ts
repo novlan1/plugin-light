@@ -23,6 +23,7 @@ export default function replaceLibrary(source) {
   }
   let res = source;
 
+  // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let i = 0;i < replaceLibraryList.length;i++) {
     const { from, to, exact } = replaceLibraryList[i];
 

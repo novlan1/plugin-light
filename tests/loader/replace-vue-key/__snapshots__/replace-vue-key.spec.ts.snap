@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replaceVueKey replaceVueKey 1`] = `
+"
+<template>
+  <div>
+    <div 
+      v-for="(item, index) of list" 
+      :key="\`type-\${index}\`"
+    >
+    {{ item }}
+    </div>
+  </div>
+</template>
+    "
+`;
+
+exports[`replaceVueKey replaceVueKey.2 1`] = `
+"
+<template>
+  <div>
+    <div 
+      v-for="(item, index) of list" 
+      :key="\`type-\${index}\`"
+    >
+    {{ item }}
+    </div>
+  </div>
+</template>
+    "
+`;
+
+exports[`replaceVueKey replaceVueKey.3 1`] = `
+"
+<template>
+  <div>
+    <div 
+      v-for="(item, blueIndex) of list" 
+      :key=" blueIndex + 'type' "
+    >
+    {{ item }}
+    </div>
+  </div>
+</template>
+    "
+`;

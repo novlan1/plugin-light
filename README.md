@@ -6,7 +6,7 @@ npm install -D uni-plugin-light
 ```
 
 
-### 插件使用方式
+## 插件使用方式
 
 ```js
 // vue.config.js
@@ -39,7 +39,7 @@ module.exports = {
 
 
 
-### loader使用方法
+## loader使用方法
 
 ```js
 // vue.config.js

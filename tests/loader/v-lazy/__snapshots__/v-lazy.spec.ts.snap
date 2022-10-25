@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lazyLoader with urlHandler 1`] = `
+"
+<template>
+ <div>
+   <img  :src="getCompressImgUrl(img)" lazy-load >
+ </div>  
+</template>
+    "
+`;
+
+exports[`lazyLoader with urlHandler and size 1`] = `
+"
+<template>
+ <div>
+   <img  :src="getCompressImgUrl(img, 50, 50)" lazy-load  size="50">
+   <img  :src="getCompressImgUrl(img, 50, 50)" lazy-load  data-size="50">
+   <img  :src="getCompressImgUrl(src, 50, 100)" lazy-load  width="50" height="100">
+   <img  :src="getCompressImgUrl(src, 50, 100)" lazy-load  data-width="50" data-height="100">
+   <img  :src="getCompressImgUrl(src, 50, 100)" lazy-load  data-width="50" data-height="100" style="padding: 20px;" class="match-img">
+ </div>  
+</template>
+    "
+`;
+
+exports[`lazyLoader without urlHandler 1`] = `
+"
+<template>
+ <div>
+   <img  :src="img" lazy-load >
+ </div>  
+</template>
+    "
+`;

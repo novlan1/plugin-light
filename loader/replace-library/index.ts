@@ -1,3 +1,5 @@
+import { replaceAllPolyfill } from '../../helper/utils/replace-all';
+
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 
@@ -9,6 +11,7 @@ const { getOptions } = require('loader-utils');
  * import 'vant/lib/list/index.css'  转为：import 'test'
  */
 export default function replaceLibrary(source) {
+  replaceAllPolyfill();
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }
@@ -29,7 +32,7 @@ export default function replaceLibrary(source) {
       const importRe = new RegExp(`(?<=import(?:[\\s\\S]+from)?\\s+)(?:'|")(${from}[\\w\\/\\-\\.]*)(?:'|")`);
 
       if (importRe.test(res)) {
-        res = res.replace(importRe, () => `'${to}'`);
+        res = res.replaceAll(importRe, () => `'${to}'`);
       }
     }
   }

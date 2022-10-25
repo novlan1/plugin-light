@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replaceLibrary replaceLibrary 1`] = `
+"
+import nesTim from 'src/common/tools/fake-library/nes-tim/index.js';
+import { Swipe, SwipeItem, Tab, Tabs } from 'src/common/tools/fake-library/vant/index.js';
+import TIM from 'src/common/tools/fake-library/tim-js-sdk/index.js';
+import 'src/common/tools/fake-library/nes-tim/index.js';
+import Swiper2, { Navigation, Pagination } from 'src/common/tools/fake-library/vant/index.js';
+import get from 'src/common/tools/fake-library/vant/index.js';
+import { post } from 'src/common/tools/fake-library/vant/index.js';
+    "
+`;

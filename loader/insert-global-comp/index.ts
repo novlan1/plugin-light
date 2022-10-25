@@ -1,3 +1,5 @@
+import { replaceAllPolyfill } from '../../helper/utils/replace-all';
+
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 
@@ -13,6 +15,8 @@ const hyphenate = function (str) {
 
 
 export default function insertGlobalComponent(source) {
+  replaceAllPolyfill();
+
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

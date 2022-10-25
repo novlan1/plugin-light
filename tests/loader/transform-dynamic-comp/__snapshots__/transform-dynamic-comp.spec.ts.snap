@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transformDynamicComp transformDynamicComp 1`] = `
+"
+<script>
+import xxComp from 'xx.comp';
+
+export default {
+  components: {
+    xxComp,
+  }
+}
+</script>
+    "
+`;

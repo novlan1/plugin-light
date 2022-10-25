@@ -1,10 +1,12 @@
+import { replaceAllPolyfill } from '../../helper/utils/replace-all';
+
+
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
-String.prototype.replaceAll = function (s1, s2) {
-  return this.replace(new RegExp(s1, 'gm'), s2);
-};
 
 export default function replaceTmpTag(source) {
+  replaceAllPolyfill();
+
   // @ts-ignore
   const options = getOptions(this) || {};
   const { replaceTmpTagMap = {} } = options;

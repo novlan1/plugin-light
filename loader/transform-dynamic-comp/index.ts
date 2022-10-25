@@ -1,20 +1,27 @@
+import { replaceAllPolyfill } from '../../helper/utils/replace-all';
+
+
 /**
- * 替换动态组件，比如：
+ * 替换动态组件
+ *
+ * @example
+ *
  * components: {
  *   xxComp(resolve) {
-       require(['xx.comp'], resolve);
-     },
-   }
-
-    会被转为：
-
-    import xxComp from 'xx.comp';
-
-    components: {
-      xxComp,
-    }
+ *     require(['xx.comp'], resolve);
+ *   },
+ * }
+ *
+ *  // 会被转为：
+ * import xxComp from 'xx.comp';
+ *
+ * components: {
+ *   xxComp,
+ *  }
  */
 export default function transformDynamicComp(source = '') {
+  replaceAllPolyfill();
+
   if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
     return source;
   }

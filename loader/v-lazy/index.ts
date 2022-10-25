@@ -104,20 +104,3 @@ function handleImg(str = '', urlHandler = '') {
   return res;
 }
 
-
-// function test() {
-//   const a = '<img v-lazy="img" size="50">';
-//   const b = '<img v-lazy="img" width="50" height="600">';
-//   const c = '<img v-lazy="img" xxx="xx">';
-//   const d = '<img v-lazy="img" data-size="50">';
-//   const e = '<img v-lazy="img" data-width="50" data-height="600">';
-//   const f = '<img v-lazy="img" xxxsize="50">';
-//   console.log(handleImg(a, 'getUrl'));
-//   console.log(handleImg(b, 'getUrl'));
-//   console.log(handleImg(c, 'getUrl'));
-//   console.log(handleImg(d, 'getUrl'));
-//   console.log(handleImg(e, 'getUrl'));
-//   console.log(handleImg(f, 'getUrl'));
-// }
-
-// test();

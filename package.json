@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "npm run build && npm run release-patch && git push --follow-tags origin master && npm publish",
+    "release": "npm run test && npm run build && npm run release-patch && git push --follow-tags origin master && npm publish",
     "build": "rm -rf lib && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",
     "release:first": "standard-version --first-release",

@@ -1,34 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`replaceTmpTag replaceTmpTag 1`] = `
-"
-<template>
-  <!-- 赛程树 -->
-  <scroll-view
-    v-if="col>=1"
-    id="scheduleTreeId"
-    ref="scheduleTree"
-    scroll-y="true"
-    scroll-x="true"
-    enable-flex="true"
-    enhanced="true"
-    :class="['tip-match-pk-schedule-list',
-            'tip-match-pk-' + teamTotal,
-            isLoserTree && isfirstTree ? 'tip-match-lose-tree':'',
-            isLoserTree && !isfirstTree ? 'tip-match-lose-line': ''
-    ]"
-    :style="{ width: \`\${tabWidth}%\`, transform: \`translate3d(\${scheduleScrollNum}rem,0,0)\` }"
-    @touchstart="e=>start(e, 't')"
-    @touchmove="move"
-    @touchend="end"
-    @scroll="onScroll"
-  >
-    <!-- @mouseup="end" -->
-  </scroll-view>
-</template>
-    "
-`;
-
 exports[`replaceTmpTag replaceTmpTag in mp 1`] = `
 "
 <template>

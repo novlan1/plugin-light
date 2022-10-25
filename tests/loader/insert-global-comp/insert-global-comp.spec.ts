@@ -12,7 +12,7 @@ jest.mock('loader-utils', () => ({
 }));
 
 describe('insertGlobalComponent', () => {
-  it('insertGlobalComponent', () => {
+  it('only one tag', () => {
     const source = `
 <template>
   <ModuleCustomGroupType
@@ -27,7 +27,7 @@ describe('insertGlobalComponent', () => {
   });
 
 
-  it('insertGlobalComponent.2', () => {
+  it('first tag is comment', () => {
     const source = `<template>
 <!-- 战后数据和直播页面 -->
 <div
@@ -37,6 +37,46 @@ describe('insertGlobalComponent', () => {
   <page-loading v-if="mShowPageLoading" />
   <BattleDetailModule v-else-if="isScheEnd" />
   <VideoRoomModule v-else />
+</div>
+</template>`;
+    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    expect(insertGlobalComponent.call({
+      resourcePath: 'MOCK_PAGE',
+    }, source)).toMatchSnapshot();
+  });
+
+
+  it('already have 1', () => {
+    const source = `<template>
+<!-- 战后数据和直播页面 -->
+<div
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+  <MatchCommDialog id="tip-match-comm-tips-dialog" /></template>
+</div>
+</template>`;
+    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    expect(insertGlobalComponent.call({
+      resourcePath: 'MOCK_PAGE',
+    }, source)).toMatchSnapshot();
+  });
+
+
+  it('already have 2', () => {
+    const source = `<template>
+<!-- 战后数据和直播页面 -->
+<div
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+  <match-comm-dialog id="tip-match-comm-tips-dialog" /></template>
 </div>
 </template>`;
     process.env.VUE_APP_PLATFORM = 'mp-weixin';

@@ -1,16 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`insertGlobalComponent insertGlobalComponent 1`] = `
-"
-<template>
-  <div><template></template> <ModuleCustomGroupType
-    :game-info-key="gameInfoKey"
-  /> <template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></div>
-</template>
-"
+exports[`insertGlobalComponent already have 1 1`] = `
+"<template>
+<!-- 战后数据和直播页面 -->
+<div
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+  <MatchCommDialog id="tip-match-comm-tips-dialog" /></template>
+</div>
+</template>"
 `;
 
-exports[`insertGlobalComponent insertGlobalComponent.2 1`] = `
+exports[`insertGlobalComponent already have 2 1`] = `
+"<template>
+<!-- 战后数据和直播页面 -->
+<div
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+  <match-comm-dialog id="tip-match-comm-tips-dialog" /></template>
+</div>
+</template>"
+`;
+
+exports[`insertGlobalComponent first tag is comment 1`] = `
 "<template>
 <!-- 战后数据和直播页面 -->
 <div
@@ -22,4 +42,14 @@ exports[`insertGlobalComponent insertGlobalComponent.2 1`] = `
   <VideoRoomModule v-else />
 <template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></div>
 </template>"
+`;
+
+exports[`insertGlobalComponent only one tag 1`] = `
+"
+<template>
+  <div><template></template> <ModuleCustomGroupType
+    :game-info-key="gameInfoKey"
+  /> <template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></div>
+</template>
+"
 `;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insertPageMeta already have 1`] = `
+"
+<template>
+  <page-meta :root-font-size="mixinRootFontSize + 'px'" page-style="height: 100%;width: 100%;">
+    <ModuleCustomGroupType
+      :game-info-key="gameInfoKey"
+    />
+  </page-meta>
+</template>
+    "
+`;
+
+exports[`insertPageMeta insertPageMeta 1`] = `
+"
+<template><page-meta :root-font-size="mixinRootFontSize + 'px'" page-style="height: 100%;width: 100%;" >
+  <ModuleCustomGroupType
+    :game-info-key="gameInfoKey"
+  />
+</page-meta></template>
+    "
+`;

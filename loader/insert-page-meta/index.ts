@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('path');
 const { getOptions } = require('loader-utils');
-const htmlReg = /<template>[\s\n]*<page-meta>([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;
+
+
+const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;
+
 // 需要贪婪匹配
 const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
@@ -13,17 +16,19 @@ export default function insertPageMeta(source) {
   // @ts-ignore
   const options = getOptions(this) || {};
   const { pages = [] } = options;
+
   // @ts-ignore
   const { resourcePath } = this;
   const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR);
 
   const fullPages = pages.map(item => `${path.resolve(rootPath, item)}.vue`);
-  // console.log('fullPages', fullPages);
   if (!fullPages.includes(resourcePath)) {
     return source;
   }
 
-  if (source.match(htmlReg)) return;
+  if (source.match(htmlReg)) {
+    return source;
+  }
 
   const res = source.replace(pureHtmlReg, (a, b) => {
     const fontsizeStr = ':root-font-size="mixinRootFontSize + \'px\'" page-style="height: 100%;width: 100%;" ';

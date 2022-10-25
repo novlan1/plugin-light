@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.46](https://github.com/novlan1/uni-plugin-light/compare/v0.0.45...v0.0.46) (2022-10-25)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化脚本 ([ebe4726](https://github.com/novlan1/uni-plugin-light/commit/ebe4726020fc3e682b9e5b35a0e6e9ed7f705fe9))
+
+
+### ✅ Tests | 测试
+
+* 补充一些测试用例 ([b71f915](https://github.com/novlan1/uni-plugin-light/commit/b71f915f4877280c007fad8d800ac72ce2bd94d5))
+* 补充一些单测 ([aaf6664](https://github.com/novlan1/uni-plugin-light/commit/aaf66643ed48436dc6a36ff81077b14458ec70eb))
+* 补充insert-global-comp测试用例 ([2d8575c](https://github.com/novlan1/uni-plugin-light/commit/2d8575cbbaa14f1178343016b1f3a8c839bcdbbb))
+* 补充plugin-local-file测试用例 ([8ab6abf](https://github.com/novlan1/uni-plugin-light/commit/8ab6abf573ac18382f5bd55c20aebeaeb0884e57))
+
+
+### ✨ Features | 新功能
+
+* 补充一些测试用例 ([a5dcd11](https://github.com/novlan1/uni-plugin-light/commit/a5dcd117a9d7675091f3f8168ea162f4087e2baf))
+* 优化一些配置 ([47887d1](https://github.com/novlan1/uni-plugin-light/commit/47887d1d587caec554de8c814ac29c5ec3451715))
+* 优化dispatch-vue ([bee1d2d](https://github.com/novlan1/uni-plugin-light/commit/bee1d2d6427e7f05e07ef319cfab6c5297ff61f9))
+
+
+### ✏️ Documentation | 文档
+
+* 更新readme ([c44d2ce](https://github.com/novlan1/uni-plugin-light/commit/c44d2ce062a732d16773a13f3b0c5135b2bbcffc))
+
 ### [0.0.45](https://github.com/novlan1/uni-plugin-light/compare/v0.0.44...v0.0.45) (2022-10-24)
 
 

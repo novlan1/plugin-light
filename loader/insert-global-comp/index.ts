@@ -3,13 +3,13 @@ import { replaceAllPolyfill } from '../../helper/utils/replace-all';
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { getOptions } = require('loader-utils');
 
-const hyphenateRE = /\B([A-Z])/g;
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
 const firstCommentReg = /(?<=<template>[\s\n]*(?:<!--.*?-->\s*)<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
 const notFirstDivReg = /(?<=<template>\s*)(<(?!div)[^>]+>[\s\S]*)(?=\s*<\/template>)/;
 const htmlReg = /(?<=<template>[\s\n]*<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
 
 const hyphenate = function (str) {
+  const hyphenateRE = /\B([A-Z])/g;
   return str.replace(hyphenateRE, '-$1').toLowerCase();
 };
 

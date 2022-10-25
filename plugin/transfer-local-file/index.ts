@@ -53,13 +53,11 @@ export class TransferLocalFilePlugin {
 
   modifyRef(assets) {
     const { adapterDirs = []  } = this.options || {};
-    // const reg = new RegExp(`\\.\\./\\.\\./(?=(${adapterDirs.join('|')}))`, 'g');
 
     for (const key of Object.keys(assets)) {
       const value = assets[key];
       if (key.endsWith('.js') || key.endsWith('.json')) {
         let source = value.source().toString();
-        // source = source.replaceAll(reg, '');
 
         source = replaceSource(source, adapterDirs);
 

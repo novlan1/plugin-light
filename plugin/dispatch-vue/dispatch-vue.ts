@@ -24,7 +24,9 @@ export class DispatchVuePlugin {
 
   apply(compiler) {
     compiler.hooks.emit.tap('moveComponentPlugin', (compilation) => {
-      console.log('transferVue', Date.now());
+      const startTime = Date.now();
+      console.log('Dispatch Vue Plugin Start Time: ', startTime);
+
       try {
         const { assets } = compilation;
         const {
@@ -35,7 +37,11 @@ export class DispatchVuePlugin {
         this.copyComponents(assets, movingComponents);
         this.modifyRef(assets, parsedReplaceRefList);
         this.deleteComponents(assets, movingComponents);
-        console.log('transferVue', Date.now());
+
+        const endTime = Date.now();
+
+        console.log('Dispatch Vue Plugin End Time: ', endTime);
+        console.log('Dispatch Vue Plugin Took Time: ', endTime - startTime);
       } catch (err) {
         console.log('err', err);
       }
@@ -44,11 +50,9 @@ export class DispatchVuePlugin {
 
   copyComponents(assets, movingComponents) {
     for (const item of movingComponents) {
-      const { originRef, sourceRef } = item;
-      const origin = this.formatAssetKey(originRef);
-      const target = this.formatAssetKey(sourceRef);
-
-      // console.log(`正在复制 asset ${originRef}`);
+      const { sourceRef, targetRef } = item;
+      const origin = this.formatAssetKey(sourceRef);
+      const target = this.formatAssetKey(targetRef);
 
       this.addCompChunk(assets, origin, target, '.js');
       this.addCompChunk(assets, origin, target, '.json');
@@ -59,10 +63,8 @@ export class DispatchVuePlugin {
 
   deleteComponents(assets, movingComponents) {
     for (const item of movingComponents) {
-      const { originRef } = item;
-      const origin = this.formatAssetKey(originRef);
-
-      // console.log(`正在删除 asset ${originRef}`);
+      const { sourceRef } = item;
+      const origin = this.formatAssetKey(sourceRef);
 
       this.deleteFile(assets, origin, '.js');
       this.deleteFile(assets, origin, '.json');
@@ -76,6 +78,16 @@ export class DispatchVuePlugin {
   }
 
   addCompChunk(assets, origin, target, postfix) {
+    /**
+     * assets 的 keys 列表示例，可以看到没有前面的 `/`
+     *
+     * [
+     *   "views/sche/cycle-set.wxml",
+     *   "views/match-detail/publish-news.wxml",
+     *   "wxcomponents/vant/mixins/basic.d.ts",
+     *   "local-component/module/tip-match/tip-match-detail-group-qrcode/index.json",
+     * ]
+     */
     if (assets[origin + postfix]) {
       const source = assets[origin + postfix].source().toString();
       assets[target + postfix] = {
@@ -113,10 +125,7 @@ export class DispatchVuePlugin {
 
       if (replaceList?.length && (key.endsWith('.js') || key.endsWith('.json'))) {
         let source = value.source().toString();
-        // console.log('正在修改', key);
-        // if (key.indexOf('json') > -1) {
-        //   console.log('source',source)
-        // }
+
         for (const replaceItem of replaceList) {
           source = source.replaceAll(replaceItem[0], replaceItem[1]);
         }

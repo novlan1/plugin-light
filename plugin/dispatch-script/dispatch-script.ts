@@ -5,13 +5,6 @@ const { normalizePath } = require('@dcloudio/uni-cli-shared');
 
 const mainPath = normalizePath(path.resolve(process.env.UNI_INPUT_DIR, 'main.'));
 
-// const time =  0;
-// function consoleLog(cb) {
-//   time += 1;
-//   if (time > 10) return;
-//   cb();
-// }
-
 
 function getForceMovePkgs(configList, moduleName) {
   if (!moduleName) return;
@@ -41,21 +34,22 @@ function baseTest(module) {
   }
   return true;
 }
-// @ts-ignore
-const subPackageRoots = Object.keys(process.UNI_SUBPACKAGES).map(root => `${root}/`);
+
+
+const subPackageRoots = Object.keys((process as any).UNI_SUBPACKAGES).map(root => `${root}/`);
+
 const findSubPackages = function (chunks) {
   return chunks.reduce((pkgs, item) => {
-    // consoleLog(() => console.log('item', item.name));
     const name = normalizePath(item.name);
     const pkgRoot = subPackageRoots.find(root => name.indexOf(root) === 0);
     pkgRoot && pkgs.add(pkgRoot);
     return pkgs;
   }, new Set());
 };
+
+
 const hasMainPackage = function (chunks) {
-  return chunks.find(item =>
-    // console.log('chunks.item.name', item.name);
-    !subPackageRoots.find(root => item.name.indexOf(root) === 0));
+  return chunks.find(item => !subPackageRoots.find(root => item.name.indexOf(root) === 0));
 };
 
 const findNameChunk = function (chunks, name) {
@@ -89,14 +83,15 @@ export class DispatchScriptPlugin {
         const waitDisposeModules = compilation.modules.filter(module => baseTest(module));
         waitDisposeModules.forEach((module) => {
           const chunks = module.getChunks();
-          // consoleLog(() => console.log('chunks', chunks[0]));
 
           const matchSubPackages = findSubPackages(chunks);
           const isMain = hasMainPackage(chunks);
           const forceMovePkgs = getForceMovePkgs(this.forceToMoveModuleList, module.resource);
-          console.log('module.resource: ', module.resource);
-          console.log('forceMovePkgs: ', forceMovePkgs);
-          console.log('isMain: ', !!isMain);
+
+          // console.log('module.resource: ', module.resource);
+          // console.log('forceMovePkgs: ', forceMovePkgs);
+          // console.log('isMain: ', !!isMain);
+
           if (forceMovePkgs?.size) {
             this.moveFiles.set(module, {
               name: module.resource,

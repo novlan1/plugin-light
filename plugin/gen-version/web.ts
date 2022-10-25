@@ -34,6 +34,7 @@ try {
           const idx = source.lastIndexOf('</body>');
           return source.slice(0, idx) + insertCode + source.slice(idx);
         };
+
         assets[key].size = function () {
           return source.length;
         };

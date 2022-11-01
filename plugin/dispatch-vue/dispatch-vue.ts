@@ -17,9 +17,24 @@ const findReplaceMap = (key, refMap = {}) => {
 
 export class DispatchVuePlugin {
   options: object;
+  postFix: {
+    html: '.wxml' | '.qml'
+    css: '.wxss' | '.qss'
+  };
 
   constructor(options) {
     this.options = options;
+    this.postFix = {
+      html: '.wxml',
+      css: '.wxss',
+    };
+
+    if (process.env.VUE_APP_PLATFORM === 'mp-qq') {
+      this.postFix = {
+        html: '.qml',
+        css: '.qss',
+      };
+    }
   }
 
   apply(compiler) {
@@ -33,6 +48,9 @@ export class DispatchVuePlugin {
           parsedReplaceRefList,
           movingComponents,
         } = analyzeComponent(this.options) || {};
+        if (!movingComponents || !parsedReplaceRefList) {
+          return;
+        }
 
         this.copyComponents(assets, movingComponents);
         this.modifyRef(assets, parsedReplaceRefList);
@@ -56,8 +74,8 @@ export class DispatchVuePlugin {
 
       this.addCompChunk(assets, origin, target, '.js');
       this.addCompChunk(assets, origin, target, '.json');
-      this.addCompChunk(assets, origin, target, '.wxml');
-      this.addCompChunk(assets, origin, target, '.wxss');
+      this.addCompChunk(assets, origin, target, this.postFix.html);
+      this.addCompChunk(assets, origin, target, this.postFix.css);
     }
   }
 
@@ -68,8 +86,8 @@ export class DispatchVuePlugin {
 
       this.deleteFile(assets, origin, '.js');
       this.deleteFile(assets, origin, '.json');
-      this.deleteFile(assets, origin, '.wxml');
-      this.deleteFile(assets, origin, '.wxss');
+      this.deleteFile(assets, origin, this.postFix.html);
+      this.deleteFile(assets, origin, this.postFix.css);
     }
   }
 

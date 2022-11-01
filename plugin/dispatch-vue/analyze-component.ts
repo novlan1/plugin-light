@@ -35,6 +35,7 @@ export function analyzeComponent(options: {
     parsedReplaceRefList?: Array<any>
     movingComponents?: Array<any>
   } {
+  console.log('process.env.UNI_OPT_SUBPACKAGES: ', process.env.UNI_OPT_SUBPACKAGES);
   if (!process.env.UNI_OPT_SUBPACKAGES) {
     return {};
   }

@@ -17,10 +17,24 @@ export default function replaceLibrary(source) {
   }
   // @ts-ignore
   const options = getOptions(this) || {};
-  const { replaceLibraryList = [] } = options;
-  if (!replaceLibraryList.length) {
+  const { replaceLibraryList = [], replaceContentList = [] } = options;
+  if (!replaceLibraryList.length && !replaceContentList.length) {
     return source;
   }
+  // @ts-ignore
+  const { resourcePath } = this;
+
+  // eslint-disable-next-line @typescript-eslint/prefer-for-of
+  for (let i = 0;i < replaceContentList.length;i++) {
+    const { path, content = '' } = replaceContentList[i];
+    const tContent = typeof content === 'function' ? content() : content;
+    if (resourcePath.match(new RegExp(path))) {
+      console.log(`replace library loader 处理了文件：${path} `);
+      return tContent;
+    }
+  }
+
+
   let res = source;
 
   // eslint-disable-next-line @typescript-eslint/prefer-for-of
@@ -37,6 +51,7 @@ export default function replaceLibrary(source) {
       }
     }
   }
+
 
   return res;
 }

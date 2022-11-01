@@ -1,4 +1,5 @@
 import replaceLibrary from '../../../loader/replace-library';
+import path from 'path';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({
@@ -44,6 +45,8 @@ import get from 'lodash-es/get';
 import { post } from 'lodash-es';
     `;
     process.env.VUE_APP_PLATFORM = 'mp-weixin';
-    expect(replaceLibrary(source)).toMatchSnapshot();
+    expect(replaceLibrary.call({
+      resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
+    }, source)).toMatchSnapshot();
   });
 });

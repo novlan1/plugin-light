@@ -51,6 +51,7 @@ console.info('[system]', 'Last Commit Hash: ${commitInfo.hash || ''}');
 
 export function getMpVersionCode() {
   return `
+var uni = typeof wx !== 'undefined' ? wx : qq;
 var miniProgram = uni.getAccountInfoSync().miniProgram || {};
 var systemInfo = uni.getSystemInfoSync() || {};
 var envVersionMap = {

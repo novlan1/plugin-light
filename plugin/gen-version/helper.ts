@@ -51,8 +51,8 @@ console.info('[system]', 'Last Commit Hash: ${commitInfo.hash || ''}');
 
 export function getMpVersionCode() {
   return `
-var miniProgram = wx.getAccountInfoSync().miniProgram || {};
-var systemInfo = wx.getSystemInfoSync() || {};
+var miniProgram = uni.getAccountInfoSync().miniProgram || {};
+var systemInfo = uni.getSystemInfoSync() || {};
 var envVersionMap = {
   develop: '开发版',
   trial: '体验版',

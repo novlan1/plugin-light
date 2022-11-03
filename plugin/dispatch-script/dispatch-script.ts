@@ -9,9 +9,9 @@ const mainPath = normalizePath(path.resolve(process.env.UNI_INPUT_DIR, 'main.'))
 function getForceMovePkgs(configList, moduleName) {
   if (!moduleName) return;
   try {
-    const findItem = configList.find(item => moduleName.indexOf(item.moduleName) > -1);
+    const findItem = configList.find(item => moduleName.indexOf(item.path) > -1);
     if (!findItem) return;
-    return new Set(findItem.pkgs);
+    return findItem.subPackages;
   } catch (err) {
     console.log('err.err: ', err);
   }
@@ -92,10 +92,11 @@ export class DispatchScriptPlugin {
           // console.log('forceMovePkgs: ', forceMovePkgs);
           // console.log('isMain: ', !!isMain);
 
-          if (forceMovePkgs?.size) {
+          if (forceMovePkgs?.length) {
+            console.log('matchSubPackages', matchSubPackages, module.resource);
             this.moveFiles.set(module, {
               name: module.resource,
-              pkgSet: matchSubPackages,
+              pkgSet: forceMovePkgs,
             });
           } else if (matchSubPackages.size > 0 && !isMain) {
             // 只用处理大于一个分包在使用的情况，一个使用的情况uni已经处理好了，但是要考虑3的情况
@@ -136,7 +137,7 @@ export class DispatchScriptPlugin {
                 }
                 GraphHelpers.connectChunkAndModule(pkgChunk, module);
               });
-              console.log(`${module.resource} 被放入分包${Array.from(moveFileInfo.pkgSet).join(',')}`);
+              console.log(`正在移动脚本 ${module.resource} 到分包 ${Array.from(moveFileInfo.pkgSet).join(',')} 中`);
               GraphHelpers.disconnectChunkAndModule(mainChunk, module);
             }
           }

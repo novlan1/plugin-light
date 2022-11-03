@@ -59,12 +59,12 @@ var envVersionMap = {
   trial: '体验版',
   release: '正式版'
 }
-var { envVersion, version } = miniProgram;
+var { envVersion = '', version = '' } = miniProgram;
 var { brand, model, pixelRatio } = systemInfo;
-var versionDesc = \`\${envVersion}(\${envVersionMap[envVersion]})\`;
+var versionDesc = \`\${envVersion}(\${envVersionMap[envVersion] || ''})\`;
 
 console.info('[system]', '');
-console.info('[system]', \`Env Version：\${versionDesc}\`);
+console.info('[system]', \`Env Version：\${envVersion ? versionDesc : ''}\`);
 console.info('[system]', \`Version：\${version}\`);
 
 console.info('[system]', '');

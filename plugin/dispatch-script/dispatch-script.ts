@@ -93,7 +93,7 @@ export class DispatchScriptPlugin {
           // console.log('isMain: ', !!isMain);
 
           if (forceMovePkgs?.length) {
-            console.log('matchSubPackages', matchSubPackages, module.resource);
+            console.log('命中的forceMovePkgs: ', forceMovePkgs);
             this.moveFiles.set(module, {
               name: module.resource,
               pkgSet: forceMovePkgs,

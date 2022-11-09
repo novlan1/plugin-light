@@ -12,15 +12,15 @@ export function replaceAbsolutePath({
 export function fixNpmPackage(assets) {
   const keys = Object.keys(assets);
   for (const item of keys) {
-    if (item.indexOf('node-modules') > -1) {
+    if (item.indexOf('node-modules') > -1 && item.endsWith('.js')) {
       const source = assets[item].source?.()?.toString();
       const cwd =  process.cwd();
       if (source.indexOf(cwd) === -1) continue;
 
       global.webpackJsonp = [];
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      require(source);
-      const comps = global.webpackJsonp?.[0]?.[2];
+      // eslint-disable-next-line no-eval
+      eval(source);
+      const comps = global.webpackJsonp?.[0]?.[1];
       if (!comps) continue;
 
       const key = Object.keys(comps)[0];

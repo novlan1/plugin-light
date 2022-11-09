@@ -31,7 +31,7 @@ export function fixNpmPackage(assets) {
         path: cwd,
         key,
       });
-
+      console.log(`FIX NPM PACKAGE: 将 ${item} 中的绝对路径替换为${key}`);
       assets[item] = {
         source() {
           return newSource;

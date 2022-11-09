@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replaceAbsolutePath replaceAbsolutePath 1`] = `
+"
+//# sourceMappingURL=../../../../Documents/node-modules/@ttt/press-ui/press-icon/press-icon.js.map
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    '../../node-modules/@ttt/press-ui/press-icon/press-icon-create-component',
+    {
+        '../../node-modules/@ttt/press-ui/press-icon/press-icon-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('1')['createComponent'](__webpack_require__("89895623"))
+        })
+    },
+    [['../../node-modules/@ttt/press-ui/press-icon/press-icon-create-component']]
+]);
+    "
+`;

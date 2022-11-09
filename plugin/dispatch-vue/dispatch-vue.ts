@@ -1,4 +1,5 @@
 import { analyzeComponent } from './analyze-component';
+import { fixNpmPackage } from '../fix-npm-package/core';
 
 String.prototype.replaceAll = function (s1, s2) {
   return this.replace(new RegExp(s1, 'gm'), s2);
@@ -17,6 +18,8 @@ const findReplaceMap = (key, refMap = {}) => {
 
 export class DispatchVuePlugin {
   options: object;
+  useFixNpm: false;
+
   postFix: {
     html: '.wxml' | '.qml'
     css: '.wxss' | '.qss'
@@ -24,6 +27,8 @@ export class DispatchVuePlugin {
 
   constructor(options) {
     this.options = options;
+    this.useFixNpm = options?.useFixNpm || true;
+
     this.postFix = {
       html: '.wxml',
       css: '.wxss',
@@ -55,6 +60,9 @@ export class DispatchVuePlugin {
         this.copyComponents(assets, movingComponents);
         this.modifyRef(assets, parsedReplaceRefList);
         this.deleteComponents(assets, movingComponents);
+        if (this.useFixNpm) {
+          fixNpmPackage(assets);
+        }
 
         const endTime = Date.now();
 

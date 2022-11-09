@@ -15,7 +15,7 @@ jest.mock('loader-utils', () => ({
         exact: false,
       },
       {
-        from: '@tencent/nes-tim',
+        from: '@ttt/nes-tim',
         to: 'src/common/tools/fake-library/nes-tim/index.js',
         exact: false,
       },
@@ -36,10 +36,10 @@ jest.mock('loader-utils', () => ({
 describe('replaceLibrary', () => {
   it('replaceLibrary', () => {
     const source = `
-import nesTim from '@tencent/nes-tim';
+import nesTim from '@ttt/nes-tim';
 import { Swipe, SwipeItem, Tab, Tabs } from 'vant';
 import TIM from 'tim-js-sdk';
-import '@tencent/nes-tim/lib/nes-tim.css';
+import '@ttt/nes-tim/lib/nes-tim.css';
 import Swiper2, { Navigation, Pagination } from 'swiper';
 import get from 'lodash-es/get';
 import { post } from 'lodash-es';

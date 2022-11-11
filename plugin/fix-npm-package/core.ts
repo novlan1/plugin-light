@@ -25,10 +25,13 @@ export function findKey(obj) {
 
 export function fixNpmPackage(assets) {
   const keys = Object.keys(assets);
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const path = require('path');
   for (const item of keys) {
     if (item.indexOf('node-modules') > -1 && item.endsWith('.js')) {
       const source = assets[item].source?.()?.toString();
-      const cwd =  process.cwd();
+      const cwd =  process.cwd().split(path.sep)
+        .join('/');
       if (source.indexOf(cwd) === -1) continue;
 
       global.webpackJsonp = [];

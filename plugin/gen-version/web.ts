@@ -39,7 +39,7 @@ try {
           return source.length;
         };
       } catch (err) {
-        console.log('GenVersionWebPlugin.err: ', err);
+        console.log('[GenVersionMpPlugin] err: ', err);
       }
     });
   }

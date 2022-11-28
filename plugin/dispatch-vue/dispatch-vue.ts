@@ -45,7 +45,7 @@ export class DispatchVuePlugin {
   apply(compiler) {
     compiler.hooks.emit.tap('moveComponentPlugin', (compilation) => {
       const startTime = Date.now();
-      console.log('Dispatch Vue Plugin Start Time: ', startTime);
+      console.log('[Dispatch Vue] Plugin Start Time: ', startTime);
 
       try {
         const { assets } = compilation;
@@ -66,10 +66,10 @@ export class DispatchVuePlugin {
 
         const endTime = Date.now();
 
-        console.log('Dispatch Vue Plugin End Time: ', endTime);
-        console.log('Dispatch Vue Plugin Took Time: ', endTime - startTime);
+        console.log('[Dispatch Vue] Plugin End Time: ', endTime);
+        console.log('[Dispatch Vue] Plugin Took Time: ', endTime - startTime);
       } catch (err) {
-        console.log('err', err);
+        console.log('[Dispatch Vue] err', err);
       }
     });
   }
@@ -153,7 +153,10 @@ export class DispatchVuePlugin {
         let source = value.source().toString();
 
         for (const replaceItem of replaceList) {
-          source = source.replaceAll(replaceItem[0], replaceItem[1]);
+          source = source.replaceAll(`${replaceItem[0]}'`, `${replaceItem[1]}'`);
+          source = source.replaceAll(`${replaceItem[0]}"`, `${replaceItem[1]}"`);
+          source = source.replaceAll(`${replaceItem[0]}-create-component'`, `${replaceItem[1]}-create-component'`);
+          source = source.replaceAll(`${replaceItem[0]}-create-component"`, `${replaceItem[1]}-create-component"`);
         }
 
         assets[key].source = function () {

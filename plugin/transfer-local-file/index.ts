@@ -16,6 +16,10 @@ export class TransferLocalFilePlugin {
 
   constructor(options) {
     this.options = options;
+
+    if (!fs.existsSync('./log')) {
+      fs.mkdirSync('./log');
+    }
   }
 
   apply(compiler) {
@@ -25,10 +29,6 @@ export class TransferLocalFilePlugin {
       this.moveComp(assets);
       if (isModifyRef) {
         this.modifyRef(assets);
-      }
-
-      if (!fs.existsSync('./log')) {
-        fs.mkdirSync('./log');
       }
 
       fs.writeFileSync('./log/assets.json', JSON.stringify(Object.keys(assets), null, 2));

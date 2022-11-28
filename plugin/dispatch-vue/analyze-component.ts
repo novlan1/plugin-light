@@ -10,12 +10,17 @@ import {
   handleUsingComponents,
   getMoveComponents,
   findSubPackages,
+  getAllGlobalComps,
 } from './helper';
 
 const fs = require('fs');
 const {
   getPageSet,
   getJsonFileMap,
+  getGlobalUsingComponents,
+  getWXComponents,
+  getComponentSet,
+  getJsonFile,
 } = require('@dcloudio/uni-cli-shared/lib/cache');
 
 
@@ -35,7 +40,18 @@ export function analyzeComponent(options: {
     parsedReplaceRefList?: Array<any>
     movingComponents?: Array<any>
   } {
-  console.log('process.env.UNI_OPT_SUBPACKAGES: ', process.env.UNI_OPT_SUBPACKAGES);
+  console.log('[Dispatch Vue] process.env.UNI_OPT_SUBPACKAGES: ', process.env.UNI_OPT_SUBPACKAGES);
+
+  try {
+    fs.writeFileSync('./log/getGlobalUsingComponents.json', JSON.stringify(getGlobalUsingComponents(), null, 2));
+    fs.writeFileSync('./log/getWXComponents.json', JSON.stringify(getWXComponents(), null, 2));
+    fs.writeFileSync('./log/getComponentSet.json', JSON.stringify(getComponentSet(), null, 2));
+    fs.writeFileSync('./log/getJsonFile.json', JSON.stringify(getJsonFile(), null, 2));
+  } catch (err) {
+
+  }
+
+
   if (!process.env.UNI_OPT_SUBPACKAGES) {
     return {};
   }
@@ -101,16 +117,24 @@ export function analyzeComponent(options: {
   genIterativeComponentMap(usingComponentsMap);
 
   let allUsingComponentMap = {};
+  let flattenUsingComponent: {[k: string]: Array<string>} = {};
   try {
-    const flattenUsingComponent = flattenUsingComponentMap(usingComponentsMap);
+    flattenUsingComponent = flattenUsingComponentMap(usingComponentsMap);
     allUsingComponentMap = handleComponentMap(flattenUsingComponent, pageSet);
 
     fs.writeFileSync('./log/usingComponentsMap.json', JSON.stringify(usingComponentsMap, null, 2));
     savingUsingComponentMap('./log/allUsingComponentMap.json', allUsingComponentMap);
   } catch (err) {
-    console.log('err', err);
+    console.log('[Dispatch Vue] err', err);
   }
 
+  const globalComps = getGlobalUsingComponents();
+  const globalCompsValues = getAllGlobalComps({
+    globalComps,
+    flattenUsingComponent,
+  });
+
+  console.log('[Dispatch Vue] globalCompsValues', globalCompsValues);
 
   /**
    * // process.UNI_SUBPACKAGES
@@ -150,11 +174,21 @@ export function analyzeComponent(options: {
     const subPackages = findSubPackages([...allUsingComponentMap[componentName]], subPackageRoots);
     const pkgRoot = subPackageRoots.find(root => componentName.indexOf(root) === 0);
 
-    if (!pkgRoot && subPackages.length && subPackages.length <= MOVE_COMPONENT_MIN_USE_TIMES) {
+    const isGlobalDisable = !!globalCompsValues.find(item => (item as string).includes(componentName));
+
+    if (isGlobalDisable) {
+      console.log('[Dispatch Vue] isGlobalDisable.componentName', componentName);
+    }
+
+    if (!isGlobalDisable
+      && !pkgRoot
+      && subPackages.length
+      && subPackages.length <= MOVE_COMPONENT_MIN_USE_TIMES
+    ) {
       subPackages.forEach((subPackage) => {
         const disable = !!MOVE_COMPONENT_MIN_DISABLE_LIST.find(item => componentName.includes(item));
         if (disable) {
-          console.log('disable.componentName', componentName);
+          console.log('[Dispatch Vue] disable.componentName', componentName);
         }
         if (subPackage && componentName.indexOf(subPackage) !== 0 && !disable) { // 仅存在一个子包引用且未在该子包
           const {

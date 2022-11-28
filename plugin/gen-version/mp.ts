@@ -36,7 +36,7 @@ export class GenVersionMpPlugin {
           return source.length;
         };
       } catch (err) {
-        console.log('GenVersionMpPlugin.err: ', err);
+        console.log('[GenVersionMpPlugin] err: ', err);
       }
     });
   }

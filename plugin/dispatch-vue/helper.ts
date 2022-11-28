@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
+import { getRelativePath } from '../../helper/utils/parse-deps';
+
 const fs = require('fs');
 const path = require('path');
 
@@ -256,7 +258,7 @@ export function getMoveComponents({
     .split(path.sep)
     .join('/');
 
-  console.log(`正在移动组件 ${comp} 到 ${target} 中`);
+  console.log(`[Dispatch Vue] 正在移动组件 ${getRelativePath(comp)} 到 ${getRelativePath(target)} 中`);
 
   return {
     target,
@@ -291,4 +293,43 @@ export function findSubPackages(pages, subPackageRoots) {
     pkgs.push(...pkgRoot);
   }
   return pkgs;
+}
+
+
+export function getAllGlobalComps({
+  globalComps,
+  flattenUsingComponent,
+}) {
+  const globalCompsValues: Array<string> = Object.values(globalComps);
+
+  const childGlobalComps = globalCompsValues.reduce((acc, item) => {
+    if (flattenUsingComponent[item]) {
+      flattenUsingComponent[item].map((child) => {
+        acc.add(child);
+      });
+    }
+
+    if (item.startsWith('/')) {
+      const newItem = item.slice(1);
+      if (flattenUsingComponent[newItem]) {
+        flattenUsingComponent[newItem].map((child) => {
+          acc.add(child);
+        });
+      }
+    }
+    return acc;
+  }, new Set());
+
+  globalCompsValues.push(...Array.from(childGlobalComps as Set<string>));
+
+  const globalCompSet = globalCompsValues.map((item) => {
+    if (item.startsWith('/')) {
+      return item.slice(1);
+    }
+    return item;
+  });
+
+  const parsedGlobalCompsValues = Array.from(new Set(globalCompSet));
+
+  return parsedGlobalCompsValues;
 }

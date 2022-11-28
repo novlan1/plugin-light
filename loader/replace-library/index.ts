@@ -29,7 +29,7 @@ export default function replaceLibrary(source) {
     const { path, content = '' } = replaceContentList[i];
     const tContent = typeof content === 'function' ? content() : content;
     if (resourcePath.match(new RegExp(path))) {
-      console.log(`replace library loader 处理了文件：${path} `);
+      console.log(`[Replace Library Loader] 处理了文件：${path} `);
       return tContent;
     }
   }

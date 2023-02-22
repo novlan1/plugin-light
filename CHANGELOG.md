@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/novlan1/uni-plugin-light/compare/v0.0.46...v0.1.0) (2023-02-22)
+
+
+### ✏️ Documentation | 文档
+
+* 优化readme ([3019a48](https://github.com/novlan1/uni-plugin-light/commit/3019a48edf1da77742622e99d5534af4b46f30d9))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复fix-npm ([1bca4e6](https://github.com/novlan1/uni-plugin-light/commit/1bca4e627cfa747e20fed21fa607d95b01197039))
+* 修复npm打包中key的问题 ([5c4ce13](https://github.com/novlan1/uni-plugin-light/commit/5c4ce13adc6ddfe3fc4e463ce1b44f27314a90b5))
+* 修复windows下分割符的错误 ([4769c19](https://github.com/novlan1/uni-plugin-light/commit/4769c198366f9e753919d484cdb2cf00d2d9bda4))
+
+
+### ✨ Features | 新功能
+
+* 兼容mp-qq ([9259491](https://github.com/novlan1/uni-plugin-light/commit/92594910f4cba10d32a671e20df1db871bd3e0d4))
+* 优化 ([950addd](https://github.com/novlan1/uni-plugin-light/commit/950addd4c6a1efdf7994c44623326221b69e28af))
+* 优化插件 ([11abb1f](https://github.com/novlan1/uni-plugin-light/commit/11abb1f704ef14114b9528633787a1a23fe2bc2d))
+* 优化插件 ([20a09ed](https://github.com/novlan1/uni-plugin-light/commit/20a09ed0c7e7c73821654d64b8db5c8b0f28526d))
+* 优化打印 ([b34eade](https://github.com/novlan1/uni-plugin-light/commit/b34eadeb5836132f73dfdc23fbd9632506efc172))
+* 优化分包插件 ([f36075d](https://github.com/novlan1/uni-plugin-light/commit/f36075d43c9e1d9f2bd3a278028a2847b30e511b))
+* 优化脚本 ([c5186c1](https://github.com/novlan1/uni-plugin-light/commit/c5186c127dcff0686474776485863fa29620f5e3))
+* 增加fix-npm ([24210a4](https://github.com/novlan1/uni-plugin-light/commit/24210a478f744d4b94b1cbf14d31a938adceefc9))
+* 增加FixNpmPackagePlugin ([0715885](https://github.com/novlan1/uni-plugin-light/commit/0715885a33b287b2934c0b66e3ffcaed431dd361))
+* **replace-library:** 优化替换组件loader ([1690a9f](https://github.com/novlan1/uni-plugin-light/commit/1690a9ff4cfe3612e85ca6b98f26677496933ea6))
+* wx改成uni ([be5a4f2](https://github.com/novlan1/uni-plugin-light/commit/be5a4f20c1661958e66ffd20da690555c5d256fa))
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 更新vscode配置 ([c3ef756](https://github.com/novlan1/uni-plugin-light/commit/c3ef7569340feda65c4870385ac1196893f5cf39))
+* 优化jest配置 ([7c1e93b](https://github.com/novlan1/uni-plugin-light/commit/7c1e93b18bb4edb4560a5974872b65fb0025b6f0))
+
 ### [0.0.46](https://github.com/novlan1/uni-plugin-light/compare/v0.0.45...v0.0.46) (2022-10-25)
 
 

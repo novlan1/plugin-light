@@ -1,10 +1,10 @@
 {
   "name": "uni-plugin-light",
-  "version": "0.0.46",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/plugin",
   "scripts": {
-    "release": "npm run test && npm run build && npm run release-patch && git push --follow-tags origin master && npm publish",
+    "release": "npm run test && npm run build && npm run release-patch && git push --follow-tags && npm publish",
     "build": "rm -rf lib && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",
     "release:first": "standard-version --first-release",

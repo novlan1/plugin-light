@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+import { replaceAllPolyfill } from 't-comm';
 import { replaceSource } from './core';
+import { createLogDir, saveJsonToLog, updateAssetSource } from '../../helper';
 
-const fs = require('fs');
-
-
-String.prototype.replaceAll = function (s1, s2) {
-  return this.replace(new RegExp(s1, 'gm'), s2);
-};
+replaceAllPolyfill();
 
 export class TransferLocalFilePlugin {
   options?: {
@@ -16,10 +12,7 @@ export class TransferLocalFilePlugin {
 
   constructor(options) {
     this.options = options;
-
-    if (!fs.existsSync('./log')) {
-      fs.mkdirSync('./log');
-    }
+    createLogDir();
   }
 
   apply(compiler) {
@@ -31,7 +24,7 @@ export class TransferLocalFilePlugin {
         this.modifyRef(assets);
       }
 
-      fs.writeFileSync('./log/assets.json', JSON.stringify(Object.keys(assets), null, 2));
+      saveJsonToLog(Object.keys(assets), 'transfer-local-file.assets.json');
     });
   }
 
@@ -61,12 +54,7 @@ export class TransferLocalFilePlugin {
 
         source = replaceSource(source, adapterDirs);
 
-        assets[key].source = function () {
-          return source;
-        };
-        assets[key].size = function () {
-          return source.length;
-        };
+        updateAssetSource(assets, key, source);
       }
     }
   }

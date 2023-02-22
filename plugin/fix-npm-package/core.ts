@@ -1,3 +1,6 @@
+import * as path from 'path';
+import { updateAssetSource, saveJsonToLog } from '../../helper/index';
+
 export function replaceAbsolutePath({
   source,
   path,
@@ -25,13 +28,15 @@ export function findKey(obj) {
 
 export function fixNpmPackage(assets) {
   const keys = Object.keys(assets);
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const path = require('path');
+  const handlesAssets: Array<{asset: string, hash: string}> = [];
+
   for (const item of keys) {
     if (item.indexOf('node-modules') > -1 && item.endsWith('.js')) {
       const source = assets[item].source?.()?.toString();
-      const cwd =  process.cwd().split(path.sep)
+      const cwd =  process.cwd()
+        .split(path.sep)
         .join('/');
+
       if (source.indexOf(cwd) === -1) continue;
 
       global.webpackJsonp = [];
@@ -49,15 +54,15 @@ export function fixNpmPackage(assets) {
         path: cwd,
         key,
       });
-      console.log(`[FIX NPM PACKAGE] 将 ${item} 中的绝对路径替换为${key}`);
-      assets[item] = {
-        source() {
-          return newSource;
-        },
-        size() {
-          return newSource.length;
-        },
-      };
+
+      // console.log(`[FIX NPM PACKAGE] 将 ${item} 中的绝对路径替换为${key}`);
+      handlesAssets.push({
+        asset: item,
+        hash: key,
+      });
+      updateAssetSource(assets, item, newSource);
     }
   }
+
+  saveJsonToLog(handlesAssets, 'fix-npm-package.json');
 }

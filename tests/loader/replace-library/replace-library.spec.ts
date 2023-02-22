@@ -1,5 +1,5 @@
-import replaceLibrary from '../../../loader/replace-library';
 import path from 'path';
+import replaceLibrary from '../../../loader/replace-library';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({

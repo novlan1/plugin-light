@@ -1,3 +1,4 @@
+import path from 'path';
 import transformDynamicComp from '../../../loader/transform-dynamic-comp';
 
 jest.mock('loader-utils', () => ({
@@ -27,6 +28,9 @@ export default {
 }
 </script>
     `;
-    expect(transformDynamicComp(source)).toMatchSnapshot();
+    expect(transformDynamicComp.call(
+      { resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue') },
+      source,
+    )).toMatchSnapshot();
   });
 });

@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-import { getRelativePath } from '../../helper/utils/parse-deps';
-
-const fs = require('fs');
-const path = require('path');
+import * as path from 'path';
+import { timeStampFormat } from 't-comm';
+import { saveJsonToLog } from '../../helper';
 
 
 export function savingUsingComponentMap(name, map) {
@@ -11,13 +9,13 @@ export function savingUsingComponentMap(name, map) {
     acc[item] = [...map[item]];
     return acc;
   }, {});
-  fs.writeFileSync(name, JSON.stringify(res, null, 2));
+  saveJsonToLog(res, name);
 }
 
 function strMapToObj(strMap) {
   const obj = Object.create(null);
   for (const [k, v] of strMap) {
-    obj[k] = v;
+    obj[k] = JSON.parse(v);
   }
   return obj;
 }
@@ -26,7 +24,7 @@ function strMapToObj(strMap) {
  * map转换为json
  */
 export function mapToJson(map) {
-  return JSON.stringify(strMapToObj(map), null, 4);
+  return strMapToObj(map);
 }
 
 
@@ -76,7 +74,7 @@ export function flattenUsingComponentMap(map) {
     res[key] = temp;
   });
 
-  fs.writeFileSync('./log/flattenUsingComponentMap.json', JSON.stringify(res, null, 2));
+  saveJsonToLog(res, 'dispatch-vue.flatten-using-component-map.json');
   return res;
 }
 
@@ -248,27 +246,17 @@ export function getMoveComponents({
 
   const sourceRef = `/${component.replace('../../', '')}`;
 
-  const comp = path.resolve(outputDir, `./${sourceRef}`);
-  const compJs = `${comp}.js`;
-  const compJson = `${comp}.json`;
-  const compWxml = `${comp}.wxml`;
-  const compWxss = `${comp}.wxss`;
+  // const comp = path.resolve(outputDir, `./${sourceRef}`);
 
   const targetRef = path.join(target.replace(outputDir, ''), fileName)
     .split(path.sep)
     .join('/');
 
-  console.log(`[Dispatch Vue] 正在移动组件 ${getRelativePath(comp)} 到 ${getRelativePath(target)} 中`);
+  // console.log(`[Dispatch Vue] 正在移动组件 ${getRelativePath(comp)} 到 ${getRelativePath(target)} 中`);
 
   return {
-    target,
-    newPosName,
     sourceRef,
     targetRef,
-    compJs,
-    compJson,
-    compWxml,
-    compWxss,
   };
 }
 
@@ -333,3 +321,19 @@ export function getAllGlobalComps({
 
   return parsedGlobalCompsValues;
 }
+
+
+export const findReplaceMap = (key, refMap = {}) => {
+  const subPackage = Object.keys(refMap).find((item) => {
+    const parsedItem = item.endsWith('/') ? item : `${item}/`;
+    return key.startsWith(parsedItem);
+  });
+
+  if (subPackage) {
+    return refMap[subPackage];
+  }
+};
+
+export const formatTime = time => timeStampFormat(time, 'yyyy-MM-dd hh:mm:ss');
+
+

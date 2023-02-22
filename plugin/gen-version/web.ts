@@ -1,4 +1,5 @@
 import { getVersionCode, getCommitCode } from './helper';
+import { updateAssetSource } from '../../helper';
 
 export class GenVersionWebPlugin {
   options: object;
@@ -30,14 +31,10 @@ try {
         const source = assets[key].source().toString();
         const insertCode = this.getInsertCode();
 
-        assets[key].source = function () {
-          const idx = source.lastIndexOf('</body>');
-          return source.slice(0, idx) + insertCode + source.slice(idx);
-        };
+        const idx = source.lastIndexOf('</body>');
+        const newSource = source.slice(0, idx) + insertCode + source.slice(idx);
 
-        assets[key].size = function () {
-          return source.length;
-        };
+        updateAssetSource(assets, key, newSource);
       } catch (err) {
         console.log('[GenVersionMpPlugin] err: ', err);
       }

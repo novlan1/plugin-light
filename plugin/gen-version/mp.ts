@@ -1,4 +1,5 @@
 import { getCommitCode, getVersionCode, getMpVersionCode } from './helper';
+import { updateAssetSource } from '../../helper';
 
 const insertCode = `
 try {
@@ -29,12 +30,7 @@ export class GenVersionMpPlugin {
         ${source}
         `;
 
-        assets[key].source = function () {
-          return source;
-        };
-        assets[key].size = function () {
-          return source.length;
-        };
+        updateAssetSource(assets, key, source);
       } catch (err) {
         console.log('[GenVersionMpPlugin] err: ', err);
       }

@@ -1,8 +1,7 @@
-import { replaceAllPolyfill } from '../../helper/utils/replace-all';
-
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { getOptions } = require('loader-utils');
-
+import { replaceAllPolyfill } from 't-comm';
+import { getOptions } from 'loader-utils';
+import { recordLoaderLog } from '../../helper/loader-log';
+import { getRelativePath } from '../../helper/index';
 
 /**
  * 转换vant等组件，比如
@@ -28,8 +27,13 @@ export default function replaceLibrary(source) {
   for (let i = 0;i < replaceContentList.length;i++) {
     const { path, content = '' } = replaceContentList[i];
     const tContent = typeof content === 'function' ? content() : content;
+
     if (resourcePath.match(new RegExp(path))) {
-      console.log(`[Replace Library Loader] 处理了文件：${path} `);
+      recordLoaderLog('replace-library.json', {
+        file: getRelativePath(resourcePath),
+        type: 'CONTENT',
+        path,
+      });
       return tContent;
     }
   }
@@ -48,6 +52,12 @@ export default function replaceLibrary(source) {
 
       if (importRe.test(res)) {
         res = res.replaceAll(importRe, () => `'${to}'`);
+        recordLoaderLog('replace-library.json', {
+          file: getRelativePath(resourcePath),
+          type: 'LIBRARY',
+          from,
+          to,
+        });
       }
     }
   }

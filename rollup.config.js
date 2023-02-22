@@ -28,6 +28,13 @@ const DEFAULT_PLUGINS = [
   }),
 ];
 
+const EXTERNALS =  [
+  'fs',
+  'path',
+  't-comm',
+  '@dcloudio/uni-cli-shared/lib/cache',
+  'loader-utils',
+];
 
 function getLoaderFiles() {
   const files = fs.readdirSync(LOADER_DIR);
@@ -62,7 +69,7 @@ function getLoaderConfig() {
         exports: 'auto',
       },
       external: [
-        't-comm',
+        ...EXTERNALS,
       ],
       plugins: [
         ...DEFAULT_PLUGINS,
@@ -77,7 +84,7 @@ function getLoaderConfig() {
         exports: 'auto',
       },
       external: [
-        't-comm',
+        ...EXTERNALS,
       ],
       plugins: [
         ...DEFAULT_PLUGINS,
@@ -97,7 +104,7 @@ export default [
       entryFileNames: 'plugin.js',
     },
     external: [
-      't-comm',
+      ...EXTERNALS,
     ],
     plugins: [
       ...DEFAULT_PLUGINS,
@@ -111,7 +118,7 @@ export default [
       entryFileNames: 'plugin.prod.js',
     },
     external: [
-      't-comm',
+      ...EXTERNALS,
     ],
     plugins: [
       ...DEFAULT_PLUGINS,

@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const path = require('path');
-const { getOptions } = require('loader-utils');
+import * as path from 'path';
+import { getOptions } from 'loader-utils';
 
 
 const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;
@@ -19,7 +18,7 @@ export default function insertPageMeta(source) {
 
   // @ts-ignore
   const { resourcePath } = this;
-  const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR);
+  const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR || '');
 
   const fullPages = pages.map(item => `${path.resolve(rootPath, item)}.vue`);
   if (!fullPages.includes(resourcePath)) {

@@ -1,8 +1,6 @@
-import { replaceAllPolyfill } from '../../helper/utils/replace-all';
+import { replaceAllPolyfill } from 't-comm';
+import { getOptions } from 'loader-utils';
 
-
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { getOptions } = require('loader-utils');
 
 export default function replaceTmpTag(source) {
   replaceAllPolyfill();
@@ -15,6 +13,7 @@ export default function replaceTmpTag(source) {
 
   const keys = Object.keys(replaceTmpTagMap);
   let res = source;
+  // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let i = 0 ;i < keys.length;i++) {
     const key = keys[i];
     const value = replaceTmpTagMap[key][type];

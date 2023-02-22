@@ -1,11 +1,11 @@
-const { parseComponent } = require('vue-template-compiler');
+import { parseComponent } from 'vue-template-compiler';
 
-function parseSFC(source) {
+export function parseSFC(source) {
   const parsed = parseComponent(source);
   return parsed;
 }
 
-function composeSFC(parsed) {
+export function composeSFC(parsed) {
   const { template = {}, script = {}, styles = [] } = parsed;
   let res = '';
   res += `<template>${template.content || ''}</template>\n`;
@@ -31,9 +31,4 @@ function composeSFC(parsed) {
   }, res);
   return res;
 }
-
-module.exports = {
-  composeSFC,
-  parseSFC,
-};
 

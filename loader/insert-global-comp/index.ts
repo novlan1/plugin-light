@@ -1,29 +1,29 @@
-import { replaceAllPolyfill } from '../../helper/utils/replace-all';
-
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { getOptions } = require('loader-utils');
+import { replaceAllPolyfill, hyphenate } from 't-comm';
+import { getOptions } from 'loader-utils';
+import { getPagePath } from './page-path';
 
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
 const firstCommentReg = /(?<=<template>[\s\n]*(?:<!--.*?-->\s*)<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
 const notFirstDivReg = /(?<=<template>\s*)(<(?!div)[^>]+>[\s\S]*)(?=\s*<\/template>)/;
 const htmlReg = /(?<=<template>[\s\n]*<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
 
-const hyphenate = function (str) {
-  const hyphenateRE = /\B([A-Z])/g;
-  return str.replace(hyphenateRE, '-$1').toLowerCase();
-};
-
 
 export default function insertGlobalComponent(source) {
   replaceAllPolyfill();
 
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
+  // @ts-ignore
+  const options = getOptions(this) || {};
+  const { platforms = ['mp-weixin', 'mp-qq'], components = [] } = options;
+  const platform = process.env.VUE_APP_PLATFORM;
+  if (!platforms.includes(platform)) {
     return source;
   }
 
-  // @ts-ignore
-  const options = getOptions(this) || {};
-  const { pages = [], components = [] } = options;
+  let { pages } = options;
+  if (pages === undefined) {
+    pages = getPagePath();
+  }
+
   // @ts-ignore
   const { resourcePath } = this;
   if (!pages.includes(resourcePath)) {

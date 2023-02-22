@@ -1,24 +1,5 @@
-
-/* eslint-disable @typescript-eslint/no-require-imports */
 import { getFlattenedDeps } from 't-comm';
-import { parseSetDeps, getRelativePath } from '../../helper/utils/parse-deps';
-
-const fs = require('fs');
-const ROOT_NAME = 'MAIN';
-
-
-function saveFile(deps, file) {
-  fs.writeFileSync(file, JSON.stringify(deps, null, 2), {
-    encoding: 'utf-8',
-  });
-}
-
-function filterFn(child) {
-  if (child.startsWith('node_modules')) {
-    // return null;
-  }
-}
-
+import { ROOT_NAME, saveJsonToLog, createLogDir, parseSetDeps, getRelativePath } from '../../helper/index';
 
 export class DepAnalysisPlugin {
   depsMap: Object;
@@ -30,9 +11,7 @@ export class DepAnalysisPlugin {
     this.reverseDepsMap = {};
     this.pluginName = 'DepAnalysisPlugin';
 
-    if (!fs.existsSync('./log')) {
-      fs.mkdirSync('./log');
-    }
+    createLogDir();
   }
 
   apply(compiler) {
@@ -71,11 +50,11 @@ export class DepAnalysisPlugin {
         const deps = parseSetDeps(this.depsMap);
         const reverseDeps = parseSetDeps(this.reverseDepsMap);
 
-        saveFile(deps, './log/dep.json');
-        saveFile(reverseDeps, './log/dep-reverse.json');
+        saveJsonToLog(deps, 'analyze-deps.dep.json');
+        saveJsonToLog(reverseDeps, 'analyze-deps.dep-reverse.json');
 
-        const handledDepsMap = getFlattenedDeps({ deps: reverseDeps, filterFn });
-        saveFile(handledDepsMap, './log/dep-flatten.json');
+        const handledDepsMap = getFlattenedDeps(reverseDeps);
+        saveJsonToLog(handledDepsMap, 'analyze-deps.dep-flatten.json');
       } catch (err) {
         console.log('[DepAnalysisPlugin] err: ', err);
       }

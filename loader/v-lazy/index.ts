@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { getOptions } = require('loader-utils');
+import { getOptions } from 'loader-utils';
 
 const htmlReg = /(?<=<template>)([\s\S]+)(?=<\/template>)/;
 const imgReg = /(<img[\s\S]+?)v-lazy=(?:"|')(.*?)(?:"|')([\s\S]*?>)/g;

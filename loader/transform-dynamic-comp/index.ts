@@ -1,5 +1,6 @@
-import { replaceAllPolyfill } from '../../helper/utils/replace-all';
-
+import { replaceAllPolyfill } from 't-comm';
+import { getRelativePath } from '../../helper';
+import { recordLoaderLog } from '../../helper/loader-log';
 
 /**
  * 替换动态组件
@@ -49,7 +50,13 @@ export default function transformDynamicComp(source = '') {
     newSource = newSource.replace(compReg, () => `${name}`);
   }
 
+  // @ts-ignore
+  const { resourcePath } = this;
 
+  recordLoaderLog('transform-dynamic-comp.json', {
+    file: getRelativePath(resourcePath),
+    component: compList.map(item => item.name).join(','),
+  });
   return newSource;
 }
 

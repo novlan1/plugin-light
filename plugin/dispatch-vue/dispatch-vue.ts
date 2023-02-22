@@ -1,24 +1,17 @@
+import { replaceAllPolyfill } from 't-comm';
 import { analyzeComponent } from './analyze-component';
 import { fixNpmPackage } from '../fix-npm-package/core';
+import { saveLoaderLog } from '../../helper/loader-log';
+import { createLogDir, updateAssetSource, removeFirstSlash } from '../../helper/index';
+import { formatTime, findReplaceMap } from './helper';
 
-String.prototype.replaceAll = function (s1, s2) {
-  return this.replace(new RegExp(s1, 'gm'), s2);
-};
-
-const findReplaceMap = (key, refMap = {}) => {
-  const subPackage = Object.keys(refMap).find((item) => {
-    const parsedItem = item.endsWith('/') ? item : `${item}/`;
-    return key.startsWith(parsedItem);
-  });
-  if (subPackage) {
-    return refMap[subPackage];
-  }
-};
+replaceAllPolyfill();
 
 
 export class DispatchVuePlugin {
   options: object;
   useFixNpm: false;
+  startTime: number;
 
   postFix: {
     html: '.wxml' | '.qml'
@@ -28,6 +21,7 @@ export class DispatchVuePlugin {
   constructor(options) {
     this.options = options;
     this.useFixNpm = options?.useFixNpm || true;
+    this.startTime = 0;
 
     this.postFix = {
       html: '.wxml',
@@ -40,12 +34,14 @@ export class DispatchVuePlugin {
         css: '.qss',
       };
     }
+
+    createLogDir();
   }
 
   apply(compiler) {
     compiler.hooks.emit.tap('moveComponentPlugin', (compilation) => {
-      const startTime = Date.now();
-      console.log('[Dispatch Vue] Plugin Start Time: ', startTime);
+      this.startTime = Date.now();
+      console.log('[Dispatch Vue] Plugin Start Time: ', formatTime(this.startTime));
 
       try {
         const { assets } = compilation;
@@ -66,8 +62,10 @@ export class DispatchVuePlugin {
 
         const endTime = Date.now();
 
-        console.log('[Dispatch Vue] Plugin End Time: ', endTime);
-        console.log('[Dispatch Vue] Plugin Took Time: ', endTime - startTime);
+        console.log('[Dispatch Vue] Plugin End Time: ', formatTime(endTime));
+        console.log('[Dispatch Vue] Plugin Took Time: ', `${endTime - this.startTime}ms`);
+
+        saveLoaderLog();
       } catch (err) {
         console.log('[Dispatch Vue] err', err);
       }
@@ -77,8 +75,8 @@ export class DispatchVuePlugin {
   copyComponents(assets, movingComponents) {
     for (const item of movingComponents) {
       const { sourceRef, targetRef } = item;
-      const origin = this.formatAssetKey(sourceRef);
-      const target = this.formatAssetKey(targetRef);
+      const origin = removeFirstSlash(sourceRef);
+      const target = removeFirstSlash(targetRef);
 
       this.addCompChunk(assets, origin, target, '.js');
       this.addCompChunk(assets, origin, target, '.json');
@@ -90,7 +88,7 @@ export class DispatchVuePlugin {
   deleteComponents(assets, movingComponents) {
     for (const item of movingComponents) {
       const { sourceRef } = item;
-      const origin = this.formatAssetKey(sourceRef);
+      const origin = removeFirstSlash(sourceRef);
 
       this.deleteFile(assets, origin, '.js');
       this.deleteFile(assets, origin, '.json');
@@ -116,21 +114,14 @@ export class DispatchVuePlugin {
      */
     if (assets[origin + postfix]) {
       const source = assets[origin + postfix].source().toString();
-      assets[target + postfix] = {
-        source() {
-          return source;
-        },
-        size() {
-          return source.length;
-        },
-      };
+      updateAssetSource(assets, target + postfix, source);
     }
   }
 
   formatReplaceRefList(replaceRefList) {
     const refMap = replaceRefList.reduce((acc, item) => {
       const { 0: origin, 1: target, 2: subPackage } = item;
-      const list = [this.formatAssetKey(origin), this.formatAssetKey(target)];
+      const list = [removeFirstSlash(origin), removeFirstSlash(target)];
 
       if (acc[subPackage]) {
         acc[subPackage].push(list);
@@ -159,22 +150,9 @@ export class DispatchVuePlugin {
           source = source.replaceAll(`${replaceItem[0]}-create-component"`, `${replaceItem[1]}-create-component"`);
         }
 
-        assets[key].source = function () {
-          return source;
-        };
-        assets[key].size = function () {
-          return source.length;
-        };
+        updateAssetSource(assets, key, source);
       }
     }
-  }
-
-
-  formatAssetKey(key) {
-    if (key.startsWith('/')) {
-      return key.slice(1);
-    }
-    return key;
   }
 }
 

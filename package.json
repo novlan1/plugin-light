@@ -21,7 +21,7 @@
   },
   "files": [
     "README.md",
-    "dist/"
+    "lib/"
   ],
   "keywords": [],
   "author": "",

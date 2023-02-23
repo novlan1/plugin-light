@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/novlan1/uni-plugin-light/compare/v0.1.0...v0.1.1) (2023-02-23)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 优化配置 ([8d26516](https://github.com/novlan1/uni-plugin-light/commit/8d26516b9cce1d8e59bf3603b9cb185686d47d09))
+
 ## [0.1.0](https://github.com/novlan1/uni-plugin-light/compare/v0.0.46...v0.1.0) (2023-02-22)
 
 

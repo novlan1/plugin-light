@@ -1,15 +1,5 @@
 /* eslint-disable max-len */
 import {
-  getPageSet,
-  getJsonFileMap,
-  getGlobalUsingComponents,
-  getWXComponents,
-  getComponentSet,
-  getJsonFile,
-  // @ts-ignore
-} from '@dcloudio/uni-cli-shared/lib/cache';
-
-import {
   formatComponentPath,
   genIterativeComponentMap,
   handleComponentMap,
@@ -21,8 +11,17 @@ import {
   findSubPackages,
   getAllGlobalComps,
 } from './helper';
-import { saveJsonToLog } from '../../helper/index';
+import { saveJsonToLog, getUniCliCache } from '../../helper/index';
 
+
+const {
+  getPageSet,
+  getJsonFileMap,
+  getGlobalUsingComponents,
+  getWXComponents,
+  getComponentSet,
+  getJsonFile,
+} = getUniCliCache();
 
 let MOVE_COMPONENT_MIN_DISABLE_LIST: Array<string> = [];
 let MOVE_COMPONENT_MIN_USE_TIMES = 100;

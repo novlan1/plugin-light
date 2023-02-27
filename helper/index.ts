@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import * as fs from 'fs';
 import * as path from 'path';
 import { isWindows } from 't-comm';
@@ -61,4 +62,10 @@ export function parseSetDeps(deps) {
 
 export function getRelativePath(filePath) {
   return path.relative(process.cwd(), path.resolve(filePath));
+}
+
+export function getUniCliCache(key?: string) {
+  const cache = require('@dcloudio/uni-cli-shared/lib/cache');
+  if (!key) return cache;
+  return cache[key];
 }

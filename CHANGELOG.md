@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/novlan1/uni-plugin-light/compare/v0.1.1...v0.1.2) (2023-02-27)
+
+
+### ♻️ Code Refactoring | 代码重构
+
+* uni-cli-cache方法收敛 ([5922290](https://github.com/novlan1/uni-plugin-light/commit/5922290391b3b1512121d7228302e960bb4e5585))
+
 ### [0.1.1](https://github.com/novlan1/uni-plugin-light/compare/v0.1.0...v0.1.1) (2023-02-23)
 
 

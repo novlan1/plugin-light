@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/novlan1/uni-plugin-light/compare/v0.1.2...v1.0.0) (2023-02-28)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* rem-to-rpx执行时机优化 ([be4126d](https://github.com/novlan1/uni-plugin-light/commit/be4126dc76d3eb773da0892b1271cb265608d38e))
+
 ### [0.1.2](https://github.com/novlan1/uni-plugin-light/compare/v0.1.1...v0.1.2) (2023-02-27)
 
 

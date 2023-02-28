@@ -22,7 +22,7 @@ export class RemToRpxPlugin {
   }
 
   apply(complier) {
-    if (process.env.UNI_PLATFORM !== 'mp-weixin') return;
+    if (process.env.UNI_PLATFORM === 'h5') return;
 
     complier.hooks.emit.tapAsync('RemToRpxPlugin', (compilation, cb) => {
       const fileNames = Object.keys(compilation.assets);

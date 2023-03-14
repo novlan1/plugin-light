@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/plugin",
   "scripts": {
+    "prepare": "husky install",
     "release": "npm run test && npm run build && npm run release-patch && git push --follow-tags && npm publish",
     "build": "rm -rf lib && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",

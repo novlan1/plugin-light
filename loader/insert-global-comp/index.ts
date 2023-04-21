@@ -2,10 +2,11 @@ import { replaceAllPolyfill, hyphenate } from 't-comm';
 import { getOptions } from 'loader-utils';
 import { getPagePath } from './page-path';
 
+
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
-const firstCommentReg = /(?<=<template>[\s\n]*(?:<!--.*?-->\s*)<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
-const notFirstDivReg = /(?<=<template>\s*)(<(?!div)[^>]+>[\s\S]*)(?=\s*<\/template>)/;
-const htmlReg = /(?<=<template>[\s\n]*<div[^>]*>)([\s\S]*)(?=<\/div>[\s\n]*<\/template>)/;
+const firstCommentReg = /(?<=<template>[\s\n]*(?:<!--.*?-->\s*)<\w+[^>]*>)([\s\S]*)(?=<\/\w+>[\s\n]*<\/template>)/;
+const notFirstDivReg = /(?<=<template>\s*)(<(?!\w+)[^>]+>[\s\S]*)(?=\s*<\/template>)/;
+const htmlReg = /(?<=<template>[\s\n]*<\w+[^>]*>)([\s\S]*)(?=<\/\w+>[\s\n]*<\/template>)/;
 
 
 export default function insertGlobalComponent(source) {

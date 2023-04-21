@@ -85,3 +85,41 @@ describe('insertGlobalComponent', () => {
     }, source)).toMatchSnapshot();
   });
 });
+
+
+describe('Other Html Tag', () => {
+  it('p', () => {
+    const source = `<template>
+<p
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+</p>
+</template>`;
+
+    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    expect(insertGlobalComponent.call({
+      resourcePath: 'MOCK_PAGE',
+    }, source)).toMatchSnapshot();
+  });
+
+
+  it('span', () => {
+    const source = `<template>
+<span
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+>
+  <a>123</a>
+</span>
+</template>`;
+
+    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    expect(insertGlobalComponent.call({
+      resourcePath: 'MOCK_PAGE',
+    }, source)).toMatchSnapshot();
+  });
+});

@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Other Html Tag p 1`] = `
+"<template>
+<p
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+><template></template>
+  <page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />
+<template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></p>
+</template>"
+`;
+
+exports[`Other Html Tag span 1`] = `
+"<template>
+<span
+  class="battle-detail-wrap"
+  style="width:100%;height: 100%;"
+><template></template>
+  <a>123</a>
+<template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></span>
+</template>"
+`;
+
 exports[`insertGlobalComponent already have 1 1`] = `
 "<template>
 <!-- 战后数据和直播页面 -->

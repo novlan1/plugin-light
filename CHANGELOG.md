@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/novlan1/uni-plugin-light/compare/v1.0.0...v1.0.1) (2023-05-06)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* 同步一些修改 ([6075f16](https://github.com/novlan1/uni-plugin-light/commit/6075f16885c5a2461aa041c7e75b7d602c4a688e))
+* 增加prepare命令 ([69f2d80](https://github.com/novlan1/uni-plugin-light/commit/69f2d80242c1c956f867a3bb823f00fc4274024e))
+
+
+### ✨ Features | 新功能
+
+* 优化replace-content插件 ([4dd71d7](https://github.com/novlan1/uni-plugin-light/commit/4dd71d7113711e66f82f65d57aeb9d5ae8e44f8e))
+* 增加replace-content ([85b81b3](https://github.com/novlan1/uni-plugin-light/commit/85b81b33e0fbaeec5670ec9da719b904fbd7e1b2))
+* **insert-global-comp:** 支持其他标签 ([60514f7](https://github.com/novlan1/uni-plugin-light/commit/60514f7a86d2d240d51c568428027aa3b34d569a))
+* **rem-to-rpx:** 支持qq小程序 ([041e9b5](https://github.com/novlan1/uni-plugin-light/commit/041e9b5b8ee0d137ab0ed6e49c01153102fc3c6b))
+
 ## [1.0.0](https://github.com/novlan1/uni-plugin-light/compare/v0.1.2...v1.0.0) (2023-02-28)
 
 

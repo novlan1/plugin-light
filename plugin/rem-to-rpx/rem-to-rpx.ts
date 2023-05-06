@@ -27,7 +27,7 @@ export class RemToRpxPlugin {
     complier.hooks.emit.tapAsync('RemToRpxPlugin', (compilation, cb) => {
       const fileNames = Object.keys(compilation.assets);
       for (const fileName of fileNames) {
-        if (/\.(css|scss|less|wxss)$/.test(fileName) === false) {
+        if (/\.(css|scss|less|wxss|qss)$/.test(fileName) === false) {
           continue;
         }
         if (isInWhiteList(this.whiteList, fileName)) {

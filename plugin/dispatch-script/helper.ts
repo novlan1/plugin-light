@@ -80,7 +80,7 @@ export function getPageSubPackages(page) {
 
 
 // 基础检测，vue和css类型不处理，只处理js类型
-export function baseTest(module) {
+export function baseTest(module, options) {
   const mainPath = normalizePath(path.resolve(process.env.UNI_INPUT_DIR || '', 'main.'));
 
   if (module.type === 'css/mini-extract') {
@@ -95,6 +95,11 @@ export function baseTest(module) {
             || resource.indexOf(mainPath) === 0 // main.js
     ) {
       return false;
+    }
+    if (options?.whiteList?.length) {
+      const isExist = options.whiteList.find(url => resource.includes(url));
+      if (isExist) console.log(resource, isExist);
+      return !!isExist;
     }
   }
   return true;

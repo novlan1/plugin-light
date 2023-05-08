@@ -1,6 +1,6 @@
 {
   "name": "uni-plugin-light",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
   "main": "lib/plugin",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novlan1/uni-plugin-light"
+    "url": "https://github.com/novlan1/uni-plugin-light"
   },
   "files": [
     "README.md",

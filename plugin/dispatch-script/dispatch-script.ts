@@ -21,6 +21,7 @@ const moduleSources: Array<string> = [];
 
 
 export class DispatchScriptPlugin {
+  options: object;
   moveFiles: Map<any, any>;
 
   pluginName = 'DispatchScriptPlugin';
@@ -30,7 +31,8 @@ export class DispatchScriptPlugin {
     subPackages: Array<string>
   }>;
 
-  constructor() {
+  constructor(options) {
+    this.options = options;
     this.moveFiles = new Map();
     this.pluginName = 'DispatchScriptPlugin';
     this.reverseDepsMap = {};
@@ -83,7 +85,7 @@ export class DispatchScriptPlugin {
     saveJsonToLog(reverseDeps, 'dispatch-script.deps-raw.json');
     saveJsonToLog(handledDepsMap, 'dispatch-script.deps-flatten.json');
 
-    const waitDisposeModules = compilation.modules.filter(module => baseTest(module));
+    const waitDisposeModules = compilation.modules.filter(module => baseTest(module, this.options));
     waitDisposeModules.forEach((module) => {
       const chunks = module.getChunks();
 

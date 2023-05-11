@@ -1,4 +1,5 @@
 import { replaceAllPolyfill } from 't-comm';
+import * as path from 'path';
 import { analyzeComponent } from './analyze-component';
 import { fixNpmPackage } from '../fix-npm-package/core';
 import { saveLoaderLog } from '../../helper/loader-log';
@@ -11,6 +12,7 @@ replaceAllPolyfill();
 export class DispatchVuePlugin {
   options: object;
   useFixNpm: false;
+  insertRequireVendor: false;
   startTime: number;
 
   postFix: {
@@ -21,6 +23,7 @@ export class DispatchVuePlugin {
   constructor(options) {
     this.options = options;
     this.useFixNpm = options?.useFixNpm || true;
+    this.insertRequireVendor = options?.insertRequireVendor || false;
     this.startTime = 0;
 
     this.postFix = {
@@ -74,11 +77,21 @@ export class DispatchVuePlugin {
 
   copyComponents(assets, movingComponents) {
     for (const item of movingComponents) {
-      const { sourceRef, targetRef } = item;
+      const { sourceRef, targetRef, subPackage } = item;
       const origin = removeFirstSlash(sourceRef);
       const target = removeFirstSlash(targetRef);
 
-      this.addCompChunk(assets, origin, target, '.js');
+      const vendor = [subPackage, 'common/vendor.js'].join('/');
+      let insertCode = '';
+
+      if (assets[vendor] && this.insertRequireVendor) {
+        console.log('[copyComponents] 存在vendor', vendor);
+        const vendorRelativePath = path.relative(path.dirname(path.resolve(target)), path.resolve(vendor));
+        console.log('[copyComponents] vendorRelativePath', vendorRelativePath);
+
+        insertCode = `require('${vendorRelativePath}');`;
+      }
+      this.addCompChunk(assets, origin, target, '.js', insertCode);
       this.addCompChunk(assets, origin, target, '.json');
       this.addCompChunk(assets, origin, target, this.postFix.html);
       this.addCompChunk(assets, origin, target, this.postFix.css);
@@ -101,7 +114,7 @@ export class DispatchVuePlugin {
     delete assets[name + postfix];
   }
 
-  addCompChunk(assets, origin, target, postfix) {
+  addCompChunk(assets, origin, target, postfix, insertCode = '') {
     /**
      * assets 的 keys 列表示例，可以看到没有前面的 `/`
      *
@@ -112,8 +125,12 @@ export class DispatchVuePlugin {
      *   "local-component/module/tip-match/tip-match-detail-group-qrcode/index.json",
      * ]
      */
+
     if (assets[origin + postfix]) {
-      const source = assets[origin + postfix].source().toString();
+      let source = assets[origin + postfix].source().toString();
+      if (postfix === '.js') {
+        source = `${insertCode}${source}`;
+      }
       updateAssetSource(assets, target + postfix, source);
     }
   }

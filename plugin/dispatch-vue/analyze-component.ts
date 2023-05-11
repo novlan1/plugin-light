@@ -166,6 +166,7 @@ export function analyzeComponent(options: {
   const movingComponents: Array<{
     sourceRef: string
     targetRef: string
+    subPackage: string
   }> = [];
 
   Object.keys(allUsingComponentMap).forEach((componentName) => {
@@ -198,6 +199,7 @@ export function analyzeComponent(options: {
           movingComponents.push({
             sourceRef,
             targetRef,
+            subPackage,
           });
         }
       });

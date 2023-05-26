@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/novlan1/uni-plugin-light/compare/v1.0.6...v1.0.8) (2023-05-26)
+
+
+### ✨ Features | 新功能
+
+* 去掉loader中耦合的平台判断，改为参数传入 ([2175d7e](https://github.com/novlan1/uni-plugin-light/commit/2175d7e3766755a8c9e62ce5cf63d4f1ca72ba94))
+* **dispatch:** 支持require vendor ([e6431ea](https://github.com/novlan1/uni-plugin-light/commit/e6431eae59d3b2ad2325c5eb7f94788e0b444923))
+
 ### [1.0.6](https://github.com/novlan1/uni-plugin-light/compare/v1.0.1...v1.0.6) (2023-05-08)
 
 

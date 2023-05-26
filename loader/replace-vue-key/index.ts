@@ -1,3 +1,6 @@
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
+
+
 /**
  * 替换vue文件key的表示，以解决转换报错
  * 比如将 :key="'type' + index" 转为 :key="type-${index}"
@@ -11,10 +14,8 @@
    transformKey(testC);
  * ```
  */
-export default function transformKey(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
-    return source;
-  }
+export default function transformKey(this: any, source) {
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
   const re = /:key="'(\w+)'\s*\+\s*(\w+)\s*"/g;
   const reBack = /:key="(\w+)\s*\+\s*'(\w+)'\s*"/g;

@@ -1,6 +1,8 @@
 import { replaceAllPolyfill } from 't-comm';
 import { getRelativePath } from '../../helper';
 import { recordLoaderLog } from '../../helper/loader-log';
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
+
 
 /**
  * 替换动态组件
@@ -20,12 +22,10 @@ import { recordLoaderLog } from '../../helper/loader-log';
  *   xxComp,
  *  }
  */
-export default function transformDynamicComp(source = '') {
+export default function transformDynamicComp(this: any, source = '') {
   replaceAllPolyfill();
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
-    return source;
-  }
   source = source.replaceAll(/\(\)\s*=>\s*import\('.*?'\)/, '1');
 
   const reg = new RegExp(/(([a-zA-Z]+?)\(resolve\)(?:\s*?)\{(?:\n\s*)require\(\['(.*?)'\],(?:\s*?)resolve\);(?:\n\s*)\})+/, 'g');

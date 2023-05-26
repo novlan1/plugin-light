@@ -2,6 +2,10 @@ import lazyLoader from '../../../loader/v-lazy';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn()
+    // 工具函数 loader-options.shouldUseLoader
+    // 调用了一次 getOptions，所以需要mock空对象两次
+    .mockReturnValueOnce({
+    })
     .mockReturnValueOnce({
     })
     .mockReturnValue({

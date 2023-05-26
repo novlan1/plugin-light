@@ -1,6 +1,7 @@
 import { replaceAllPolyfill, hyphenate } from 't-comm';
 import { getOptions } from 'loader-utils';
 import { getPagePath } from './page-path';
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
 
 
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;
@@ -9,16 +10,13 @@ const notFirstDivReg = /(?<=<template>\s*)(<(?!\w+)[^>]+>[\s\S]*)(?=\s*<\/templa
 const htmlReg = /(?<=<template>[\s\n]*<\w+[^>]*>)([\s\S]*)(?=<\/\w+>[\s\n]*<\/template>)/;
 
 
-export default function insertGlobalComponent(source) {
+export default function insertGlobalComponent(this: any, source) {
   replaceAllPolyfill();
 
-  // @ts-ignore
   const options = getOptions(this) || {};
-  const { platforms = ['mp-weixin', 'mp-qq'], components = [] } = options;
-  const platform = process.env.VUE_APP_PLATFORM;
-  if (!platforms.includes(platform)) {
-    return source;
-  }
+  const { components = [] } = options;
+
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
   let { pages } = options;
   if (pages === undefined) {

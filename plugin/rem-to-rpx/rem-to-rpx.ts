@@ -1,4 +1,5 @@
 import { handleRem } from './css-handler';
+import { PLATFORM_MAP } from '../../helper/config';
 
 function isInWhiteList(whiteList, fileName) {
   for (const item of whiteList) {
@@ -22,7 +23,7 @@ export class RemToRpxPlugin {
   }
 
   apply(complier) {
-    if (process.env.UNI_PLATFORM === 'h5') return;
+    if (process.env.UNI_PLATFORM === PLATFORM_MAP.H5) return;
 
     complier.hooks.emit.tapAsync('RemToRpxPlugin', (compilation, cb) => {
       const fileNames = Object.keys(compilation.assets);

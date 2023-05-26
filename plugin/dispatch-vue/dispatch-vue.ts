@@ -5,6 +5,7 @@ import { fixNpmPackage } from '../fix-npm-package/core';
 import { saveLoaderLog } from '../../helper/loader-log';
 import { createLogDir, updateAssetSource, removeFirstSlash } from '../../helper/index';
 import { formatTime, findReplaceMap } from './helper';
+import { PLATFORM_MAP } from '../../helper/config';
 
 replaceAllPolyfill();
 
@@ -31,7 +32,7 @@ export class DispatchVuePlugin {
       css: '.wxss',
     };
 
-    if (process.env.VUE_APP_PLATFORM === 'mp-qq') {
+    if (process.env.VUE_APP_PLATFORM === PLATFORM_MAP.MP_QQ) {
       this.postFix = {
         html: '.qml',
         css: '.qss',

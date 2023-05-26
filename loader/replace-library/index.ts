@@ -2,6 +2,8 @@ import { replaceAllPolyfill } from 't-comm';
 import { getOptions } from 'loader-utils';
 import { recordLoaderLog } from '../../helper/loader-log';
 import { getRelativePath } from '../../helper/index';
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
+
 
 /**
  * 转换vant等组件，比如
@@ -9,18 +11,15 @@ import { getRelativePath } from '../../helper/index';
  * import List from 'vant/lib/list'  转为：import List from 'test';
  * import 'vant/lib/list/index.css'  转为：import 'test'
  */
-export default function replaceLibrary(source) {
+export default function replaceLibrary(this: any, source) {
   replaceAllPolyfill();
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
-    return source;
-  }
-  // @ts-ignore
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
+
   const options = getOptions(this) || {};
   const { replaceLibraryList = [], replaceContentList = [] } = options;
   if (!replaceLibraryList.length && !replaceContentList.length) {
     return source;
   }
-  // @ts-ignore
   const { resourcePath } = this;
 
   // eslint-disable-next-line @typescript-eslint/prefer-for-of

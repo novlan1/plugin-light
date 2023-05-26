@@ -1,5 +1,6 @@
 import * as path from 'path';
 import { getOptions } from 'loader-utils';
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
 
 
 const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;
@@ -8,15 +9,12 @@ const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/temp
 const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
 
-export default function insertPageMeta(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
-    return source;
-  }
-  // @ts-ignore
+export default function insertPageMeta(this: any, source) {
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
+
   const options = getOptions(this) || {};
   const { pages = [] } = options;
 
-  // @ts-ignore
   const { resourcePath } = this;
   const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR || '');
 

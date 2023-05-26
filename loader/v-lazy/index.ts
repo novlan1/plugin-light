@@ -1,4 +1,5 @@
 import { getOptions } from 'loader-utils';
+import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
 
 const htmlReg = /(?<=<template>)([\s\S]+)(?=<\/template>)/;
 const imgReg = /(<img[\s\S]+?)v-lazy=(?:"|')(.*?)(?:"|')([\s\S]*?>)/g;
@@ -25,11 +26,9 @@ const heightReg = /(?<=[\s\n]+(?:data-)?)height=(?:"|')(\d+)(?:"|')/;
  * <img v-lazy="src" width="50" height="100">
  * <img v-lazy="src" data-width="50" data-height="100">
  */
-export default function lazyLoader(source) {
-  if (process.env.VUE_APP_PLATFORM !== 'mp-weixin' && process.env.VUE_APP_PLATFORM !== 'mp-qq') {
-    return source;
-  }
-  // @ts-ignore
+export default function lazyLoader(this: any, source) {
+  if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
+
   const options = getOptions(this) || {};
   const { urlHandler } = options;
 

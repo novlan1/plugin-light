@@ -50,7 +50,7 @@ describe('replaceTmpTag', () => {
   });
 
   it('replaceTmpTag in web', () => {
-    process.env.VUE_APP_PLATFORM = 'H5';
+    process.env.VUE_APP_PLATFORM = 'h5';
     expect(replaceTmpTag(source)).toMatchSnapshot();
   });
 });

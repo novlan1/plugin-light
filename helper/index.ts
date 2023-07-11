@@ -8,11 +8,12 @@ export const ROOT_NAME = 'MAIN';
 export function saveJsonToLog(content, file, needLog = true) {
   if (!needLog) return;
   createLogDir();
-  fs.writeFile(`./log/${file}`, JSON.stringify(content, null, 2), {
-    encoding: 'utf-8',
-  }, () => {
 
-  });
+  try {
+    fs.writeFile(`./log/${file}`, JSON.stringify(content, null, 2), {
+      encoding: 'utf-8',
+    }, () => {});
+  } catch (err) {}
 }
 
 export function createLogDir() {

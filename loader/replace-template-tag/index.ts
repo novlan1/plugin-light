@@ -10,7 +10,7 @@ export default function replaceTmpTag(this: any, source) {
   const options = getOptions(this) || {};
   const { replaceTmpTagMap = {} } = options;
 
-  const type = PLATFORMS_MP.includes(process.env.VUE_APP_PLATFORM || '') ? 'mp' : 'web';
+  const type = PLATFORMS_MP.includes(process.env.UNI_PLATFORM || '') ? 'mp' : 'web';
 
   const keys = Object.keys(replaceTmpTagMap);
   let res = source;

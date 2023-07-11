@@ -22,7 +22,7 @@ describe('insertPageMeta', () => {
   />
 </template>
     `;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     process.env.VUE_APP_DIR = '';
 
     expect(insertPageMeta.call({
@@ -41,7 +41,7 @@ describe('insertPageMeta', () => {
   </page-meta>
 </template>
     `;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     process.env.VUE_APP_DIR = '';
 
     expect(insertPageMeta.call({

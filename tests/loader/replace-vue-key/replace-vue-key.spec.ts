@@ -2,7 +2,7 @@ import replaceVueKey from '../../../loader/replace-vue-key';
 
 
 beforeAll(() => {
-  process.env.VUE_APP_PLATFORM = 'mp-weixin';
+  process.env.UNI_PLATFORM = 'mp-weixin';
 });
 
 

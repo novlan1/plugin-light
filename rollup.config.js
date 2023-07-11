@@ -34,6 +34,9 @@ const EXTERNALS =  [
   't-comm',
   '@dcloudio/uni-cli-shared/lib/cache',
   'loader-utils',
+  'vue-template-compiler',
+  'glob-to-regexp',
+  'xregexp',
 ];
 
 function getLoaderFiles() {
@@ -123,6 +126,20 @@ export default [
     plugins: [
       ...DEFAULT_PLUGINS,
       terser(),
+    ],
+  },
+  {
+    input: './task/sync-repo.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'task.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
     ],
   },
   ...getLoaderConfig(),

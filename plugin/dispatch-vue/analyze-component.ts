@@ -72,7 +72,8 @@ export function analyzeComponent(options: {
     saveJsonToLog(getJsonFile(), 'dispatch-vue.get-json-file.json', options.needLog);
   } catch (err) {}
 
-  if (!process.env.UNI_OPT_SUBPACKAGES) {
+  const subPackageRoots = Object.keys((process as any).UNI_SUBPACKAGES) || {};
+  if (!subPackageRoots.length) {
     return {};
   }
 
@@ -108,7 +109,7 @@ export function analyzeComponent(options: {
   /**
    * process.env.UNI_OPT_SUBPACKAGES => true
    */
-  saveJsonToLog(process.env.UNI_OPT_SUBPACKAGES, 'dispatch-vue.UNI_OPT_SUBPACKAGES.json', options.needLog);
+  // saveJsonToLog(process.env.UNI_OPT_SUBPACKAGES, 'dispatch-vue.UNI_OPT_SUBPACKAGES.json', options.needLog);
 
   getUsingComponentsMap(jsonFileMap, pageSet);
 
@@ -157,7 +158,6 @@ export function analyzeComponent(options: {
    *   },
    * }
    */
-  const subPackageRoots = Object.keys((process as any).UNI_SUBPACKAGES);
   saveJsonToLog((process as any).UNI_SUBPACKAGES, 'dispatch-vue.UNI_SUBPACKAGES.json');
 
 

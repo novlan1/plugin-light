@@ -20,7 +20,7 @@ describe('insertGlobalComponent', () => {
   />
 </template>
 `;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe('insertGlobalComponent', () => {
   <VideoRoomModule v-else />
 </div>
 </template>`;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();
@@ -59,7 +59,7 @@ describe('insertGlobalComponent', () => {
   <MatchCommDialog id="tip-match-comm-tips-dialog" /></template>
 </div>
 </template>`;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();
@@ -79,7 +79,7 @@ describe('insertGlobalComponent', () => {
   <match-comm-dialog id="tip-match-comm-tips-dialog" /></template>
 </div>
 </template>`;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();
@@ -100,7 +100,7 @@ describe('Other Html Tag', () => {
 </p>
 </template>`;
 
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();
@@ -117,7 +117,7 @@ describe('Other Html Tag', () => {
 </span>
 </template>`;
 
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(insertGlobalComponent.call({
       resourcePath: 'MOCK_PAGE',
     }, source)).toMatchSnapshot();

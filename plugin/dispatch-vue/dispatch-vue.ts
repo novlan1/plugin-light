@@ -32,7 +32,7 @@ export class DispatchVuePlugin {
       css: '.wxss',
     };
 
-    if (process.env.VUE_APP_PLATFORM === PLATFORM_MAP.MP_QQ) {
+    if (process.env.UNI_PLATFORM === PLATFORM_MAP.MP_QQ) {
       this.postFix = {
         html: '.qml',
         css: '.qss',
@@ -87,7 +87,9 @@ export class DispatchVuePlugin {
 
       if (assets[vendor] && this.insertRequireVendor) {
         console.log('[copyComponents] 存在vendor', vendor);
-        const vendorRelativePath = path.relative(path.dirname(path.resolve(target)), path.resolve(vendor));
+        const vendorRelativePath = path.relative(path.dirname(path.resolve(target)), path.resolve(vendor))
+          .split(path.sep)
+          .join('/');
         console.log('[copyComponents] vendorRelativePath', vendorRelativePath);
 
         insertCode = `require('${vendorRelativePath}');`;

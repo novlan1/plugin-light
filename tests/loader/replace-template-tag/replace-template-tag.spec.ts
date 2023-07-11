@@ -13,7 +13,7 @@ jest.mock('loader-utils', () => ({
 }));
 
 beforeAll(() => {
-  process.env.VUE_APP_PLATFORM = 'mp-weixin';
+  process.env.UNI_PLATFORM = 'mp-weixin';
 });
 
 
@@ -45,12 +45,12 @@ describe('replaceTmpTag', () => {
 </template>
     `;
   it('replaceTmpTag in mp', () => {
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(replaceTmpTag(source)).toMatchSnapshot();
   });
 
   it('replaceTmpTag in web', () => {
-    process.env.VUE_APP_PLATFORM = 'h5';
+    process.env.UNI_PLATFORM = 'h5';
     expect(replaceTmpTag(source)).toMatchSnapshot();
   });
 });

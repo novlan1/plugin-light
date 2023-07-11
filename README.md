@@ -1,5 +1,29 @@
 # uni-plugin-light
 
+
+uni-app相关插件，包括
+
+- 依赖分析
+- JS分发
+- 组件分发
+- npm包打包失败修复
+- 生成版本号
+- rem转rpx
+- 内容替换
+- 拷贝本地文件
+
+
+以及一些loader
+
+- 自定义ifdef
+- 插入全局组件
+- 替换三方库
+- v-lazy兼容
+- 替换动态组件
+- 替换vue标签
+- 替换v-for中的key
+
+
 ## 安装
 ```
 npm install -D uni-plugin-light

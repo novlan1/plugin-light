@@ -1,4 +1,4 @@
-export function handleRem(content) {
+export function handleRem(content, factor = 100, unit = 'rpx') {
   if (content == null) {
     return content;
   }
@@ -22,12 +22,12 @@ export function handleRem(content) {
   if (records.length > 0) {
     let buffer = `${content}`;
     for (const record of records) {
-      let number = (record.number * 100).toFixed(2);
+      let number = (record.number * factor).toFixed(2);
       if (number == `${parseInt(number, 10)}`) {
         // 去掉无效的小数点，比如：28.00
         number = `${parseInt(number, 10)}`;
       }
-      buffer = buffer.replace(record.keyword, `${number}rpx`);
+      buffer = buffer.replace(record.keyword, `${number}${unit}`);
     }
     return buffer;
   }

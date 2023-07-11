@@ -14,7 +14,7 @@ const sourceDir = path.resolve(process.env.UNI_INPUT_DIR || '');
 let scriptSubPackagesMap;
 
 function getGlobalComponents() {
-  const { globalCompsValues: globalComponents } = analyzeComponent({ needGlobalComponents: true });
+  const { globalCompsValues: globalComponents = [] } = analyzeComponent({ needGlobalComponents: true });
   const sourceDirList = sourceDir.split(path.sep);
 
   return (globalComponents as Array<any>)

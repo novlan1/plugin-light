@@ -44,7 +44,7 @@ import Swiper2, { Navigation, Pagination } from 'swiper';
 import get from 'lodash-es/get';
 import { post } from 'lodash-es';
     `;
-    process.env.VUE_APP_PLATFORM = 'mp-weixin';
+    process.env.UNI_PLATFORM = 'mp-weixin';
     expect(replaceLibrary.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, source)).toMatchSnapshot();

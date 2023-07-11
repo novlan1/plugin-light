@@ -14,7 +14,7 @@ jest.mock('loader-utils', () => ({
 }));
 
 beforeAll(() => {
-  process.env.VUE_APP_PLATFORM = 'mp-weixin';
+  process.env.UNI_PLATFORM = 'mp-weixin';
 });
 
 

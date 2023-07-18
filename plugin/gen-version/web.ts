@@ -3,9 +3,13 @@ import { updateAssetSource } from '../../helper';
 
 export class GenVersionWebPlugin {
   options: object;
+  buildName?: string;
+  commitName?: string;
 
   constructor(options) {
     this.options = options;
+    this.buildName = options.buildName || '';
+    this.commitName = options.commitName || '';
   }
 
   getInsertCode() {
@@ -13,8 +17,8 @@ export class GenVersionWebPlugin {
 <script>
 try {
   setTimeout(() => {   
-    ${getVersionCode()}
-    ${getCommitCode()}
+    ${getVersionCode(this.buildName)}
+    ${getCommitCode(this.commitName)}
   }, 2000);
 } catch(err) {}
 </script>
@@ -41,4 +45,3 @@ try {
     });
   }
 }
-

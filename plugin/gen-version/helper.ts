@@ -1,34 +1,48 @@
 import { getGitCommitInfo, timeStampFormat, getGitCurBranch, getGitAuthor } from 't-comm';
 
-export function getVersionCode() {
+export function getVersionCode(versionName?: string) {
   let author = '';
   let branch = '';
 
   try {
-    author = getGitAuthor(false);
-    branch = getGitCurBranch();
+    author = getGitAuthor(false) || '';
+    branch = getGitCurBranch() || '';
   } catch (err) {}
 
   const versionInfo = {
     time: timeStampFormat(Date.now(), 'yyyy-MM-dd hh:mm:ss'),
     author,
     branch,
-    netEnv: process.env.NET_ENV,
+    netEnv: process.env.NET_ENV || '',
   };
 
+  let code = '';
+  if (versionName) {
+    code = `
+window.${versionName} = {
+  time: '${versionInfo.time}',
+  author: '${versionInfo.author}',
+  branch: '${versionInfo.branch}',
+  netEnv: '${versionInfo.netEnv}',
+}
+    `;
 
-  const code = `
+    return code;
+  }
+
+  code = `
 console.info('[system]', '');
 console.info('[system]', 'Build Time: ${versionInfo.time || ''}');
 console.info('[system]', 'Build Author: ${versionInfo.author || ''}');
 console.info('[system]', 'Build Branch: ${versionInfo.branch || ''}');
 console.info('[system]', 'Build Net Env: ${versionInfo.netEnv || ''}');
 `;
+
   return code;
 }
 
 
-export function getCommitCode() {
+export function getCommitCode(versionName?: string) {
   let commitInfo: any = {};
   try {
     commitInfo = getGitCommitInfo();
@@ -38,7 +52,21 @@ export function getCommitCode() {
   }
 
 
-  const code = `
+  let code = '';
+  if (versionName) {
+    code = `
+window.${versionName} = {
+  message: '${commitInfo.message}',
+  author: '${commitInfo.author}',
+  date: '${commitInfo.date}',
+  hash: '${commitInfo.hash}',
+}
+    `;
+
+    return code;
+  }
+
+  code = `
 console.info('[system]', '');
 console.info('[system]', 'Last Commit Message: ${commitInfo.message || ''}');
 console.info('[system]', 'Last Commit Author: ${commitInfo.author || ''}');

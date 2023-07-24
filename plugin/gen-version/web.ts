@@ -6,8 +6,8 @@ export class GenVersionWebPlugin {
   buildName?: string;
   commitName?: string;
 
-  constructor(options) {
-    this.options = options;
+  constructor(options: Record<string, any> = {}) {
+    this.options = options || {};
     this.buildName = options.buildName || '';
     this.commitName = options.commitName || '';
   }

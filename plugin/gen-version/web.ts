@@ -5,11 +5,13 @@ export class GenVersionWebPlugin {
   options: object;
   buildName?: string;
   commitName?: string;
+  delay: number;
 
   constructor(options: Record<string, any> = {}) {
     this.options = options || {};
     this.buildName = options.buildName || '';
     this.commitName = options.commitName || '';
+    this.delay = options.delay || 10;
   }
 
   getInsertCode() {
@@ -19,7 +21,7 @@ try {
   setTimeout(() => {   
     ${getVersionCode(this.buildName)}
     ${getCommitCode(this.commitName)}
-  }, 2000);
+  }, ${this.delay});
 } catch(err) {}
 </script>
 `;

@@ -1,6 +1,6 @@
 {
   "name": "uni-plugin-light",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "",
   "main": "lib/plugin",
   "scripts": {
@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "vue-template-compiler": "^2.6.14",
-    "xregexp": "^5.1.1"
+    "xregexp": "3.1.0"
   },
   "lint-staged": {
     "*.{ts,js,vue}": [

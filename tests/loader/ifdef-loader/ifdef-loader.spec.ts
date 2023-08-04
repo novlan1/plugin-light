@@ -142,62 +142,62 @@ console.log('c.1');
 
 
 describe('preprocessLoader.js', () => {
-  it('preprocessLoader.1', () => {
+  it('preprocessLoader.1.jsStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, jsStr)).toMatchSnapshot();
   });
 
-  it('preprocessLoader.2', () => {
+  it('preprocessLoader.2.jsStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, jsStr)).toMatchSnapshot();
   });
 
-  it('preprocessLoader.3', () => {
+  it('preprocessLoader.3.jsStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, jsStr)).toMatchSnapshot();
   });
 
-  it('preprocessLoader.4', () => {
+  it('preprocessLoader.4.htmlStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, htmlStr)).toMatchSnapshot();
   });
 
-  it('preprocessLoader.5', () => {
+  it('preprocessLoader.5.htmlStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, htmlStr)).toMatchSnapshot();
   });
 
-  it('preprocessLoader.6', () => {
+  it('preprocessLoader.6.htmlStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, htmlStr)).toMatchSnapshot();
   });
-  it('preprocessLoader.7', () => {
+  it('preprocessLoader.7.cssStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, cssStr)).toMatchSnapshot();
   });
-  it('preprocessLoader.8', () => {
+  it('preprocessLoader.8.cssStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, cssStr)).toMatchSnapshot();
   });
-  it('preprocessLoader.9', () => {
+  it('preprocessLoader.9.cssStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, cssStr)).toMatchSnapshot();
   });
-  it('preprocessLoader.10', () => {
+  it('preprocessLoader.10.vueStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, vueStr)).toMatchSnapshot();
   });
-  it('preprocessLoader.11', () => {
+  it('preprocessLoader.11.vueStr', () => {
     expect(preprocessLoader.call({
       resourcePath: path.resolve(process.cwd(), './src', 'MOCK_PAGE.vue'),
     }, vueStr)).toMatchSnapshot();

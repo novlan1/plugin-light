@@ -1,23 +1,208 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`preprocessLoader.js preprocessLoader.1 1`] = `""`;
+exports[`preprocessLoader.js preprocessLoader.1.jsStr 1`] = `
+"
 
-exports[`preprocessLoader.js preprocessLoader.2 1`] = `""`;
+console.log('1');
 
-exports[`preprocessLoader.js preprocessLoader.3 1`] = `""`;
 
-exports[`preprocessLoader.js preprocessLoader.4 1`] = `""`;
 
-exports[`preprocessLoader.js preprocessLoader.5 1`] = `""`;
 
-exports[`preprocessLoader.js preprocessLoader.6 1`] = `""`;
 
-exports[`preprocessLoader.js preprocessLoader.7 1`] = `""`;
 
-exports[`preprocessLoader.js preprocessLoader.8 1`] = `""`;
+console.log('3');
+"
+`;
 
-exports[`preprocessLoader.js preprocessLoader.9 1`] = `""`;
+exports[`preprocessLoader.js preprocessLoader.2.jsStr 1`] = `
+"
+// #ifdef H5
+console.log('1');
+// #endif
 
-exports[`preprocessLoader.js preprocessLoader.10 1`] = `""`;
+// #ifndef H5
+console.log('2');
+// #endif
 
-exports[`preprocessLoader.js preprocessLoader.11 1`] = `""`;
+console.log('3');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.3.jsStr 1`] = `
+"
+
+
+
+
+
+console.log('2');
+
+
+console.log('3');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.4.htmlStr 1`] = `
+"
+
+console.log('a');
+
+
+
+
+
+
+
+console.log('c');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.5.htmlStr 1`] = `
+"
+
+
+
+
+
+
+console.log('b');
+
+
+console.log('c');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.6.htmlStr 1`] = `
+"
+<!-- #ifdef H5 -->
+console.log('a');
+<!-- #endif -->
+
+
+<!-- #ifndef H5 -->
+console.log('b');
+<!-- #endif -->
+
+console.log('c');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.7.cssStr 1`] = `
+"
+
+console.log('a.1');
+
+
+
+
+
+
+console.log('c.1');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.8.cssStr 1`] = `
+"
+
+
+
+
+
+console.log('b.1');
+
+
+console.log('c.1');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.9.cssStr 1`] = `
+"
+/* #ifdef H5 */
+console.log('a.1');
+/* #endif */
+
+/* #ifndef H5 */
+console.log('b.1');
+/* #endif */
+
+console.log('c.1');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.10.vueStr 1`] = `
+"
+
+console.log('1');
+
+
+
+
+
+
+console.log('3');
+
+
+
+
+console.log('a');
+
+
+
+
+
+
+
+console.log('c');
+
+
+
+
+console.log('a.1');
+
+
+
+
+
+
+console.log('c.1');
+"
+`;
+
+exports[`preprocessLoader.js preprocessLoader.11.vueStr 1`] = `
+"
+
+
+
+
+
+console.log('2');
+
+
+console.log('3');
+
+
+
+
+
+
+
+
+
+console.log('b');
+
+
+console.log('c');
+
+
+
+
+
+
+
+
+console.log('b.1');
+
+
+console.log('c.1');
+"
+`;

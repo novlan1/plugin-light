@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.40](https://github.com/novlan1/uni-plugin-light/compare/v1.0.25...v1.0.40) (2023-08-23)
+
+
+### ✨ Features | 新功能
+
+* 增加webpack基础配置 ([3eb7955](https://github.com/novlan1/uni-plugin-light/commit/3eb7955a1ffb368d54e9ba27c09b09b429539cc8))
+
 ### [1.0.8](https://github.com/novlan1/uni-plugin-light/compare/v1.0.6...v1.0.8) (2023-05-26)
 
 

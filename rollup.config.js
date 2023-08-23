@@ -6,11 +6,12 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 
 
-const LOADER_DIR = './loader';
+const LOADER_DIR = './src/loader';
 const BUNDLE_DIR = 'lib';
 const DEFAULT_PLUGINS = [
   resolve(),
@@ -37,6 +38,11 @@ const EXTERNALS =  [
   'vue-template-compiler',
   'glob-to-regexp',
   'xregexp',
+
+  'filemanager-webpack-plugin',
+  'webpack-bundle-analyzer',
+  'prerender-spa-plugin',
+  'webpack-hooks-shellscripts',
 ];
 
 function getLoaderFiles() {
@@ -100,7 +106,7 @@ function getLoaderConfig() {
 
 export default [
   {
-    input: './plugin/index.ts',
+    input: './src/plugin/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -114,7 +120,7 @@ export default [
     ],
   },
   {
-    input: './plugin/index.ts',
+    input: './src/plugin/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -129,11 +135,40 @@ export default [
     ],
   },
   {
-    input: './task/sync-repo.ts',
+    input: './src/task/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
       entryFileNames: 'task.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
+    input: './src/webpack/base-config/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'webpack-base-config.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      json(),
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
+    input: './src/webpack/base-config/publish.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'webpack-publish.js',
     },
     external: [
       ...EXTERNALS,

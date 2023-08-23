@@ -1,5 +1,5 @@
 import path from 'path';
-import preprocessLoader from '../../../loader/ifdef-loader';
+import preprocessLoader from '../../../src/loader/ifdef-loader';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn()
@@ -104,40 +104,11 @@ console.log('c.1');
 `;
 
 const vueStr = `
-// #ifdef H5
-console.log('1');
-// #endif
+${jsStr}
 
-// #ifndef H5
-console.log('2');
-// #endif
+${htmlStr}
 
-console.log('3');
-
-
-
-<!-- #ifdef H5 -->
-console.log('a');
-<!-- #endif -->
-
-
-<!-- #ifndef H5 -->
-console.log('b');
-<!-- #endif -->
-
-console.log('c');
-
-
-
-/* #ifdef H5 */
-console.log('a.1');
-/* #endif */
-
-/* #ifndef H5 */
-console.log('b.1');
-/* #endif */
-
-console.log('c.1');
+${cssStr}
 `;
 
 

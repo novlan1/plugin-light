@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-this-alias */
 /* eslint-disable no-param-reassign */
-import { replaceAbsolutePath, findKey } from '../../../plugin/fix-npm-package/core';
+import { replaceAbsolutePath, findKey } from '../../../src/plugin/fix-npm-package/core';
 
 describe('replaceAbsolutePath', () => {
   it('replaceAbsolutePath', () => {

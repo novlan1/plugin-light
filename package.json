@@ -1,6 +1,6 @@
 {
   "name": "uni-plugin-light",
-  "version": "1.0.25",
+  "version": "1.0.40",
   "description": "",
   "main": "lib/plugin",
   "scripts": {
@@ -9,13 +9,18 @@
     "build": "rm -rf lib && rollup -c",
     "write:npm:token": "node script/write-npm-token.js",
     "release:first": "standard-version --first-release",
-    "release-major": "standard-version --release-as major",
-    "release-minor": "standard-version --release-as minor",
-    "release-patch": "standard-version --release-as patch",
+    "release-major": "standard-version --release-as major -a",
+    "release-minor": "standard-version --release-as minor -a",
+    "release-patch": "standard-version --release-as patch -a",
     "test": "jest --coverage --verbose -u",
     "lint": "eslint --ext .js,.ts.vue .",
     "lint:fix": "eslint --fix --ext .js,.ts.vue .",
-    "version:tip": "node script/version-tip"
+    "version:tip": "node script/version-tip",
+    "docs:gen": "node script/docs/gen-docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "node script/docs/deploy",
+    "init:env": "node script/env/rainbow-env"
   },
   "repository": {
     "type": "git",
@@ -41,9 +46,11 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^9.0.2",
     "@types/jest": "^29.2.1",
+    "dotenv": "^16.3.1",
     "eslint": "^8.22.0",
     "eslint-config-light": "^1.0.6",
     "glob-to-regexp": "^0.4.1",
@@ -58,17 +65,31 @@
     "rollup": "^2.79.1",
     "rollup-plugin-terser": "^7.0.2",
     "standard-version": "^9.5.0",
-    "t-comm": "^1.1.39",
     "ts-jest": "^29.0.3",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "vuepress": "^1.9.10",
+    "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "vue-template-compiler": "^2.6.14",
+    "commander": "^11.0.0",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "prerender-spa-plugin": "^3.4.0",
+    "t-comm": "^1.1.66",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-hooks-shellscripts": "^1.0.2",
     "xregexp": "3.1.0"
+  },
+  "peerDependencies": {
+    "vue-template-compiler": "^2.6.14"
   },
   "lint-staged": {
     "*.{ts,js,vue}": [
       "eslint --fix"
     ]
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "node script/docs/change-log"
+    }
   }
 }

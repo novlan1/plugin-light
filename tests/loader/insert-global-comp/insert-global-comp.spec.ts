@@ -1,4 +1,5 @@
-import insertGlobalComponent from '../../../loader/insert-global-comp';
+/* eslint-disable jest/expect-expect */
+import insertGlobalComponent from '../../../src/loader/insert-global-comp';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({
@@ -11,6 +12,21 @@ jest.mock('loader-utils', () => ({
   }),
 }));
 
+const baseStr = `<page-loading v-if="mShowPageLoading" />
+  <BattleDetailModule v-else-if="isScheEnd" />
+  <VideoRoomModule v-else />`;
+
+const firstTagProps = `class="battle-detail-wrap"
+  style="width:100%;height: 100%;"`;
+
+
+function expectFunction(source) {
+  process.env.UNI_PLATFORM = 'mp-weixin';
+  expect(insertGlobalComponent.call({
+    resourcePath: 'MOCK_PAGE',
+  }, source)).toMatchSnapshot();
+}
+
 describe('insertGlobalComponent', () => {
   it('only one tag', () => {
     const source = `
@@ -20,10 +36,7 @@ describe('insertGlobalComponent', () => {
   />
 </template>
 `;
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 
 
@@ -31,18 +44,12 @@ describe('insertGlobalComponent', () => {
     const source = `<template>
 <!-- 战后数据和直播页面 -->
 <div
-  class="battle-detail-wrap"
-  style="width:100%;height: 100%;"
+  ${firstTagProps}
 >
-  <page-loading v-if="mShowPageLoading" />
-  <BattleDetailModule v-else-if="isScheEnd" />
-  <VideoRoomModule v-else />
+  ${baseStr}
 </div>
 </template>`;
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 
 
@@ -50,19 +57,13 @@ describe('insertGlobalComponent', () => {
     const source = `<template>
 <!-- 战后数据和直播页面 -->
 <div
-  class="battle-detail-wrap"
-  style="width:100%;height: 100%;"
+  ${firstTagProps}
 >
-  <page-loading v-if="mShowPageLoading" />
-  <BattleDetailModule v-else-if="isScheEnd" />
-  <VideoRoomModule v-else />
+  ${baseStr}
   <MatchCommDialog id="tip-match-comm-tips-dialog" /></template>
 </div>
 </template>`;
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 
 
@@ -70,19 +71,13 @@ describe('insertGlobalComponent', () => {
     const source = `<template>
 <!-- 战后数据和直播页面 -->
 <div
-  class="battle-detail-wrap"
-  style="width:100%;height: 100%;"
+  ${firstTagProps}
 >
-  <page-loading v-if="mShowPageLoading" />
-  <BattleDetailModule v-else-if="isScheEnd" />
-  <VideoRoomModule v-else />
+  ${baseStr}
   <match-comm-dialog id="tip-match-comm-tips-dialog" /></template>
 </div>
 </template>`;
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 });
 
@@ -91,35 +86,25 @@ describe('Other Html Tag', () => {
   it('p', () => {
     const source = `<template>
 <p
-  class="battle-detail-wrap"
-  style="width:100%;height: 100%;"
+  ${firstTagProps}
 >
-  <page-loading v-if="mShowPageLoading" />
-  <BattleDetailModule v-else-if="isScheEnd" />
-  <VideoRoomModule v-else />
+${baseStr}
 </p>
 </template>`;
 
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 
 
   it('span', () => {
     const source = `<template>
 <span
-  class="battle-detail-wrap"
-  style="width:100%;height: 100%;"
+  ${firstTagProps}
 >
   <a>123</a>
 </span>
 </template>`;
 
-    process.env.UNI_PLATFORM = 'mp-weixin';
-    expect(insertGlobalComponent.call({
-      resourcePath: 'MOCK_PAGE',
-    }, source)).toMatchSnapshot();
+    expectFunction(source);
   });
 });

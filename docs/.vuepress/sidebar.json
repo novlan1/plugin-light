@@ -1,0 +1,124 @@
+{
+  "sidebar": [
+    {
+      "title": "插件",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "analyze-deps",
+          "path": "/zh/plugin/analyze-deps.md"
+        },
+        {
+          "title": "dispatch-script",
+          "path": "/zh/plugin/dispatch-script.md"
+        },
+        {
+          "title": "dispatch-vue",
+          "path": "/zh/plugin/dispatch-vue.md"
+        },
+        {
+          "title": "fix-npm-package",
+          "path": "/zh/plugin/fix-npm-package.md"
+        },
+        {
+          "title": "gen-version",
+          "path": "/zh/plugin/gen-version.md"
+        },
+        {
+          "title": "modify-html",
+          "path": "/zh/plugin/modify-html.md"
+        },
+        {
+          "title": "rem-to-rpx",
+          "path": "/zh/plugin/rem-to-rpx.md"
+        },
+        {
+          "title": "replace-app-id",
+          "path": "/zh/plugin/replace-app-id.md"
+        },
+        {
+          "title": "replace-content",
+          "path": "/zh/plugin/replace-content.md"
+        },
+        {
+          "title": "save-loader-log",
+          "path": "/zh/plugin/save-loader-log.md"
+        },
+        {
+          "title": "transfer-local-file",
+          "path": "/zh/plugin/transfer-local-file.md"
+        }
+      ]
+    },
+    {
+      "title": "loader",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "cross-game-style",
+          "path": "/zh/loader/cross-game-style.md"
+        },
+        {
+          "title": "cross-platform",
+          "path": "/zh/loader/cross-platform.md"
+        },
+        {
+          "title": "ifdef-loader",
+          "path": "/zh/loader/ifdef-loader.md"
+        },
+        {
+          "title": "insert-global-comp",
+          "path": "/zh/loader/insert-global-comp.md"
+        },
+        {
+          "title": "insert-page-meta",
+          "path": "/zh/loader/insert-page-meta.md"
+        },
+        {
+          "title": "replace-library",
+          "path": "/zh/loader/replace-library.md"
+        },
+        {
+          "title": "replace-template-tag",
+          "path": "/zh/loader/replace-template-tag.md"
+        },
+        {
+          "title": "replace-vue-key",
+          "path": "/zh/loader/replace-vue-key.md"
+        },
+        {
+          "title": "transform-dynamic-comp",
+          "path": "/zh/loader/transform-dynamic-comp.md"
+        },
+        {
+          "title": "v-lazy",
+          "path": "/zh/loader/v-lazy.md"
+        }
+      ]
+    },
+    {
+      "title": "基础配置",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "base-config",
+          "path": "/zh/config/base-config.md"
+        }
+      ]
+    },
+    {
+      "title": "CLI命令",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "publish",
+          "path": "/zh/script/publish.md"
+        },
+        {
+          "title": "sync-repo",
+          "path": "/zh/script/sync-repo.md"
+        }
+      ]
+    }
+  ]
+}

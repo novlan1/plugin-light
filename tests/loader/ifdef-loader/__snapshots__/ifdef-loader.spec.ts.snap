@@ -132,6 +132,7 @@ console.log('c.1');
 exports[`preprocessLoader.js preprocessLoader.10.vueStr 1`] = `
 "
 
+
 console.log('1');
 
 
@@ -165,11 +166,13 @@ console.log('a.1');
 
 
 console.log('c.1');
+
 "
 `;
 
 exports[`preprocessLoader.js preprocessLoader.11.vueStr 1`] = `
 "
+
 
 
 
@@ -204,5 +207,6 @@ console.log('b.1');
 
 
 console.log('c.1');
+
 "
 `;

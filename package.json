@@ -20,6 +20,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "node script/docs/deploy",
+    "docs:deploy:mine": "node script/docs/docs-mine",
     "init:env": "node script/env/rainbow-env"
   },
   "repository": {

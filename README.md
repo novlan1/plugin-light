@@ -27,6 +27,8 @@
 
 还有一些`webpack`基础配置和 CLI 命令。
 
+详细文档地址可以查看[这里](https://novlan1.github.io/uni-plugin-light/)。
+
 ## 安装
 
 ```

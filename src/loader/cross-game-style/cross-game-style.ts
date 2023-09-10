@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { getStyleName } from './style-name';
 
-export function crossGameStyleLoader(this: any, source) {
+export function crossGameStyleLoader(this: any, source: string) {
   // 改为异步loader
   const callback = this.async();
 

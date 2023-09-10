@@ -4,6 +4,57 @@
 
 
 
+
+
+
+
+
+### [1.1.1](https://github.com/novlan1/uni-plugin-light/compare/v1.1.0...v1.1.1) (2023-09-08)
+
+
+### Chore 🚀 
+
+* update t-comm ([6e3a367](https://github.com/novlan1/uni-plugin-light/commit/6e3a3675b2f9a0805bd7717bfb94e693390f0848))
+
+## [1.1.0](https://github.com/novlan1/uni-plugin-light/compare/v1.0.43...v1.1.0) (2023-09-08)
+
+
+### Features 🎉
+
+* **webpack-config:** 支持恢复console日志 ([99427e0](https://github.com/novlan1/uni-plugin-light/commit/99427e06c93050f7a64880cbf507be9519c440c6))
+
+### [1.0.43](https://github.com/novlan1/uni-plugin-light/compare/v1.0.42...v1.0.43) (2023-09-05)
+
+
+### Features 🎉
+
+* **webpack-config:** 允许配置参数取消移除console日志 ([21b945e](https://github.com/novlan1/uni-plugin-light/commit/21b945ea8ccffa1bfa9c1b611a59b2f7edceeb0a))
+
+### [1.0.42](https://github.com/novlan1/uni-plugin-light/compare/v1.0.41...v1.0.42) (2023-09-04)
+
+
+### Documentation 📖
+
+* 贡献指南 ([eb6392e](https://github.com/novlan1/uni-plugin-light/commit/eb6392e1d508212f8dd4c179cb3327046a33cc9e))
+
+
+### Code Refactoring ♻️
+
+* add types ([3148c17](https://github.com/novlan1/uni-plugin-light/commit/3148c17aebd558b4314beaa1821eacb3668d0ba8))
+
+
+### Features 🎉
+
+* **webpack-config:** 增加useIfDefLoader ([a46db1a](https://github.com/novlan1/uni-plugin-light/commit/a46db1a6f11eb3f01500a9f2956ed685d3853c2a))
+
+### [1.0.41](https://github.com/novlan1/uni-plugin-light/compare/v1.0.40...v1.0.41) (2023-08-29)
+
+
+### Chore 🚀 
+
+* 脚本命令优化 ([8ed00ab](https://github.com/novlan1/uni-plugin-light/commit/8ed00ab55cb3f825acb94e1199f45bf47b46f27c))
+* update t-comm ([a05b4d4](https://github.com/novlan1/uni-plugin-light/commit/a05b4d4356785b3dde4090c891eed64422e2e71a))
+
 ### [1.0.40](https://github.com/novlan1/uni-plugin-light/compare/v1.0.39...v1.0.40) (2023-08-21)
 
 

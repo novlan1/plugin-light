@@ -10,7 +10,7 @@ const notFirstDivReg = /(?<=<template>\s*)(<(?!\w+)[^>]+>[\s\S]*)(?=\s*<\/templa
 const htmlReg = /(?<=<template>[\s\n]*<\w+[^>]*>)([\s\S]*)(?=<\/\w+>[\s\n]*<\/template>)/;
 
 
-export function insertGlobalComponent(this: any, source) {
+export function insertGlobalComponent(this: any, source: string) {
   replaceAllPolyfill();
 
   const options = getOptions(this) || {};
@@ -20,20 +20,20 @@ export function insertGlobalComponent(this: any, source) {
 
   let { pages } = options;
   if (pages === undefined) {
-    pages = getPagePath();
+    pages = getPagePath() as any;
   }
 
   // @ts-ignore
   const { resourcePath } = this;
-  if (!pages.includes(resourcePath)) {
+  if (!(pages as unknown as string[]).includes(resourcePath)) {
     return source;
   }
 
-  const res = insertComp(source, components);
+  const res = insertComp(source, components as Array<any>);
   return res;
 }
 
-function getExtraStr(props, events) {
+function getExtraStr(props: Array<Record<string, any>>, events: Array<Record<string, any>>) {
   let extra = props.reduce((acc, prop) => {
     const { key, value, custom } = prop;
     acc += `${custom ? ':' : ''}${key}="${value}" `;
@@ -49,7 +49,7 @@ function getExtraStr(props, events) {
   return extra;
 }
 
-function composeCompStr(components, isOnTop) {
+function composeCompStr(components: Array<Record<string, any>>, isOnTop: boolean) {
   components = components.filter(item => !!item.isOnTop === !!isOnTop);
   let str = '<template>';
   str += components.map((item) => {
@@ -62,7 +62,7 @@ function composeCompStr(components, isOnTop) {
   return str;
 }
 
-function insertComp(source, components) {
+function insertComp(source: string, components: Array<Record<string, any>>) {
   const newComponents = components.filter((item) => {
     const { name } = item;
     return !isAlreadyInPage(source, name);
@@ -92,7 +92,7 @@ function insertComp(source, components) {
   return res;
 }
 
-function isAlreadyInPage(source, comp) {
+function isAlreadyInPage(source: string, comp: string) {
   const compReg = new RegExp(`<template>[\\s\\S]*(${comp}|${hyphenate(comp)})([\\s\\S]+)<\\/template>`);
   if (source.match(compReg)) return true;
   return false;

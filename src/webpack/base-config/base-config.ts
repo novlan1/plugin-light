@@ -116,11 +116,18 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
     isUseVueLoader,
     isVue3,
     useXSS,
+    useIfDefLoader,
   } = merge({}, {
     isUseVueLoader: true,
     isVue3: false,
     useXSS: true,
+    useIfDefLoader: true,
   }, options || {});
+
+  let terserPureFuncs = ['console.log', 'console.table'];
+  if (options?.terserPureFuncs) {
+    terserPureFuncs = options.terserPureFuncs || [];
+  }
 
   const config = {
     publicPath: process.env.VUE_APP_PUBLICPATH, // 部署应用包时的基本URL
@@ -177,39 +184,39 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
         .uses
         .delete('cache-loader');
 
-      config.module
-        .rule('ifdef-loader')
+      if (useIfDefLoader) {
+        config.module
+          .rule('ifdef-loader')
         // 根据项目实际配置文件类型
-        .test(/(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/)
+          .test(/(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/)
         // 不要配成下面这样，会卡住
         // .test(/\.vue|\.ts|\.js|\.css|\.scss$/)
-        .use(TOOL_PATH_MAP.ifdefLoader)
-        .loader(TOOL_PATH_MAP.ifdefLoader)
-        .options({
-          context: { H5: true },
-          type: ['css', 'js', 'html'],
-        })
-        .end();
+          .use(TOOL_PATH_MAP.ifdefLoader)
+          .loader(TOOL_PATH_MAP.ifdefLoader)
+          .options({
+            context: { H5: true },
+            type: ['css', 'js', 'html'],
+          })
+          .end();
+      }
 
       // 先暂时去掉eslint
       config.module.rule('eslint')
         .uses
         .clear();
+
       config
         .when(
           process.env.PUBLISH_ENV !== 'test',
           (config) => {
-          // 去掉console.log
+            // 去掉console.log
             config.optimization.minimizer('terser')
               .tap((args) => {
               // remove debugger
-              // eslint-disable-next-line no-param-reassign
                 args[0].terserOptions.compress.drop_debugger = true;
                 // 移除 console.log
-                // eslint-disable-next-line no-param-reassign
-                args[0].terserOptions.compress.pure_funcs = ['console.log', 'console.table'];
+                args[0].terserOptions.compress.pure_funcs = terserPureFuncs;
                 // 去掉注释 如果需要看chunk-vendors公共部分插件，可以注释掉就可以看到注释了
-                // eslint-disable-next-line no-param-reassign
                 args[0].terserOptions.output = {
                   comments: false,
                 };

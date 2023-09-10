@@ -44,10 +44,19 @@ module.exports = merge(getWebpackBaseConfig({
 `getWebpackBaseConfig` 接收一个对象作为参数，其属性及说明如下：
 
 
-| 参数           | 说明                                                  | 类型      | 默认值  |
-| -------------- | ----------------------------------------------------- | --------- | ------- |
-| isUseVueLoader | 是否使用`vue-loader`                                  | _boolean_ | `true`  |
-| isVue3         | 是否是 Vue3 项目                                      | _boolean_ | `false` |
-| useXSS         | 是否使用`XSS`过滤，需要提前在 Vue 原型上挂载`xss`方法 | _boolean_ | `true`  |
+| 参数            | 说明                                                  | 类型      | 默认值                             |
+| --------------- | ----------------------------------------------------- | --------- | ---------------------------------- |
+| isUseVueLoader  | 是否使用`vue-loader`                                  | _boolean_ | `true`                             |
+| isVue3          | 是否是 Vue3 项目                                      | _boolean_ | `false`                            |
+| useXSS          | 是否使用`XSS`过滤，需要提前在 Vue 原型上挂载`xss`方法 | _boolean_ | `true`                             |
+| useIfDefLoader  | 是否使用`ifdef-loader`                                | _boolean_ | `true`                             |
+| terserPureFuncs | 打包去除`console`日志的方法                           | _Array_   | `['console.log', 'console.table']` |
 
 
+## 常见问题
+
+### console日志
+
+生产环境下，即`process.env.NODE_ENV`为`production`时，默认去掉`console`日志，可以通过`terserPureFuncs`传递空数组来恢复显示。
+
+注意同时去掉`babel`插件`transform-remove-console`。

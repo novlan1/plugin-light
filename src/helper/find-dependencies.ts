@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 
-function getParent(path, level) {
+function getParent(path: Record<string, any>, level: number) {
   if (!level) {
     return path.parent;
   }
   return getParent(path.parentPath, level - 1);
 }
 
-export function findDependencies(content) {
+export function findDependencies(content: string) {
   const parser = require('@babel/parser');
   const traverse = require('@babel/traverse').default;
   // const generate = require('@babel/generator').default;
@@ -21,7 +21,7 @@ export function findDependencies(content) {
   });
 
   traverse(ast, {
-    CallExpression(path) {
+    CallExpression(path: any) {
       if (path.node.callee.name === 'require') {
         if (path.node.arguments[0].type === 'StringLiteral') {
           sourceList.push(path.node.arguments[0].value);
@@ -40,7 +40,7 @@ export function findDependencies(content) {
         }
       }
     },
-    ImportDeclaration(path) {
+    ImportDeclaration(path: any) {
       sourceList.push(path.node.source.value);
     },
   });

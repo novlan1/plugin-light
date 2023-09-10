@@ -66,6 +66,10 @@ module.exports = {
         path: '/',
       },
       ...getSidebarConfig(),
+      {
+        title: '贡献指南',
+        path: '/CONTRIBUTING.md',
+      },
       ...changeLogSidebar,
     ],
   },

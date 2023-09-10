@@ -5,7 +5,7 @@ import { isWindows } from 't-comm';
 
 export const ROOT_NAME = 'MAIN';
 
-export function saveJsonToLog(content, file, needLog = true) {
+export function saveJsonToLog(content: string, file: string, needLog = true) {
   if (!needLog) return;
   createLogDir();
 
@@ -22,9 +22,9 @@ export function createLogDir() {
   }
 }
 
-export const normalizePath = path => (isWindows() ? path.replace(/\\/g, '/') : path);
+export const normalizePath = (path: string) => (isWindows() ? path.replace(/\\/g, '/') : path);
 
-export function updateAssetSource(assets, key, source) {
+export function updateAssetSource(assets: Record<string, any>, key: string, source: string) {
   assets[key] = {
     source() {
       return source;
@@ -35,14 +35,14 @@ export function updateAssetSource(assets, key, source) {
   };
 }
 
-export function removeFirstSlash(key) {
+export function removeFirstSlash(key: string) {
   if (key.startsWith('/')) {
     return key.slice(1);
   }
   return key;
 }
 
-function sortStringList(list) {
+function sortStringList(list: Array<String | Number>) {
   list.sort((a, b) => {
     if (a > b) return 1;
     if (a < b) return -1;
@@ -51,8 +51,8 @@ function sortStringList(list) {
   return list;
 }
 
-export function parseSetDeps(deps) {
-  return Object.keys(deps).reduce((acc, item) => {
+export function parseSetDeps(deps: Record<string, any>) {
+  return Object.keys(deps).reduce((acc: Record<string, any>, item) => {
     acc[item]  = Array.from(deps[item]);
 
     sortStringList(acc[item]);
@@ -61,7 +61,7 @@ export function parseSetDeps(deps) {
 }
 
 
-export function getRelativePath(filePath) {
+export function getRelativePath(filePath: string) {
   return path.relative(process.cwd(), path.resolve(filePath));
 }
 

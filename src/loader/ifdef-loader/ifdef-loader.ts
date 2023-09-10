@@ -27,6 +27,8 @@ const TAGS = {
   css: 'style',
 };
 
+type ITagKey = keyof typeof TAGS;
+
 export function preprocessLoader(content = '') {
   if (content.indexOf('#ifdef') < 0 && content.indexOf('#ifndef') < 0) {
     return content;
@@ -34,7 +36,7 @@ export function preprocessLoader(content = '') {
 
   // @ts-ignore
   const { type, context = {} } = utils.getOptions(this);
-  let types = type;
+  let types: any = type;
 
 
   if (!Array.isArray(types)) {
@@ -45,16 +47,16 @@ export function preprocessLoader(content = '') {
   const { resourcePath } = this;
   console.log('[ifdef-loader]正在处理: ', resourcePath);
 
-  types.forEach((type) => {
+  types.forEach((type: string) => {
     try {
       content = preprocessor.preprocess(content, context, {
         type,
       });
     } catch (e) {
       if (~['.nvue', '.vue'].indexOf(path.extname(resourcePath))) {
-        console.error(`${TAGS[type]}节点 ${ERRORS[type]}`);
+        console.error(`${TAGS[type as ITagKey]}节点 ${ERRORS[type as ITagKey]}`);
       } else {
-        console.error(`${ERRORS[type]}`);
+        console.error(`${ERRORS[type as ITagKey]}`);
       }
     }
   });

@@ -9,7 +9,7 @@ const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/temp
 const pureHtmlReg = /(?<=<template>[\s\n]*)([\s\S]+)(?=[\s\n]*<\/template>)/;
 
 
-export function insertPageMeta(this: any, source) {
+export function insertPageMeta(this: any, source: string) {
   if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
   const options = getOptions(this) || {};
@@ -18,7 +18,7 @@ export function insertPageMeta(this: any, source) {
   const { resourcePath } = this;
   const rootPath = path.resolve(process.cwd(), './src', process.env.VUE_APP_DIR || '');
 
-  const fullPages = pages.map(item => `${path.resolve(rootPath, item)}.vue`);
+  const fullPages = (pages as Array<string>).map(item => `${path.resolve(rootPath, item)}.vue`);
   if (!fullPages.includes(resourcePath)) {
     return source;
   }

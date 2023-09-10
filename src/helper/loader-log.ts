@@ -2,8 +2,11 @@ import { saveJsonToLog } from './index';
 
 const LOG_KEY = 'LOADER_LOGS';
 
+type IGlobal = typeof global & {[LOG_KEY]: any};
+
+
 export function saveLoaderLog() {
-  const loaderLogs = global[LOG_KEY] as {
+  const loaderLogs = (global as IGlobal)[LOG_KEY] as {
     [k: string]: any
   };
 
@@ -14,12 +17,12 @@ export function saveLoaderLog() {
   });
 }
 
-export function recordLoaderLog(file, content) {
-  if (!global[LOG_KEY]) {
-    global[LOG_KEY] = {};
+export function recordLoaderLog(file: string, content: string) {
+  if (!(global as IGlobal)[LOG_KEY]) {
+    (global as IGlobal)[LOG_KEY] = {};
   }
-  if (!global[LOG_KEY][file]) {
-    global[LOG_KEY][file] = [];
+  if (!(global as IGlobal)[LOG_KEY][file]) {
+    (global as IGlobal)[LOG_KEY][file] = [];
   }
-  global[LOG_KEY][file].push(content);
+  (global as IGlobal)[LOG_KEY][file].push(content);
 }

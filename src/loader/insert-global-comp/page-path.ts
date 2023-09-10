@@ -16,12 +16,12 @@ let rootPath = process.cwd();
     '/Users/mike/Documents/web/src/project/user/views/sche/cycle-set.vue'
     ]
  */
-function getAllPagesFromJson(data) {
+function getAllPagesFromJson(data: { pages: Array<Record<string, any>>, subPackages: Array<Record<string, any>>}) {
   const { pages = [], subPackages = [] } = data;
 
   const res = pages
     .map(item => item.path)
-    .concat(subPackages.map(item => item.pages.map(sub => path.join(item.root, sub.path))).flat())
+    .concat(subPackages.map(item => item.pages.map((sub: {path: string}) => path.join(item.root, sub.path))).flat())
     .map(item => `${path.resolve(rootPath, item)}.vue`)
     .filter(item => fs.existsSync(item));
 

@@ -3,10 +3,10 @@ import { PLATFORM_MAP } from './config';
 
 export function shouldUseLoader(this: any, defaultPlatforms: Array<string> = []) {
   const options = getOptions(this) || {};
-  const { platforms = defaultPlatforms } = options;
+  const { platforms = defaultPlatforms  } = options;
   const platform = process.env.UNI_PLATFORM || '';
 
-  return platforms.includes(platform);
+  return (platforms  as string[]).includes(platform);
 }
 
 

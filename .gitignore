@@ -4,5 +4,7 @@ node_modules
 /coverage/
 /dist/
 /lib/
-docs/zh/
+# docs/zh/
 docs/.vuepress/dist
+
+*.log

@@ -1,16 +1,7 @@
-import { getCommitCode, getVersionCode, getMpVersionCode } from './helper';
+import { getMpInsertCode } from './helper';
 import { updateAssetSource } from '../../helper';
 
-const insertCode = `
-try {
-  setTimeout(() => {
-    ${getVersionCode()}
-    ${getCommitCode()}
-    ${getMpVersionCode()}
-  }, 2000);
-} catch(err) {}
-`;
-
+const insertCode = getMpInsertCode();
 
 export class GenVersionMpPlugin {
   options: object;

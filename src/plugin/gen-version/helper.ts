@@ -101,3 +101,46 @@ console.info('[system]', \`PixelRatio：\${pixelRatio}\`);
   `;
 }
 
+
+export function getMpInsertCode() {
+  const insertCode = `
+try {
+  setTimeout(() => {
+    ${getVersionCode()}
+    ${getCommitCode()}
+    ${getMpVersionCode()}
+  }, 2000);
+} catch(err) {}
+`;
+
+  return insertCode;
+}
+
+
+export function getGenVersionPluginOptions(options) {
+  const buildName = options?.buildName || '';
+  const commitName = options?.commitName || '';
+  const delay = options?.delay === undefined ? 10 : options?.delay;
+
+  return {
+    buildName,
+    commitName,
+    delay,
+  };
+}
+
+
+export function getWebInsertCode(options) {
+  const { buildName, commitName, delay } = getGenVersionPluginOptions(options || {});
+
+  return `
+<script>
+try {
+  setTimeout(() => {   
+    ${getVersionCode(buildName)}
+    ${getCommitCode(commitName)}
+  }, ${delay});
+} catch(err) {}
+</script>
+`;
+}

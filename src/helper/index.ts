@@ -5,7 +5,7 @@ import { isWindows } from 't-comm';
 
 export const ROOT_NAME = 'MAIN';
 
-export function saveJsonToLog(content: string, file: string, needLog = true) {
+export function saveJsonToLog(content: any, file: string, needLog = true) {
   if (!needLog) return;
   createLogDir();
 

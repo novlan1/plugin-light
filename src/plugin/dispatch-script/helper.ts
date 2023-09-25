@@ -2,11 +2,11 @@ import * as path from 'path';
 // @ts-ignore
 import { normalizePath, getRelativePath, getUniCliCache } from '../../helper/index';
 
-const getPageSet = getUniCliCache('getPageSet');
+const getPageSet = () => getUniCliCache('getPageSet')();
 
 const INPUT_DIR = process.env.UNI_INPUT_DIR || '';
-const SUB_PACKAGE_ROOTS = Object.keys((process as any).UNI_SUBPACKAGES);
-const subPackageRootsWithSlash = Object.keys((process as any).UNI_SUBPACKAGES).map(root => `${root}/`);
+const SUB_PACKAGE_ROOTS = Object.keys((process as any).UNI_SUBPACKAGES || {});
+const subPackageRootsWithSlash = Object.keys((process as any).UNI_SUBPACKAGES || {}).map(root => `${root}/`);
 
 let mainPackagePages;
 

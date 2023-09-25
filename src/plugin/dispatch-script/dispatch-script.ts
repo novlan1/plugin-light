@@ -14,8 +14,6 @@ import {
 } from './helper';
 
 
-const GraphHelpers = require('webpack/lib/GraphHelpers');
-
 const resourceResolveDataList: Array<any> = [];
 const moduleSources: Array<string> = [];
 
@@ -119,6 +117,8 @@ export class DispatchScriptPlugin {
     chunks,
     compilation,
   }) {
+    const graphHelpers = require('webpack/lib/GraphHelpers');
+
     modules.forEach((module) => {
       if (this.moveFiles.has(module)) {
         const mainChunks = module.getChunks();
@@ -147,7 +147,7 @@ export class DispatchScriptPlugin {
               const group = compilation.addChunkInGroup(chunkName);
               pkgChunk = group.chunks[0];
             }
-            GraphHelpers.connectChunkAndModule(pkgChunk, module);
+            graphHelpers.connectChunkAndModule(pkgChunk, module);
           });
 
           // console.log(`[DISPATCH SCRIPT] 正在移动脚本 ${getRelativePath(module.resource)}
@@ -157,7 +157,7 @@ export class DispatchScriptPlugin {
             module: getRelativePath(module.resource),
             subPackages: Array.from(moveFileInfo.pkgSet),
           });
-          GraphHelpers.disconnectChunkAndModule(mainChunk, module);
+          graphHelpers.disconnectChunkAndModule(mainChunk, module);
         }
       }
     });

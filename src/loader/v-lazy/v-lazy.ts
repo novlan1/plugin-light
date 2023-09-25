@@ -1,12 +1,6 @@
 import { getOptions } from 'loader-utils';
 import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
-
-const htmlReg = /(?<=<template>)([\s\S]+)(?=<\/template>)/;
-const imgReg = /(<img[\s\S]+?)v-lazy=(?:"|')(.*?)(?:"|')([\s\S]*?>)/g;
-
-const sizeReg = /(?<=[\s\n]+(?:data-)?)size=(?:"|')(\d+)(?:"|')/;
-const widthReg = /(?<=[\s\n]+(?:data-)?)width=(?:"|')(\d+)(?:"|')/;
-const heightReg = /(?<=[\s\n]+(?:data-)?)height=(?:"|')(\d+)(?:"|')/;
+import { vLazyCore } from './core';
 
 
 /**
@@ -30,75 +24,9 @@ export function lazyLoader(this: any, source) {
   if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
   const options = getOptions(this) || {};
-  const { urlHandler } = options;
 
-  let html = '';
-  const match = source.match(htmlReg);
-  if (match?.[1]) {
-    html = match[1];
-  }
-
-  if (!html) return source;
-  if (!html.match(imgReg)) return source;
-
-  const newHtml = handleImg(html, urlHandler);
-
-  const newSource = source.replace(htmlReg, () => newHtml);
+  const newSource = vLazyCore(source, options);
   return newSource;
 }
 
-function getSize(pre, post, reg) {
-  let size;
-  const preMatch = pre.match(reg);
-  const postMatch = post.match(reg);
-  if (preMatch?.[1]) {
-    size = preMatch[1];
-  } else if (postMatch?.[1]) {
-    size = postMatch[1];
-  }
-  return size;
-}
-
-function getImgSrc({
-  urlHandler,
-  src,
-  size,
-  width,
-  height,
-}) {
-  let srcStr = src;
-  if (!urlHandler) {
-    return src;
-  }
-
-  if (width && height) {
-    srcStr = `${urlHandler}(${src}, ${width}, ${height})`;
-  } else if (size) {
-    srcStr = `${urlHandler}(${src}, ${size}, ${size})`;
-  } else {
-    srcStr = `${urlHandler}(${src})`;
-  }
-  return srcStr;
-}
-
-function handleImg(str = '', urlHandler = '') {
-  const res = str.replace(imgReg, (...args) => {
-    const { 1: pre, 2: src, 3: post } = args;
-    const size = getSize(pre, post, sizeReg);
-    const width = getSize(pre, post, widthReg);
-    const height = getSize(pre, post, heightReg);
-
-    const srcStr = getImgSrc({
-      urlHandler,
-      src,
-      size,
-      width,
-      height,
-    });
-    const innerRes = `${pre} :src="${srcStr}" lazy-load ${post}`;
-
-    return innerRes;
-  });
-  return res;
-}
 

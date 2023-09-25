@@ -135,7 +135,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
     assetsDir: '', // 放置静态文件夹目录
     lintOnSave: process.env.NODE_ENV === 'development',
     productionSourceMap: false, // 生产环境是否生成sourceMap
-    transpileDependencies: ['press-ui'],
+    transpileDependencies: ['press-ui', 'pmd-merchant-ui'],
     parallel: false,
     css: {
       extract: false,

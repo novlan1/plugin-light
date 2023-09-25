@@ -9,3 +9,5 @@ export * from './replace-app-id';
 export * from './replace-content';
 export * from './save-loader-log';
 export * from './transfer-local-file';
+
+export * from '../vite-plugin';

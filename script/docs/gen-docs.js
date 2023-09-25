@@ -28,6 +28,7 @@ function getDocsList() {
   const list = [];
   traverseEveryFolder('./src/loader', 'loader', list);
   traverseEveryFolder('./src/plugin', 'plugin', list);
+  traverseEveryFolder('./src/vite-plugin', 'vite', list);
   traverseEveryFolder('./src/task', 'script', list);
   traverseEveryFolder('./src/webpack', 'config', list);
   return list;
@@ -57,15 +58,21 @@ function genSidebarJson(list) {
       children: filterList('loader'),
     },
     {
+      title: 'Vite 插件',
+      collapsable: false,
+      children: filterList('vite'),
+    },
+    {
       title: '基础配置',
       collapsable: false,
       children: filterList('config'),
     },
     {
-      title: 'CLI命令',
+      title: 'CLI 命令',
       collapsable: false,
       children: filterList('script'),
     },
+
   ];
 
   return {

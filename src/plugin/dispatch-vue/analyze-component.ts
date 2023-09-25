@@ -13,15 +13,13 @@ import {
 } from './helper';
 import { saveJsonToLog, getUniCliCache } from '../../helper/index';
 
+const getPageSet = () => getUniCliCache('getPageSet')();
+const getJsonFileMap = () => getUniCliCache('getJsonFileMap')();
+const getGlobalUsingComponents = () => getUniCliCache('getGlobalUsingComponents')();
+const getWXComponents = () => getUniCliCache('getWXComponents')();
+const getComponentSet = () => getUniCliCache('getComponentSet')();
+const getJsonFile = () => getUniCliCache('getJsonFile')();
 
-const {
-  getPageSet,
-  getJsonFileMap,
-  getGlobalUsingComponents,
-  getWXComponents,
-  getComponentSet,
-  getJsonFile,
-} = getUniCliCache();
 
 let MOVE_COMPONENT_MIN_DISABLE_LIST: Array<string> = [];
 let MOVE_COMPONENT_MIN_USE_TIMES = 100;

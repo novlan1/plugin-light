@@ -9,6 +9,100 @@
 
 
 
+
+
+
+
+
+
+
+
+
+### [1.1.10](https://github.com/novlan1/uni-plugin-light/compare/v1.1.9...v1.1.10) (2023-09-23)
+
+
+### Code Refactoring ♻️
+
+* **vite:** update vite plugin ([4a2da3c](https://github.com/novlan1/uni-plugin-light/commit/4a2da3cb66a97099d53fd300dc13f6235e70e4ac))
+
+
+### Documentation 📖
+
+* update docs ([8664b49](https://github.com/novlan1/uni-plugin-light/commit/8664b498cdeaaba77c7ffe9695e9b0809cd5472f))
+* update vite plugin ([2e55d16](https://github.com/novlan1/uni-plugin-light/commit/2e55d16a5ef02108b21313ca1d21d81823eb3c32))
+
+
+### Features 🎉
+
+* **vite:** add genVersionMp & genVersionWeb plugin of Vite ([07c4f24](https://github.com/novlan1/uni-plugin-light/commit/07c4f2447c405c824a4e146c30ee03ca6c8c0698))
+
+### [1.1.9](https://github.com/novlan1/uni-plugin-light/compare/v1.1.8...v1.1.9) (2023-09-16)
+
+
+### Features 🎉
+
+* **vite:** add rem-to-rpx vite plugin ([393b4d2](https://github.com/novlan1/uni-plugin-light/commit/393b4d289467362eb8ed02fa6c67c89008903881))
+
+### [1.1.8](https://github.com/novlan1/uni-plugin-light/compare/v1.1.7...v1.1.8) (2023-09-15)
+
+
+### Code Refactoring ♻️
+
+* 兼容非webpack环境 ([553d881](https://github.com/novlan1/uni-plugin-light/commit/553d881450d7d0f618a3fb0eecc8d4918285fb63))
+
+### [1.1.7](https://github.com/novlan1/uni-plugin-light/compare/v1.1.6...v1.1.7) (2023-09-15)
+
+### [1.1.6](https://github.com/novlan1/uni-plugin-light/compare/v1.1.5...v1.1.6) (2023-09-15)
+
+
+### Features 🎉
+
+* **vite:** add transform v-lay plugin for vite ([2d9c012](https://github.com/novlan1/uni-plugin-light/commit/2d9c0124f75e10657af0f9628fa95b9868a78d94))
+
+### [1.1.5](https://github.com/novlan1/uni-plugin-light/compare/v1.1.4...v1.1.5) (2023-09-13)
+
+
+### Chore 🚀 
+
+* add npm install tip ([792cbe6](https://github.com/novlan1/uni-plugin-light/commit/792cbe62afaa5ec0ab800f572eee988fa0b31534))
+* downgrade lint-staged version to fix ??: problem ([d9446d2](https://github.com/novlan1/uni-plugin-light/commit/d9446d254527707995d9284638a5136f01c16b0d))
+* ignore log files ([ee63fa4](https://github.com/novlan1/uni-plugin-light/commit/ee63fa4c0a2aa601fea29c9df22c7d75044835e5))
+* update t-comm ([36e449b](https://github.com/novlan1/uni-plugin-light/commit/36e449b21d57c2051a7c08a5fedd97c986619b69))
+
+### [1.1.4](https://github.com/novlan1/uni-plugin-light/compare/v1.1.3...v1.1.4) (2023-09-12)
+
+
+### Documentation 📖
+
+* 恢复docs ([190a570](https://github.com/novlan1/uni-plugin-light/commit/190a570d1a5dfda2286e4328df33329b3054ac86))
+
+
+### Features 🎉
+
+* pmd-merchant-ui ([935a76f](https://github.com/novlan1/uni-plugin-light/commit/935a76fa52aaa6657cb4dab3ec276a58fee16e43))
+* styleName支持options ([c874f13](https://github.com/novlan1/uni-plugin-light/commit/c874f1328d04a72255b9649580a18de3d67bb8c2))
+
+### [1.1.3](https://github.com/novlan1/uni-plugin-light/compare/v1.1.2...v1.1.3) (2023-09-11)
+
+
+### Chore 🚀 
+
+* update t-comm ([08e566d](https://github.com/novlan1/uni-plugin-light/commit/08e566d9e43178ff1dd893c1a454caf4c31af349))
+
+### [1.1.2](https://github.com/novlan1/uni-plugin-light/compare/v1.1.1...v1.1.2) (2023-09-11)
+
+
+### Documentation 📖
+
+* update docs ([d6e63a8](https://github.com/novlan1/uni-plugin-light/commit/d6e63a8e888292358bf735475f73b77272e61068))
+* update docs ([350cd70](https://github.com/novlan1/uni-plugin-light/commit/350cd70822154b8ca7c5d50f1f06cb9abc318fc5))
+
+
+### Chore 🚀 
+
+* 降级commander到10，以支持node<=14 ([3559400](https://github.com/novlan1/uni-plugin-light/commit/35594008d0036431181017903ee917537515f9f8))
+* update change log generation ([da419ff](https://github.com/novlan1/uni-plugin-light/commit/da419ff6a9b5c384b9508036996996ed71d42d83))
+
 ### [1.1.1](https://github.com/novlan1/uni-plugin-light/compare/v1.1.0...v1.1.1) (2023-09-08)
 
 

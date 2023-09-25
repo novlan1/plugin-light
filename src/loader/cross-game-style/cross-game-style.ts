@@ -1,14 +1,18 @@
 import * as fs from 'fs';
 import { getStyleName } from './style-name';
+import { getOptions } from 'loader-utils';
 
 export function crossGameStyleLoader(this: any, source: string) {
   // 改为异步loader
   const callback = this.async();
-
+  const options = getOptions(this);
   if (source.indexOf('@TIP_STYLE_NAME') !== -1) {
     let styleName: String|Array<String> = '';
     // 使用env.local的样式 VUE_APP_DIR = module/ingame-nba，即为nba
-    if (getStyleName()) {
+    if (options?.styleName) {
+      // @ts-ignore
+      styleName = options.styleName;
+    } else if (getStyleName()) {
       styleName = getStyleName();
     }
     if (Array.isArray(styleName)) {

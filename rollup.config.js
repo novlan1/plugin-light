@@ -178,4 +178,18 @@ export default [
     ],
   },
   ...getLoaderConfig(),
+  {
+    input: './script/post-install/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'post-install.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+    ],
+  },
 ];

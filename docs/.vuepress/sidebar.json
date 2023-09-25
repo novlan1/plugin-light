@@ -97,6 +97,20 @@
       ]
     },
     {
+      "title": "Vite 插件",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "rem-to-rpx",
+          "path": "/zh/vite/rem-to-rpx.md"
+        },
+        {
+          "title": "transform-v-lazy",
+          "path": "/zh/vite/transform-v-lazy.md"
+        }
+      ]
+    },
+    {
       "title": "基础配置",
       "collapsable": false,
       "children": [
@@ -107,7 +121,7 @@
       ]
     },
     {
-      "title": "CLI命令",
+      "title": "CLI 命令",
       "collapsable": false,
       "children": [
         {

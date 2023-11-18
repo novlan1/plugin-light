@@ -18,6 +18,113 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+### [1.1.20](https://github.com/novlan1/uni-plugin-light/compare/v1.1.19...v1.1.20) (2023-11-18)
+
+
+### Features 🎉
+
+* **style-list:** 导出getStyleList ([7f412f5](https://github.com/novlan1/uni-plugin-light/commit/7f412f520612f8ef27c49221102a30a5bb4a8368))
+
+### [1.1.19](https://github.com/novlan1/uni-plugin-light/compare/v1.1.18...v1.1.19) (2023-11-11)
+
+
+### Documentation 📖
+
+* update docs ([547291b](https://github.com/novlan1/uni-plugin-light/commit/547291bfb4b7f690971d38a3aa0fff1a8db6c0e2))
+
+
+### Features 🎉
+
+* **inject-dynamic-style-mp:** 使用base.scss判断而非TIP_STYLE_NAME ([8f633ea](https://github.com/novlan1/uni-plugin-light/commit/8f633ea8d5727d2c24555c88586b797b8d16b6b8))
+
+### [1.1.18](https://github.com/novlan1/uni-plugin-light/compare/v1.1.17...v1.1.18) (2023-11-11)
+
+
+### Features 🎉
+
+* **inject-dynamic-style-mp:** add inject dynamic style mp ([9ee3c88](https://github.com/novlan1/uni-plugin-light/commit/9ee3c883a78a31de7f68cbcebb13e8a257c5881f))
+* update inject dynamic style mp ([446768b](https://github.com/novlan1/uni-plugin-light/commit/446768b00210c12ab04c6a6c96a30c4971a4e583))
+
+### [1.1.17](https://github.com/novlan1/uni-plugin-light/compare/v1.1.16...v1.1.17) (2023-11-06)
+
+
+### Documentation 📖
+
+* update docs ([cafd70a](https://github.com/novlan1/uni-plugin-light/commit/cafd70ad284c54de22629a9b446b034287e9d7c8))
+
+
+### Features 🎉
+
+* **vue-directive:** add vue-directive loader ([52429ff](https://github.com/novlan1/uni-plugin-light/commit/52429ff92dfee6946231f83556df9fedcbbf0965))
+
+### [1.1.16](https://github.com/novlan1/uni-plugin-light/compare/v1.1.15...v1.1.16) (2023-11-04)
+
+
+### Documentation 📖
+
+* update docs ([b50ab37](https://github.com/novlan1/uni-plugin-light/commit/b50ab375b887e0c99f9c09375aeb7fffdfa3430b))
+* update docs ([aaacd38](https://github.com/novlan1/uni-plugin-light/commit/aaacd380f1c4b39b8512ee67515fbfe76b04ae31))
+
+
+### Chore 🚀 
+
+* hide console ([4fadbec](https://github.com/novlan1/uni-plugin-light/commit/4fadbecefe32cfc1d00f1e4d4f0a5febd4567249))
+
+### [1.1.15](https://github.com/novlan1/uni-plugin-light/compare/v1.1.14...v1.1.15) (2023-11-04)
+
+
+### Features 🎉
+
+* **inject-dynamic-style:** add inject dynamic style ([952d12c](https://github.com/novlan1/uni-plugin-light/commit/952d12c86fe68c13925139d361a75c738cb9e0bf))
+
+### [1.1.14](https://github.com/novlan1/uni-plugin-light/compare/v1.1.13...v1.1.14) (2023-10-27)
+
+
+### Features 🎉
+
+* **webpack-config:** use @vue/preload-webpack-plugin ([35823b6](https://github.com/novlan1/uni-plugin-light/commit/35823b6f80a08447851a28ee282e9ebfe0e76501))
+
+### [1.1.13](https://github.com/novlan1/uni-plugin-light/compare/v1.1.12...v1.1.13) (2023-10-17)
+
+
+### Chore 🚀 
+
+* update docs ([887d4d2](https://github.com/novlan1/uni-plugin-light/commit/887d4d211bb856e2f0239f19811ec587baad5a11))
+
+
+### Bug Fixes 🐞
+
+* read comment json ([a0e2114](https://github.com/novlan1/uni-plugin-light/commit/a0e21144495247c72c265000d8e07958ef0a43d3))
+
+### [1.1.12](https://github.com/novlan1/uni-plugin-light/compare/v1.1.11...v1.1.12) (2023-10-10)
+
+
+### Features 🎉
+
+* **webpack-config:** add shadow project map config ([ff792e2](https://github.com/novlan1/uni-plugin-light/commit/ff792e204a1494dc24049c281d21726ee83e333b))
+
+### [1.1.11](https://github.com/novlan1/uni-plugin-light/compare/v1.1.10...v1.1.11) (2023-10-10)
+
+
+### Code Refactoring ♻️
+
+* preprocess 改为 ts ([cd795d4](https://github.com/novlan1/uni-plugin-light/commit/cd795d4b5910fb514eda6abd03857dd1a0a90ce3))
+
+
+### Bug Fixes 🐞
+
+* **rem-to-rpx:** fix asset size ([0e56c19](https://github.com/novlan1/uni-plugin-light/commit/0e56c19c17565ba170337c7adda790e6a5c666e1))
+
 ### [1.1.10](https://github.com/novlan1/uni-plugin-light/compare/v1.1.9...v1.1.10) (2023-09-23)
 
 

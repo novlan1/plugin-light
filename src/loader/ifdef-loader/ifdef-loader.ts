@@ -1,6 +1,6 @@
 import * as path from 'path';
 import utils from 'loader-utils';
-import preprocessor from './preprocess/preprocess';
+import { preprocess } from './preprocess/preprocess';
 
 
 const ERRORS = {
@@ -49,7 +49,7 @@ export function preprocessLoader(content = '') {
 
   types.forEach((type: string) => {
     try {
-      content = preprocessor.preprocess(content, context, {
+      content = preprocess(content, context, {
         type,
       });
     } catch (e) {

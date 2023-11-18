@@ -1,5 +1,5 @@
 
-module.exports = {
+const delim: Record<string, any> = {
   simple: {
     echo: '^#echo[ \t]+(.*?)[ \t]*$',
     exec: '^#exec[ \t]+(\\S+)[ \t]*\\((.*)\\)[ \t]*$',
@@ -86,29 +86,35 @@ module.exports = {
   },
 };
 
-module.exports.xml = module.exports.html;
 
-module.exports.javascript = module.exports.js;
-module.exports.jsx = module.exports.js;
-module.exports.c = module.exports.js;
-module.exports.cc = module.exports.js;
-module.exports.cpp = module.exports.js;
-module.exports.cs = module.exports.js;
-module.exports.csharp = module.exports.js;
-module.exports.java = module.exports.js;
-module.exports.less = module.exports.js;
-module.exports.sass = module.exports.js;
-module.exports.scss = module.exports.js;
-module.exports.css = module.exports.js;
-module.exports.php = module.exports.js;
-module.exports.ts = module.exports.js;
-module.exports.tsx = module.exports.js;
-module.exports.peg = module.exports.js;
-module.exports.pegjs = module.exports.js;
-module.exports.jade = module.exports.js;
-module.exports.styl = module.exports.js;
-module.exports.go = module.exports.js;
+delim.xml = delim.html;
 
-module.exports.bash = module.exports.coffee;
-module.exports.shell = module.exports.coffee;
-module.exports.sh = module.exports.coffee;
+delim.javascript = delim.js;
+delim.jsx = delim.js;
+delim.c = delim.js;
+delim.cc = delim.js;
+delim.cpp = delim.js;
+delim.cs = delim.js;
+delim.csharp = delim.js;
+delim.java = delim.js;
+delim.less = delim.js;
+delim.sass = delim.js;
+delim.scss = delim.js;
+delim.css = delim.js;
+delim.php = delim.js;
+delim.ts = delim.js;
+delim.tsx = delim.js;
+delim.peg = delim.js;
+delim.pegjs = delim.js;
+delim.jade = delim.js;
+delim.styl = delim.js;
+delim.go = delim.js;
+
+delim.bash = delim.coffee;
+delim.shell = delim.coffee;
+delim.sh = delim.coffee;
+
+export default delim;
+export {
+  delim,
+};

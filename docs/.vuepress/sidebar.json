@@ -67,6 +67,14 @@
           "path": "/zh/loader/ifdef-loader.md"
         },
         {
+          "title": "inject-dynamic-style-mp",
+          "path": "/zh/loader/inject-dynamic-style-mp.md"
+        },
+        {
+          "title": "inject-dynamic-style-web",
+          "path": "/zh/loader/inject-dynamic-style-web.md"
+        },
+        {
           "title": "insert-global-comp",
           "path": "/zh/loader/insert-global-comp.md"
         },
@@ -93,6 +101,10 @@
         {
           "title": "v-lazy",
           "path": "/zh/loader/v-lazy.md"
+        },
+        {
+          "title": "vue-directive",
+          "path": "/zh/loader/vue-directive.md"
         }
       ]
     },

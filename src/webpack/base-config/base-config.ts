@@ -19,11 +19,16 @@ const TOOL_PATH_MAP = getLocalToolPathMap();
 
 
 // 获取真实的vue-app名字
-function getRealVueAppDir() {
+function getRealVueAppDir(shadowProjectMap = {}) {
   const vueAppDir = process.env.VUE_APP_DIR || '';
+
   if (DEFAULT_PROJECT_MAP[vueAppDir]) {
     return DEFAULT_PROJECT_MAP[vueAppDir];
   }
+  if (shadowProjectMap[vueAppDir]) {
+    return shadowProjectMap[vueAppDir];
+  }
+
   return vueAppDir || '';
 }
 
@@ -51,12 +56,12 @@ function getOutputPath() {
 }
 
 // 入口：entry.js, entry-server.js, entry-client.js
-function getEntry() {
-  return path.resolve(curDirname, 'src', getRealVueAppDir(), 'main.js'); // plugin的入口用自己的
+function getEntry(shadowProjectMap) {
+  return path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap), 'main.js'); // plugin的入口用自己的
 }
 
 // 获取目下所有项目文件夹名称并创建webpack别名
-function getAllAppNameAlias() {
+function getAllAppNameAlias(shadowProjectMap) {
   const files = fs.readdirSync(path.resolve(curDirname, 'src'));
   const result: Record<string, any> = {
     foldername: [], // 文件夹名字
@@ -73,7 +78,7 @@ function getAllAppNameAlias() {
   });
   const alias = {
     src: path.resolve(curDirname, 'src'),
-    '@': path.resolve(curDirname, 'src', getRealVueAppDir()), // 由环境变量确定当前的项目
+    '@': path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap)), // 由环境变量确定当前的项目
   };
   result.foldername.forEach((dir) => {
     alias[dir] = path.resolve(curDirname, 'src', dir);
@@ -117,6 +122,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
     isVue3,
     useXSS,
     useIfDefLoader,
+    shadowProjectMap = {},
   } = merge({}, {
     isUseVueLoader: true,
     isVue3: false,
@@ -158,10 +164,10 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       disableHostCheck: (process.env.NODE_ENV || '').startsWith('development'),
     },
     configureWebpack: {
-      entry: getEntry(),
+      entry: getEntry(shadowProjectMap),
       name: getAppName(),
       resolve: {
-        alias: getAllAppNameAlias(),
+        alias: getAllAppNameAlias(shadowProjectMap),
         extensions: ['js', 'vue', 'json', 'ts'],
       },
       // 可用来测试webpack运行时机制
@@ -229,6 +235,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       config.plugins.delete('prefetch'); // 这个禁止掉，首屏不预加载其他路由的js，需要预加载的路由，引入的时候，加上/* webpackPrefetch: true */
 
       config.plugin('preload')
+        .use('@vue/preload-webpack-plugin')
         .tap(() => [{
           rel: 'preload',
           // 不写这个runtime.js会被打包进去
@@ -375,7 +382,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       // 指定html模板文件
       config.plugin('html')
         .tap((args) => { // https://github.com/vuejs/vue-cli/blob/dev/docs/zh/guide/webpack.md
-          args[0].template = path.resolve(curDirname, 'src', getRealVueAppDir() || 'comm', 'index.html'); // 业务目录下自己的模板。默认在vue-cli3/public/index.html
+          args[0].template = path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap) || 'comm', 'index.html'); // 业务目录下自己的模板。默认在vue-cli3/public/index.html
           args[0].minify = false; // 不需要压缩，没几个字节，不压缩方便后续处理
           return args;
         });
@@ -388,7 +395,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
           .use(new HtmlModifyPlugin({
             onEnd: {
               html: [{
-                source: path.resolve(curDirname, 'src', getRealVueAppDir(), 'index.html'),
+                source: path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap), 'index.html'),
                 destination: `${getOutputPath()}/index.html`,
                 ssr: process.env.VUE_APP_SSR,
                 urls: getCdnInject({ isVue3 }).cdnUrls,

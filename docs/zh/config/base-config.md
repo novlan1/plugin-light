@@ -44,13 +44,14 @@ module.exports = merge(getWebpackBaseConfig({
 `getWebpackBaseConfig` 接收一个对象作为参数，其属性及说明如下：
 
 
-| 参数            | 说明                                                  | 类型      | 默认值                             |
-| --------------- | ----------------------------------------------------- | --------- | ---------------------------------- |
-| isUseVueLoader  | 是否使用`vue-loader`                                  | _boolean_ | `true`                             |
-| isVue3          | 是否是 Vue3 项目                                      | _boolean_ | `false`                            |
-| useXSS          | 是否使用`XSS`过滤，需要提前在 Vue 原型上挂载`xss`方法 | _boolean_ | `true`                             |
-| useIfDefLoader  | 是否使用`ifdef-loader`                                | _boolean_ | `true`                             |
-| terserPureFuncs | 打包去除`console`日志的方法                           | _Array_   | `['console.log', 'console.table']` |
+| 参数             | 说明                                                  | 类型      | 默认值                             |
+| ---------------- | ----------------------------------------------------- | --------- | ---------------------------------- |
+| isUseVueLoader   | 是否使用`vue-loader`                                  | _boolean_ | `true`                             |
+| isVue3           | 是否是 Vue3 项目                                      | _boolean_ | `false`                            |
+| useXSS           | 是否使用`XSS`过滤，需要提前在 Vue 原型上挂载`xss`方法 | _boolean_ | `true`                             |
+| useIfDefLoader   | 是否使用`ifdef-loader`                                | _boolean_ | `true`                             |
+| terserPureFuncs  | 打包去除`console`日志的方法                           | _array_   | `['console.log', 'console.table']` |
+| shadowProjectMap | 映射的项目                                            | _object_  | -                                  |
 
 
 ## 常见问题

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import * as fs from 'fs';
 import * as path from 'path';
+import { readCommentJson } from 't-comm';
 
 
 let rootPath = process.cwd();
@@ -35,7 +36,7 @@ export function getPagePath() {
     return [];
   }
 
-  const pagesJson = require(pagesJsonPath);
+  const pagesJson: any = readCommentJson(pagesJsonPath);
   return getAllPagesFromJson(pagesJson);
 }
 

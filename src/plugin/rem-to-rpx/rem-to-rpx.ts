@@ -59,7 +59,16 @@ export class RemToRpxPlugin {
         const sourceCode = asset.source() || asset._valueAsString || asset._value || asset._cachedSource;
         if (sourceCode != null) {
           // 这里返回null或者undefined会导致编译过程无法结束，所以sourceCode需要判空才给asset.source赋值
-          asset.source = () => handleRem(sourceCode, this.factor, this.unit);
+          const newSource = handleRem(sourceCode, this.factor, this.unit);
+
+          compilation.assets[fileName] = {
+            source() {
+              return newSource;
+            },
+            size() {
+              return newSource.length;
+            },
+          };
         }
       }
       cb?.();

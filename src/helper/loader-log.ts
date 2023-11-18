@@ -17,7 +17,7 @@ export function saveLoaderLog() {
   });
 }
 
-export function recordLoaderLog(file: string, content: string) {
+export function recordLoaderLog(file: string, content: any) {
   if (!(global as IGlobal)[LOG_KEY]) {
     (global as IGlobal)[LOG_KEY] = {};
   }

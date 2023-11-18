@@ -1,29 +1,11 @@
-/*
- * preprocess
- * https://github.com/onehealth/preprocess
- *
- * Copyright (c) 2012 OneHealth Solutions, Inc.
- * Written by Jarrod Overson - http://jarrodoverson.com/
- * Licensed under the Apache 2.0 license.
- */
+import * as path from 'path';
+import * as fs from 'fs';
+import * as os from 'os';
+import delim from './regexrules';
+import * as XRegExp from 'xregexp';
 
-'use strict';
 
-exports.preprocess = preprocess;
-exports.preprocessFile = preprocessFile;
-exports.preprocessFileSync = preprocessFileSync;
-
-const path = require('path');
-
-const fs = require('fs');
-
-const os = require('os');
-
-const delim = require('./regexrules');
-
-const XRegExp = require('xregexp');
-
-function preprocessFile(srcFile, destFile, context, callback, options) {
+export function preprocessFile(srcFile, destFile, context, callback, options) {
   options = getOptionsForFile(srcFile, options);
   context.src = srcFile;
 
@@ -34,7 +16,7 @@ function preprocessFile(srcFile, destFile, context, callback, options) {
   });
 }
 
-function preprocessFileSync(srcFile, destFile, context, options) {
+export function preprocessFileSync(srcFile, destFile, context, options) {
   options = getOptionsForFile(srcFile, options);
   context.src = srcFile;
 
@@ -56,7 +38,7 @@ function getExtension(filename) {
   return ext[ext.length - 1];
 }
 
-function preprocess(src, context, typeOrOptions) {
+export function preprocess(src, context, typeOrOptions) {
   src = src.toString();
   context = context || process.env;
 
@@ -93,7 +75,7 @@ function preprocess(src, context, typeOrOptions) {
   return preprocessor(src, context, options);
 }
 
-function preprocessor(src, context, opts, noRestoreEol) {
+function preprocessor(src, context, opts, noRestoreEol = false) {
   src = normalizeEol(src);
 
   let rv = src;
@@ -103,8 +85,8 @@ function preprocessor(src, context, opts, noRestoreEol) {
   if (opts.type.extend) {
     rv = replaceRecursive(rv, opts.type.extend, (startMatches, endMatches, include, recurse) => {
       const file = (startMatches[1] || '').trim();
-      const extendedContext = copy(context);
-      const extendedOpts = copy(opts);
+      const extendedContext: any = copy(context);
+      const extendedOpts: any = copy(opts);
       extendedContext.src = path.join(opts.srcDir, file);
       extendedOpts.srcDir = path.dirname(extendedContext.src);
 
@@ -256,7 +238,7 @@ function getEolType(source) {
   return eol;
 }
 
-function normalizeEol(source, indent) {
+function normalizeEol(source, indent = false) {
   // only process any kind of EOL if indentation has to be added, otherwise replace only non \n EOLs
   if (indent) {
     source = source.replace(/(?:\r?\n)|\r/g, `\n${indent}`);
@@ -303,7 +285,7 @@ function replaceRecursive(rv, rule, processor) {
       valueNames: ['between', 'left', 'match', 'right'],
     });
 
-    const matchGroup = {
+    const matchGroup: Record<string, any> = {
       left: null,
       match: null,
       right: null,
@@ -335,8 +317,8 @@ function replaceRecursive(rv, rule, processor) {
 function processIncludeDirective(isStatic, context, opts, match, linePrefix, file) {
   file = (file || '').trim();
   const indent = linePrefix.replace(/\S/g, ' ');
-  const includedContext = copy(context);
-  const includedOpts = copy(opts);
+  const includedContext: any = copy(context);
+  const includedOpts: any = copy(opts);
   includedContext.src = path.join(opts.srcDir, file);
   includedOpts.srcDir = path.dirname(includedContext.src);
 

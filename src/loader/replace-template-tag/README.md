@@ -35,3 +35,23 @@ module.export = {
   }
 }
 ```
+
+## loader参数
+
+| 参数             | 说明           | 类型     | 默认值 |
+| ---------------- | -------------- | -------- | ------ |
+| replaceTmpTagMap | 替换标签映射表 | _object_ | -      |
+
+
+`options` 类型说明:
+
+```ts
+export type IReplaceTemplateTagOptions = {
+  replaceTmpTagMap?: {
+    [k: string]: {
+      mp: string;
+      web: string;
+    }
+  }
+};
+```

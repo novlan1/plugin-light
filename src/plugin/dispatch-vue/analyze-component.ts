@@ -169,7 +169,7 @@ export function analyzeComponent(options: {
 
   Object.keys(allUsingComponentMap).forEach((componentName) => {
     const subPackages = findSubPackages([...allUsingComponentMap[componentName]], subPackageRoots);
-    const pkgRoot = subPackageRoots.find(root => componentName.indexOf(root) === 0);
+    const pkgRoot = subPackageRoots.find(root => componentName.indexOf(`${root}/`) === 0);
     const isGlobalDisable = !!globalCompsValues.find(item => (item as string).includes(componentName));
 
     if (!isGlobalDisable

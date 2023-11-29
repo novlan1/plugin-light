@@ -3,7 +3,7 @@ import { getOptions } from 'loader-utils';
 import { recordLoaderLog } from '../../helper/loader-log';
 import { getRelativePath } from '../../helper/index';
 import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
-
+import type { IReplaceLibraryOptions } from './types';
 
 /**
  * 转换vant等组件，比如
@@ -15,9 +15,10 @@ export function replaceLibrary(this: any, source) {
   replaceAllPolyfill();
   if (!shouldUseLoader.call(this, PLATFORMS_MP)) return source;
 
-  const options = getOptions(this) || {};
+  const options: IReplaceLibraryOptions = getOptions(this) || {};
+
   const { replaceLibraryList = [], replaceContentList = [] } = options;
-  if (!replaceLibraryList.length && !replaceContentList.length) {
+  if (!replaceLibraryList?.length && !replaceContentList.length) {
     return source;
   }
   const { resourcePath } = this;

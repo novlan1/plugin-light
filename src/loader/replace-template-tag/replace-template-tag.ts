@@ -2,12 +2,14 @@ import { replaceAllPolyfill } from 't-comm';
 import { getOptions } from 'loader-utils';
 import { shouldUseLoader, PLATFORMS_ALL, PLATFORMS_MP } from '../../helper/loader-options';
 
+import type { IReplaceTemplateTagOptions } from './types';
 
 export function replaceTmpTag(this: any, source) {
   replaceAllPolyfill();
   if (!shouldUseLoader.call(this, PLATFORMS_ALL)) return source;
 
-  const options = getOptions(this) || {};
+  const options: IReplaceTemplateTagOptions = getOptions(this) || {};
+
   const { replaceTmpTagMap = {} } = options;
 
   const type = PLATFORMS_MP.includes(process.env.UNI_PLATFORM || '') ? 'mp' : 'web';

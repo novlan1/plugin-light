@@ -28,6 +28,59 @@
 
 
 
+
+
+
+
+### [1.1.23](https://github.com/novlan1/uni-plugin-light/compare/v1.1.22-alpha.1...v1.1.23) (2023-11-27)
+
+
+### Documentation 📖
+
+* update docs ([d73be4b](https://github.com/novlan1/uni-plugin-light/commit/d73be4b8ab035402b5ab3126ca4f96f77ad2a4be))
+
+
+### Code Refactoring ♻️
+
+* **rem:** use t-comm transform rem ([36a42f0](https://github.com/novlan1/uni-plugin-light/commit/36a42f06d8831cea6d0c4d3d800d17547c874797))
+
+
+### Tests ✅
+
+* update tests ([deda866](https://github.com/novlan1/uni-plugin-light/commit/deda8660a80dbdde2fc3bd433ba9498b59ee4b9f))
+
+### [1.1.22-alpha.1](https://github.com/novlan1/uni-plugin-light/compare/v1.1.22...v1.1.22-alpha.1) (2023-11-23)
+
+
+### Code Refactoring ♻️
+
+* 补充类型 ([dc30668](https://github.com/novlan1/uni-plugin-light/commit/dc30668d195b4370721215b085ccffa4fbfc173f))
+
+
+### Bug Fixes 🐞
+
+* **dispatch-vue:** 解决分包前缀相同，多派发的问题 ([9b84289](https://github.com/novlan1/uni-plugin-light/commit/9b84289c4868626c4def4f82709ded474c6661e6))
+
+
+### [1.1.22](https://github.com/novlan1/uni-plugin-light/compare/v1.1.21...v1.1.22) (2023-11-20)
+
+
+### Features 🎉
+
+* **webpack-config:** add if-def-loader files ([817befb](https://github.com/novlan1/uni-plugin-light/commit/817befb0ee9593bebb65f1e89958e121331fbf67))
+
+### [1.1.21](https://github.com/novlan1/uni-plugin-light/compare/v1.1.20...v1.1.21) (2023-11-20)
+
+
+### Chore 🚀 
+
+* update pkg ([bcfbbd3](https://github.com/novlan1/uni-plugin-light/commit/bcfbbd308585eca36c40d5200df916233186ab1c))
+
+
+### Features 🎉
+
+* **ifdef-loader:** add log option ([c9d00ae](https://github.com/novlan1/uni-plugin-light/commit/c9d00aeada59617878a4aba970c0bbd92f184cba))
+
 ### [1.1.20](https://github.com/novlan1/uni-plugin-light/compare/v1.1.19...v1.1.20) (2023-11-18)
 
 

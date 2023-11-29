@@ -1,14 +1,18 @@
 const { execSync } = require('child_process');
+
+
 const ENV_FILE = '.env.local';
+const REPO = 'uni-plugin-light';
+const TARGET_DIR = 'docs/.vuepress/dist';
+
 
 function main() {
   require('dotenv').config({ path: ENV_FILE });
 
-  const token = process.env.GITHUB_TOKEN;
-
-  execSync(`sh script/docs/docs-mine.sh ${token}`, {
+  execSync(`npx t-comm deploy:github --repo ${REPO} --dir ${TARGET_DIR}`, {
     stdio: 'inherit',
   });
 }
 
 main();
+

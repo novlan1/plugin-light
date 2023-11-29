@@ -36,6 +36,6 @@ module.exports = {
 | ---------- | ---------------------- | -------- | ---------------------------------------- |
 | whiteList  | 不处理的路径白名单列表 | _array_  | -                                        |
 | factor     | 转换比例               | _number_ | `100`                                    |
-| unit       | 目标单位               | _string_ | `unit`                                   |
+| unit       | 目标单位               | _string_ | `rpx`                                    |
 | fileSuffix | 要处理的文件后缀名     | _array_  | `['css', 'scss', 'less', 'wxss', 'qss']` |
 

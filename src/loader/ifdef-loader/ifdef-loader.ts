@@ -35,7 +35,7 @@ export function preprocessLoader(content = '') {
   }
 
   // @ts-ignore
-  const { type, context = {} } = utils.getOptions(this);
+  const { type, context = {}, log = false } = utils.getOptions(this);
   let types: any = type;
 
 
@@ -45,7 +45,9 @@ export function preprocessLoader(content = '') {
 
   // @ts-ignore
   const { resourcePath } = this;
-  console.log('[ifdef-loader]正在处理: ', resourcePath);
+  if (log) {
+    console.log('[ifdef-loader]正在处理: ', resourcePath);
+  }
 
   types.forEach((type: string) => {
     try {

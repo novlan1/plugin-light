@@ -274,7 +274,7 @@ export function findSubPackages(pages, subPackageRoots) {
     const pagePath = pages[i];
 
     //  subPackageRoots，形如views/match, views/sche
-    const pkgRoot = subPackageRoots.filter(root => pagePath.indexOf(root) === 0);
+    const pkgRoot = subPackageRoots.filter(root => pagePath.indexOf(`${root}/`) === 0);
     if (!pkgRoot.length) { // 被非分包引用
       return [];
     }

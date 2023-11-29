@@ -50,14 +50,26 @@ module.exports = merge(getWebpackBaseConfig({
 | isVue3           | 是否是 Vue3 项目                                      | _boolean_ | `false`                            |
 | useXSS           | 是否使用`XSS`过滤，需要提前在 Vue 原型上挂载`xss`方法 | _boolean_ | `true`                             |
 | useIfDefLoader   | 是否使用`ifdef-loader`                                | _boolean_ | `true`                             |
+| handleIfDefFiles | `ifdef-loader` 要处理的文件                           | _Regexp_  | 参考下方                           |
 | terserPureFuncs  | 打包去除`console`日志的方法                           | _array_   | `['console.log', 'console.table']` |
 | shadowProjectMap | 映射的项目                                            | _object_  | -                                  |
 
 
 ## 常见问题
 
+
+### handleIfDefFiles
+
+`handleIfDefFiles` 默认值如下：
+
+```ts
+/(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/
+```
+
 ### console日志
 
 生产环境下，即`process.env.NODE_ENV`为`production`时，默认去掉`console`日志，可以通过`terserPureFuncs`传递空数组来恢复显示。
 
 注意同时去掉`babel`插件`transform-remove-console`。
+
+

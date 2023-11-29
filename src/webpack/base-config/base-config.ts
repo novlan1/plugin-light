@@ -36,7 +36,7 @@ const publishPara = process.env.publish;
 
 
 const port = process.env.port || process.env.npm_config_port || 443;
-
+const DEFAULT_HANDLE_IF_DEF_FILES = /(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/;
 
 function getAppName() {
   const arr = (process.env.VUE_APP_DIR || '').split('/');
@@ -122,12 +122,14 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
     isVue3,
     useXSS,
     useIfDefLoader,
+    handleIfDefFiles,
     shadowProjectMap = {},
   } = merge({}, {
     isUseVueLoader: true,
     isVue3: false,
     useXSS: true,
     useIfDefLoader: true,
+    handleIfDefFiles: DEFAULT_HANDLE_IF_DEF_FILES,
   }, options || {});
 
   let terserPureFuncs = ['console.log', 'console.table'];
@@ -194,7 +196,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
         config.module
           .rule('ifdef-loader')
         // 根据项目实际配置文件类型
-          .test(/(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/)
+          .test(handleIfDefFiles)
         // 不要配成下面这样，会卡住
         // .test(/\.vue|\.ts|\.js|\.css|\.scss$/)
           .use(TOOL_PATH_MAP.ifdefLoader)

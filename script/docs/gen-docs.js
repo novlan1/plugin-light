@@ -3,6 +3,19 @@ const { traverseFolder, execCommand } = require('t-comm');
 
 const SIDEBAR_CONFIG_PATH = './docs/.vuepress/sidebar.json';
 
+
+function getMdTitle(file) {
+  const reg = /^##\s+(.*)/;
+  const data = fs.readFileSync(file, {
+    encoding: 'utf-8',
+  });
+  const match = data.match(reg);
+  if (match?.[1]) {
+    return match[1].trim();
+  }
+}
+
+
 function traverseEveryFolder(dir, type, list) {
   traverseFolder((file) => {
     const reg = /([^/]+)\/README\.md$/;
@@ -40,7 +53,7 @@ function genSidebarJson(list) {
     return list.filter(item => item.type === type).map((item) => {
       const path = item.target.replace('./docs', '');
       return {
-        title: item.name,
+        title: getMdTitle(item.file) || item.name,
         path,
       };
     });
@@ -53,7 +66,7 @@ function genSidebarJson(list) {
       children: filterList('plugin'),
     },
     {
-      title: 'loader',
+      title: 'Loader',
       collapsable: false,
       children: filterList('loader'),
     },

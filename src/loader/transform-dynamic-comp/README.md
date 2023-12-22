@@ -1,4 +1,4 @@
-# transform-dynamic-comp
+## 动态引入组件转换
 
 替换动态组件。
 
@@ -23,26 +23,20 @@ components: {
 ```
 
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```js
-const TRANSFORM_DYNAMIC_COMP_LOADER = 'uni-plugin-light/lib/loader/transform-dynamic-comp';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
     config.module
       .rule('vue')
       .test(/\.vue$/)
-      .use(TRANSFORM_DYNAMIC_COMP_LOADER)
-      .loader(TRANSFORM_DYNAMIC_COMP_LOADER)
+      .use(LOADER_MAP.transformDynamicComp)
+      .loader(LOADER_MAP.transformDynamicComp)
       .end();
   }
 }

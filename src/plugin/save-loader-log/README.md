@@ -1,23 +1,14 @@
-# save-loader-log
+## Loader 日志保存
 
-将`loader`中的日志，输出到本地文件。
+将 `loader` 中的日志，输出到本地文件。
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-
-2. 在你的`loader`中使用`recordLoaderLog`记录日志。
+1. 在 `loader` 中 使用 `recordLoaderLog` 记录日志。
 
 
 ```ts
-const {
-  recordLoaderLog,
-} = require('uni-plugin-light/lib/plugin');
+const { recordLoaderLog } = require('plugin-light/lib/plugin');
 
 
 function someLoader(source) {
@@ -28,13 +19,11 @@ function someLoader(source) {
 ```
 
 
-3. 在 `vue.config.js` 中添加如下设置：
+2. 在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const {
-  SaveLoaderLogPlugin,
-} = require('uni-plugin-light/lib/plugin');
+const { SaveLoaderLogPlugin } = require('plugin-light/lib/plugin');
 
 module.exports = {
   configureWebpack: {

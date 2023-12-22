@@ -1,4 +1,4 @@
-# insert-global-comp
+## 全局组件注入
 
 插入公共组件的`loader`，比如`dialog`、`header`，这些几乎所有页面都会用到的组件，适合用这个`loader`。
 
@@ -19,7 +19,7 @@ Vue.component('GlobalComponent', GlobalComponent);
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const INSET_GLOBAL_COMP_LOADER = 'uni-plugin-light/lib/loader/insert-global-comp';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.exports = {
   chainWebpack(config) {
@@ -27,8 +27,8 @@ module.exports = {
       .rule('global-comp-vue')
       .test(/\.vue$/)
       .pre()
-      .use(INSET_GLOBAL_COMP_LOADER)
-      .loader(INSET_GLOBAL_COMP_LOADER)
+      .use(LOADER_MAP.insertGlobalComp)
+      .loader(LOADER_MAP.insertGlobalComp)
       .options({
         pages: ['/Users/mike/Documents/web/src/project/user/views/index/index-home.vue'],
         components: [{
@@ -48,7 +48,7 @@ module.exports = {
 };
 ```
 
-## loader参数
+### Loader 参数
 
 | 参数       | 说明       | 类型                 | 默认值                   |
 | ---------- | ---------- | -------------------- | ------------------------ |
@@ -68,6 +68,6 @@ Component
 
 
 
-## 文章
+### 文章
 
 [uni-app小程序全局组件的优化](https://juejin.cn/post/7130582926655225887)

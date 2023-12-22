@@ -1,16 +1,10 @@
-# 发布脚本
+## 发布脚本
 
 发布打包后的内容。
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在`package.json`中声明：
+在`package.json`中声明：
 
 
 ```json
@@ -32,6 +26,3 @@ npm run publish:prod
 
 npm run publish:devcloud
 ```
-
-
-

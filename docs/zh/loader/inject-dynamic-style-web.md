@@ -1,27 +1,21 @@
-# inject-dynamic-style
+## 动态样式注入 - H5
 
 注入不同类型的样式文件。
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```js
-const INJECT_DYNAMIC_STYLE = 'uni-plugin-light/lib/loader/inject-dynamic-style';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
     config.module
       .rule('inject-dynamic-style')
       .test(/(css\/base\.scss)$/)
-      .use(INJECT_DYNAMIC_STYLE) 
-      .loader(INJECT_DYNAMIC_STYLE)
+      .use(LOADER_MAP.injectDynamicStyleWeb) 
+      .loader(LOADER_MAP.injectDynamicStyleWeb)
       .end();
   }
 }

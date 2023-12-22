@@ -1,6 +1,7 @@
 import * as path from 'path';
-// @ts-ignore
-import { normalizePath, getRelativePath, getUniCliCache } from '../../helper/index';
+import { normalizePath } from 't-comm';
+
+import { getRelativePath, getUniCliCache } from '../../helper/index';
 
 const getPageSet = () => getUniCliCache('getPageSet')();
 

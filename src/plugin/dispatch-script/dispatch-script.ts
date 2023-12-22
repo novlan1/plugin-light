@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import * as path from 'path';
+import { normalizePath } from 't-comm';
 
-import { createLogDir, saveJsonToLog, normalizePath, parseSetDeps, getRelativePath } from '../../helper/index';
+import { createLogDir, saveJsonToLog, parseSetDeps, getRelativePath } from '../../helper/index';
 import { traverseDeps } from './traverse-deps';
 import { getScriptSubPackages }  from './script-sub-packages';
 import {

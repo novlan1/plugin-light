@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { normalizePath } from 't-comm';
 
 export const BASE_SCSS = 'base.scss';
 
@@ -32,6 +33,8 @@ ${topElement}.${componentName} {
 
 
 export function getComponentName(dir) {
-  const match = dir.match(/\/([^/]+)\/css/);
+  const tPath = normalizePath(dir);
+  const reg = /\/([^/]+)\/css/;
+  const match = tPath.match(reg);
   return match?.[1] || '';
 }

@@ -5,105 +5,113 @@
       "collapsable": false,
       "children": [
         {
-          "title": "analyze-deps",
+          "title": "依赖分析",
           "path": "/zh/plugin/analyze-deps.md"
         },
         {
-          "title": "dispatch-script",
+          "title": "JS 分发",
           "path": "/zh/plugin/dispatch-script.md"
         },
         {
-          "title": "dispatch-vue",
+          "title": "组件分发",
           "path": "/zh/plugin/dispatch-vue.md"
         },
         {
-          "title": "fix-npm-package",
+          "title": "三方库打包修复",
           "path": "/zh/plugin/fix-npm-package.md"
         },
         {
-          "title": "gen-version",
+          "title": "版本输出",
           "path": "/zh/plugin/gen-version.md"
         },
         {
-          "title": "modify-html",
+          "title": "GlobalThis 垫片",
+          "path": "/zh/plugin/global-this-polyfill.md"
+        },
+        {
+          "title": "HTML 修改",
           "path": "/zh/plugin/modify-html.md"
         },
         {
-          "title": "rem-to-rpx",
+          "title": "Rem 转换",
           "path": "/zh/plugin/rem-to-rpx.md"
         },
         {
-          "title": "replace-app-id",
+          "title": "小程序 AppId 转换",
           "path": "/zh/plugin/replace-app-id.md"
         },
         {
-          "title": "replace-content",
+          "title": "打包内容转换",
           "path": "/zh/plugin/replace-content.md"
         },
         {
-          "title": "save-loader-log",
+          "title": "Loader 日志保存",
           "path": "/zh/plugin/save-loader-log.md"
         },
         {
-          "title": "transfer-local-file",
+          "title": "打包后外层文件转移",
           "path": "/zh/plugin/transfer-local-file.md"
         }
       ]
     },
     {
-      "title": "loader",
+      "title": "Loader",
       "collapsable": false,
       "children": [
         {
-          "title": "cross-game-style",
+          "title": "样式关键词编译",
           "path": "/zh/loader/cross-game-style.md"
         },
         {
-          "title": "cross-platform",
+          "title": "跨平台关键词编译",
           "path": "/zh/loader/cross-platform.md"
         },
         {
-          "title": "ifdef-loader",
+          "title": "CSS 中 URL 前空格修复",
+          "path": "/zh/loader/css-url-blank-space.md"
+        },
+        {
+          "title": "条件编译",
           "path": "/zh/loader/ifdef-loader.md"
         },
         {
-          "title": "inject-dynamic-style-mp",
+          "title": "动态样式注入 - 小程序",
           "path": "/zh/loader/inject-dynamic-style-mp.md"
         },
         {
-          "title": "inject-dynamic-style-web",
+          "title": "动态样式注入 - H5",
           "path": "/zh/loader/inject-dynamic-style-web.md"
         },
         {
-          "title": "insert-global-comp",
+          "title": "全局组件注入",
           "path": "/zh/loader/insert-global-comp.md"
         },
         {
-          "title": "insert-page-meta",
+          "title": "Page Meta 注入",
           "path": "/zh/loader/insert-page-meta.md"
         },
         {
-          "title": "replace-library",
+          "title": "三方库转换",
           "path": "/zh/loader/replace-library.md"
         },
         {
-          "title": "replace-template-tag",
+          "title": "Vue 模板标签转换",
           "path": "/zh/loader/replace-template-tag.md"
         },
         {
-          "title": "replace-vue-key",
+          "title": "Vue 中 key 转换",
           "path": "/zh/loader/replace-vue-key.md"
         },
         {
-          "title": "transform-dynamic-comp",
+          "title": "动态引入组件转换",
           "path": "/zh/loader/transform-dynamic-comp.md"
         },
         {
-          "title": "v-lazy",
+          "title": "Vue v-lazy 转换",
           "path": "/zh/loader/v-lazy.md"
         },
         {
-          "title": "vue-directive",
+          "title": "Vue 指令转换",
           "path": "/zh/loader/vue-directive.md"
         }
       ]
@@ -113,11 +121,11 @@
       "collapsable": false,
       "children": [
         {
-          "title": "rem-to-rpx",
+          "title": "Rem 转换",
           "path": "/zh/vite/rem-to-rpx.md"
         },
         {
-          "title": "transform-v-lazy",
+          "title": "Vue v-lazy 转换",
           "path": "/zh/vite/transform-v-lazy.md"
         }
       ]
@@ -127,8 +135,12 @@
       "collapsable": false,
       "children": [
         {
-          "title": "base-config",
+          "title": "Vue 项目基础配置",
           "path": "/zh/config/base-config.md"
+        },
+        {
+          "title": "uni-app 项目基础配置",
+          "path": "/zh/config/uni-vue-config.md"
         }
       ]
     },
@@ -137,11 +149,11 @@
       "collapsable": false,
       "children": [
         {
-          "title": "publish",
+          "title": "发布脚本",
           "path": "/zh/script/publish.md"
         },
         {
-          "title": "sync-repo",
+          "title": "仓库同步",
           "path": "/zh/script/sync-repo.md"
         }
       ]

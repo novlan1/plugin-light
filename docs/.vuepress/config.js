@@ -2,6 +2,7 @@ const fs = require('fs');
 const { SHOW_CHANGE_LOG, SHOW_PUBLISH_CLI } = require('./changelog.env');
 const SIDEBAR_CONFIG_PATH = './docs/.vuepress/sidebar.json';
 
+
 function getSidebarConfig() {
   const path = SIDEBAR_CONFIG_PATH;
   const data = fs.readFileSync(path);
@@ -24,8 +25,8 @@ const changeLogSidebar = SHOW_CHANGE_LOG ? [
 
 
 module.exports = {
-  title: 'uni-plugin-light',
-  description: 'webpack相关插件、loader、基础配置',
+  title: 'Plugin Light',
+  description: 'Webpack 相关插件、Loader、基础配置',
   base: process.env.PUBLISH_PATH || '/uni-plugin-light/',
   head: [
     [

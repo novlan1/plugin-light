@@ -9,6 +9,7 @@ import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
+import dts from 'rollup-plugin-dts';
 
 
 const LOADER_DIR = './src/loader';
@@ -43,6 +44,10 @@ const EXTERNALS =  [
   'webpack-bundle-analyzer',
   'prerender-spa-plugin',
   'webpack-hooks-shellscripts',
+  'uni-read-pages',
+  'webpack',
+  'uni-plugin-light',
+  'plugin-light',
 ];
 
 function getLoaderFiles() {
@@ -57,11 +62,11 @@ function getLoaderFiles() {
       };
     }
 
-    return {
-      path: path.resolve(cur),
-      name: file,
-    };
-  });
+    // return {
+    //   path: path.resolve(cur),
+    //   name: file,
+    // };
+  }).filter(item => !!item);
   return loaderFiles;
 }
 
@@ -81,6 +86,7 @@ function getLoaderConfig() {
         ...EXTERNALS,
       ],
       plugins: [
+        // json(),
         ...DEFAULT_PLUGINS,
       ],
     }))
@@ -104,7 +110,7 @@ function getLoaderConfig() {
 }
 
 
-export default [
+const rollUpConfigList = [
   {
     input: './src/plugin/index.ts',
     output: {
@@ -135,6 +141,21 @@ export default [
     ],
   },
   {
+    input: './src/loader/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'loader.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      json(),
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
     input: './src/task/index.ts',
     output: {
       dir: BUNDLE_DIR,
@@ -154,6 +175,21 @@ export default [
       dir: BUNDLE_DIR,
       format: 'cjs',
       entryFileNames: 'webpack-base-config.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      json(),
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
+    input: './src/webpack/uni-vue-config/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'uni-vue-config.js',
     },
     external: [
       ...EXTERNALS,
@@ -192,4 +228,24 @@ export default [
       ...DEFAULT_PLUGINS,
     ],
   },
+];
+
+const dtsConfigList = rollUpConfigList
+  .filter(item => item.output?.entryFileNames !== 'post-install.js'
+   && item.output.dir !== `${BUNDLE_DIR}/loader`)
+  .map(item => ({
+    ...item,
+    output: {
+      ...item.output,
+      entryFileNames: item.output.entryFileNames.replace(/\.js$/, '.d.ts'),
+    },
+    plugins: [
+      json(),
+      dts(),
+    ],
+  }));
+
+export default [
+  ...rollUpConfigList,
+  ...dtsConfigList,
 ];

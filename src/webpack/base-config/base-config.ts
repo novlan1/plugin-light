@@ -9,13 +9,13 @@ import HooksScriptPlugin from 'webpack-hooks-shellscripts';
 
 import { HtmlModifyPlugin } from '../../plugin/modify-html/modify-html';
 import { getRootDir } from '../helper/root';
-import { getLocalToolPathMap } from './helper';
+import { LOADER_MAP } from '../../loader/index';
 
 import { DEFAULT_CDN_URLS, DEFAULT_PROJECT_MAP } from './config';
+import { DEFAULT_TRANSPILE_DEPENDENCIES } from '../uni-vue-config/config';
 
 
 const curDirname = getRootDir();
-const TOOL_PATH_MAP = getLocalToolPathMap();
 
 
 // 获取真实的vue-app名字
@@ -36,7 +36,7 @@ const publishPara = process.env.publish;
 
 
 const port = process.env.port || process.env.npm_config_port || 443;
-const DEFAULT_HANDLE_IF_DEF_FILES = /(press-ui|component).*(\.vue|\.ts|\.js|\.css|\.scss)$/;
+const DEFAULT_HANDLE_IF_DEF_FILES = /(press-ui|component|press-plus).*(\.vue|\.ts|\.js|\.css|\.scss)$/;
 
 function getAppName() {
   const arr = (process.env.VUE_APP_DIR || '').split('/');
@@ -133,8 +133,13 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
   }, options || {});
 
   let terserPureFuncs = ['console.log', 'console.table'];
+  let transpileDependencies = DEFAULT_TRANSPILE_DEPENDENCIES;
+
   if (options?.terserPureFuncs) {
     terserPureFuncs = options.terserPureFuncs || [];
+  }
+  if (options?.transpileDependencies) {
+    transpileDependencies = options.transpileDependencies;
   }
 
   const config = {
@@ -143,7 +148,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
     assetsDir: '', // 放置静态文件夹目录
     lintOnSave: process.env.NODE_ENV === 'development',
     productionSourceMap: false, // 生产环境是否生成sourceMap
-    transpileDependencies: ['press-ui', 'pmd-merchant-ui'],
+    transpileDependencies,
     parallel: false,
     css: {
       extract: false,
@@ -199,8 +204,8 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
           .test(handleIfDefFiles)
         // 不要配成下面这样，会卡住
         // .test(/\.vue|\.ts|\.js|\.css|\.scss$/)
-          .use(TOOL_PATH_MAP.ifdefLoader)
-          .loader(TOOL_PATH_MAP.ifdefLoader)
+          .use(LOADER_MAP.ifdef)
+          .loader(LOADER_MAP.ifdef)
           .options({
             context: { H5: true },
             type: ['css', 'js', 'html'],
@@ -266,8 +271,8 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       config.module
         .rule('vue')
         .test(/\.vue$/)
-        .use(TOOL_PATH_MAP.tipCSSLoader, TOOL_PATH_MAP.crossPlatformVueLoader) // 处理样式的loader，必须在vue-loader前执行
-        .loader(TOOL_PATH_MAP.tipCSSLoader, TOOL_PATH_MAP.crossPlatformVueLoader)
+        .use(LOADER_MAP.crossGameStyle, LOADER_MAP.crossPlatformProd) // 处理样式的loader，必须在vue-loader前执行
+        .loader(LOADER_MAP.crossGameStyle, LOADER_MAP.crossPlatformProd)
         .end();
 
 
@@ -302,8 +307,8 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       config.module
         .rule('js')
         .test(/\.[jt]s$/)
-        .use(TOOL_PATH_MAP.crossPlatformJSLoader) // 处理样式的loader，必须在vue-loader前执行
-        .loader(TOOL_PATH_MAP.crossPlatformJSLoader)
+        .use(LOADER_MAP.crossPlatform) // 处理样式的loader，必须在vue-loader前执行
+        .loader(LOADER_MAP.crossPlatform)
         .end();
 
       config
@@ -459,7 +464,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
               beforeRun: [
               ],
               afterEmit: [
-                `node ${TOOL_PATH_MAP.publishUtil}`,
+                `node ${LOADER_MAP.publishUtil}`,
               ],
             }))
             .end();
@@ -471,7 +476,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
               beforeRun: [
               ],
               afterEmit: [
-                `node ${TOOL_PATH_MAP.publishUtil} prod`,
+                `node ${LOADER_MAP.publishUtil} prod`,
               ],
             }))
             .end();

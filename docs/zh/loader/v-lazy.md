@@ -1,5 +1,4 @@
-# v-lazy
-
+## Vue v-lazy 转换
 
 替换 Vue 模板中的`v-lazy`，比如
 
@@ -39,26 +38,20 @@
 ```
 
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```js
-const V_LAZY_LOADER = 'uni-plugin-light/lib/loader/v-lazy';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
     config.module
       .rule('vue')
       .test(/\.vue$/)
-      .use(V_LAZY_LOADER)
-      .loader(V_LAZY_LOADER)
+      .use(LOADER_MAP.vLazy)
+      .loader(LOADER_MAP.vLazy)
       .end();
   }
 }

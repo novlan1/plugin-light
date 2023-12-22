@@ -8,7 +8,7 @@ const VALID_ENV_LIST = ['test', 'prod', 'devcloud'];
 
 program
   .name('light-cli')
-  .description('CLI for uni-plugin-light')
+  .description('CLI for plugin-light')
   .version(version);
 
 

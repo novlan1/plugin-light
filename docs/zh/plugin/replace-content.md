@@ -1,23 +1,14 @@
-# replace-content
-
+## 打包内容转换
 
 替换打包产物内容
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const {
-  ReplaceContentPlugin,
-} = require('uni-plugin-light/lib/plugin');
+const { ReplaceContentPlugin } = require('plugin-light/lib/plugin');
 
 const plugins = []
 

@@ -1,5 +1,6 @@
 import * as path from 'path';
 import { getOptions } from 'loader-utils';
+import { normalizePath } from 't-comm';
 import { getStyleList, genInjectContent, BASE_SCSS } from '../inject-dynamic-style-web/helper';
 import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
 
@@ -7,7 +8,8 @@ import { shouldUseLoader, PLATFORMS_MP } from '../../helper/loader-options';
 const CSS_PATH = `./css/${BASE_SCSS}`;
 
 function getComponentName(dir) {
-  const match = dir.match(/\/([^/]+)$/);
+  const tPath = normalizePath(dir);
+  const match = tPath.match(/\/([^/]+)$/);
   return match?.[1] || '';
 }
 

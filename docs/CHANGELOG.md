@@ -7,30 +7,153 @@
 
 
 
+### [1.1.37](https://github.com/novlan1/uni-plugin-light/compare/v1.1.36...v1.1.37) (2023-12-21)
 
 
+### Features 🎉
+
+* 配置transpileDependencies ([3045ad8](https://github.com/novlan1/uni-plugin-light/commit/3045ad888a0b2dfde1834c0067a6b70698785dc9))
+
+### [1.1.36](https://github.com/novlan1/uni-plugin-light/compare/v1.1.35...v1.1.36) (2023-12-19)
 
 
+### Features 🎉
+
+* **uni-vue-config:** add rem to rpx options ([85cc6de](https://github.com/novlan1/uni-plugin-light/commit/85cc6deb852fd812598243c51dc810e4c55f84da))
+
+### [1.1.35](https://github.com/novlan1/uni-plugin-light/compare/v1.1.34...v1.1.35) (2023-12-18)
 
 
+### Features 🎉
+
+* **uni-vue-config:** update chain wepback ([ca1e0d9](https://github.com/novlan1/uni-plugin-light/commit/ca1e0d9c25791cd104c102a9b494b6b387e7eda2))
+
+### [1.1.34](https://github.com/novlan1/uni-plugin-light/compare/v1.1.33...v1.1.34) (2023-12-18)
 
 
+### Code Refactoring ♻️
+
+* **plugin-light:** update package name ([3c14d17](https://github.com/novlan1/uni-plugin-light/commit/3c14d1766671ff57069bba22d87eb4a1a916ceaf))
 
 
+### Chore 🚀 
+
+* update package description ([ca22c21](https://github.com/novlan1/uni-plugin-light/commit/ca22c217cffe0224fcc0fd4a25c209ea05d8bde0))
 
 
+### Features 🎉
+
+* **uni-vue-config:** support more plugin and loader ([beab176](https://github.com/novlan1/uni-plugin-light/commit/beab17606c1d15c6900c9aed56e462b0284058f2))
+
+### [1.1.33](https://github.com/novlan1/uni-plugin-light/compare/v1.1.32...v1.1.33) (2023-12-18)
 
 
+### Features 🎉
+
+* 配置transpileDependencies ([fec0652](https://github.com/novlan1/uni-plugin-light/commit/fec06529c5d91029a540f3143f5d9a24c1746bcd))
 
 
+### Code Refactoring ♻️
+
+* **transpileDependencies:** add config ([1cd04cd](https://github.com/novlan1/uni-plugin-light/commit/1cd04cd0fd63013fbf544fd2fe5db2a7f4475830))
+
+### [1.1.32](https://github.com/novlan1/uni-plugin-light/compare/v1.1.31...v1.1.32) (2023-12-13)
 
 
+### Bug Fixes 🐞
+
+* **webpack-base-config:** fix ifdef loader path ([2e2f994](https://github.com/novlan1/uni-plugin-light/commit/2e2f994c64f6f31cc98be49408ca535022a31fc8))
+
+### [1.1.31](https://github.com/novlan1/uni-plugin-light/compare/v1.1.30...v1.1.31) (2023-12-12)
 
 
+### Features 🎉
+
+* **loader:** add loader map ([abd1b2c](https://github.com/novlan1/uni-plugin-light/commit/abd1b2c38d286c2936ece45a959894cc8a8c71c8))
 
 
+### Code Refactoring ♻️
+
+* **loader-map:** user loader map ([32e2bd9](https://github.com/novlan1/uni-plugin-light/commit/32e2bd9aa5bdbef7f54b8a3b35add5e886be8a10))
 
 
+### Documentation 📖
+
+* update docs ([86918ae](https://github.com/novlan1/uni-plugin-light/commit/86918ae49638eaa7981a4018484089608f878da6))
+
+
+### Bug Fixes 🐞
+
+* **inject-dynamic-style:** support windows ([df328bf](https://github.com/novlan1/uni-plugin-light/commit/df328bf2ae6957c296f16637500105626e23144e))
+
+### [1.1.30](https://github.com/novlan1/uni-plugin-light/compare/v1.1.29...v1.1.30) (2023-12-11)
+
+
+### Documentation 📖
+
+* update docs ([0d9767c](https://github.com/novlan1/uni-plugin-light/commit/0d9767c5c468f93002d5c37fce2a15b9554df613))
+
+
+### Bug Fixes 🐞
+
+* cross-platform use double loader ([05c54d2](https://github.com/novlan1/uni-plugin-light/commit/05c54d2472bf76fedeeed75f4fa0bd4d9069eb85))
+
+### [1.1.29](https://github.com/novlan1/uni-plugin-light/compare/v1.1.28...v1.1.29) (2023-12-08)
+
+
+### Chore 🚀 
+
+* update build options ([9505203](https://github.com/novlan1/uni-plugin-light/commit/9505203f8d821195bff3ac360f24e495fb9b5fe9))
+
+### [1.1.28](https://github.com/novlan1/uni-plugin-light/compare/v1.1.27...v1.1.28) (2023-12-08)
+
+
+### Build System 📦‍
+
+* rollup ts ([2b74eb3](https://github.com/novlan1/uni-plugin-light/commit/2b74eb3b3b9b863fd8d84c0a082375429eefa6fb))
+
+### [1.1.27](https://github.com/novlan1/uni-plugin-light/compare/v1.1.26...v1.1.27) (2023-12-06)
+
+
+### Features 🎉
+
+* **uni-vue-config:** remove watchOptions ([3c10126](https://github.com/novlan1/uni-plugin-light/commit/3c101262fc3f6fd47cfe13b24c9cf84a5f7cc8df))
+
+### [1.1.26](https://github.com/novlan1/uni-plugin-light/compare/v1.1.25...v1.1.26) (2023-12-05)
+
+
+### Features 🎉
+
+* **uni-vue-config:** add uni-app project vue config ([a921169](https://github.com/novlan1/uni-plugin-light/commit/a921169b72299c9b3e6c587b6936fef81c02f05a))
+
+### [1.1.25](https://github.com/novlan1/uni-plugin-light/compare/v1.1.24...v1.1.25) (2023-12-01)
+
+
+### Chore 🚀 
+
+* update script ([7cc1b2a](https://github.com/novlan1/uni-plugin-light/commit/7cc1b2acb9869c92d062fa36e82f9b118827ad4c))
+
+
+### Features 🎉
+
+* **webpack-config:** ifdef 编译press-plus ([ab1de47](https://github.com/novlan1/uni-plugin-light/commit/ab1de47b043458e2b253458bf656966255c707bd))
+
+### [1.1.24](https://github.com/novlan1/uni-plugin-light/compare/v1.1.23...v1.1.24) (2023-11-30)
+
+
+### Documentation 📖
+
+* update change log ([e2bc918](https://github.com/novlan1/uni-plugin-light/commit/e2bc9184edb2e7d92573373747bc9e9129299ed0))
+
+
+### Chore 🚀 
+
+* update script ([d83be00](https://github.com/novlan1/uni-plugin-light/commit/d83be0022c27b0b51715e7cde43357bd51760667))
+
+
+### Features 🎉
+
+* **webpack:** 编译press-plus ([6a274e6](https://github.com/novlan1/uni-plugin-light/commit/6a274e642e1866eeff61ef9cdb3e4cd4e5ef3b9a))
 
 ### [1.1.23](https://github.com/novlan1/uni-plugin-light/compare/v1.1.22-alpha.1...v1.1.23) (2023-11-27)
 

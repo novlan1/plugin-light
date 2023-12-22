@@ -1,4 +1,4 @@
-# ifdef loader
+## 条件编译
 
 
 此 `loader` 实现了 `uni-app` 中的条件编译功能，可以帮助在普通 h5 项目中运行 `uni-app` 的跨端项目。
@@ -9,18 +9,12 @@
 `uni-app` 中的条件编译文档在[这里](https://uniapp.dcloud.net.cn/tutorial/platform.html#preprocessor)，`ifdef-loader` 是参考其实现的，所以开发者在代码中使用条件编译时，可以和 `uni-app` 完全一致。
 
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中配置如下：
 
 ```js
-const IF_DEF_LOADER = 'uni-plugin-light/lib/loader/ifdef-loader';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
@@ -30,8 +24,8 @@ module.export = {
       .test(/press-ui.*(\.vue|\.ts|\.js|\.css|\.scss)$/)
       // 不要配成下面这样，会卡住
       // .test(/\.vue|\.ts|\.js|\.css|\.scss$/) 
-      .use(IF_DEF_LOADER)
-      .loader(IF_DEF_LOADER)
+      .use(LOADER_MAP.ifdef)
+      .loader(LOADER_MAP.ifdef)
       .options({
         context: { H5: true },
         type: ['css', 'js', 'html'],
@@ -41,7 +35,7 @@ module.export = {
 }
 ```
 
-## loader参数
+### Loader 参数
 
 | 参数    | 说明           | 类型              | 默认值  |
 | ------- | -------------- | ----------------- | ------- |

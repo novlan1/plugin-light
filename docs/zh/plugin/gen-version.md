@@ -1,22 +1,16 @@
-# 版本输出插件
+## 版本输出
 
 输出当前版本，包括构建信息、最后一次提交信息。
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```ts
 const {
   GenVersionWebPlugin,
   GenVersionMpPlugin,
-} = require('uni-plugin-light/lib/plugin');
+} = require('plugin-light/lib/plugin');
 
 const plugins = []
 
@@ -33,7 +27,7 @@ module.exports = {
 }
 ```
 
-## 插件参数
+### 插件参数
 
 对于`web`端的插件 `GenVersionWebPlugin`，可以选择通过`console.log`输出，或者插入到`window`的一个属性中。挂载在`window`中相对隐蔽，不容易泄漏开发相关信息。
 

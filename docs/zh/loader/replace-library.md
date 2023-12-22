@@ -1,19 +1,13 @@
-# replace-library
+## 三方库转换
 
 替换一些小程序用不到的库，避免产物体积过大。
 
 ## 使用方法
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const REPLACE_LIBRARY_LOADER = 'uni-plugin-light/lib/loader/replace-library';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 const defaultReplaceLibConfig = {
   replaceLibraryList: [
@@ -62,15 +56,15 @@ module.exports = {
     config.module
       .rule('ts')
       .test(/\.ts$/)
-      .use(REPLACE_LIBRARY_LOADER)
-      .loader(REPLACE_LIBRARY_LOADER)
+      .use(LOADER_MAP.replaceLibrary)
+      .loader(LOADER_MAP.replaceLibrary)
       .options(defaultReplaceLibConfig)
       .end();
   },
 };
 ```
 
-## loader参数
+### Loader 参数
 
 | 参数               | 说明             | 类型               | 默认值 |
 | ------------------ | ---------------- | ------------------ | ------ |
@@ -87,8 +81,8 @@ Library
 
 Content
 
-| 参数    | 说明     | 类型       | 默认值 |
-| ------- | -------- | ---------- | ------ |
-| path    | 源地址   | _string_   | -      |
-| content | 文件内容 | _function_ | -      |
+| 参数    | 说明     | 类型                 | 默认值 |
+| ------- | -------- | -------------------- | ------ |
+| path    | 源地址   | _string_             | -      |
+| content | 文件内容 | _function \| string_ | -      |
 

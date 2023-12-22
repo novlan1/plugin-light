@@ -1,4 +1,4 @@
-# insert-page-meta
+## Page Meta 注入
 
 在小程序产物中插入`page-meta`标签。
 
@@ -8,15 +8,15 @@
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const INSERT_PAGE_META_LOADER = 'uni-plugin-light/lib/loader/insert-page-meta';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.exports = {
   chainWebpack(config) {
     config.module
       .rule('vue')
       .test(/\.vue$/)
-      .use(INSERT_PAGE_META_LOADER)
-      .loader(INSERT_PAGE_META_LOADER)
+      .use(LOADER_MAP.insertPageMeta)
+      .loader(LOADER_MAP.insertPageMeta)
       .options({
         pages: ['views/sche/sche']
       })
@@ -25,7 +25,7 @@ module.exports = {
 };
 ```
 
-## loader参数
+### Loader 参数
 
 | 参数  | 说明       | 类型              | 默认值 |
 | ----- | ---------- | ----------------- | ------ |
@@ -33,6 +33,6 @@ module.exports = {
 
 
 
-## 文章
+### 文章
 
 [vue项目转uni-app问题记录](https://juejin.cn/post/7130155200798539783)

@@ -1,29 +1,23 @@
-# inject-dynamic-style-mp
+## 动态样式注入 - 小程序
 
 注入不同类型的样式文件，小程序可用。
 
 与 `inject-dynamic-style-web` 类似，只是前者可在 `body` 上添加样式，而本 `loader` 必须挂载在页面内部结构中。
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中配置如下：
 
 ```js
-const INJECT_DYNAMIC_STYLE_MP = 'uni-plugin-light/lib/loader/inject-dynamic-style-mp';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
     config.module
       .rule('inject-dynamic-style-mp')
       .test(/(\.vue)$/)
-      .use(INJECT_DYNAMIC_STYLE_MP) 
-      .loader(INJECT_DYNAMIC_STYLE_MP)
+      .use(LOADER_MAP.injectDynamicStyleMp) 
+      .loader(LOADER_MAP.injectDynamicStyleMp)
       .options({
         topElement: 'demo-wrap'
       })

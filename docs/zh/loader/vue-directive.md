@@ -1,4 +1,4 @@
-# vue-direction
+## Vue 指令转换
 
 
 替换 Vue 模板中的指令，如：
@@ -17,26 +17,20 @@
 >
 ```
 
-## 如何使用
+### 如何使用
 
-1. 先安装 npm 包：
-
-```bash
-npm i uni-plugin-light -D
-```
-
-2. 在 `vue.config.js` 中添加如下设置：
+在 `vue.config.js` 中添加如下设置：
 
 ```js
-const VUE_DIRECTIVE_LOADER = 'uni-plugin-light/lib/loader/vue-directive';
+const { LOADER_MAP } = 'plugin-light/lib/loader';
 
 module.export = {
   chainWebpack(config) {
     config.module
       .rule('vue')
       .test(/\.vue$/)
-      .use(VUE_DIRECTIVE_LOADER)
-      .loader(VUE_DIRECTIVE_LOADER)
+      .use(LOADER_MAP.vueDirective)
+      .loader(LOADER_MAP.vueDirective)
       .options({
         list: ['treport'],
       })
@@ -45,7 +39,7 @@ module.export = {
 }
 ```
 
-## loader参数
+### Loader 参数
 
 | 参数 | 说明             | 类型    | 默认值 |
 | ---- | ---------------- | ------- | ------ |

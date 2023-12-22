@@ -6,5 +6,5 @@ export function innerPublish(publishEnv) {
   localPublish({
     ...PUBLISH_BASE_OPTIONS,
     publishEnv,
-  });
+  } as any);
 }

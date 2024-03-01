@@ -2,7 +2,7 @@
 const { program } = require('commander');
 const { version } = require('../package.json');
 const { innerPublish } = require('../lib/webpack-base-config');
-const { syncRepo } = require('../lib/task');
+const { syncRepo } = require('../lib/cli');
 
 const VALID_ENV_LIST = ['test', 'prod', 'devcloud'];
 

@@ -1,10 +1,10 @@
-import { handleRem } from '../../plugin/rem-to-rpx/css-handler';
+import { handleRem } from '../../webpack-plugin/rem-to-rpx/css-handler';
 const FILE_POSTFIXES = [
   'css',
   'scss',
 ];
 
-function shouldHandleFile(file) {
+function shouldHandleFile(file: string) {
   let fileName = file;
   let postfix = '';
   const index = file.indexOf('?');
@@ -30,7 +30,7 @@ export function remToRpxVitePlugin() {
   return {
     name: 'rem-to-rpx',
     // enforce: 'post',
-    transform(source: string, id) {
+    transform(source: string, id: string) {
       if (!shouldHandleFile(id)) return;
 
       return {

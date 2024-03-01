@@ -1,5 +1,5 @@
 /* eslint-disable jest/expect-expect */
-import insertGlobalComponent from '../../../src/loader/insert-global-comp';
+import insertGlobalComponent from '../../../src/webpack-loader/insert-global-comp';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({
@@ -20,7 +20,7 @@ const firstTagProps = `class="battle-detail-wrap"
   style="width:100%;height: 100%;"`;
 
 
-function expectFunction(source) {
+function expectFunction(source: string) {
   process.env.UNI_PLATFORM = 'mp-weixin';
   expect(insertGlobalComponent.call({
     resourcePath: 'MOCK_PAGE',

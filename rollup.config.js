@@ -12,7 +12,7 @@ import { DEFAULT_EXTENSIONS } from '@babel/core';
 import dts from 'rollup-plugin-dts';
 
 
-const LOADER_DIR = './src/loader';
+const LOADER_DIR = './src/webpack-loader';
 const BUNDLE_DIR = 'lib';
 const DEFAULT_PLUGINS = [
   resolve(),
@@ -48,6 +48,23 @@ const EXTERNALS =  [
   'webpack',
   'uni-plugin-light',
   'plugin-light',
+  'stylelint',
+  'postcss-selector-parser',
+
+  'vite',
+  'vite-plugin-cdn2',
+  '@vitejs/plugin-vue',
+  '@vitejs/plugin-vue-jsx',
+  'vite-plugin-compression',
+  'vite-plugin-html',
+  'vite-plugin-commonjs',
+  'vite-plugin-mock-dev-server',
+  'vite-plugin-svg-icons',
+  'vite-plugin-vue-setup-extend',
+  'unplugin-vue-components',
+  'unplugin-vue-components/vite',
+  'unplugin-vue-components/resolvers',
+  '@vitejs/plugin-basic-ssl',
 ];
 
 function getLoaderFiles() {
@@ -112,7 +129,7 @@ function getLoaderConfig() {
 
 const rollUpConfigList = [
   {
-    input: './src/plugin/index.ts',
+    input: './src/webpack-plugin/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -126,7 +143,7 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/plugin/index.ts',
+    input: './src/webpack-plugin/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -141,7 +158,7 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/loader/index.ts',
+    input: './src/webpack-loader/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -156,11 +173,11 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/task/index.ts',
+    input: './src/cli/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
-      entryFileNames: 'task.js',
+      entryFileNames: 'cli.js',
     },
     external: [
       ...EXTERNALS,
@@ -170,7 +187,7 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/webpack/base-config/index.ts',
+    input: './src/project-config/base-config/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -185,7 +202,7 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/webpack/uni-vue-config/index.ts',
+    input: './src/project-config/uni-vue-config/index.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
@@ -200,11 +217,39 @@ const rollUpConfigList = [
     ],
   },
   {
-    input: './src/webpack/base-config/publish.ts',
+    input: './src/project-config/base-config/publish.ts',
     output: {
       dir: BUNDLE_DIR,
       format: 'cjs',
       entryFileNames: 'webpack-publish.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
+    input: './src/project-config/vite-config/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'vite-config.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
+    input: './src/stylelint-plugin/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'stylelint-plugin.js',
     },
     external: [
       ...EXTERNALS,

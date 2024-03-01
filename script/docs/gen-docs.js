@@ -39,11 +39,12 @@ function traverseEveryFolder(dir, type, list) {
 
 function getDocsList() {
   const list = [];
-  traverseEveryFolder('./src/loader', 'loader', list);
-  traverseEveryFolder('./src/plugin', 'plugin', list);
+  traverseEveryFolder('./src/webpack-loader', 'loader', list);
+  traverseEveryFolder('./src/webpack-plugin', 'plugin', list);
   traverseEveryFolder('./src/vite-plugin', 'vite', list);
-  traverseEveryFolder('./src/task', 'script', list);
-  traverseEveryFolder('./src/webpack', 'config', list);
+  traverseEveryFolder('./src/cli', 'cli', list);
+  traverseEveryFolder('./src/project-config', 'config', list);
+  traverseEveryFolder('./src/stylelint-plugin', 'stylelint-plugin', list);
   return list;
 }
 
@@ -61,12 +62,12 @@ function genSidebarJson(list) {
 
   const baseConfig = [
     {
-      title: '插件',
+      title: 'Webpack 插件',
       collapsable: false,
       children: filterList('plugin'),
     },
     {
-      title: 'Loader',
+      title: 'Webpack Loader',
       collapsable: false,
       children: filterList('loader'),
     },
@@ -76,16 +77,20 @@ function genSidebarJson(list) {
       children: filterList('vite'),
     },
     {
-      title: '基础配置',
+      title: '项目配置',
       collapsable: false,
       children: filterList('config'),
     },
     {
       title: 'CLI 命令',
       collapsable: false,
-      children: filterList('script'),
+      children: filterList('cli'),
     },
-
+    {
+      title: 'Stylelint 插件',
+      collapsable: false,
+      children: filterList('stylelint-plugin'),
+    },
   ];
 
   return {

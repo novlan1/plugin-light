@@ -1,4 +1,4 @@
-import replaceTmpTag from '../../../src/loader/replace-template-tag';
+import replaceTmpTag from '../../../src/webpack-loader/replace-template-tag';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn()

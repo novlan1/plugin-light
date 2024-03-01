@@ -1,0 +1,1 @@
+export { ifdefVitePlugin } from './ifdef';

@@ -1,4 +1,4 @@
-import insertPageMeta from '../../../src/loader/insert-page-meta';
+import insertPageMeta from '../../../src/webpack-loader/insert-page-meta';
 import path from 'path';
 
 jest.mock('loader-utils', () => ({

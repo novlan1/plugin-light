@@ -1,4 +1,4 @@
-import { handleRem } from '../../../src/plugin/rem-to-rpx/css-handler';
+import { handleRem } from '../../../src/webpack-plugin/rem-to-rpx/css-handler';
 
 describe('handleRem', () => {
   it('handleRem', () => {

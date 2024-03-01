@@ -1,4 +1,4 @@
-import lazyLoader from '../../../src/loader/v-lazy';
+import lazyLoader from '../../../src/webpack-loader/v-lazy';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn()

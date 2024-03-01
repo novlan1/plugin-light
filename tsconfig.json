@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "allowJs": true,
     "noEmit": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "paths": {},
     "lib": [
@@ -25,7 +25,8 @@
     "jsx": "preserve",
   },
   "include": [
-    "./**/*"
+    "./**/*",
+    "types"
   ],
   "exclude": [
     "node_modules"

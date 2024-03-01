@@ -1,4 +1,4 @@
-import { replaceDirective } from '../../../src/loader/vue-directive/vue-directive';
+import { replaceDirective } from '../../../src/webpack-loader/vue-directive/vue-directive';
 
 
 describe('replaceDirective', () => {

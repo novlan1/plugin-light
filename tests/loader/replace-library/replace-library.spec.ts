@@ -1,5 +1,5 @@
 import path from 'path';
-import replaceLibrary from '../../../src/loader/replace-library';
+import replaceLibrary from '../../../src/webpack-loader/replace-library';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({

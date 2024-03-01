@@ -1,11 +1,11 @@
-import { getMpInsertCode } from '../../plugin/gen-version/helper';
+import { getMpInsertCode } from '../../webpack-plugin/gen-version/helper';
 
 
 export function genVersionMpVitePlugin() {
   return {
     name: 'gen-version-mp',
 
-    renderChunk(code, chunk) {
+    renderChunk(code: string, chunk: Record<string, any>) {
       const id = chunk.fileName;
 
       if (id === 'app.js') {

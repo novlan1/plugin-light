@@ -1,5 +1,5 @@
 import path from 'path';
-import transformDynamicComp from '../../../src/loader/transform-dynamic-comp';
+import transformDynamicComp from '../../../src/webpack-loader/transform-dynamic-comp';
 
 
 beforeAll(() => {

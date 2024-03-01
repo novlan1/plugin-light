@@ -1,4 +1,4 @@
-import replaceVueKey from '../../../src/loader/replace-vue-key';
+import replaceVueKey from '../../../src/webpack-loader/replace-vue-key';
 
 
 beforeAll(() => {

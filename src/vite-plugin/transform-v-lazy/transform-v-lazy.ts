@@ -1,4 +1,4 @@
-import { vLazyCore } from '../../loader/v-lazy/core';
+import { vLazyCore } from '../../webpack-loader/v-lazy/core';
 
 export function transformVLazyVitePlugin() {
   return {

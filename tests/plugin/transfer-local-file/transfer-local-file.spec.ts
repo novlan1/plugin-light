@@ -1,4 +1,4 @@
-import { replaceSource } from '../../../src/plugin/transfer-local-file/core';
+import { replaceSource } from '../../../src/webpack-plugin/transfer-local-file/core';
 
 const baseStr = '(global["webpackJsonp"] =require(\'../../common/abc/123.js\');(global["webpackJsonp"] =';
 

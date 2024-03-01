@@ -1,5 +1,5 @@
 import path from 'path';
-import preprocessLoader from '../../../src/loader/ifdef-loader';
+import preprocessLoader from '../../../src/webpack-loader/ifdef-loader';
 
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn()

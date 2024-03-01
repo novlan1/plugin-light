@@ -7,6 +7,286 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### [1.2.22](https://github.com/novlan1/uni-plugin-light/compare/v1.2.21...v1.2.22) (2024-02-29)
+
+
+### Documentation 📖
+
+* update docs ([8d30b28](https://github.com/novlan1/uni-plugin-light/commit/8d30b284ad871237299afefe083581157efaae55))
+* update stylelint plugin docs ([01a0cc5](https://github.com/novlan1/uni-plugin-light/commit/01a0cc57192c5513a21971fa2628120c81e05193))
+
+
+### Features 🎉
+
+* **stylelint-plugin:** support tip style name ([7d34fcd](https://github.com/novlan1/uni-plugin-light/commit/7d34fcddca48637f63c99857950c6372dda9a3ac))
+
+### [1.2.21](https://github.com/novlan1/uni-plugin-light/compare/v1.2.20...v1.2.21) (2024-02-29)
+
+
+### Documentation 📖
+
+* **stylelint-plugin:** add stylelint plugin docs ([f17913c](https://github.com/novlan1/uni-plugin-light/commit/f17913cee3eccca2404debd78aaa6f67cc25d929))
+
+### [1.2.20](https://github.com/novlan1/uni-plugin-light/compare/v1.2.19...v1.2.20) (2024-02-29)
+
+### [1.2.19](https://github.com/novlan1/uni-plugin-light/compare/v1.2.18...v1.2.19) (2024-02-29)
+
+
+### Bug Fixes 🐞
+
+* **stylelint-plugin:** update plugin name ([db16792](https://github.com/novlan1/uni-plugin-light/commit/db16792f8809cbb5e19de303fef3aeb83db7bcf7))
+
+### [1.2.18](https://github.com/novlan1/uni-plugin-light/compare/v1.2.17...v1.2.18) (2024-02-29)
+
+
+### Features 🎉
+
+* **stylelint-plugin:** addd stylelint plugin ([4ac34e6](https://github.com/novlan1/uni-plugin-light/commit/4ac34e69c87e073b75853e67bca04267520b1869))
+
+
+### Chore 🚀 
+
+* eslint ([3a047e3](https://github.com/novlan1/uni-plugin-light/commit/3a047e36ba4e6903d0577cf7f6520d05eb88ce50))
+* eslint ([602498d](https://github.com/novlan1/uni-plugin-light/commit/602498d92ab546925aac193a21d87eec5215298d))
+* eslint ([7469ce8](https://github.com/novlan1/uni-plugin-light/commit/7469ce8a6292c4938972d16693244b618cb363fd))
+
+
+### Bug Fixes 🐞
+
+* **stylelint-plugin:** 修改导出方式，支持多插件 ([33bb759](https://github.com/novlan1/uni-plugin-light/commit/33bb75913832aa088aeee45183807668b4b44303))
+
+
+### Code Refactoring ♻️
+
+* update folder name ([19de807](https://github.com/novlan1/uni-plugin-light/commit/19de807e6447bc8f1dfba98b7b94b02fea73062b))
+
+### [1.2.17](https://github.com/novlan1/uni-plugin-light/compare/v1.2.16...v1.2.17) (2024-02-01)
+
+
+### Features 🎉
+
+* **cross-module-style:** add module style loader ([9c3bbbf](https://github.com/novlan1/uni-plugin-light/commit/9c3bbbf291140b490c8033a501253d9c18ade8a9))
+
+### [1.2.16](https://github.com/novlan1/uni-plugin-light/compare/v1.2.15...v1.2.16) (2024-01-17)
+
+
+### Features 🎉
+
+* 非release分支禁用treeShaking ([1f90333](https://github.com/novlan1/uni-plugin-light/commit/1f9033375d3da72b550daea77f903637d487c265))
+
+### [1.2.15](https://github.com/novlan1/uni-plugin-light/compare/v1.2.14...v1.2.15) (2024-01-17)
+
+
+### Features 🎉
+
+* 非release分支禁用treeShaking ([59f6bc9](https://github.com/novlan1/uni-plugin-light/commit/59f6bc911b979eeabacda7187d99e13457964be3))
+* 非release分支禁用treeShaking ([956540e](https://github.com/novlan1/uni-plugin-light/commit/956540e0d9de9643f272b618224386f20a169842))
+* **remove-sync:** add remove sync script ([76b8a40](https://github.com/novlan1/uni-plugin-light/commit/76b8a40b042bd01b48576a95de8dd9ea6ab81775))
+* **script:** add lint for remove sync ([d1c0f92](https://github.com/novlan1/uni-plugin-light/commit/d1c0f92ab7ab7be23638a4fd21b62d5c40e97a8a))
+
+### [1.2.14](https://github.com/novlan1/uni-plugin-light/compare/v1.2.13...v1.2.14) (2024-01-05)
+
+
+### Bug Fixes 🐞
+
+* vite config support not https ([2a93822](https://github.com/novlan1/uni-plugin-light/commit/2a93822207e223d2bf4a8e8ec9d42ebee30968b1))
+
+### [1.2.13](https://github.com/novlan1/uni-plugin-light/compare/v1.2.12...v1.2.13) (2024-01-03)
+
+
+### Chore 🚀 
+
+* add post release bash ([fe41706](https://github.com/novlan1/uni-plugin-light/commit/fe4170641ff72a1e3c12df6e496091d27b3967f7))
+* **releaes:** use pnpm install ([acb2a88](https://github.com/novlan1/uni-plugin-light/commit/acb2a8835849619ea21a219839bf85f9098367eb))
+
+### [1.2.12](https://github.com/novlan1/uni-plugin-light/compare/v1.2.11...v1.2.12) (2024-01-03)
+
+
+### Features 🎉
+
+* **vite-config:** get styleName from subProject config ([e4350ed](https://github.com/novlan1/uni-plugin-light/commit/e4350ed072f759ba6c0837b0ffb2bb48113d18bf))
+
+
+### Code Refactoring ♻️
+
+* **vite-config:** update subproject config name ([f55883d](https://github.com/novlan1/uni-plugin-light/commit/f55883d251c5a64d873c4574d9bd43629551de26))
+
+### [1.2.11](https://github.com/novlan1/uni-plugin-light/compare/v1.2.10...v1.2.11) (2024-01-03)
+
+
+### Features 🎉
+
+* **vite-config:** support cross game style ([92789b2](https://github.com/novlan1/uni-plugin-light/commit/92789b2872069682e5727e0ee75d9c568fe673ff))
+
+### [1.2.10](https://github.com/novlan1/uni-plugin-light/compare/v1.2.9...v1.2.10) (2024-01-03)
+
+
+### Bug Fixes 🐞
+
+* **vite-plugin:** fix pmd alias ([2cb5911](https://github.com/novlan1/uni-plugin-light/commit/2cb5911ddd1265033061b572ab2adc33ee677a2d))
+
+### [1.2.9](https://github.com/novlan1/uni-plugin-light/compare/v1.2.8...v1.2.9) (2024-01-03)
+
+
+### Features 🎉
+
+* **vite-config:** support pmd alias ([3937e83](https://github.com/novlan1/uni-plugin-light/commit/3937e83df23cc744c17aa64b26cdfb61ee1e4a79))
+
+### [1.2.8](https://github.com/novlan1/uni-plugin-light/compare/v1.2.7...v1.2.8) (2024-01-03)
+
+
+### Bug Fixes 🐞
+
+* **alias-for-library:** support linux soft link ([53263b6](https://github.com/novlan1/uni-plugin-light/commit/53263b629277f66f93981f2327e29b014522a3ef))
+
+### [1.2.7](https://github.com/novlan1/uni-plugin-light/compare/v1.2.6...v1.2.7) (2024-01-03)
+
+
+### Bug Fixes 🐞
+
+* **alias-for-library:** support linux soft link ([4bf9481](https://github.com/novlan1/uni-plugin-light/commit/4bf9481b07f8b143f99f9c5d4e42f4cb3e654ff9))
+
+### [1.2.6](https://github.com/novlan1/uni-plugin-light/compare/v1.2.5...v1.2.6) (2024-01-03)
+
+
+### Features 🎉
+
+* **alias-for-library:** add vite plugin for component library ([343eb2b](https://github.com/novlan1/uni-plugin-light/commit/343eb2b5de9ead30e47ecf088ddf7a71cac0bdd3))
+* **vite-config:** use alias for component library ([fd40824](https://github.com/novlan1/uni-plugin-light/commit/fd40824023b170e27939bc1f017937d86218bb59))
+
+
+### Documentation 📖
+
+* **vite-plugin:** add docs for library alias plugin ([52b5093](https://github.com/novlan1/uni-plugin-light/commit/52b509301d52bea5833f76c3a4fbb77637d561c1))
+
+### [1.2.5](https://github.com/novlan1/uni-plugin-light/compare/v1.2.4...v1.2.5) (2024-01-02)
+
+
+### Bug Fixes 🐞
+
+* **webpack-base-config:** fix html plugin of webpack base config ([1211d56](https://github.com/novlan1/uni-plugin-light/commit/1211d56a5d8014f576b8bee670f7afa06f49b564))
+
+### [1.2.4](https://github.com/novlan1/uni-plugin-light/compare/v1.2.3...v1.2.4) (2024-01-02)
+
+
+### Features 🎉
+
+* **add-code-at-end:** add vite plugin add code at code ([17fc379](https://github.com/novlan1/uni-plugin-light/commit/17fc379123b3ea37f104a08fbc1e2b5e1ccb8fa6))
+
+
+### Chore 🚀 
+
+* add vite config default options ([1da7894](https://github.com/novlan1/uni-plugin-light/commit/1da789452cd28a5281e416e8f18d6c4c5ccea78d))
+
+
+### Documentation 📖
+
+* **vite-plugin:** add docs for add code at end vite plugin ([c752202](https://github.com/novlan1/uni-plugin-light/commit/c7522021d60121def00624d80c1a425f302311db))
+
+### [1.2.3](https://github.com/novlan1/uni-plugin-light/compare/v1.2.2...v1.2.3) (2024-01-02)
+
+
+### Features 🎉
+
+* **vite-config:** support optimizeDeps config ([cad73ad](https://github.com/novlan1/uni-plugin-light/commit/cad73ad04498f07e8f06da32c83c98dca1d22e0b))
+* **vite-plugin:** support pmd tools ([34d64fd](https://github.com/novlan1/uni-plugin-light/commit/34d64fd58e7c75b735f0fa5280dfdf1b7843f865))
+
+
+### Chore 🚀 
+
+* add release bash ([852fdd7](https://github.com/novlan1/uni-plugin-light/commit/852fdd743320d4642c81e77d1508ab544beaa467))
+
+### [1.2.2](https://github.com/novlan1/uni-plugin-light/compare/v1.2.1...v1.2.2) (2023-12-30)
+
+
+### Features 🎉
+
+* **vite-config:** use ifdef plugin ([30b82ff](https://github.com/novlan1/uni-plugin-light/commit/30b82ff546e39c046afac6b55b55d9c3eedf6c17))
+* **vite-plugin:** add ifdef vite plugin ([67e59ef](https://github.com/novlan1/uni-plugin-light/commit/67e59efe7e9b9ced36460d55fb4ab3054cfd351b))
+
+### [1.2.1](https://github.com/novlan1/uni-plugin-light/compare/v1.2.0...v1.2.1) (2023-12-30)
+
+
+### Code Refactoring ♻️
+
+* 命名优化，script => cli ([294ddf9](https://github.com/novlan1/uni-plugin-light/commit/294ddf99daf256dbf4dd618e18641a5c12621c11))
+
+
+### Documentation 📖
+
+* 文档生成 ([1041bad](https://github.com/novlan1/uni-plugin-light/commit/1041bad7e51585c85eb042378130ff976aeb603f))
+* update sidebar docs ([10fd8c9](https://github.com/novlan1/uni-plugin-light/commit/10fd8c91d6b699b95b7fd7131b432b48d517be9f))
+
+
+### Features 🎉
+
+* **vite-plugin:** add cross game sytle ([6ef584d](https://github.com/novlan1/uni-plugin-light/commit/6ef584dae61a44638bf2fdf1bb9a2bb4ffc1b5b4))
+* **vite-plugin:** add replace require dynamic plugin ([81490b6](https://github.com/novlan1/uni-plugin-light/commit/81490b6909450de53b8e9f5ec16e82a5e4af5fc3))
+* **vite:** 支持不配置 VUE_APP_DIR的默认情况 ([b5e2ee4](https://github.com/novlan1/uni-plugin-light/commit/b5e2ee445379c96d5ad09643168ed8e7794a318e))
+* **vite:** support https ([62d8c6a](https://github.com/novlan1/uni-plugin-light/commit/62d8c6abf60c686577575eb0bdc9a98d179e282f))
+
+
+### Chore 🚀 
+
+* update vite build config ([75e2808](https://github.com/novlan1/uni-plugin-light/commit/75e28084cb818a707d0f14e3214d30dd73440bf9))
+
+## [1.2.0](https://github.com/novlan1/uni-plugin-light/compare/v1.1.39...v1.2.0) (2023-12-25)
+
+
+### Features 🎉
+
+* **vite:** add vite base config ([71895d0](https://github.com/novlan1/uni-plugin-light/commit/71895d0b77c1919d9eb1c46bc35c7e17349e50d8))
+
+
+### Documentation 📖
+
+* add vite config docs ([f1dcc9e](https://github.com/novlan1/uni-plugin-light/commit/f1dcc9ee765265dc7cb7b8063c8a87d029e21dd5))
+* **vite:** add vite gen version docs ([9de9685](https://github.com/novlan1/uni-plugin-light/commit/9de9685ecb0ea6cc57630200c78740e543674b58))
+
+### [1.1.39](https://github.com/novlan1/uni-plugin-light/compare/v1.1.38...v1.1.39) (2023-12-23)
+
+### [1.1.38](https://github.com/novlan1/uni-plugin-light/compare/v1.1.37...v1.1.38) (2023-12-23)
+
+
+### Chore 🚀 
+
+* update t-comm ([be817b6](https://github.com/novlan1/uni-plugin-light/commit/be817b646222b639c1163d3b7b0ac048a54ab52c))
+
+
+### Bug Fixes 🐞
+
+* update uni vue config ([f8a1e14](https://github.com/novlan1/uni-plugin-light/commit/f8a1e14c2c9525cc36b505056380c75090168cbb))
+
+
+### Code Refactoring ♻️
+
+* **ts:** add many ts typs ([927e366](https://github.com/novlan1/uni-plugin-light/commit/927e366b77db1689a4b6694bea12d29b0f6dbc98))
+* **ts:** update ts types ([f08783c](https://github.com/novlan1/uni-plugin-light/commit/f08783ccbec1df683698c7bd41504d3549933b32))
+
+
+### Documentation 📖
+
+* update docs ([bd53c3c](https://github.com/novlan1/uni-plugin-light/commit/bd53c3c1d661b1ab6e3cd789e11a65cdebedb38d))
+
 ### [1.1.37](https://github.com/novlan1/uni-plugin-light/compare/v1.1.36...v1.1.37) (2023-12-21)
 
 

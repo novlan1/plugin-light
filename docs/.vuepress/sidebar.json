@@ -1,7 +1,7 @@
 {
   "sidebar": [
     {
-      "title": "插件",
+      "title": "Webpack 插件",
       "collapsable": false,
       "children": [
         {
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "title": "Loader",
+      "title": "Webpack Loader",
       "collapsable": false,
       "children": [
         {
@@ -121,8 +121,36 @@
       "collapsable": false,
       "children": [
         {
+          "title": "文件后增加代码",
+          "path": "/zh/vite/add-code-at-end.md"
+        },
+        {
+          "title": "三方库别名处理",
+          "path": "/zh/vite/alias-for-library.md"
+        },
+        {
+          "title": "样式关键词编译",
+          "path": "/zh/vite/cross-game-style.md"
+        },
+        {
+          "title": "跨平台关键词编译",
+          "path": "/zh/vite/cross-platform.md"
+        },
+        {
+          "title": "版本输出",
+          "path": "/zh/vite/gen-version.md"
+        },
+        {
+          "title": "条件编译",
+          "path": "/zh/vite/ifdef.md"
+        },
+        {
           "title": "Rem 转换",
           "path": "/zh/vite/rem-to-rpx.md"
+        },
+        {
+          "title": "动态导入组件语法替换",
+          "path": "/zh/vite/replace-require-dynamic.md"
         },
         {
           "title": "Vue v-lazy 转换",
@@ -131,7 +159,7 @@
       ]
     },
     {
-      "title": "基础配置",
+      "title": "项目配置",
       "collapsable": false,
       "children": [
         {
@@ -141,6 +169,10 @@
         {
           "title": "uni-app 项目基础配置",
           "path": "/zh/config/uni-vue-config.md"
+        },
+        {
+          "title": "Vite 项目基础配置",
+          "path": "/zh/config/vite-config.md"
         }
       ]
     },
@@ -150,11 +182,21 @@
       "children": [
         {
           "title": "发布脚本",
-          "path": "/zh/script/publish.md"
+          "path": "/zh/cli/publish.md"
         },
         {
           "title": "仓库同步",
-          "path": "/zh/script/sync-repo.md"
+          "path": "/zh/cli/sync-repo.md"
+        }
+      ]
+    },
+    {
+      "title": "Stylelint 插件",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "无用样式检测",
+          "path": "/zh/stylelint-plugin/useless-css.md"
         }
       ]
     }

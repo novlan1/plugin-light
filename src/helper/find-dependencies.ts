@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
+type IPath = {
+  parent: string;
+  parentPath: IPath;
+};
 
-function getParent(path: Record<string, any>, level: number) {
+function getParent(path: IPath, level: number): any {
   if (!level) {
     return path.parent;
   }
@@ -10,8 +14,6 @@ function getParent(path: Record<string, any>, level: number) {
 export function findDependencies(content: string) {
   const parser = require('@babel/parser');
   const traverse = require('@babel/traverse').default;
-  // const generate = require('@babel/generator').default;
-  // const t = require('@babel/types');
 
   const sourceList: Array<string> = [];
   const ast = parser.parse(content, {

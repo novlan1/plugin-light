@@ -1,7 +1,6 @@
 ## Plugin Light
 
-
-`Webpack` 相关插件，包括
+`Plugin Light` 是一个丰富、易用的工具集。包含一些 `Webpack` 相关插件，比如
 
 - [依赖分析](./src/webpack-plugin/analyze-deps/)
 - [JS分发](./src/webpack-plugin/dispatch-script/)
@@ -25,9 +24,7 @@
 - [替换`v-for`中的`key`](./src/webpack-loader/replace-vue-key/)
 - ...
 
-还有一些`webpack`基础配置和 CLI 命令。
-
-详细文档地址可以查看[这里](https://novlan1.github.io/uni-plugin-light/)。
+还有一些 `Webpack` 基础配置和 CLI 命令。
 
 ### 安装
 
@@ -82,3 +79,8 @@ module.export = {
   }
 }
 ```
+
+
+### 文档
+
+[点此查看](https://novlan1.github.io/uni-plugin-light/)

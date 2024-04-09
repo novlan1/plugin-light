@@ -4,11 +4,23 @@ import insertGlobalComponent from '../../../src/webpack-loader/insert-global-com
 jest.mock('loader-utils', () => ({
   getOptions: jest.fn().mockReturnValue({
     pages: ['MOCK_PAGE'],
-    components: [{
-      isOnTop: false,
-      name: 'MatchCommDialog', // 组件名称
-      id: 'tip-match-comm-tips-dialog',
-    }],
+    components: [
+      {
+        isOnTop: false,
+        name: 'MatchCommDialog', // 组件名称
+        id: 'tip-match-comm-tips-dialog',
+      },
+      {
+        isOnTop: false,
+        name: 'GlobalComponent',
+        id: 'global-component',
+      },
+      {
+        isOnTop: false,
+        name: 'PressGpDialog',
+        id: 'press-gp-dialog',
+      },
+    ],
   }),
 }));
 

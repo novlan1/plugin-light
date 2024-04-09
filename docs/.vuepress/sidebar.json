@@ -5,6 +5,10 @@
       "collapsable": false,
       "children": [
         {
+          "title": "动态组件转为用时注入",
+          "path": "/zh/plugin/add-placeholder.md"
+        },
+        {
           "title": "依赖分析",
           "path": "/zh/plugin/analyze-deps.md"
         },
@@ -15,6 +19,10 @@
         {
           "title": "组件分发",
           "path": "/zh/plugin/dispatch-vue.md"
+        },
+        {
+          "title": "修复 mini-css-extract-plugin",
+          "path": "/zh/plugin/fix-mini-css-plugin.md"
         },
         {
           "title": "三方库打包修复",

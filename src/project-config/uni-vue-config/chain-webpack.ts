@@ -16,7 +16,7 @@ export function chainWebpack(config: any, options: GetUniVueConfig = {}) {
       .end();
   }
 
-  if (options.useTransformDynamicCompLoader) {
+  if (options.useTransformDynamicCompLoader || options.useAddPlaceHolderPlugin) {
     config.module
       .rule('vue')
       .test(/\.vue$/)
@@ -25,7 +25,7 @@ export function chainWebpack(config: any, options: GetUniVueConfig = {}) {
       .end();
   }
 
-  if (options.useAutoPlaceHolderLoader) {
+  if (options.useAddPlaceHolderPlugin) {
     config.module
       .rule('vue')
       .test(/\.vue$/)

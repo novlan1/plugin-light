@@ -10,3 +10,4 @@ docs/.vuepress/dist
 
 *.log
 /temp/
+.DS_Store

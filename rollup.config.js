@@ -64,7 +64,13 @@ const EXTERNALS =  [
   'unplugin-vue-components',
   'unplugin-vue-components/vite',
   'unplugin-vue-components/resolvers',
+  'unplugin-auto-import',
+  'unplugin-auto-import/vite',
   '@vitejs/plugin-basic-ssl',
+
+  'chalk',
+  'progress-bar-webpack-plugin',
+  'script-ext-html-webpack-plugin',
 ];
 
 function getLoaderFiles() {

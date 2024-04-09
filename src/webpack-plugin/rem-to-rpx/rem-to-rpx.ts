@@ -1,5 +1,5 @@
 import { transFormRem } from 't-comm/lib/rem/rem';
-import { PLATFORM_MAP } from '../../helper/config';
+import { PLATFORM_MAP, CSS_POSTFIX_MAP } from '../../helper/config';
 
 function isInWhiteList(whiteList: Array<string>, fileName: string) {
   for (const item of whiteList) {
@@ -32,8 +32,11 @@ export class RemToRpxPlugin {
       'css',
       'scss',
       'less',
-      'wxss',
-      'qss',
+
+      CSS_POSTFIX_MAP.MP_WX,
+      CSS_POSTFIX_MAP.MP_QQ,
+      CSS_POSTFIX_MAP.MP_ALIPAY,
+      CSS_POSTFIX_MAP.MP_JD,
     ];
   }
 

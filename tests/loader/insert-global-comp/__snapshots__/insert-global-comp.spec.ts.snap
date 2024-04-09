@@ -9,7 +9,9 @@ exports[`Other Html Tag p 1`] = `
 <page-loading v-if="mShowPageLoading" />
   <BattleDetailModule v-else-if="isScheEnd" />
   <VideoRoomModule v-else />
-<template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></p>
+<template><MatchCommDialog id="tip-match-comm-tips-dialog" />
+<GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></p>
 </template>"
 `;
 
@@ -20,7 +22,9 @@ exports[`Other Html Tag span 1`] = `
   style="width:100%;height: 100%;"
 ><template></template>
   <a>123</a>
-<template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></span>
+<template><MatchCommDialog id="tip-match-comm-tips-dialog" />
+<GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></span>
 </template>"
 `;
 
@@ -30,12 +34,13 @@ exports[`insertGlobalComponent already have 1 1`] = `
 <div
   class="battle-detail-wrap"
   style="width:100%;height: 100%;"
->
+><template></template>
   <page-loading v-if="mShowPageLoading" />
   <BattleDetailModule v-else-if="isScheEnd" />
   <VideoRoomModule v-else />
   <MatchCommDialog id="tip-match-comm-tips-dialog" /></template>
-</div>
+<template><GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></div>
 </template>"
 `;
 
@@ -45,12 +50,13 @@ exports[`insertGlobalComponent already have 2 1`] = `
 <div
   class="battle-detail-wrap"
   style="width:100%;height: 100%;"
->
+><template></template>
   <page-loading v-if="mShowPageLoading" />
   <BattleDetailModule v-else-if="isScheEnd" />
   <VideoRoomModule v-else />
   <match-comm-dialog id="tip-match-comm-tips-dialog" /></template>
-</div>
+<template><GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></div>
 </template>"
 `;
 
@@ -64,7 +70,9 @@ exports[`insertGlobalComponent first tag is comment 1`] = `
   <page-loading v-if="mShowPageLoading" />
   <BattleDetailModule v-else-if="isScheEnd" />
   <VideoRoomModule v-else />
-<template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></div>
+<template><MatchCommDialog id="tip-match-comm-tips-dialog" />
+<GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></div>
 </template>"
 `;
 
@@ -73,7 +81,9 @@ exports[`insertGlobalComponent only one tag 1`] = `
 <template>
   <div><template></template> <ModuleCustomGroupType
     :game-info-key="gameInfoKey"
-  /> <template><MatchCommDialog id="tip-match-comm-tips-dialog" /></template></div>
+  /> <template><MatchCommDialog id="tip-match-comm-tips-dialog" />
+<GlobalComponent id="global-component" />
+<PressGpDialog id="press-gp-dialog" /></template></div>
 </template>
 "
 `;

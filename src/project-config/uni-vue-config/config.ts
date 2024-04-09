@@ -30,3 +30,6 @@ export const DEFAULT_ADAPTER_DIRS = [
   'static',
   'node-modules',
 ];
+
+export const AEGIS_EXTERNAL_SCRIPT_LINK = 'https://image-1251917893.file.myqcloud.com/igame/npm/aegis-web/aegis.min.js';
+export const UNI_SIMPLE_ROUTER_SCRIPT_LINK = 'https://image-1251917893.file.myqcloud.com/igame/npm/uni-simple-router/uni-simple-router-2.0.8-beta-4.js';

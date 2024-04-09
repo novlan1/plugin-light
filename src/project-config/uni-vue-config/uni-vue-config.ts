@@ -7,8 +7,33 @@ import { getPlugins } from './plugin';
 import { chainWebpack } from './chain-webpack';
 import { DEFAULT_TRANSPILE_DEPENDENCIES, DEFAULT_ADAPTER_DIRS } from './config';
 import type { GetUniVueConfig } from './types';
+import { optimizationH5 } from './optimization-h5';
+import { checkH5 } from '../helper/h5';
+import { checkDebugMode } from '../helper/bundle-analyze';
 
 const curDirname = getRootDir();
+
+function getExternals({
+  aegisWebSdkExternal,
+  uniSimpleRouterExternal,
+}: {
+  aegisWebSdkExternal?: boolean | string;
+  uniSimpleRouterExternal?: boolean | string;
+}) {
+  const externals: Record<string, string> = {};
+
+  if (checkH5()) {
+    if (aegisWebSdkExternal) {
+      externals['aegis-web-sdk'] = 'window Aegis';
+    }
+    if (uniSimpleRouterExternal) {
+      externals['uni-simple-router'] = 'Router';
+    }
+  }
+
+
+  return externals;
+}
 
 
 // 获取目下所有项目文件夹名称并创建webpack别名
@@ -55,6 +80,10 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
 
     remToRpxPluginMpOptions,
     genVersionWebPluginOptions,
+    useFixMiniCssPlugin,
+    aegisWebSdkExternal = true,
+    uniSimpleRouterExternal = false,
+    customPreload = false,
   } = options || {};
 
   let transpileDependencies = DEFAULT_TRANSPILE_DEPENDENCIES;
@@ -67,6 +96,16 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
     transpileDependencies = options.transpileDependencies;
   }
 
+  const useH5SplitChunks = checkH5() && options?.useH5SplitChunks;
+  const optimization: Record<string, any> = {};
+  if (useH5SplitChunks) {
+    optimization.runtimeChunk = { name: 'runtime' };
+  }
+  if (checkDebugMode()) {
+    optimization.minimize = false;
+  }
+
+
   return {
     parallel: process.env.NODE_ENV !== 'production',
     lintOnSave: options.lintOnSave || false, // 忽略编译时候的eslint报错
@@ -77,6 +116,10 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
           ...getAllAppNameAlias(),
         },
       },
+      externals: getExternals({
+        aegisWebSdkExternal,
+        uniSimpleRouterExternal,
+      }),
       plugins: getPlugins({
         adapterDirs,
         useDispatchScriptPlugin,
@@ -92,6 +135,10 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
 
         remToRpxPluginMpOptions,
         genVersionWebPluginOptions,
+        useFixMiniCssPlugin,
+        aegisWebSdkExternal,
+        uniSimpleRouterExternal,
+        customPreload,
       }),
       module: {
         rules: [
@@ -101,15 +148,22 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
           },
         ],
       },
+      optimization,
       // watchOptions: {
       //   ignored: [/node_modules/],
       // },
     },
 
+    ...(useH5SplitChunks ? { pages: optimizationH5(useH5SplitChunks).pages } : {}),
+
     transpileDependencies,
 
     chainWebpack(config: any) {
       chainWebpack(config, options);
+
+      if (useH5SplitChunks) {
+        optimizationH5(useH5SplitChunks).chainWebpack(config);
+      }
     },
   };
 }

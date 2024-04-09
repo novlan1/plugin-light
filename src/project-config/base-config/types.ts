@@ -20,5 +20,8 @@ export type IBaseConfigOptions = {
 
   // 映射的项目
   shadowProjectMap?: Record<string, string>
+
+  // 自定义的 cdn 链接，用于 externals
+  customCdnUrls?: Array<string>;
 };
 

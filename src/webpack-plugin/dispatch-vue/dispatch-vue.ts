@@ -5,7 +5,7 @@ import { fixNpmPackage } from '../fix-npm-package/core';
 import { saveLoaderLog } from '../../helper/loader-log';
 import { createLogDir, updateAssetSource, removeFirstSlash } from '../../helper/index';
 import { formatTime, findReplaceMap, replaceAllPolyfill } from './helper';
-import { PLATFORM_MAP } from '../../helper/config';
+import { PLATFORM_MAP, HTML_MAP, CSS_MAP } from '../../helper/config';
 import type { IDispatchVueOptions, IMovingComponents, IReplaceRefList } from './types';
 
 
@@ -19,8 +19,8 @@ export class DispatchVuePlugin {
   startTime: number;
 
   postFix: {
-    html: '.wxml' | '.qml'
-    css: '.wxss' | '.qss'
+    html: typeof HTML_MAP[keyof typeof HTML_MAP];
+    css: typeof CSS_MAP[keyof typeof CSS_MAP];
   };
 
   constructor(options: IDispatchVueOptions) {
@@ -30,14 +30,19 @@ export class DispatchVuePlugin {
     this.startTime = 0;
 
     this.postFix = {
-      html: '.wxml',
-      css: '.wxss',
+      html: HTML_MAP.MP_WX,
+      css: CSS_MAP.MP_WX,
     };
 
     if (process.env.UNI_PLATFORM === PLATFORM_MAP.MP_QQ) {
       this.postFix = {
-        html: '.qml',
-        css: '.qss',
+        html: HTML_MAP.MP_QQ,
+        css: CSS_MAP.MP_QQ,
+      };
+    } else if (process.env.UNI_PLATFORM == PLATFORM_MAP.MP_ALIPAY) {
+      this.postFix = {
+        html: HTML_MAP.MP_ALIPAY,
+        css: CSS_MAP.MP_ALIPAY,
       };
     }
 

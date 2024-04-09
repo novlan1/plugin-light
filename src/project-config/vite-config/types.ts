@@ -29,4 +29,6 @@ export type GetViteConfigOptions = {
 
   // pmd-tools 之类的别名映射
   pmdAliasMap?: Record<string, string>;
+
+  customElements?: Array<string>;
 };

@@ -1,6 +1,6 @@
 {
   "name": "plugin-light",
-  "version": "1.2.22",
+  "version": "1.2.58",
   "description": "Webpack 相关插件、Loader、基础配置及 CLI 命令",
   "main": "lib/plugin",
   "scripts": {
@@ -22,8 +22,7 @@
     "docs:deploy": "node script/docs/deploy",
     "docs:deploy:mine": "node script/docs/docs-mine",
     "init:env": "node script/env/rainbow-env",
-    "init:loader": "node script/docs/init-loader",
-    "postinstall": "node -e \"try{require('./lib/post-install')}catch(e){}\""
+    "init:loader": "node script/docs/init-loader"
   },
   "repository": {
     "type": "git",
@@ -45,8 +44,7 @@
     "webpack",
     "uni-plugin-light",
     "plugin-light",
-    "cli",
-    "press-ui"
+    "cli"
   ],
   "author": "",
   "license": "ISC",
@@ -89,14 +87,19 @@
   },
   "dependencies": {
     "eslint-config-light": "^1.5.3",
-    "t-comm": "^1.3.45",
+    "t-comm": "^1.3.63",
     "@vitejs/plugin-basic-ssl": "^1.0.2",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "chalk": "4",
     "commander": "^10.0.1",
     "filemanager-webpack-plugin": "^2.0.5",
     "prerender-spa-plugin": "^3.4.0",
+    "press-ui": "^1.3.16",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.5",
     "uni-read-pages": "^1.0.5",
+    "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.22.12",
     "vite": "^4.5.0",
     "vite-plugin-cdn2": "^0.15.2",

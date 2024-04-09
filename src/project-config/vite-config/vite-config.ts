@@ -6,6 +6,10 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import Components from 'unplugin-vue-components/vite';
 // eslint-disable-next-line import/no-unresolved
 import { VantResolver } from 'unplugin-vue-components/resolvers';
+// eslint-disable-next-line import/no-unresolved
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+// eslint-disable-next-line import/no-unresolved
+import AutoImport from 'unplugin-auto-import/vite';
 
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import mockDevServerPlugin from 'vite-plugin-mock-dev-server';
@@ -89,6 +93,7 @@ export function getViteBaseConfig({
   pressPlusAlias = DEFAULT_ALIAS.PRESS_PLUS,
   aliasForLibraryOptions = DEFAULT_ALIAS_FOR_LIBRARY_OPTIONS,
   pmdAliasMap = getDefaultPmdAliasMap(root),
+  customElements = [],
 }: GetViteConfigOptions) {
   // 环境变量
   const env = loadEnv(mode, root, ENV_PREFIX);
@@ -119,13 +124,26 @@ export function getViteBaseConfig({
     addCodeAtEndVitePlugin(addCodeAtEndOptions || DEFAULT_ADD_CODE_AT_END_OPTIONS),
     serverHttps ? basicSsl() : '',
     commonjs(),
-    vue({}),
+    vue({
+      template: {
+        compilerOptions: {
+          // @ts-ignore
+          isCustomElement: (tag: string) => customElements.includes(tag),
+        },
+      },
+    }),
     vueJsx(),
     mockDevServerPlugin(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
     // vant 组件自动按需引入
     Components({
       dts: 'typings/components.d.ts',
-      resolvers: [VantResolver()],
+      resolvers: [
+        VantResolver(),
+        ElementPlusResolver(),
+      ],
     }),
     // svg icon
     createSvgIconsPlugin({

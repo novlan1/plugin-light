@@ -12,7 +12,7 @@ export function replaceTmpTag(this: any, source: string) {
 
   const { replaceTmpTagMap = {} } = options;
 
-  const type = PLATFORMS_MP.includes(process.env.UNI_PLATFORM || '') ? 'mp' : 'web';
+  const type = PLATFORMS_MP.includes((process.env.UNI_PLATFORM || '') as any) ? 'mp' : 'web';
 
   const keys = Object.keys(replaceTmpTagMap);
   let res = source;

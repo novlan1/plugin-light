@@ -5,14 +5,13 @@ import type { IDispatchScriptOptions } from '../../webpack-plugin/dispatch-scrip
 import type { IDispatchVueOptions } from '../../webpack-plugin/dispatch-vue/types';
 import type { IRemToRpxOptions } from '../../webpack-plugin/rem-to-rpx/types';
 import type { IGenVersionOptions } from '../../webpack-plugin/gen-version/types';
+import type { ICustomPreloadOptions } from '../../webpack-plugin/custom-preload/types';
 
 
 export type GetUniVueConfig = {
   // Loader 部分
   // 是否使用转换动态引入组件
   useTransformDynamicCompLoader?: boolean;
-  // 是否使用 auto placeholder loader
-  useAutoPlaceHolderLoader?: boolean;
   // 是否使用替换 vue key loader
   useReplaceVueKeyLoader?: boolean;
   // 是否使用处理 swipe 组件的 loader
@@ -61,7 +60,7 @@ export type GetUniVueConfig = {
 
   // 是否使用 xss 方法包裹 v-html 内容，需提前注册全局方法
   useXSS?: boolean;
-  // 是否使用 add placeholder 插件
+  // 是否使用 add placeholder 插件，为 true 时，也会使用 动态引入组件的替换插件
   useAddPlaceHolderPlugin?: boolean;
 
   //  mp 条件下, rem to rpx 插件选项
@@ -79,4 +78,21 @@ export type GetUniVueConfig = {
   transpileDependencies?: Array<string>;
   // 是否校验 eslint
   lintOnSave?: boolean;
+
+  // 是否使用 H5 的 splitChunks 配置
+  // 如果是对象类型，则直接传递给 config.optimization.splitChunks
+  useH5SplitChunks?: boolean | Record<string, any>;
+
+  // 是否使用 fix-mini-css-plugin
+  useFixMiniCssPlugin?: boolean;
+
+  // aegis-web-sdk 是否使用外链
+  // 传入 string 会覆盖之前的链接
+  // 默认为 true
+  aegisWebSdkExternal?: boolean | string;
+
+  // 默认为 false
+  uniSimpleRouterExternal?: boolean | string;
+
+  customPreload?: boolean | ICustomPreloadOptions;
 };

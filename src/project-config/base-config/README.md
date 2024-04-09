@@ -101,3 +101,11 @@ export type IBaseConfigOptions = {
 生产环境下，即`process.env.NODE_ENV`为`production`时，默认去掉`console`日志，可以通过`terserPureFuncs`传递空数组来恢复显示。
 
 注意同时去掉`babel`插件`transform-remove-console`。
+
+### 打包产物分析
+
+当 `process.env.npm_config_report` 不为 `falsy` 时，本工具会使用 `webpack-bundle-analyzer` 插件，开发者可用来进行打包分析。
+
+### 调试模式
+
+当 `process.env.DEBUG_MODE` 不为 `falsy` 时，本工具会设置 `configureWebpack.optimization.minimize` 为 `false`，开发者可以用来进行产物分析。

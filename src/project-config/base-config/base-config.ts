@@ -11,8 +11,10 @@ import { HtmlModifyPlugin } from '../../webpack-plugin/modify-html/modify-html';
 import { getRootDir } from '../helper/root';
 import { LOADER_MAP } from '../../webpack-loader/index';
 
-import { DEFAULT_CDN_URLS, DEFAULT_PROJECT_MAP, DEFAULT_HANDLE_IF_DEF_FILES } from './config';
+import { DEFAULT_CDN_URLS, VUE3_CDN_URLS, DEFAULT_PROJECT_MAP, DEFAULT_HANDLE_IF_DEF_FILES } from './config';
 import { DEFAULT_TRANSPILE_DEPENDENCIES } from '../uni-vue-config/config';
+import { checkBundleAnalyze, checkDebugMode } from '../helper/bundle-analyze';
+import type { IBaseConfigOptions } from './types';
 
 
 const curDirname = getRootDir();
@@ -88,6 +90,10 @@ function getAllAppNameAlias(shadowProjectMap: Record<string, string>) {
 // 需要构建时自动注入的cdn url
 function getCdnInject({
   isVue3 = false,
+  customCdnUrls = [],
+}: {
+  isVue3?: boolean;
+  customCdnUrls?: Array<string>;
 }) {
   const objs = { // 无需溯源打包的对象。比如采用cdn引入的对象。
     mqq: 'mqq',
@@ -100,22 +106,21 @@ function getCdnInject({
     'vue-lazyload': 'VueLazyload',
   };
 
-  // 必要的cdn写这里。构建时注入html中。（不是所有页面都要的，页面自己加载）
+  // 必要的 cdn 写这里。构建时注入 html 中。（不是所有页面都要的，页面自己加载）
   let cdnUrls = DEFAULT_CDN_URLS;
 
   if (isVue3) {
-    cdnUrls = [
-      'https://unpkg.com/vue@3.2.31/dist/vue.runtime.global.prod.js',
-      'https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.js',
-      'https://unpkg.com/vuex@4.0.2/dist/vuex.global.js',
-      ...cdnUrls.slice(3),
-    ];
+    cdnUrls = VUE3_CDN_URLS;
+  }
+
+  if (customCdnUrls?.length) {
+    cdnUrls = customCdnUrls;
   }
 
   return { objs, cdnUrls };
 }
 
-export function getWebpackBaseConfig(options?: Record<string, any>) {
+export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
   const {
     isUseVueLoader,
     isVue3,
@@ -181,6 +186,12 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
       //   minimize: false,
       //   runtimeChunk: { name: 'runtime' },
       // },
+
+      ...(checkDebugMode() ? {
+        optimization: {
+          minimize: false,
+        },
+      } : {}),
     },
     chainWebpack(config: any) {
       config.module.rule('vue')
@@ -206,7 +217,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
           .use(LOADER_MAP.ifdef)
           .loader(LOADER_MAP.ifdef)
           .options({
-            context: { H5: true },
+            context: { H5: true, VUE2: true },
             type: ['css', 'js', 'html'],
           })
           .end();
@@ -249,7 +260,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
           include: 'initial',
         }]);
 
-      if (process.env.npm_config_report) {
+      if (checkBundleAnalyze()) {
         console.log('进行包分析');
         config
           .plugin('webpack-bundle-analyzer')
@@ -281,15 +292,15 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
           .test(/\.vue$/)
           .use('vue-loader')
           .loader('vue-loader')
-          .tap((options: any) => {
-            if (options) {
-              options.compilerOptions.whitespace = 'preserve';
+          .tap((vueOptions: any) => {
+            if (vueOptions) {
+              vueOptions.compilerOptions.whitespace = 'preserve';
             }
-            return options;
+            return vueOptions;
           })
-          .tap((options: any) => {
+          .tap((vueOptions: any) => {
             if (useXSS) {
-              options.compilerOptions.directives = {
+              vueOptions.compilerOptions.directives = {
                 html(node: any, directiveMeta: any) {
                   (node.props || (node.props = [])).push({
                     name: 'innerHTML',
@@ -298,7 +309,7 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
                 },
               };
             }
-            return options;
+            return vueOptions;
           })
           .end();
       }
@@ -404,7 +415,10 @@ export function getWebpackBaseConfig(options?: Record<string, any>) {
                 source: path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap), 'index.html'),
                 destination: `${getOutputPath()}/index.html`,
                 ssr: process.env.VUE_APP_SSR,
-                urls: getCdnInject({ isVue3 }).cdnUrls,
+                urls: getCdnInject({
+                  isVue3,
+                  customCdnUrls: options?.customCdnUrls,
+                }).cdnUrls,
               }],
             },
           }))

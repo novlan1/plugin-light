@@ -1,6 +1,6 @@
 
 import * as path from 'path';
-import { flat } from 't-comm';
+import { flat } from 't-comm/lib/base/list/flat';
 
 import {
   isInIgnoreGlob,
@@ -26,7 +26,7 @@ function parseParams(files: IFiles, {
 }: {
   ignore: Array<string>;
   projectRoot: string
-}) {
+}): any {
   return flat(files.map((file) => {
     let from;
     let level = Infinity;
@@ -72,7 +72,7 @@ export function syncRepo() {
     ignore,
     projectRoot,
   });
-  const allDependencies: Set<string> = new Set(parsedFiles.map(item => item.from));
+  const allDependencies: Set<string> = new Set(parsedFiles.map((item: { from: string }) => item.from));
 
   findAllDependencies({
     files: parsedFiles,

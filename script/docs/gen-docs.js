@@ -39,11 +39,11 @@ function traverseEveryFolder(dir, type, list) {
 
 function getDocsList() {
   const list = [];
-  traverseEveryFolder('./src/webpack-loader', 'loader', list);
-  traverseEveryFolder('./src/webpack-plugin', 'plugin', list);
+  traverseEveryFolder('./src/webpack-loader', 'webpack-loader', list);
+  traverseEveryFolder('./src/webpack-plugin', 'webpack-plugin', list);
   traverseEveryFolder('./src/vite-plugin', 'vite', list);
   traverseEveryFolder('./src/cli', 'cli', list);
-  traverseEveryFolder('./src/project-config', 'config', list);
+  traverseEveryFolder('./src/project-config', 'project-config', list);
   traverseEveryFolder('./src/stylelint-plugin', 'stylelint-plugin', list);
   return list;
 }
@@ -64,12 +64,12 @@ function genSidebarJson(list) {
     {
       title: 'Webpack 插件',
       collapsable: false,
-      children: filterList('plugin'),
+      children: filterList('webpack-plugin'),
     },
     {
       title: 'Webpack Loader',
       collapsable: false,
-      children: filterList('loader'),
+      children: filterList('webpack-loader'),
     },
     {
       title: 'Vite 插件',
@@ -79,7 +79,7 @@ function genSidebarJson(list) {
     {
       title: '项目配置',
       collapsable: false,
-      children: filterList('config'),
+      children: filterList('project-config'),
     },
     {
       title: 'CLI 命令',
@@ -103,6 +103,7 @@ function main() {
   const sidebar = genSidebarJson(list);
 
   // console.log('[list]', list);
+  execCommand('rm -rf ./docs/zh/*', process.cwd(), 'inherit');
 
   list.forEach((item) => {
     execCommand(

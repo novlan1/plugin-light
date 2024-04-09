@@ -3,26 +3,26 @@
 
 `Webpack` 相关插件，包括
 
-- [依赖分析](./src/plugin/analyze-deps/)
-- [JS分发](./src/plugin/dispatch-script/)
-- [组件分发](./src/plugin/dispatch-vue/)
-- [npm包打包失败修复](./src/plugin/fix-npm-package/)
-- [生成版本号](./src/plugin/gen-version/)
-- [`rem`转`rpx`](./src/plugin/rem-to-rpx/)
-- [`appId`替换](./src/plugin/replace-app-id/)
-- [拷贝本地文件](./src/plugin/transfer-local-file/)
+- [依赖分析](./src/webpack-plugin/analyze-deps/)
+- [JS分发](./src/webpack-plugin/dispatch-script/)
+- [组件分发](./src/webpack-plugin/dispatch-vue/)
+- [npm包打包失败修复](./src/webpack-plugin/fix-npm-package/)
+- [生成版本号](./src/webpack-plugin/gen-version/)
+- [`rem`转`rpx`](./src/webpack-plugin/rem-to-rpx/)
+- [`appId`替换](./src/webpack-plugin/replace-app-id/)
+- [拷贝本地文件](./src/webpack-plugin/transfer-local-file/)
 - ...
 
 
 以及一些 `Loader`
 
-- [自定义`ifdef`](./src/loader/ifdef-loader/)
-- [插入全局组件](./src/loader/insert-global-comp/)
-- [替换三方库](./src/loader/replace-library/)
-- [`v-lazy`兼容](./src/loader/v-lazy/)
-- [替换动态组件](./src/loader/transform-dynamic-comp/)
-- [替换vue标签](./src/loader/replace-template-tag/)
-- [替换`v-for`中的`key`](./src/loader/replace-vue-key/)
+- [自定义`ifdef`](./src/webpack-loader/ifdef-loader/)
+- [插入全局组件](./src/webpack-loader/insert-global-comp/)
+- [替换三方库](./src/webpack-loader/replace-library/)
+- [`v-lazy`兼容](./src/webpack-loader/v-lazy/)
+- [替换动态组件](./src/webpack-loader/transform-dynamic-comp/)
+- [替换vue标签](./src/webpack-loader/replace-template-tag/)
+- [替换`v-for`中的`key`](./src/webpack-loader/replace-vue-key/)
 - ...
 
 还有一些`webpack`基础配置和 CLI 命令。

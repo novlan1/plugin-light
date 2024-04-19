@@ -106,6 +106,9 @@ type GetUniVueConfig = {
   uniSimpleRouterExternal?: boolean | string;
 
   customPreload?: boolean | ICustomPreloadOptions;
+
+  // 是否需要 sourceMap
+  needSourceMap?: boolean;
 };
 ```
 
@@ -144,3 +147,27 @@ type GetUniVueConfig = {
 ### 调试模式
 
 当 `process.env.DEBUG_MODE` 不为 `falsy` 时，本工具会设置 `configureWebpack.optimization.minimize` 为 `false`，开发者可以用来进行产物分析。
+
+### sourceMap
+
+`options.needSourceMap` 的默认值为：
+
+```ts
+checkH5() && process.env.NODE_ENV === 'production' && getGitCurBranch(__dirname) === 'release';
+```
+
+传入布尔值时，会取传入的值。
+
+内部实现方式：
+
+```ts
+configureWebpack: {
+  ...(needSourceMap ? {
+    devtool: 'hidden-source-map',
+  } : {}),
+}
+```
+
+研发平台子项目中填有 TAM_ID（上报ID） 的话，会在发布正式环境时，将 `sourceMap` 文件后上传到 TAM 平台对应的项目下。
+
+可以在查看错误文件的时候，选择对应的 `sourceMap`，注意不用带域名，直接输入文件名，比如 `main.1212.js.map`。

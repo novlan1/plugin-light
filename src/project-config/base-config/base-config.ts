@@ -151,7 +151,7 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
     outputDir: getOutputPath(), // build时输出的文件目录
     assetsDir: '', // 放置静态文件夹目录
     lintOnSave: process.env.NODE_ENV === 'development',
-    productionSourceMap: false, // 生产环境是否生成sourceMap
+    productionSourceMap: true, // 生产环境是否生成sourceMap
     transpileDependencies,
     parallel: false,
     css: {
@@ -321,12 +321,11 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
         .loader(LOADER_MAP.crossPlatform)
         .end();
 
-      config
-      // https://webpack.js.org/configuration/devtool/#development
-        .when(
-          process.env.NODE_ENV === 'development',
-          (config: any) => config.devtool('cheap-source-map'),
-        );
+      if (process.env.NODE_ENV === 'production') {
+        config.devtool('hidden-module-source-map'); // 对外隐藏map信息、使用源码定位出错位置
+      } else {
+        config.devtool('eval-source-map'); // 生成速度更快
+      }
 
       config
         .when(

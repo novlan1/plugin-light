@@ -95,4 +95,7 @@ export type GetUniVueConfig = {
   uniSimpleRouterExternal?: boolean | string;
 
   customPreload?: boolean | ICustomPreloadOptions;
+
+  // 是否需要 sourceMap
+  needSourceMap?: boolean;
 };

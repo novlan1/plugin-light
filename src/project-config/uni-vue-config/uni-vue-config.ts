@@ -1,13 +1,16 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { getGitCurBranch } from 't-comm';
 
 import { getRootDir } from '../helper/root';
 import { LOADER_MAP } from '../../webpack-loader/index';
 import { getPlugins } from './plugin';
 import { chainWebpack } from './chain-webpack';
+
 import { DEFAULT_TRANSPILE_DEPENDENCIES, DEFAULT_ADAPTER_DIRS } from './config';
 import type { GetUniVueConfig } from './types';
 import { optimizationH5 } from './optimization-h5';
+
 import { checkH5 } from '../helper/h5';
 import { checkDebugMode } from '../helper/bundle-analyze';
 
@@ -33,6 +36,12 @@ function getExternals({
 
 
   return externals;
+}
+
+function getDefaultNeedSourceMap() {
+  const needSourceMap = checkH5() && process.env.NODE_ENV === 'production' && getGitCurBranch(__dirname) === 'release';
+
+  return needSourceMap;
 }
 
 
@@ -88,12 +97,17 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
 
   let transpileDependencies = DEFAULT_TRANSPILE_DEPENDENCIES;
   let adapterDirs = DEFAULT_ADAPTER_DIRS;
+  let needSourceMap = getDefaultNeedSourceMap();
 
   if (options?.adapterDirs) {
     adapterDirs = options.adapterDirs || [];
   }
   if (options?.transpileDependencies) {
     transpileDependencies = options.transpileDependencies;
+  }
+
+  if (typeof options?.needSourceMap === 'boolean') {
+    needSourceMap = options.needSourceMap;
   }
 
   const useH5SplitChunks = checkH5() && options?.useH5SplitChunks;
@@ -149,6 +163,10 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
         ],
       },
       optimization,
+
+      ...(needSourceMap ? {
+        devtool: 'hidden-source-map',
+      } : {}),
       // watchOptions: {
       //   ignored: [/node_modules/],
       // },

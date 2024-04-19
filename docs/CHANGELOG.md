@@ -38,6 +38,40 @@
 
 
 
+### [1.2.61](https://github.com/novlan1/uni-plugin-light/compare/v1.2.60...v1.2.61) (2024-04-17)
+
+
+### Features 🎉
+
+* **source-map:** 更新sourceMap配置 ([2c130b3](https://github.com/novlan1/uni-plugin-light/commit/2c130b3193dcb3d4da4367bd5bcf1e43f7be0db6))
+
+
+### Documentation 📖
+
+* source map ([1365388](https://github.com/novlan1/uni-plugin-light/commit/1365388b7567f97cd5cf34cdd43373afa4afc08d))
+* **uni-vue-config:** add source-map ([3572109](https://github.com/novlan1/uni-plugin-light/commit/35721095aaed4770476b609da01d68718b851786))
+
+### [1.2.60](https://github.com/novlan1/uni-plugin-light/compare/v1.2.59...v1.2.60) (2024-04-16)
+
+### [1.2.59](https://github.com/novlan1/uni-plugin-light/compare/v1.2.58...v1.2.59) (2024-04-16)
+
+
+### Chore 🚀 
+
+* update t-comm ([ae0ddf0](https://github.com/novlan1/uni-plugin-light/commit/ae0ddf031c67aef4dacc337e341c5b1692c2a39e))
+
+
+### Documentation 📖
+
+* 优化目录结构 ([7536da2](https://github.com/novlan1/uni-plugin-light/commit/7536da29828ecb91ad6fcc9cce46b708b9d45399))
+* update readme ([e6a7c82](https://github.com/novlan1/uni-plugin-light/commit/e6a7c827d5b4d83670f3e23f207aafe43a31df30))
+
+
+### Features 🎉
+
+* **sync-repo:** 优化类型 ([53a6f6f](https://github.com/novlan1/uni-plugin-light/commit/53a6f6f4a920414502a1d60c0d8b99b6f3e25144))
+* **uni-vue-config:** support source map ([6deb4f6](https://github.com/novlan1/uni-plugin-light/commit/6deb4f65ce9d007012cb8c45478ae1e958791342))
+
 ### [1.2.58](https://github.com/novlan1/uni-plugin-light/compare/v1.2.57...v1.2.58) (2024-04-09)
 
 

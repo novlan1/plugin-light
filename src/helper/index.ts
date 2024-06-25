@@ -1,19 +1,42 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import * as fs from 'fs';
 import * as path from 'path';
-import { isWindows } from 't-comm';
+import { isWindows, timeStampFormat, readFileSync } from 't-comm';
 
 export const ROOT_NAME = 'MAIN';
 
 export function saveJsonToLog(content: any, file: string, needLog = true) {
   if (!needLog) return;
   createLogDir();
+  const filePath = `./log/${file}`;
+
+
+  let beforeContent = [];
+  let newContent = [{
+    logTime: timeStampFormat(Date.now(), 'yyyy-MM-dd hh:mm:ss'),
+    data: content,
+  }];
+
+
+  if (fs.existsSync(filePath)) {
+    try {
+      beforeContent = readFileSync(filePath, true).logList || [];
+    } catch (err) {
+      beforeContent = [];
+    }
+  }
+  if (beforeContent && Array.isArray(beforeContent)) {
+    newContent.push(...beforeContent);
+  }
+
+  newContent = newContent.slice(0, 10);
 
   try {
-    fs.writeFile(`./log/${file}`, JSON.stringify(content, null, 2), {
+    fs.writeFile(filePath, JSON.stringify({ logList: newContent }, null, 2), {
       encoding: 'utf-8',
     }, () => {});
-  } catch (err) {}
+  } catch (err) {
+  }
 }
 
 export function createLogDir() {

@@ -1,0 +1,157 @@
+[
+  {
+    "text": "北京市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/11.html",
+    "code": "11"
+  },
+  {
+    "text": "天津市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/12.html",
+    "code": "12"
+  },
+  {
+    "text": "河北省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13.html",
+    "code": "13"
+  },
+  {
+    "text": "山西省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14.html",
+    "code": "14"
+  },
+  {
+    "text": "内蒙古自治区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15.html",
+    "code": "15"
+  },
+  {
+    "text": "辽宁省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21.html",
+    "code": "21"
+  },
+  {
+    "text": "吉林省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22.html",
+    "code": "22"
+  },
+  {
+    "text": "黑龙江省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23.html",
+    "code": "23"
+  },
+  {
+    "text": "上海市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/31.html",
+    "code": "31"
+  },
+  {
+    "text": "江苏省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32.html",
+    "code": "32"
+  },
+  {
+    "text": "浙江省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33.html",
+    "code": "33"
+  },
+  {
+    "text": "安徽省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34.html",
+    "code": "34"
+  },
+  {
+    "text": "福建省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35.html",
+    "code": "35"
+  },
+  {
+    "text": "江西省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36.html",
+    "code": "36"
+  },
+  {
+    "text": "山东省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37.html",
+    "code": "37"
+  },
+  {
+    "text": "河南省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41.html",
+    "code": "41"
+  },
+  {
+    "text": "湖北省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42.html",
+    "code": "42"
+  },
+  {
+    "text": "湖南省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43.html",
+    "code": "43"
+  },
+  {
+    "text": "广东省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44.html",
+    "code": "44"
+  },
+  {
+    "text": "广西壮族自治区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45.html",
+    "code": "45"
+  },
+  {
+    "text": "海南省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46.html",
+    "code": "46"
+  },
+  {
+    "text": "重庆市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/50.html",
+    "code": "50"
+  },
+  {
+    "text": "四川省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51.html",
+    "code": "51"
+  },
+  {
+    "text": "贵州省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52.html",
+    "code": "52"
+  },
+  {
+    "text": "云南省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53.html",
+    "code": "53"
+  },
+  {
+    "text": "西藏自治区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54.html",
+    "code": "54"
+  },
+  {
+    "text": "陕西省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61.html",
+    "code": "61"
+  },
+  {
+    "text": "甘肃省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62.html",
+    "code": "62"
+  },
+  {
+    "text": "青海省",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63.html",
+    "code": "63"
+  },
+  {
+    "text": "宁夏回族自治区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64.html",
+    "code": "64"
+  },
+  {
+    "text": "新疆维吾尔自治区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65.html",
+    "code": "65"
+  }
+]

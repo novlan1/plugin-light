@@ -29,7 +29,7 @@ export class InsertScriptPlugin {
 
         updateAssetSource(assets, key, newSource);
       } catch (err) {
-        console.log('[GenVersionMpPlugin] err: ', err);
+        console.warn('[GenVersionMpPlugin] err: ', err);
       }
     });
   }

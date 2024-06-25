@@ -22,7 +22,7 @@ export class CopyDirPlugin {
       if (dir.from && dir.to) {
         const result = dir.type === 'mv' ? childProcess.spawnSync('mv', ['-f', dir.from, dir.to]) : childProcess.spawnSync('cp', ['-rf', dir.from, dir.to]);
         if (result.error) {
-          console.log(result.error);
+          console.warn(result.error);
         }
       }
     });

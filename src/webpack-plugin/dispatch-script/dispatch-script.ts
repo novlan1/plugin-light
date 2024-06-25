@@ -12,8 +12,12 @@ import {
   findSubPackages,
   hasMainPackage,
   findNameChunk,
+  getMainJSPath,
+  getPagesList,
 } from './helper';
 import type { IDispatchScriptOptions, IChunks, IModule } from './types';
+import { addCommonVendorCore } from '../add-common-vendor/core';
+import { getPageSet } from '../dispatch-vue/helper';
 
 
 const resourceResolveDataList: Array<any> = [];
@@ -31,12 +35,25 @@ export class DispatchScriptPlugin {
     subPackages: Array<string>
   }>;
 
+  pages: Array<string>;
+  mainPath: string;
+
   constructor(options: IDispatchScriptOptions) {
+    // if (options.addCommonVendorRequire !== false) {
+    //   options.addCommonVendorRequire = true;
+    // }
+
     this.options = options;
+
     this.moveFiles = new Map();
     this.pluginName = 'DispatchScriptPlugin';
     this.reverseDepsMap = {};
     this.handledModules = [];
+
+    // 现在获取不到真正的 pages，是空数组
+    this.pages = getPagesList();
+    this.mainPath = getMainJSPath();
+    saveJsonToLog(this.pages, 'dispatch-script.raw-pages.json');
 
     createLogDir();
   }
@@ -47,7 +64,7 @@ export class DispatchScriptPlugin {
         try {
           this.collectDeps(result);
         } catch (err) {
-          console.log('[DISPATCH SCRIPT] err', err);
+          console.warn('[DISPATCH SCRIPT] err', err);
         }
       });
     });
@@ -57,13 +74,13 @@ export class DispatchScriptPlugin {
         try {
           this.collectShouldDispatchJS(compilation);
         } catch (err) {
-          console.log('[DISPATCH SCRIPT] err', err);
+          console.warn('[DISPATCH SCRIPT] err', err);
         }
       });
 
       compilation.hooks.optimizeChunkModules.tap(this.pluginName, (chunks: IChunks, modules: Array<IModule>) => {
-        saveJsonToLog(resourceResolveDataList, 'dispatch-script.resource-resolve-data-list.json');
-        saveJsonToLog(moduleSources, 'dispatch-script.module-sources.json');
+        saveJsonToLog(resourceResolveDataList, 'dispatch-script.raw-resource-resolve-data-list.json');
+        saveJsonToLog(moduleSources, 'dispatch-script.raw-module-sources.json');
 
         try {
           this.doDispatchJS({
@@ -72,18 +89,42 @@ export class DispatchScriptPlugin {
             compilation,
           });
         } catch (err) {
-          console.log('[DISPATCH SCRIPT] err', err);
+          console.warn('[DISPATCH SCRIPT] err', err);
         }
       });
     });
+
+    if (this.options.addCommonVendorRequire) {
+      compiler.hooks.emit.tap(this.pluginName, (compilation: any) => {
+        try {
+          const { assets } = compilation;
+
+          addCommonVendorCore({
+            assets,
+            pageSet: Array.from(getPageSet()),
+            subPackages: Object.keys((process as any).UNI_SUBPACKAGES) || {},
+            outputDir: process.env.UNI_OUTPUT_DIR || '',
+          });
+        } catch (err) {
+          console.warn('DispatchScriptPlugin.err: ', err);
+        }
+      });
+    }
   }
 
   collectShouldDispatchJS(compilation: any) {
     const reverseDeps = parseSetDeps(this.reverseDepsMap);
-    const handledDepsMap = traverseDeps(reverseDeps);
 
-    saveJsonToLog(reverseDeps, 'dispatch-script.deps-raw.json');
-    saveJsonToLog(handledDepsMap, 'dispatch-script.deps-flatten.json');
+    saveJsonToLog(getPagesList(), 'dispatch-script.raw-pages-dispatch.json');
+
+    const handledDepsMap = traverseDeps({
+      deps: reverseDeps,
+      pages: getPagesList(),
+      mainPath: getMainJSPath(),
+    });
+
+    saveJsonToLog(reverseDeps, 'dispatch-script.inner-deps-raw.json');
+    saveJsonToLog(handledDepsMap, 'dispatch-script.inner-deps-flatten.json');
 
     const waitDisposeModules = compilation.modules.filter((module: IModule) => baseTest(module, this.options));
     waitDisposeModules.forEach((module: IModule) => {
@@ -95,9 +136,6 @@ export class DispatchScriptPlugin {
 
       moduleSources.push(module.resource);
 
-      // console.log('[DISPATCH SCRIPT] module.resource: ', module.resource);
-      // console.log('[DISPATCH SCRIPT] forceMovePackages: ', forceMovePackages);
-      // console.log('[DISPATCH SCRIPT] isMain: ', !!isMain);
 
       if (forceMovePackages?.length) {
         this.moveFiles.set(module, {
@@ -105,7 +143,7 @@ export class DispatchScriptPlugin {
           pkgSet: forceMovePackages,
         });
       } else if (matchSubPackages.size > 0 && !isMain) {
-        // 只用处理大于一个分包在使用的情况，一个使用的情况uni已经处理好了，但是要考虑3的情况
+        // 只用处理大于一个分包在使用的情况，一个使用的情况 uni 已经处理好了，但是要考虑 3 的情况
         this.moveFiles.set(module, {
           name: module.resource,
           pkgSet: matchSubPackages,
@@ -128,7 +166,7 @@ export class DispatchScriptPlugin {
     modules.forEach((module) => {
       if (this.moveFiles.has(module)) {
         const mainChunks = module.getChunks();
-        // 如果不存在主包的common/vendor中，说明已经被uni放入分包了，就不需要做任何处理
+        // 如果不存在主包的 common/vendor 中，说明已经被 uni 放入分包了，就不需要做任何处理
         if (mainChunks.length === 1 && mainChunks[0].name === VENDER_PATH) {
           const mainChunk = mainChunks[0];
           const moveFileInfo = this.moveFiles.get(module);
@@ -142,8 +180,7 @@ export class DispatchScriptPlugin {
              * views/edit/
              * views/setting/
              */
-            const aPath = path.join(value, VENDER_PATH) as any;
-            // @ts-ignore
+            const aPath = path.join(value, VENDER_PATH);
             chunkNames.push(normalizePath(aPath));
           });
 
@@ -156,9 +193,6 @@ export class DispatchScriptPlugin {
             graphHelpers.connectChunkAndModule(pkgChunk, module);
           });
 
-          // console.log(`[DISPATCH SCRIPT] 正在移动脚本 ${getRelativePath(module.resource)}
-          // 到分包 ${Array.from(moveFileInfo.pkgSet).join(',')} 中`);
-
           this.handledModules.push({
             module: getRelativePath(module.resource),
             subPackages: Array.from(moveFileInfo.pkgSet),
@@ -168,7 +202,7 @@ export class DispatchScriptPlugin {
       }
     });
 
-    saveJsonToLog(this.handledModules, 'dispatch-script.handled-modules.json');
+    saveJsonToLog(this.handledModules, 'dispatch-script.result-handled-modules.json');
   }
 
   collectDeps(result: {
@@ -189,8 +223,6 @@ export class DispatchScriptPlugin {
       query = '',
     } = resourceResolveData;
 
-    // console.log('[DISPATCH SCRIPT] issuer', issuer);
-    // console.log('[DISPATCH SCRIPT] path', path);
 
     const parent = issuer ? getRelativePath(issuer) : ROOT_NAME;
     const child = getRelativePath(path);

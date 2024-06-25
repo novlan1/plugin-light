@@ -46,7 +46,7 @@ export class GlobalThisPolyfillPlugin {
           return source.length;
         };
       } catch (err) {
-        console.log('GlobalThisPolyfillPlugin.err: ', err);
+        console.warn('GlobalThisPolyfillPlugin.err: ', err);
       }
     });
   }

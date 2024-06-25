@@ -6,7 +6,6 @@
 
 在 `vue.config.js` 中添加如下设置：
 
-
 ```js
 const { getUniVueConfig } = require('plugin-light/lib/uni-vue-config');
 const { merge } = require('webpack-merge');
@@ -109,7 +108,15 @@ type GetUniVueConfig = {
 
   // 是否需要 sourceMap
   needSourceMap?: boolean;
-};
+
+  usePMDBusinessAlias?: boolean;
+
+  // 是否使用 work-box
+  useWorkBoxPlugin?: Record<string, any>;
+
+  // 是否保存 bundle-analyze 结果到 html 中
+  saveBundleAnalyzeHtml?: Record<string, any>;
+}
 ```
 
 #### transpileDependencies
@@ -143,6 +150,8 @@ type GetUniVueConfig = {
 ### 打包产物分析
 
 当 `process.env.npm_config_report` 不为 `falsy` 时，本工具会使用 `webpack-bundle-analyzer` 插件，开发者可用来进行打包分析。
+
+当传入 `saveBundleAnalyzeHtml` 不为 `falsy` 时，会在 `production` 模式下，保存打包分析产物到 `my-bundle-analyze.html` 文件中，可以在流水线中进行归档。
 
 ### 调试模式
 

@@ -38,6 +38,435 @@
 
 
 
+### [1.3.9](https://github.com/novlan1/uni-plugin-light/compare/v1.3.8...v1.3.9) (2024-06-21)
+
+
+### Features 🎉
+
+* **log:** 支持保存多份log文件 ([56d013a](https://github.com/novlan1/uni-plugin-light/commit/56d013ad7b5ce04a711463a104a777178e8865a7))
+
+### [1.3.8](https://github.com/novlan1/uni-plugin-light/compare/v1.3.7...v1.3.8) (2024-06-20)
+
+
+### Features 🎉
+
+* **dispatch-script:** 命名优化 ([2924588](https://github.com/novlan1/uni-plugin-light/commit/2924588d4097194ad8672cf9f4b25a60dadd4865))
+
+
+### Chore 🚀 
+
+* 增加注释 ([187bce7](https://github.com/novlan1/uni-plugin-light/commit/187bce756d3de2840aade44e1b50b90d60deeb17))
+* 增加注释 ([5eed43e](https://github.com/novlan1/uni-plugin-light/commit/5eed43e08d3894a47ca31020fae95d6dfdab8c80))
+* **traverse-deps:** 命名优化again ([73354c8](https://github.com/novlan1/uni-plugin-light/commit/73354c8e31fb8ec55949b638b386d7da6961732e))
+
+
+### Code Refactoring ♻️
+
+* **dispatch-script:** 重构依赖分析 ([a2c4241](https://github.com/novlan1/uni-plugin-light/commit/a2c4241a6accafeee85cf7e4766cb2ef492b8996))
+
+### [1.3.7](https://github.com/novlan1/uni-plugin-light/compare/v1.3.6...v1.3.7) (2024-06-19)
+
+
+### Bug Fixes 🐞
+
+* **dispatch-script:** 获取pageSet时机优化 ([40c448c](https://github.com/novlan1/uni-plugin-light/commit/40c448c169371edeb959c5523f1a5893b0e47b50))
+
+### [1.3.6](https://github.com/novlan1/uni-plugin-light/compare/v1.3.5...v1.3.6) (2024-06-19)
+
+
+### Documentation 📖
+
+* update docs ([e5f32d0](https://github.com/novlan1/uni-plugin-light/commit/e5f32d0d40727e7e9a1b06f7def01d67c396f3d1))
+
+
+### Features 🎉
+
+* **dispatch-script:** 支持增加common/vendor的引用 ([0938b88](https://github.com/novlan1/uni-plugin-light/commit/0938b88a499deb087c7ec5c74e850dc99b206b8a))
+* **dispatch-vue:** 防止重复插入vendor ([fb66bfe](https://github.com/novlan1/uni-plugin-light/commit/fb66bfe76b8af22144e4df8c79eb2f9cff394dcc))
+
+### [1.3.5](https://github.com/novlan1/uni-plugin-light/compare/v1.3.4...v1.3.5) (2024-06-18)
+
+
+### Chore 🚀 
+
+* remove extra log ([ce09716](https://github.com/novlan1/uni-plugin-light/commit/ce097167b6dcc7df97355ecb3a5ea87a2abee3f8))
+
+
+### Features 🎉
+
+* **fix-npm-package:** fixNpmPackage 只执行一次 ([3ac4e6e](https://github.com/novlan1/uni-plugin-light/commit/3ac4e6e428f1f9ca7c31418b30973bea3584d2ba))
+
+### [1.3.4](https://github.com/novlan1/uni-plugin-light/compare/v1.3.3...v1.3.4) (2024-06-18)
+
+
+### Documentation 📖
+
+* update docs ([fccd922](https://github.com/novlan1/uni-plugin-light/commit/fccd92275dd387d98cf4485b4c854ad8a2f6dd89))
+* update docs ([ad6d99d](https://github.com/novlan1/uni-plugin-light/commit/ad6d99d23ea37cd2cb806e135574c9be525218ce))
+
+
+### Code Refactoring ♻️
+
+* 日志优化 ([e645cf9](https://github.com/novlan1/uni-plugin-light/commit/e645cf9abe3921ed58a3ac65868f3d5b7927f810))
+* 引用修改 ([3b8ee79](https://github.com/novlan1/uni-plugin-light/commit/3b8ee7956b20c28fa32b7213a81e1be45d5a4ad4))
+* **dispatch-script:** 依赖分析抽离 ([6dfac81](https://github.com/novlan1/uni-plugin-light/commit/6dfac81c61acb109b4ac475dbc2203fd60084c0a))
+
+### [1.3.3](https://github.com/novlan1/uni-plugin-light/compare/v1.3.2...v1.3.3) (2024-06-18)
+
+
+### Chore 🚀 
+
+* **log:** 保存日志优化 ([cf3de99](https://github.com/novlan1/uni-plugin-light/commit/cf3de99dfdcf8c51a191211865df61127eb20088))
+
+
+### Features 🎉
+
+* **dispatch-vue:** custom disable 前置判断 ([4c51653](https://github.com/novlan1/uni-plugin-light/commit/4c516535c95d322053d982d7038ee6c3ba643263))
+* **dispatch-vue:** findSubPackages去重 ([e03958f](https://github.com/novlan1/uni-plugin-light/commit/e03958fde36c48685e882d9eff83223d4133f353))
+
+
+### Tests ✅
+
+* **dispatch-vue:** 核心逻辑增加单元测试 ([cf6c8cd](https://github.com/novlan1/uni-plugin-light/commit/cf6c8cd165529d50243d3178372d4f2ae3cce206))
+
+
+### Documentation 📖
+
+* **dispatch-vue:** update docs ([af6f471](https://github.com/novlan1/uni-plugin-light/commit/af6f471df23787c8fad0d562a8d2f699f1be5dc2))
+
+
+### Code Refactoring ♻️
+
+* **dispatch-vue:** 抽离format ([1af7fc9](https://github.com/novlan1/uni-plugin-light/commit/1af7fc9e2dd8706a228a060e0e3e157027639577))
+* **dispatch-vue:** 抽离getMovingComponents核心逻辑 ([62f0333](https://github.com/novlan1/uni-plugin-light/commit/62f03331300eb7c6b801d95f2102ac9e188ddde2))
+* **dispatch-vue:** 优化插件核心逻辑，并防止循环引用 ([f921e42](https://github.com/novlan1/uni-plugin-light/commit/f921e429dc74008add46c949dd72b9778e8c6655))
+
+### [1.3.2](https://github.com/novlan1/uni-plugin-light/compare/v1.3.1...v1.3.2) (2024-06-06)
+
+
+### Bug Fixes 🐞
+
+* **custom-preload:** 防止加载js失败 ([6453f00](https://github.com/novlan1/uni-plugin-light/commit/6453f003cc01b8cb93e4ef0211771fb85908b887))
+
+### [1.3.1](https://github.com/novlan1/uni-plugin-light/compare/v1.3.0...v1.3.1) (2024-06-06)
+
+
+### Bug Fixes 🐞
+
+* 自定义预加载 ([c4768fa](https://github.com/novlan1/uni-plugin-light/commit/c4768fa8202a7a52ddca9ba92a34dd6426a39792))
+
+## [1.3.0](https://github.com/novlan1/uni-plugin-light/compare/v1.2.99...v1.3.0) (2024-06-04)
+
+
+### Bug Fixes 🐞
+
+* **extract-routes:** 修复提取问题 ([55f7779](https://github.com/novlan1/uni-plugin-light/commit/55f7779aada6deede7de8c6cc2638016444da00e))
+
+
+### Features 🎉
+
+* **custom-preload:** 支持自动寻找uniRoutes ([454a7f4](https://github.com/novlan1/uni-plugin-light/commit/454a7f49e9adb62b747bd7d0b6f6b13b7575efe8))
+* **loader:** 导出preprocess ([a52d738](https://github.com/novlan1/uni-plugin-light/commit/a52d7382b1c45380b41a9ca54851e6b085251361))
+* **uni-vue-config:** sw 和 split-chunk只在productionxia使用 ([3222c19](https://github.com/novlan1/uni-plugin-light/commit/3222c19fe248cde9ac017a65a38de799d7a16d93))
+
+### [1.2.99](https://github.com/novlan1/uni-plugin-light/compare/v1.2.98...v1.2.99) (2024-06-03)
+
+
+### Bug Fixes 🐞
+
+* 白名单判断逻辑反了 ([ea92058](https://github.com/novlan1/uni-plugin-light/commit/ea92058d3305bd64bd1b869766bc589e3a579cd8))
+
+### [1.2.98](https://github.com/novlan1/uni-plugin-light/compare/v1.2.97...v1.2.98) (2024-06-03)
+
+### [1.2.97](https://github.com/novlan1/uni-plugin-light/compare/v1.2.96...v1.2.97) (2024-06-03)
+
+
+### Chore 🚀 
+
+* update optimization h5 ([334e2f0](https://github.com/novlan1/uni-plugin-light/commit/334e2f09b0c806e24939f9ee1e685fa0fbe4d0f4))
+
+### [1.2.96](https://github.com/novlan1/uni-plugin-light/compare/v1.2.95...v1.2.96) (2024-06-03)
+
+
+### Features 🎉
+
+* **vue-lazyload-external:** add vueLazyloadExternal ([b3519b3](https://github.com/novlan1/uni-plugin-light/commit/b3519b349fa76ba18c1df015e80f8a8ac1928771))
+
+### [1.2.95](https://github.com/novlan1/uni-plugin-light/compare/v1.2.94...v1.2.95) (2024-06-03)
+
+
+### Bug Fixes 🐞
+
+* axios external ([26a0c49](https://github.com/novlan1/uni-plugin-light/commit/26a0c49e9f8aba6af39f36f77d4f6a9e246756cb))
+
+### [1.2.94](https://github.com/novlan1/uni-plugin-light/compare/v1.2.93...v1.2.94) (2024-06-03)
+
+
+### Features 🎉
+
+* **uni-config:** axios external 改为默认false ([2f8fc90](https://github.com/novlan1/uni-plugin-light/commit/2f8fc90cf197e6205134560ed6417ae31a820696))
+
+### [1.2.93](https://github.com/novlan1/uni-plugin-light/compare/v1.2.92...v1.2.93) (2024-06-03)
+
+
+### Documentation 📖
+
+* udpate config ([419eba3](https://github.com/novlan1/uni-plugin-light/commit/419eba3782ec49bb68902226ba8dd3dad334774f))
+
+
+### Features 🎉
+
+* 增加npm run link ([2e0e115](https://github.com/novlan1/uni-plugin-light/commit/2e0e115cafbb9383c05a21094ee8bc272ad2de7f))
+* 支持axios external ([b37ca08](https://github.com/novlan1/uni-plugin-light/commit/b37ca0808c3d13f704f18122e9ade5dac5a30ef1))
+
+### [1.2.92](https://github.com/novlan1/uni-plugin-light/compare/v1.2.91...v1.2.92) (2024-05-31)
+
+
+### Features 🎉
+
+* **bundle:** 只在production下保存bundle ([ddec7c8](https://github.com/novlan1/uni-plugin-light/commit/ddec7c851546eab2ecf949102300071c82cd7673))
+* save bundle analyze html ([84b41d4](https://github.com/novlan1/uni-plugin-light/commit/84b41d48f6e6ca8f483e23092f98f545256a1014))
+
+### [1.2.91](https://github.com/novlan1/uni-plugin-light/compare/v1.2.90...v1.2.91) (2024-05-31)
+
+### [1.2.90](https://github.com/novlan1/uni-plugin-light/compare/v1.2.89...v1.2.90) (2024-05-31)
+
+
+### Bug Fixes 🐞
+
+* **custom-preload:** 支持数组形式的 condition.path ([242a3c8](https://github.com/novlan1/uni-plugin-light/commit/242a3c8432954695f1cb8f7e9e7550278c92775d))
+
+### [1.2.89](https://github.com/novlan1/uni-plugin-light/compare/v1.2.88...v1.2.89) (2024-05-30)
+
+
+### Chore 🚀 
+
+* lint ([f61a86e](https://github.com/novlan1/uni-plugin-light/commit/f61a86ec391b018c8ea19088aaaa7a412ffc72f0))
+* update log ([64baa50](https://github.com/novlan1/uni-plugin-light/commit/64baa5010d31e38f007894f10fe2961e8d2d83f4))
+* update spider area ([990a44d](https://github.com/novlan1/uni-plugin-light/commit/990a44def716f0b08fbfc94b75ee87b33ebcb513))
+* update t-comm ([a336bb4](https://github.com/novlan1/uni-plugin-light/commit/a336bb4eb68b9209eec55202122968aae7678502))
+
+
+### Features 🎉
+
+* 更新 ast config ([aa949f5](https://github.com/novlan1/uni-plugin-light/commit/aa949f557847dfac1c6bac56908495186f10123d))
+* 修复custom-preload中解析工具 ([bf39772](https://github.com/novlan1/uni-plugin-light/commit/bf397723f4005d50c036d2033e2d67451e13ff6a))
+* 优化custom-preload，支持history模式 ([9979fcc](https://github.com/novlan1/uni-plugin-light/commit/9979fccc436e8aee41b34c9b1e896e9b84200495))
+* 增加spider-city ([62a84b3](https://github.com/novlan1/uni-plugin-light/commit/62a84b375dd2e22974a475f1634c22e286b82022))
+* **custom-preload:** 支持更多preload模式 ([6a3df11](https://github.com/novlan1/uni-plugin-light/commit/6a3df113c18ed3f45be846fde885a4de4a919934))
+* update ast config ([e6ca82e](https://github.com/novlan1/uni-plugin-light/commit/e6ca82e9156fe842d52bc04ef1f6ea5318a30c86))
+* update spider area ([844f3d2](https://github.com/novlan1/uni-plugin-light/commit/844f3d294bfe6e2a47ce7238445f7dde0d729f03))
+
+### [1.2.88](https://github.com/novlan1/uni-plugin-light/compare/v1.2.87...v1.2.88) (2024-05-23)
+
+
+### Features 🎉
+
+* **project-config:** add workbox plugin ([316719f](https://github.com/novlan1/uni-plugin-light/commit/316719f8e5852a05a786c1b395c47de214eff904))
+* update workbox plugin config ([a72abc9](https://github.com/novlan1/uni-plugin-light/commit/a72abc986c02d0afc374372a8cd9f765d31c1d8e))
+* **workbox-plugin:** 支持传入参数 ([285e5af](https://github.com/novlan1/uni-plugin-light/commit/285e5af2998d1b98d140e1795ee0ad4862ade3f1))
+
+
+### Bug Fixes 🐞
+
+* **workbox-plugin:** add config ([4996b75](https://github.com/novlan1/uni-plugin-light/commit/4996b758985441158590f67853df10b970a35301))
+
+### [1.2.87](https://github.com/novlan1/uni-plugin-light/compare/v1.2.86...v1.2.87) (2024-05-23)
+
+
+### Features 🎉
+
+* **uni-config:** update workbox config ([41e2848](https://github.com/novlan1/uni-plugin-light/commit/41e28485e754c3f26e25d7d59133593123c3b2ce))
+
+### [1.2.86](https://github.com/novlan1/uni-plugin-light/compare/v1.2.85...v1.2.86) (2024-05-23)
+
+
+### Features 🎉
+
+* add externals ([9f7b68e](https://github.com/novlan1/uni-plugin-light/commit/9f7b68ea04e9b517c7cae4316c5c9769c1aa2ba9))
+
+### [1.2.85](https://github.com/novlan1/uni-plugin-light/compare/v1.2.84...v1.2.85) (2024-05-23)
+
+
+### Features 🎉
+
+* add ast replace script ([a85d2c5](https://github.com/novlan1/uni-plugin-light/commit/a85d2c59bccb193c1d64c547fd16aebee2cd930f))
+* **project-config:** add use work-box plugin ([3f287ae](https://github.com/novlan1/uni-plugin-light/commit/3f287ae701e3fb9af82ec651406b6030c9c3747a))
+
+### [1.2.84](https://github.com/novlan1/uni-plugin-light/compare/v1.2.83...v1.2.84) (2024-05-17)
+
+
+### Bug Fixes 🐞
+
+* **insert-code:** 兼容为空chunkMap ([5566ff2](https://github.com/novlan1/uni-plugin-light/commit/5566ff2fbff9fabc1064e620b2ea4c0616415a66))
+
+### [1.2.83](https://github.com/novlan1/uni-plugin-light/compare/v1.2.82...v1.2.83) (2024-05-15)
+
+
+### Features 🎉
+
+* support pmd-business ([948dd75](https://github.com/novlan1/uni-plugin-light/commit/948dd750831ce50678127639cf1397523e1efaf9))
+
+### [1.2.82](https://github.com/novlan1/uni-plugin-light/compare/v1.2.81...v1.2.82) (2024-05-13)
+
+
+### Bug Fixes 🐞
+
+* 防止parseMessage报错 ([3dd7d12](https://github.com/novlan1/uni-plugin-light/commit/3dd7d12429d3faf87ecb030f0562055fa10936b4))
+
+### [1.2.81](https://github.com/novlan1/uni-plugin-light/compare/v1.2.80...v1.2.81) (2024-05-13)
+
+
+### Features 🎉
+
+* update default transpileDepencies ([40cb76e](https://github.com/novlan1/uni-plugin-light/commit/40cb76e30cd76b5f49f666311201fb82dcad94c3))
+
+### [1.2.80](https://github.com/novlan1/uni-plugin-light/compare/v1.2.79...v1.2.80) (2024-05-11)
+
+
+### Features 🎉
+
+* add gp redirect ([6c14aaf](https://github.com/novlan1/uni-plugin-light/commit/6c14aafa71543eaf9f9d3023060b62c34747c216))
+
+
+### Bug Fixes 🐞
+
+* **gen-version:** 修复commit中带引号的情况 ([1a6743e](https://github.com/novlan1/uni-plugin-light/commit/1a6743e5a8c4829f75ea60334522ab73253eb71f))
+
+### [1.2.79](https://github.com/novlan1/uni-plugin-light/compare/v1.2.78...v1.2.79) (2024-05-09)
+
+
+### Chore 🚀 
+
+* update deps ([4d2abc0](https://github.com/novlan1/uni-plugin-light/commit/4d2abc00ab843c06cd132c7cef61715635fda77b))
+
+### [1.2.78](https://github.com/novlan1/uni-plugin-light/compare/v1.2.77...v1.2.78) (2024-05-09)
+
+
+### Features 🎉
+
+* **base-config:** 支持pmd包的条件编译 ([cef7c77](https://github.com/novlan1/uni-plugin-light/commit/cef7c77598d61106def4eb466ebffd1caf5e9ad6))
+
+### [1.2.77](https://github.com/novlan1/uni-plugin-light/compare/v1.2.76...v1.2.77) (2024-05-08)
+
+
+### Chore 🚀 
+
+* update t-comm ([e920214](https://github.com/novlan1/uni-plugin-light/commit/e9202140f9bd81111beee6f99ae4ddb841119ad8))
+
+
+### Features 🎉
+
+* **uni-config:** add config ([826419a](https://github.com/novlan1/uni-plugin-light/commit/826419a255ae5dafa61189177b8a2a4c060c439d))
+
+### [1.2.76](https://github.com/novlan1/uni-plugin-light/compare/v1.2.75...v1.2.76) (2024-04-30)
+
+
+### Features 🎉
+
+* 注释iife ([903174d](https://github.com/novlan1/uni-plugin-light/commit/903174d4c82a07ac2d139aa79969a750279bd670))
+* add iife ([217391f](https://github.com/novlan1/uni-plugin-light/commit/217391fbbe091660c13e8d733f86392b8154cb7f))
+* **uni-vue-config:** add zebra-ui trans ([6b463a8](https://github.com/novlan1/uni-plugin-light/commit/6b463a8a1a54ea19e9948dc1d5e7d682e7a8ae7e))
+* **vite-config:** add useCdn param ([7af5b5b](https://github.com/novlan1/uni-plugin-light/commit/7af5b5b65cef71deb828ac4f50a95e0402510582))
+
+### [1.2.75](https://github.com/novlan1/uni-plugin-light/compare/v1.2.73...v1.2.75) (2024-04-23)
+
+
+### Features 🎉
+
+* **vite-config:** update cdn ([338c594](https://github.com/novlan1/uni-plugin-light/commit/338c594bcf4010a86f4f2991c75804231997e870))
+
+### [1.2.73](https://github.com/novlan1/uni-plugin-light/compare/v1.2.72...v1.2.73) (2024-04-23)
+
+
+### Features 🎉
+
+* **vite-config:** add build target ([0eb0d4a](https://github.com/novlan1/uni-plugin-light/commit/0eb0d4aa8b7f212f09688a6c466b8eb4d3c79ba6))
+
+### [1.2.72](https://github.com/novlan1/uni-plugin-light/compare/v1.2.71...v1.2.72) (2024-04-23)
+
+
+### Features 🎉
+
+* **vite-config:** add legacy ([96c25e2](https://github.com/novlan1/uni-plugin-light/commit/96c25e2c1fd3904d6ce46bb5a260ac00ac1ada99))
+
+### [1.2.71](https://github.com/novlan1/uni-plugin-light/compare/v1.2.70...v1.2.71) (2024-04-23)
+
+
+### Features 🎉
+
+* **vite-config:** update vite config ([a8ddfb7](https://github.com/novlan1/uni-plugin-light/commit/a8ddfb7b1ad7ca3978df8a06fefb322d0df5c188))
+
+### [1.2.70](https://github.com/novlan1/uni-plugin-light/compare/v1.2.69...v1.2.70) (2024-04-23)
+
+
+### Features 🎉
+
+* remove cross origin ([9dde6ee](https://github.com/novlan1/uni-plugin-light/commit/9dde6ee0c8fa5f1de0d1fc912aa5971987df6c43))
+* remove cross origin ([7085848](https://github.com/novlan1/uni-plugin-light/commit/70858488d818e8e2c80e787e8380707c0c4e0e16))
+
+### [1.2.69](https://github.com/novlan1/uni-plugin-light/compare/v1.2.68...v1.2.69) (2024-04-22)
+
+
+### Bug Fixes 🐞
+
+* **vite-config:** vue-demi cdn提前 ([c39364f](https://github.com/novlan1/uni-plugin-light/commit/c39364fe26fef8fd352496b09011446dc7ad3625))
+
+### [1.2.68](https://github.com/novlan1/uni-plugin-light/compare/v1.2.67...v1.2.68) (2024-04-22)
+
+
+### Features 🎉
+
+* **vite-config:** add more cdn list ([3bd816e](https://github.com/novlan1/uni-plugin-light/commit/3bd816ecee03777268d814c54aabe8841db5ec22))
+
+### [1.2.67](https://github.com/novlan1/uni-plugin-light/compare/v1.2.66...v1.2.67) (2024-04-22)
+
+
+### Features 🎉
+
+* **vite-config:** 支持cdn ([85c29a6](https://github.com/novlan1/uni-plugin-light/commit/85c29a60372f64f4e3b16f4dd01b5821ffc83a63))
+
+### [1.2.66](https://github.com/novlan1/uni-plugin-light/compare/v1.2.65...v1.2.66) (2024-04-21)
+
+
+### Features 🎉
+
+* **vite-config:** add visualizer ([9876580](https://github.com/novlan1/uni-plugin-light/commit/98765806b3788e5ace2f38cd4f8c5a19f685dca6))
+* **vite-config:** update env name ([d6fb931](https://github.com/novlan1/uni-plugin-light/commit/d6fb9316048e673b63dbf2ac9ca69239ec44a9d0))
+
+### [1.2.65](https://github.com/novlan1/uni-plugin-light/compare/v1.2.64...v1.2.65) (2024-04-20)
+
+
+### Features 🎉
+
+* **vite-config:** 支持history模式 ([16b582c](https://github.com/novlan1/uni-plugin-light/commit/16b582c17e7604f9d1c6ebd2ec7475e5d8b68d9c))
+
+### [1.2.64](https://github.com/novlan1/uni-plugin-light/compare/v1.2.63...v1.2.64) (2024-04-20)
+
+
+### Features 🎉
+
+* **vite:** support history mode ([4718300](https://github.com/novlan1/uni-plugin-light/commit/4718300df0935c6b515d7ac846207e83bd68927c))
+
+### [1.2.63](https://github.com/novlan1/uni-plugin-light/compare/v1.2.62...v1.2.63) (2024-04-20)
+
+
+### Features 🎉
+
+* **uni-vue-config:** 默认版本信息不输出 ([0700fc7](https://github.com/novlan1/uni-plugin-light/commit/0700fc7a7f6a1d9f2ef0fa9b7a32559b41a705bb))
+
+### [1.2.62](https://github.com/novlan1/uni-plugin-light/compare/v1.2.61...v1.2.62) (2024-04-20)
+
+
+### Documentation 📖
+
+* update docs ([1f6799b](https://github.com/novlan1/uni-plugin-light/commit/1f6799b9e9d541e6dd8ad9f978c67e467169acd0))
+
+
+### Features 🎉
+
+* **vite-config:** add gen version ([fce9200](https://github.com/novlan1/uni-plugin-light/commit/fce9200f1ae8aa68288964f53d256b4dcc2cf184))
+
 ### [1.2.61](https://github.com/novlan1/uni-plugin-light/compare/v1.2.60...v1.2.61) (2024-04-17)
 
 

@@ -31,4 +31,7 @@ export type GetViteConfigOptions = {
   pmdAliasMap?: Record<string, string>;
 
   customElements?: Array<string>;
+
+  // 三方库是否使用 cdn 链接，比如 vue，vue-router
+  useCdn?: boolean;
 };

@@ -15,6 +15,7 @@ import { DEFAULT_CDN_URLS, VUE3_CDN_URLS, DEFAULT_PROJECT_MAP, DEFAULT_HANDLE_IF
 import { DEFAULT_TRANSPILE_DEPENDENCIES } from '../uni-vue-config/config';
 import { checkBundleAnalyze, checkDebugMode } from '../helper/bundle-analyze';
 import type { IBaseConfigOptions } from './types';
+import { initWorkboxPlugin } from './service-worker';
 
 
 const curDirname = getRootDir();
@@ -62,7 +63,7 @@ function getEntry(shadowProjectMap: Record<string, string>) {
 }
 
 // 获取目下所有项目文件夹名称并创建webpack别名
-function getAllAppNameAlias(shadowProjectMap: Record<string, string>) {
+function getAllAppNameAlias(shadowProjectMap: Record<string, string>, usePMDBusinessAlias = false) {
   const files = fs.readdirSync(path.resolve(curDirname, 'src'));
   const result: Record<string, any> = {
     foldername: [], // 文件夹名字
@@ -84,6 +85,13 @@ function getAllAppNameAlias(shadowProjectMap: Record<string, string>) {
   result.foldername.forEach((dir: string) => {
     alias[dir] = path.resolve(curDirname, 'src', dir);
   });
+
+  if (usePMDBusinessAlias) {
+    return {
+      ...alias,
+      'src/component': 'pmd-business',
+    };
+  }
   return alias;
 }
 
@@ -178,7 +186,7 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
       entry: getEntry(shadowProjectMap),
       name: getAppName(),
       resolve: {
-        alias: getAllAppNameAlias(shadowProjectMap),
+        alias: getAllAppNameAlias(shadowProjectMap, options?.usePMDBusinessAlias),
         extensions: ['js', 'vue', 'json', 'ts'],
       },
       // 可用来测试webpack运行时机制
@@ -192,6 +200,9 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
           minimize: false,
         },
       } : {}),
+      plugins: [
+        options?.useWorkBoxPlugin ? initWorkboxPlugin(options.useWorkBoxPlugin) : undefined,
+      ].filter(item => item),
     },
     chainWebpack(config: any) {
       config.module.rule('vue')
@@ -217,7 +228,7 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
           .use(LOADER_MAP.ifdef)
           .loader(LOADER_MAP.ifdef)
           .options({
-            context: { H5: true, VUE2: true },
+            context: { H5: true, VUE2: true, __NOT_UNI__: true },
             type: ['css', 'js', 'html'],
           })
           .end();

@@ -53,7 +53,7 @@ export function transformDynamicComp(this: any, source = '') {
   // @ts-ignore
   const { resourcePath } = this;
 
-  recordLoaderLog('transform-dynamic-comp.json', {
+  recordLoaderLog('transform-dynamic-comp.result.json', {
     file: getRelativePath(resourcePath),
     component: compList.map(item => item.name).join(','),
   });

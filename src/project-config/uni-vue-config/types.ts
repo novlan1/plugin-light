@@ -88,14 +88,21 @@ export type GetUniVueConfig = {
 
   // aegis-web-sdk 是否使用外链
   // 传入 string 会覆盖之前的链接
-  // 默认为 true
   aegisWebSdkExternal?: boolean | string;
-
-  // 默认为 false
   uniSimpleRouterExternal?: boolean | string;
+  axiosExternal?: boolean | string;
+  vueLazyloadExternal?: boolean | string;
 
   customPreload?: boolean | ICustomPreloadOptions;
 
   // 是否需要 sourceMap
   needSourceMap?: boolean;
+
+  usePMDBusinessAlias?: boolean;
+
+  // 是否使用 work-box
+  useWorkBoxPlugin?: Record<string, any>;
+
+  // 是否保存 bundle-analyze 结果到 html 中
+  saveBundleAnalyzeHtml?: boolean | Record<string, any>;
 };

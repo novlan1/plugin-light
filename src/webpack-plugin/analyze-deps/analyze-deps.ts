@@ -25,9 +25,6 @@ export class DepAnalysisPlugin {
           path,
         } = resourceResolveData;
 
-        // console.log('[DepAnalysisPlugin] issuer', issuer);
-        // console.log('[DepAnalysisPlugin] path', path);
-
         const parent = issuer ? getRelativePath(issuer) : ROOT_NAME;
         const child = getRelativePath(path);
 
@@ -56,7 +53,7 @@ export class DepAnalysisPlugin {
         const handledDepsMap = getFlattenedDeps(reverseDeps);
         saveJsonToLog(handledDepsMap, 'analyze-deps.dep-flatten.json');
       } catch (err) {
-        console.log('[DepAnalysisPlugin] err: ', err);
+        console.warn('[DepAnalysisPlugin] err: ', err);
       }
     });
   }

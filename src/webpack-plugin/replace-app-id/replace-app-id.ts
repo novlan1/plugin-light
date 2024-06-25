@@ -19,7 +19,7 @@ export class ReplaceAppIdPlugin {
       try {
         this.doReplace(compilation, cb);
       } catch (err) {
-        console.log('[ReplaceAppIdPlugin] err: ', err);
+        console.warn('[ReplaceAppIdPlugin] err: ', err);
       }
     });
   }

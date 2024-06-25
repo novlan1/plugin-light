@@ -10,6 +10,12 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 // eslint-disable-next-line import/no-unresolved
 import AutoImport from 'unplugin-auto-import/vite';
+import { BUILD_NAME_MAP } from 't-comm/lib/v-console/config';
+import { removeLastSlash } from 't-comm/lib/slash/slash';
+
+import { visualizer } from 'rollup-plugin-visualizer';
+import importToCDN from 'vite-plugin-cdn-import';
+import legacy from '@vitejs/plugin-legacy';
 
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import mockDevServerPlugin from 'vite-plugin-mock-dev-server';
@@ -18,7 +24,7 @@ import viteCompression from 'vite-plugin-compression';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import commonjs from 'vite-plugin-commonjs';
-import { enableCDN } from './cdn';
+import { enableCDN, CDN_LIST } from './cdn';
 
 import type { GetViteConfigOptions } from './types';
 import { ifdefVitePlugin } from '../../vite-plugin/ifdef';
@@ -26,6 +32,7 @@ import { crossPlatformVitePlugin } from '../../vite-plugin/cross-platform';
 import { addCodeAtEndVitePlugin } from '../../vite-plugin/add-code-at-end';
 import { aliasForLibrary } from '../../vite-plugin/alias-for-library';
 import { crossGameStyleVitePlugin } from '../../vite-plugin/cross-game-style';
+import { genVersionWebVitePlugin } from '../../vite-plugin/gen-version/web';
 import {
   DEFAULT_OPTIMIZE_DEPS_INCLUDES,
   DEFAULT_OPTIMIZE_DEPS_EXCLUDES,
@@ -40,7 +47,6 @@ const ENV_PREFIX = ['VITE_', 'VUE_APP'];
 
 // 当前工作目录路径
 const root: string = process.cwd();
-
 
 function getAlias({
   subProjectRoot,
@@ -94,10 +100,16 @@ export function getViteBaseConfig({
   aliasForLibraryOptions = DEFAULT_ALIAS_FOR_LIBRARY_OPTIONS,
   pmdAliasMap = getDefaultPmdAliasMap(root),
   customElements = [],
+
+  useCdn = true,
 }: GetViteConfigOptions) {
   // 环境变量
   const env = loadEnv(mode, root, ENV_PREFIX);
+  const isProduction = mode === 'production';
+
   const appDir = env.VUE_APP_DIR || '';
+  const vueAppBase = env.VUE_APP_PUBLICPATH;
+
 
   let subProjectRoot = `${path.resolve(root, `./src/${appDir}`)}/`;
   if (!appDir) {
@@ -166,11 +178,45 @@ export function getViteBaseConfig({
     }),
     // 生产环境默认不启用 CDN 加速
     enableCDN(env.VITE_CDN_DEPS),
+    genVersionWebVitePlugin({
+      buildName: BUILD_NAME_MAP.build,
+      commitName: BUILD_NAME_MAP.commit,
+      delay: 10,
+    }),
+    legacy({
+      targets: ['> 1%, last 1 version, ie >= 11'],
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime'], // 面向IE11时需要此插件
+    }),
+    isProduction && useCdn ? importToCDN(CDN_LIST) : null,
+    isProduction ? visualizer({
+      open: !!env.VITE_VISUALIZER,
+      filename: path.resolve(subProjectRoot, 'dist', 'stats.html'), // 分析图生成的文件名
+      gzipSize: true, // 收集 gzip 大小并将其显示
+      brotliSize: true, // 收集 brotli 大小并将其显示
+    }) : null,
   ].filter(item => !!item);
+
+
+  const experimentalConfig = vueAppBase ? {
+    experimental: {
+      renderBuiltUrl(filename: string, { hostId, hostType, type }: {
+        hostId: string;
+        hostType: string;
+        type: string;
+      }) {
+        console.log('[experimental] ', hostType, hostId, type, filename);
+
+        return `${removeLastSlash(vueAppBase)}/${filename}`;
+      },
+    },
+  } : {};
+
 
   return {
     root: subProjectRoot,
-    base: env.VUE_APP_PUBLICPATH || './',
+    envDir: process.cwd(),
+    base: vueAppBase || './',
+    ...experimentalConfig,
     optimizeDeps: {
       // include: ["press-ui/**/*.vue"]
       include: optimizeDepsIncludes || DEFAULT_OPTIMIZE_DEPS_INCLUDES,
@@ -199,6 +245,7 @@ export function getViteBaseConfig({
       },
     },
     build: {
+      target: 'es2015',
       rollupOptions: {
         input: {
           1: path.resolve(subProjectRoot, './index.html'),

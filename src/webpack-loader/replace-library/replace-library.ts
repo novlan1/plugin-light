@@ -29,7 +29,7 @@ export function replaceLibrary(this: any, source: string) {
     const tContent = typeof content === 'function' ? content() : content;
 
     if (resourcePath.match(new RegExp(path))) {
-      recordLoaderLog('replace-library.json', {
+      recordLoaderLog('replace-library.result.json', {
         file: getRelativePath(resourcePath),
         type: 'CONTENT',
         path,
@@ -52,7 +52,7 @@ export function replaceLibrary(this: any, source: string) {
 
       if (importRe.test(res)) {
         res = res.replaceAll(importRe, () => `'${to}'`);
-        recordLoaderLog('replace-library.json', {
+        recordLoaderLog('replace-library.result.json', {
           file: getRelativePath(resourcePath),
           type: 'LIBRARY',
           from,

@@ -56,7 +56,7 @@ export class InsertGlobalCompPlugin {
       const globalComponents = getGlobalComponents(assets, this.options);
 
 
-      console.log('globalComponents', globalComponents);
+      console.log('[globalComponents]', globalComponents);
       for (const fileName of fileNames) {
         if (/\.(json)$/.test(fileName) === false || fileName === 'app.json') {
           continue;

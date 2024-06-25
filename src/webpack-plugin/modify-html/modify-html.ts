@@ -196,7 +196,7 @@ export const HtmlModifyPlugin = (function () {
           operationList
             .reduce((previous, fn: Function) => previous
               .then((retVal: any) => fn(retVal, compiler))
-              .catch((err: Error) => console.log(err)), Promise.resolve());
+              .catch((err: Error) => console.warn(err)), Promise.resolve());
         }
       },
     },

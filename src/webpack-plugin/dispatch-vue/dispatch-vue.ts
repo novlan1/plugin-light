@@ -2,10 +2,12 @@
 import * as path from 'path';
 import { analyzeComponent } from './analyze-component';
 import { fixNpmPackage } from '../fix-npm-package/core';
+import { formatTime, findReplaceMap, replaceAllPolyfill, formatReplaceRefList } from './helper';
+
 import { saveLoaderLog } from '../../helper/loader-log';
-import { createLogDir, updateAssetSource, removeFirstSlash } from '../../helper/index';
-import { formatTime, findReplaceMap, replaceAllPolyfill } from './helper';
 import { PLATFORM_MAP, HTML_MAP, CSS_MAP } from '../../helper/config';
+import { createLogDir, updateAssetSource, removeFirstSlash } from '../../helper/index';
+
 import type { IDispatchVueOptions, IMovingComponents, IReplaceRefList } from './types';
 
 
@@ -78,7 +80,7 @@ export class DispatchVuePlugin {
 
         saveLoaderLog();
       } catch (err) {
-        console.log('[Dispatch Vue] err', err);
+        console.warn('[Dispatch Vue] err', err);
       }
     });
   }
@@ -144,30 +146,15 @@ export class DispatchVuePlugin {
 
     if (assets[origin + postfix]) {
       let source = assets[origin + postfix].source().toString();
-      if (postfix === '.js') {
+      if (postfix === '.js' && !source.startsWith(insertCode)) {
         source = `${insertCode}${source}`;
       }
       updateAssetSource(assets, target + postfix, source);
     }
   }
 
-  formatReplaceRefList(replaceRefList: IReplaceRefList) {
-    const refMap = replaceRefList.reduce((acc: Record<string, IReplaceRefList>, item) => {
-      const { 0: origin, 1: target, 2: subPackage } = item;
-      const list = [removeFirstSlash(origin), removeFirstSlash(target)];
-
-      if (acc[subPackage]) {
-        acc[subPackage].push(list);
-      } else {
-        acc[subPackage] = [list];
-      }
-      return acc;
-    }, {});
-    return refMap;
-  }
-
   modifyRef(assets: Record<string, any>, parsedReplaceRefList: IReplaceRefList) {
-    const refMap = this.formatReplaceRefList(parsedReplaceRefList);
+    const refMap = formatReplaceRefList(parsedReplaceRefList);
     replaceAllPolyfill();
 
     for (const key of Object.keys(assets)) {

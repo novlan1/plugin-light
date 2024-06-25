@@ -13,7 +13,7 @@ export class SaveLoaderLogPlugin {
       try {
         saveLoaderLog();
       } catch (err) {
-        console.log('[SAVE LOADER LOG] err', err);
+        console.warn('[SAVE LOADER LOG] err', err);
       }
     });
   }

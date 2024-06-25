@@ -3,7 +3,13 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import TransformPages from 'uni-read-pages';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import chalk from 'chalk';
+
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import { BUILD_NAME_MAP } from 't-comm/lib/v-console/config';
+import WorkboxPlugin from 'workbox-webpack-plugin';
+
+import { getProjectName, getSubProjectName } from '../../helper/project-name';
+import { getExternalScripts } from './external';
 
 import {
   GenVersionMpPlugin,
@@ -29,7 +35,6 @@ import { updateManifest } from './replace-manifest';
 import { checkBundleAnalyze } from '../helper/bundle-analyze';
 import type { GetUniVueConfig } from './types';
 import { CSS_POSTFIX_MAP } from '../../helper/config';
-import { AEGIS_EXTERNAL_SCRIPT_LINK, UNI_SIMPLE_ROUTER_SCRIPT_LINK } from './config';
 import { checkH5 } from '../helper/h5';
 
 
@@ -47,15 +52,26 @@ export function getPlugins({
   useAddPlaceHolderPlugin = false,
 
   remToRpxPluginMpOptions = {},
-  genVersionWebPluginOptions = {},
+  genVersionWebPluginOptions = {
+    buildName: BUILD_NAME_MAP.build,
+    commitName: BUILD_NAME_MAP.commit,
+    delay: 1,
+  },
 
   useFixMiniCssPlugin = false,
 
   aegisWebSdkExternal,
   uniSimpleRouterExternal,
+  axiosExternal,
+  vueLazyloadExternal,
+
   customPreload,
+
+  useWorkBoxPlugin,
+  saveBundleAnalyzeHtml,
 }: GetUniVueConfig) {
   const plugins: Array<any> = [];
+  const isProduction = process.env.NODE_ENV === 'production';
 
   if (process.env.VUE_APP_PLATFORM === 'app-plus') {
     const globalVarsDefinePlugin = new webpack.DefinePlugin({
@@ -110,18 +126,17 @@ export function getPlugins({
     if (process.env.VUE_APP_PLATFORM === 'mp-qq') {
       plugins.push(new GlobalThisPolyfillPlugin());
     }
-
-    if (useDispatchScriptPlugin) {
-      plugins.push(new DispatchScriptPlugin(dispatchScriptPluginOptions || {}));
-    }
     if (useDispatchVuePlugin) {
       plugins.push(new DispatchVuePlugin(dispatchVuePluginOptions || {}));
+    }
+    if (useDispatchScriptPlugin) {
+      plugins.push(new DispatchScriptPlugin(dispatchScriptPluginOptions || {}));
     }
     if (useAddPlaceHolderPlugin) {
       plugins.push(new AddPlaceHolderPlugin());
     }
   } else {
-    if (process.env.NODE_ENV === 'production' && process.env.VUE_APP_ROUTER_BASE && process.env.VUE_APP_ROUTER_BASE !== '/') {
+    if (isProduction && process.env.VUE_APP_ROUTER_BASE && process.env.VUE_APP_ROUTER_BASE !== '/') {
       updateManifest('h5.router.base', JSON.stringify(process.env.VUE_APP_ROUTER_BASE));
     }
     if (process.env.VUE_APP_BRANCH !== 'release' && process.env.UNI_OPT_TREESHAKINGNG) {
@@ -131,7 +146,7 @@ export function getPlugins({
       'src/project',
       'dist/project',
     )}/static`;
-    plugins.push(new GenVersionWebPlugin(genVersionWebPluginOptions || {}));
+    plugins.push(new GenVersionWebPlugin(genVersionWebPluginOptions));
   }
 
   if (useCopyDirPlugin) {
@@ -152,6 +167,13 @@ export function getPlugins({
     plugins.push(new BundleAnalyzerPlugin({
       analyzerPort: 8888,
     }));
+  } else if (saveBundleAnalyzeHtml && isProduction) {
+    plugins.push(new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'my-bundle-analyze.html',
+      ...(typeof saveBundleAnalyzeHtml === 'object' ? saveBundleAnalyzeHtml : {}),
+    }));
   }
 
   if (useFixMiniCssPlugin) {
@@ -163,18 +185,12 @@ export function getPlugins({
     clear: false,
   }));
 
-  const externalScripts: Array<string> = [];
-  if (typeof aegisWebSdkExternal === 'string') {
-    externalScripts.push(aegisWebSdkExternal);
-  } else if (aegisWebSdkExternal) {
-    externalScripts.push(AEGIS_EXTERNAL_SCRIPT_LINK);
-  }
-
-  if (typeof uniSimpleRouterExternal === 'string') {
-    externalScripts.push(uniSimpleRouterExternal);
-  } else if (uniSimpleRouterExternal) {
-    externalScripts.push(UNI_SIMPLE_ROUTER_SCRIPT_LINK);
-  }
+  const externalScripts: Array<string> = getExternalScripts({
+    aegisWebSdkExternal,
+    uniSimpleRouterExternal,
+    axiosExternal,
+    vueLazyloadExternal,
+  });
 
   if (externalScripts.length && checkH5()) {
     plugins.push(new InsertScriptPlugin({
@@ -190,6 +206,32 @@ export function getPlugins({
         inline: /runtime/,
       }),
     ]);
+  }
+
+  if (checkH5() && useWorkBoxPlugin && isProduction) {
+    plugins.push(new WorkboxPlugin.GenerateSW({
+      swDest: `./service-worker-${getProjectName()}-${getSubProjectName()}.js`,
+      clientsClaim: true,
+      include: [/.*(.js|.css|.svg|.png|.jpg|.jpeg)/],
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 25 * 1024 * 1024,
+      importScripts: [],
+      inlineWorkboxRuntime: true,
+      runtimeCaching: [{
+        urlPattern: new RegExp('^https://image-1251917893\\.file\\.myqcloud.com.*(\\.js|\\.css|\\.svg|\\.png|\\.jpg|\\.jpeg)'),
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      }, {
+        urlPattern: /.*\.html$/,
+        handler: 'NetworkOnly',
+      }],
+
+      ...useWorkBoxPlugin,
+    }));
   }
 
   return plugins;

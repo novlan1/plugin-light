@@ -71,6 +71,12 @@ const EXTERNALS =  [
   'chalk',
   'progress-bar-webpack-plugin',
   'script-ext-html-webpack-plugin',
+
+  'rollup-plugin-visualizer',
+
+  '@vitejs/plugin-legacy',
+
+  'workbox-webpack-plugin',
 ];
 
 function getLoaderFiles() {

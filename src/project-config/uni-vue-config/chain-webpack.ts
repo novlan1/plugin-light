@@ -119,7 +119,7 @@ export function chainWebpack(config: any, options: GetUniVueConfig = {}) {
   }
 
   config.module
-    .rule('js')
+    .rule('cross-platform-prod')
     .test(/\.[jt]s$/)
     .use(LOADER_MAP.crossPlatformProd)
     .loader(LOADER_MAP.crossPlatformProd)

@@ -33,7 +33,6 @@ export function getMainPackagePages() {
     .filter(page => !subPackages.find(subPackage => page.startsWith(subPackage)))
     .map(item => `${getRelativePath(item)}.vue`);
 
-  console.log('[DISPATCH SCRIPT] mainPackagePages', mainPackagePages);
   return mainPackagePages;
 }
 
@@ -76,6 +75,7 @@ export function getPageSubPackages(page: string) {
       return acc;
     }, {});
   const subPackage = Object.keys(subPackageMap).find(item => page.startsWith(`${item}/`));
+
   if (subPackage) {
     return subPackageMap[subPackage];
   }
@@ -101,8 +101,8 @@ export function baseTest(module: IModule, options: IDispatchScriptOptions) {
     }
     if (options?.whiteList?.length) {
       const isExist = options.whiteList.find(url => resource.includes(url));
-      if (isExist) console.log(resource, isExist);
-      return !!isExist;
+
+      return !isExist;
     }
   }
   return true;

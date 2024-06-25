@@ -23,5 +23,10 @@ export type IBaseConfigOptions = {
 
   // 自定义的 cdn 链接，用于 externals
   customCdnUrls?: Array<string>;
+
+  usePMDBusinessAlias?: boolean;
+
+  // 是否使用 work-box
+  useWorkBoxPlugin?: {}
 };
 

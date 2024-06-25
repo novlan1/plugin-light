@@ -1,50 +1,15 @@
 import { updateAssetSource } from '../../helper/index';
-import { extractComponentDeps, stringifyJson } from './helper';
+import { extractComponentDeps, extractUniRoutes, stringifyJson, paresPreloadOptions } from './helper';
 
-import type { ICustomPreloadOptions, IParsedCustomPreloadOption } from './types';
+import type { ICustomPreloadOptions, IUniRoutes } from './types';
 
-
-function paresPreloadOptions(options: ICustomPreloadOptions['list']): Array<IParsedCustomPreloadOption> {
-  const delay = 0;
-  const interval = 1000;
-  if (!options) {
-    return [];
-  }
-  return options.map((option) => {
-    if (Array.isArray(option.pages)) {
-      const pages = option.pages.map((page, index) => {
-        if (Array.isArray(page)) {
-          return {
-            page,
-            delay: index * interval + delay,
-          };
-        }
-        return {
-          page: [page],
-          delay: index * interval + delay,
-        };
-      });
-
-      return {
-        ...option,
-        pages,
-      };
-    }
-    return {
-      ...option,
-      pages: [{
-        page: [option.pages],
-        delay,
-      }],
-    };
-  });
-}
 
 export class CustomPreloadPlugin {
   pluginName = 'CustomPreloadPlugin';
   moduleList = [];
   mainChunkFileName = 'index.js';
   pageChunkList: Array<{name: string;chunks: Array<string>;}> = [];
+  uniRoutes: Array<IUniRoutes> = [];
   customPreloadOptions: ICustomPreloadOptions = {};
 
 
@@ -72,6 +37,7 @@ export class CustomPreloadPlugin {
       const source = mainChunkFile.source();
 
       const pageChunkList = extractComponentDeps(source);
+      this.uniRoutes = extractUniRoutes(source);
       this.pageChunkList = pageChunkList;
 
       const insertCode = this.getAllPreloadScripts();
@@ -80,7 +46,7 @@ export class CustomPreloadPlugin {
   }
 
   getAllPreloadScripts() {
-    const parsedOptions = paresPreloadOptions(this.customPreloadOptions.list);
+    const parsedOptions = paresPreloadOptions(this.customPreloadOptions.list, this.uniRoutes);
     const preloadPageList = parsedOptions?.reduce((acc: Array<string>, item) => {
       acc.push(...(item.pages || []).reduce((ac: Array<string>, it) => {
         ac.push(...it.page);
@@ -95,6 +61,17 @@ export class CustomPreloadPlugin {
         acc[item.name] = item.chunks;
         return acc;
       }, {});
+
+    if (!Object.keys(chunkMap).length) {
+      return '';
+    }
+    // var chunkMap = {
+    //   'views-match-match-detail-index': [ 'chunk-49f54b64', 'chunk-17956c4c', 'views-match-match-detail-index'],
+    //   'views-match-match-detail-match-detail': [ 'chunk-49da847a', 'views-match-match-detail-match-detail'],
+    //   'views-other-album-event-theme': [ 'chunk-49f54b64', 'views-other-album-event-theme'],
+    //   'views-battle-room-room-quick': [ 'chunk-49da847a', 'views-battle-room-room-quick'],
+    // };
+
     const insertCode = `<script>(function(){var chunkMap = ${JSON.stringify(chunkMap)};var preloadList = ${stringifyJson(parsedOptions || [])};var hash = window.location.hash;
 main();
 function main() {
@@ -108,6 +85,7 @@ function load() {
   for(var i = 0; i< preloadList.length;i++){
     var item = preloadList[i];
     var hash = item.condition && item.condition.hash;
+    var conditionPath = item.condition && item.condition.path;
     var evalHash = '';
     try {
       evalHash = eval(hash);
@@ -120,12 +98,23 @@ function load() {
         break;
       }
     }
+
+    if (conditionPath && location.pathname) {
+      var currentPath = '/' + location.pathname.split('/').slice(2).join('/');
+
+      if ((typeof conditionPath === 'string' && conditionPath === currentPath) || (
+        Object.prototype.toString.call(conditionPath) === '[object Array]' && conditionPath.indexOf(currentPath) > -1)
+      ) {
+        loadScript(item.pages);
+        break;
+      }
+    }
   }
 }
 function getPageChunks(pages) {
   var result = [];
   for (var i = 0; i< pages.length;i++) {
-    result = result.concat(chunkMap[pages[i]]);
+    result = result.concat(chunkMap[pages[i] || []]);
   }
   return result;
 }
@@ -133,10 +122,13 @@ function loadScript(pages) {
   var scripts = [];
   for (var i =0;i<pages.length;i++) {
     var page = pages[i];
-    scripts = scripts.concat({
-      script: getPageChunks(page.page || []),
-      delay: page.delay,
-    });
+    var script = getPageChunks(page.page || []);
+    if (script && script.length) {
+      scripts = scripts.concat({
+        script: script,
+        delay: page.delay,
+      });
+    }
   }
   for (var j = 0; j < scripts.length; j++) {
     (function (j) {
@@ -152,9 +144,10 @@ function batchLoadScript(scripts) {
   }
 }
 function realLoadScript(target) {
+  if (!target) { return; }
   var src = window.jsonpScriptSrc && window.jsonpScriptSrc(target);
 
-  if (!src) { return; }
+  if (!src || src.indexOf('.undefined.js') > -1) { return; }
   var head = document.querySelector('head');
   if (!head) { return; }
   var newScript = document.createElement('script');

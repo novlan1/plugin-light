@@ -14,7 +14,7 @@ export class FixNpmPackagePlugin {
         const { assets } = compilation;
         fixNpmPackage(assets);
       } catch (err) {
-        console.log('[FIX NPM PACKAGE] err', err);
+        console.warn('[FIX NPM PACKAGE] err', err);
       }
     });
   }

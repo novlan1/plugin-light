@@ -7,15 +7,14 @@ import {
   mapToJson,
   savingUsingComponentMap,
   handleUsingComponents,
-  getMoveComponents,
-  findSubPackages,
   getAllGlobalComps,
+  getPageSet,
 } from './helper';
 import { saveJsonToLog, getUniCliCache } from '../../helper/index';
+import { getMovingComponents } from './core';
 import type { IMovingComponents, IReplaceRefList, IDispatchVueOptions } from './types';
 
 
-const getPageSet = () => getUniCliCache('getPageSet')();
 const getJsonFileMap = () => getUniCliCache('getJsonFileMap')();
 const getGlobalUsingComponents = () => getUniCliCache('getGlobalUsingComponents')();
 const getWXComponents = () => getUniCliCache('getWXComponents')();
@@ -27,11 +26,14 @@ let MOVE_COMPONENT_MIN_DISABLE_LIST: Array<string> = [];
 let MOVE_COMPONENT_MIN_USE_TIMES = 10000000;
 
 const outputDir = process.env.UNI_OUTPUT_DIR || '';
-const usingComponentsMap: Record<string, any> = {};
 
 
-function getUsingComponentsMap(jsonFileMap: Map<string, any>, pageSet: Set<string>) {
-  // 处理genericComponents
+export function getUsingComponentsMap(
+  jsonFileMap: Map<string, any>,
+  pageSet: Set<string>,
+  usingComponentsMap: Record<string, any>,
+) {
+  // 处理 genericComponents
   for (const name of jsonFileMap.keys()) {
     const jsonObj = JSON.parse(jsonFileMap.get(name));
     let { usingComponents = {} } = jsonObj;
@@ -50,6 +52,7 @@ function getUsingComponentsMap(jsonFileMap: Map<string, any>, pageSet: Set<strin
   }
 }
 
+
 export function analyzeComponent(options: IDispatchVueOptions = {
   needLog: true,
   needGlobalComponents: false,
@@ -59,10 +62,11 @@ export function analyzeComponent(options: IDispatchVueOptions = {
     globalCompsValues?: Array<string>;
   } {
   try {
-    saveJsonToLog(getGlobalUsingComponents(), 'dispatch-vue.get-global-using-components.json', options.needLog);
-    saveJsonToLog(getWXComponents(), 'dispatch-vue.get-wx-components.json', options.needLog);
-    saveJsonToLog(getComponentSet(), 'dispatch-vue.get-component-set.json', options.needLog);
-    saveJsonToLog(getJsonFile(), 'dispatch-vue.get-json-file.json', options.needLog);
+    saveJsonToLog({ outputDir }, 'dispatch-vue.raw-output-dir.json', options.needLog);
+    saveJsonToLog(getGlobalUsingComponents(), 'dispatch-vue.raw-get-global-using-components.json', options.needLog);
+    saveJsonToLog(getWXComponents(), 'dispatch-vue.raw-get-wx-components.json', options.needLog);
+    saveJsonToLog(getComponentSet(), 'dispatch-vue.raw-get-component-set.json', options.needLog);
+    saveJsonToLog(getJsonFile(), 'dispatch-vue.raw-get-json-file.json', options.needLog);
   } catch (err) {}
 
   const subPackageRoots = Object.keys((process as any).UNI_SUBPACKAGES) || {};
@@ -85,10 +89,10 @@ export function analyzeComponent(options: IDispatchVueOptions = {
     * }
     */
   const jsonFileMap = getJsonFileMap();
-  saveJsonToLog(mapToJson(jsonFileMap), 'dispatch-vue.json-file-map.json');
+  saveJsonToLog(mapToJson(jsonFileMap), 'dispatch-vue.raw-json-file-map.json');
 
   /**
-   * // pageSet
+   * // pageSet 示例
    * [
    *   "views/index/index-home",
    *   "packages/views/webview/webview",
@@ -97,29 +101,25 @@ export function analyzeComponent(options: IDispatchVueOptions = {
    * ]
    */
   const pageSet = getPageSet();
-  saveJsonToLog(Array.from(pageSet), 'dispatch-vue.page-set.json', options.needLog);
+  saveJsonToLog(Array.from(pageSet), 'dispatch-vue.raw-get-page-set.json', options.needLog);
 
-  /**
-   * process.env.UNI_OPT_SUBPACKAGES => true
-   */
-  // saveJsonToLog(process.env.UNI_OPT_SUBPACKAGES, 'dispatch-vue.UNI_OPT_SUBPACKAGES.json', options.needLog);
-
-  getUsingComponentsMap(jsonFileMap, pageSet);
-
+  const usingComponentsMap: Record<string, any> = {};
+  getUsingComponentsMap(jsonFileMap, pageSet, usingComponentsMap);
   genIterativeComponentMap(usingComponentsMap);
 
-  let allUsingComponentMap = {};
+  let usingComponentPages = {};
   let flattenUsingComponent: {[k: string]: Array<string>} = {};
   try {
     flattenUsingComponent = flattenUsingComponentMap(usingComponentsMap);
-    allUsingComponentMap = handleComponentMap(flattenUsingComponent, pageSet);
+    usingComponentPages = handleComponentMap(flattenUsingComponent, pageSet);
 
-    saveJsonToLog(usingComponentsMap, 'dispatch-vue.using-component-map.json', options.needLog);
-    if (options.needLog) {
-      savingUsingComponentMap('dispatch-vue.using-component-map-all.json', allUsingComponentMap);
+    saveJsonToLog(usingComponentsMap, 'dispatch-vue.inner-using-component-map.json', options.needLog);
+    saveJsonToLog(flattenUsingComponent, 'dispatch-vue.inner-using-component-flatten.json', options.needLog);
+    if (options.needLog !== false) {
+      savingUsingComponentMap('dispatch-vue.inner-using-component-pages.json', usingComponentPages);
     }
   } catch (err) {
-    console.log('[Dispatch Vue] err', err);
+    console.warn('[Dispatch Vue] err', err);
   }
 
   const globalComps = getGlobalUsingComponents();
@@ -134,10 +134,10 @@ export function analyzeComponent(options: IDispatchVueOptions = {
     };
   }
 
-  saveJsonToLog(globalCompsValues, 'dispatch-vue.global-components.json', options.needLog);
+  saveJsonToLog(globalCompsValues, 'dispatch-vue.inner-global-components-all.json', options.needLog);
 
   /**
-   * // process.UNI_SUBPACKAGES
+   * // process.UNI_SUBPACKAGES 示例：
    *
    * {
    *   "packages": {
@@ -151,49 +151,20 @@ export function analyzeComponent(options: IDispatchVueOptions = {
    *   },
    * }
    */
-  saveJsonToLog((process as any).UNI_SUBPACKAGES, 'dispatch-vue.UNI_SUBPACKAGES.json');
+  saveJsonToLog((process as any).UNI_SUBPACKAGES, 'dispatch-vue.raw-UNI_SUBPACKAGES.json');
 
-
-  const replaceRefList: Array<Array<string>> = [];
-
-  const movingComponents: IMovingComponents = [];
-
-  Object.keys(allUsingComponentMap).forEach((componentName) => {
-    const subPackages = findSubPackages([...allUsingComponentMap[componentName as keyof typeof allUsingComponentMap]], subPackageRoots);
-    const pkgRoot = subPackageRoots.find(root => componentName.indexOf(`${root}/`) === 0);
-    const isGlobalDisable = !!globalCompsValues.find(item => (item as string).includes(componentName));
-
-    if (!isGlobalDisable
-      && !pkgRoot
-      && subPackages.length
-      && subPackages.length <= MOVE_COMPONENT_MIN_USE_TIMES
-    ) {
-      subPackages.forEach((subPackage) => {
-        const disable = !!MOVE_COMPONENT_MIN_DISABLE_LIST.find(item => componentName.includes(item));
-        if (disable) {
-          console.log('[Dispatch Vue] disable.componentName', componentName);
-        }
-        if (subPackage && componentName.indexOf(subPackage) !== 0 && !disable) { // 仅存在一个子包引用且未在该子包
-          const {
-            sourceRef,
-            targetRef,
-          } = getMoveComponents({
-            component: componentName,
-            subPackage,
-            outputDir,
-          });
-
-          replaceRefList.push([sourceRef, targetRef, subPackage]);
-
-          movingComponents.push({
-            sourceRef,
-            targetRef,
-            subPackage,
-          });
-        }
-      });
-    }
+  const {
+    replaceRefList,
+    movingComponents,
+  } = getMovingComponents({
+    usingComponentPages,
+    subPackageRoots,
+    globalCompsValues,
+    MOVE_COMPONENT_MIN_DISABLE_LIST,
+    MOVE_COMPONENT_MIN_USE_TIMES,
+    outputDir,
   });
+
 
   const parsedReplaceRefList = Array.from(new Set(replaceRefList.map(item => JSON.stringify(item))))
     .map(item => JSON.parse(item));
@@ -215,34 +186,24 @@ export function analyzeComponent(options: IDispatchVueOptions = {
    *   ],
    * ]
    */
-  saveJsonToLog(parsedReplaceRefList, 'dispatch-vue.replace-ref-list.json', options.needLog);
+  saveJsonToLog(parsedReplaceRefList, 'dispatch-vue.result-replace-ref-list.json', options.needLog);
 
   const parsedMovingComponents = Array.from(new Set(movingComponents.map(item => JSON.stringify(item))))
     .map(item => JSON.parse(item));
 
   /**
    *
-   * // movingComponents 示例如下，目前实际用到的只有 sourceRef、targetRef
+   * // movingComponents 示例如下
    *
    * [
    *   {
-   *     compJs: '/Users/mike/Documents/web/dist/build/mp-weixin/local-component/ui/tip-match/tip-match-notice/index-mp.js',
-   *     compJson: '/Users/mike/Documents/web/dist/build/mp-weixin/local-component/ui/tip-match/tip-match-notice/index-mp.json',
-   *     compWxml: '/Users/mike/Documents/web/dist/build/mp-weixin/local-component/ui/tip-match/tip-match-notice/index-mp.wxml',
-   *     compWxss: '/Users/mike/Documents/web/dist/build/mp-weixin/local-component/ui/tip-match/tip-match-notice/index-mp.wxss',
-   *     target: '/Users/mike/Documents/web/dist/build/mp-weixin/views/match/lcu-tm-tm-notice',
-   *     newPosName: 'lcu-tm-tm-notice',
    *     sourceRef: '/local-component/ui/tip-match/tip-match-notice/index-mp',
    *     targetRef: '/views/match/lcu-tm-tm-notice/index-mp',
    *     subPackage: 'views/match',
-   *     subPackages: [
-   *       'views/match',
-   *       'views/create',
-   *     ],
    *   },
    * ];
    */
-  saveJsonToLog(parsedMovingComponents, 'dispatch-vue.moving-components.json', options.needLog);
+  saveJsonToLog(parsedMovingComponents, 'dispatch-vue.result-moving-components.json', options.needLog);
 
   return {
     parsedReplaceRefList,

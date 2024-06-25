@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
 import type { IAddCodeAtEndOptions } from '../../vite-plugin/add-code-at-end/types';
 import type { IAliasForLibraryOptions } from '../../vite-plugin/alias-for-library/types';
 
-export type GetViteConfigOptions = {
+type GetViteConfigOptions = {
   // 模式，对应 Vite 中 defineConfig 的 mode 参数
   mode: string;
 
@@ -32,7 +32,7 @@ export type GetViteConfigOptions = {
   // 本地开发是否是 https
   serverHttps?: boolean;
   // 参考 https://cn.vitejs.dev/config/server-options.html#server-host
-  serverHost?: boolean;
+  serverHost?: string | boolean;
 
   // 对应 optimizeDeps.include
   optimizeDepsIncludes?: Array<string>;
@@ -51,6 +51,11 @@ export type GetViteConfigOptions = {
 
   // pmd-tools 之类的别名映射
   pmdAliasMap?: Record<string, string>;
+
+  customElements?: Array<string>;
+
+  // 三方库是否使用 cdn 链接，比如 vue，vue-router
+  useCdn?: boolean;
 };
 ```
 
@@ -61,4 +66,9 @@ export type GetViteConfigOptions = {
 2. 支持在环境变量文件中配置 `VUE_APP_DIR`，环境变量文件可以是 `.env`, `.env.local` 等
 
     也支持不配置，此时应用入口是 `src/main.ts`，即非 `monorepo` 模式
+
+### 打包产物分析
+
+当 `process.env.VITE_VISUALIZER` 不为 `falsy` 时，本工具会使用 `rollup-plugin-visualizer` 插件，开发者可用来进行打包分析。
+
 

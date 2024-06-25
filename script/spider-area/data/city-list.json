@@ -1,0 +1,2746 @@
+[
+  {
+    "code": "110100000000",
+    "text": "市辖区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/11/1101.html",
+    "parent": [
+      "北京市"
+    ]
+  },
+  {
+    "code": "120100000000",
+    "text": "市辖区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/12/1201.html",
+    "parent": [
+      "天津市"
+    ]
+  },
+  {
+    "code": "130100000000",
+    "text": "石家庄市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1301.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130200000000",
+    "text": "唐山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1302.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130300000000",
+    "text": "秦皇岛市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1303.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130400000000",
+    "text": "邯郸市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1304.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130500000000",
+    "text": "邢台市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1305.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130600000000",
+    "text": "保定市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1306.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130700000000",
+    "text": "张家口市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1307.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130800000000",
+    "text": "承德市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1308.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "130900000000",
+    "text": "沧州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1309.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "131000000000",
+    "text": "廊坊市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1310.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "131100000000",
+    "text": "衡水市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/13/1311.html",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "133100000000",
+    "text": "雄安新区",
+    "href": "",
+    "parent": [
+      "河北省"
+    ]
+  },
+  {
+    "code": "140100000000",
+    "text": "太原市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1401.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140200000000",
+    "text": "大同市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1402.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140300000000",
+    "text": "阳泉市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1403.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140400000000",
+    "text": "长治市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1404.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140500000000",
+    "text": "晋城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1405.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140600000000",
+    "text": "朔州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1406.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140700000000",
+    "text": "晋中市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1407.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140800000000",
+    "text": "运城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1408.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "140900000000",
+    "text": "忻州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1409.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "141000000000",
+    "text": "临汾市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1410.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "141100000000",
+    "text": "吕梁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/14/1411.html",
+    "parent": [
+      "山西省"
+    ]
+  },
+  {
+    "code": "150100000000",
+    "text": "呼和浩特市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1501.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150200000000",
+    "text": "包头市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1502.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150300000000",
+    "text": "乌海市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1503.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150400000000",
+    "text": "赤峰市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1504.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150500000000",
+    "text": "通辽市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1505.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150600000000",
+    "text": "鄂尔多斯市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1506.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150700000000",
+    "text": "呼伦贝尔市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1507.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150800000000",
+    "text": "巴彦淖尔市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1508.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "150900000000",
+    "text": "乌兰察布市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1509.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "152200000000",
+    "text": "兴安盟",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1522.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "152500000000",
+    "text": "锡林郭勒盟",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1525.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "152900000000",
+    "text": "阿拉善盟",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/1529.html",
+    "parent": [
+      "内蒙古自治区"
+    ]
+  },
+  {
+    "code": "210100000000",
+    "text": "沈阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2101.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210200000000",
+    "text": "大连市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2102.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210300000000",
+    "text": "鞍山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2103.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210400000000",
+    "text": "抚顺市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2104.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210500000000",
+    "text": "本溪市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2105.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210600000000",
+    "text": "丹东市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2106.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210700000000",
+    "text": "锦州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2107.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210800000000",
+    "text": "营口市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2108.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "210900000000",
+    "text": "阜新市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2109.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "211000000000",
+    "text": "辽阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2110.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "211100000000",
+    "text": "盘锦市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2111.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "211200000000",
+    "text": "铁岭市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2112.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "211300000000",
+    "text": "朝阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2113.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "211400000000",
+    "text": "葫芦岛市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/21/2114.html",
+    "parent": [
+      "辽宁省"
+    ]
+  },
+  {
+    "code": "220100000000",
+    "text": "长春市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2201.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220200000000",
+    "text": "吉林市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2202.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220300000000",
+    "text": "四平市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2203.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220400000000",
+    "text": "辽源市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2204.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220500000000",
+    "text": "通化市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2205.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220600000000",
+    "text": "白山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2206.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220700000000",
+    "text": "松原市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2207.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "220800000000",
+    "text": "白城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2208.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "222400000000",
+    "text": "延边朝鲜族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2224.html",
+    "parent": [
+      "吉林省"
+    ]
+  },
+  {
+    "code": "230100000000",
+    "text": "哈尔滨市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2301.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230200000000",
+    "text": "齐齐哈尔市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2302.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230300000000",
+    "text": "鸡西市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2303.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230400000000",
+    "text": "鹤岗市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2304.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230500000000",
+    "text": "双鸭山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2305.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230600000000",
+    "text": "大庆市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2306.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230700000000",
+    "text": "伊春市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2307.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230800000000",
+    "text": "佳木斯市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2308.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "230900000000",
+    "text": "七台河市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2309.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "231000000000",
+    "text": "牡丹江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2310.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "231100000000",
+    "text": "黑河市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2311.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "231200000000",
+    "text": "绥化市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2312.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "232700000000",
+    "text": "大兴安岭地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/23/2327.html",
+    "parent": [
+      "黑龙江省"
+    ]
+  },
+  {
+    "code": "310100000000",
+    "text": "市辖区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/31/3101.html",
+    "parent": [
+      "上海市"
+    ]
+  },
+  {
+    "code": "320100000000",
+    "text": "南京市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3201.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320200000000",
+    "text": "无锡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3202.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320300000000",
+    "text": "徐州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3203.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320400000000",
+    "text": "常州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3204.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320500000000",
+    "text": "苏州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3205.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320600000000",
+    "text": "南通市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3206.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320700000000",
+    "text": "连云港市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3207.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320800000000",
+    "text": "淮安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3208.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "320900000000",
+    "text": "盐城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3209.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "321000000000",
+    "text": "扬州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3210.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "321100000000",
+    "text": "镇江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3211.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "321200000000",
+    "text": "泰州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3212.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "321300000000",
+    "text": "宿迁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/3213.html",
+    "parent": [
+      "江苏省"
+    ]
+  },
+  {
+    "code": "330100000000",
+    "text": "杭州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3301.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330200000000",
+    "text": "宁波市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3302.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330300000000",
+    "text": "温州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3303.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330400000000",
+    "text": "嘉兴市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3304.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330500000000",
+    "text": "湖州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3305.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330600000000",
+    "text": "绍兴市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3306.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330700000000",
+    "text": "金华市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3307.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330800000000",
+    "text": "衢州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3308.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "330900000000",
+    "text": "舟山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3309.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "331000000000",
+    "text": "台州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3310.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "331100000000",
+    "text": "丽水市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/33/3311.html",
+    "parent": [
+      "浙江省"
+    ]
+  },
+  {
+    "code": "340100000000",
+    "text": "合肥市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3401.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340200000000",
+    "text": "芜湖市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3402.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340300000000",
+    "text": "蚌埠市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3403.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340400000000",
+    "text": "淮南市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3404.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340500000000",
+    "text": "马鞍山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3405.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340600000000",
+    "text": "淮北市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3406.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340700000000",
+    "text": "铜陵市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3407.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "340800000000",
+    "text": "安庆市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3408.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341000000000",
+    "text": "黄山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3410.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341100000000",
+    "text": "滁州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3411.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341200000000",
+    "text": "阜阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3412.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341300000000",
+    "text": "宿州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3413.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341500000000",
+    "text": "六安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3415.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341600000000",
+    "text": "亳州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3416.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341700000000",
+    "text": "池州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3417.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "341800000000",
+    "text": "宣城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/34/3418.html",
+    "parent": [
+      "安徽省"
+    ]
+  },
+  {
+    "code": "350100000000",
+    "text": "福州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3501.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350200000000",
+    "text": "厦门市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3502.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350300000000",
+    "text": "莆田市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3503.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350400000000",
+    "text": "三明市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3504.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350500000000",
+    "text": "泉州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3505.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350600000000",
+    "text": "漳州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3506.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350700000000",
+    "text": "南平市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3507.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350800000000",
+    "text": "龙岩市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3508.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "350900000000",
+    "text": "宁德市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/35/3509.html",
+    "parent": [
+      "福建省"
+    ]
+  },
+  {
+    "code": "360100000000",
+    "text": "南昌市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3601.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360200000000",
+    "text": "景德镇市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3602.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360300000000",
+    "text": "萍乡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3603.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360400000000",
+    "text": "九江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3604.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360500000000",
+    "text": "新余市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3605.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360600000000",
+    "text": "鹰潭市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3606.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360700000000",
+    "text": "赣州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3607.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360800000000",
+    "text": "吉安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3608.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "360900000000",
+    "text": "宜春市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3609.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "361000000000",
+    "text": "抚州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3610.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "361100000000",
+    "text": "上饶市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/36/3611.html",
+    "parent": [
+      "江西省"
+    ]
+  },
+  {
+    "code": "370100000000",
+    "text": "济南市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3701.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370200000000",
+    "text": "青岛市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3702.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370300000000",
+    "text": "淄博市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3703.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370400000000",
+    "text": "枣庄市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3704.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370500000000",
+    "text": "东营市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3705.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370600000000",
+    "text": "烟台市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3706.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370700000000",
+    "text": "潍坊市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3707.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370800000000",
+    "text": "济宁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3708.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "370900000000",
+    "text": "泰安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3709.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371000000000",
+    "text": "威海市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3710.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371100000000",
+    "text": "日照市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3711.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371300000000",
+    "text": "临沂市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3713.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371400000000",
+    "text": "德州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3714.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371500000000",
+    "text": "聊城市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3715.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371600000000",
+    "text": "滨州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3716.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "371700000000",
+    "text": "菏泽市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/3717.html",
+    "parent": [
+      "山东省"
+    ]
+  },
+  {
+    "code": "410100000000",
+    "text": "郑州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4101.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410200000000",
+    "text": "开封市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4102.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410300000000",
+    "text": "洛阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4103.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410400000000",
+    "text": "平顶山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4104.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410500000000",
+    "text": "安阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4105.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410600000000",
+    "text": "鹤壁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4106.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410700000000",
+    "text": "新乡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4107.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410800000000",
+    "text": "焦作市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4108.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "410900000000",
+    "text": "濮阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4109.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411000000000",
+    "text": "许昌市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4110.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411100000000",
+    "text": "漯河市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4111.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411200000000",
+    "text": "三门峡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4112.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411300000000",
+    "text": "南阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4113.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411400000000",
+    "text": "商丘市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4114.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411500000000",
+    "text": "信阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4115.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411600000000",
+    "text": "周口市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4116.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "411700000000",
+    "text": "驻马店市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4117.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "419000000000",
+    "text": "省直辖县级行政区划",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/41/4190.html",
+    "parent": [
+      "河南省"
+    ]
+  },
+  {
+    "code": "420100000000",
+    "text": "武汉市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4201.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420200000000",
+    "text": "黄石市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4202.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420300000000",
+    "text": "十堰市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4203.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420500000000",
+    "text": "宜昌市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4205.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420600000000",
+    "text": "襄阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4206.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420700000000",
+    "text": "鄂州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4207.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420800000000",
+    "text": "荆门市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4208.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "420900000000",
+    "text": "孝感市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4209.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "421000000000",
+    "text": "荆州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4210.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "421100000000",
+    "text": "黄冈市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4211.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "421200000000",
+    "text": "咸宁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4212.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "421300000000",
+    "text": "随州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4213.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "422800000000",
+    "text": "恩施土家族苗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4228.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "429000000000",
+    "text": "省直辖县级行政区划",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/42/4290.html",
+    "parent": [
+      "湖北省"
+    ]
+  },
+  {
+    "code": "430100000000",
+    "text": "长沙市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4301.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430200000000",
+    "text": "株洲市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4302.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430300000000",
+    "text": "湘潭市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4303.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430400000000",
+    "text": "衡阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4304.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430500000000",
+    "text": "邵阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4305.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430600000000",
+    "text": "岳阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4306.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430700000000",
+    "text": "常德市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4307.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430800000000",
+    "text": "张家界市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4308.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "430900000000",
+    "text": "益阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4309.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "431000000000",
+    "text": "郴州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4310.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "431100000000",
+    "text": "永州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4311.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "431200000000",
+    "text": "怀化市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4312.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "431300000000",
+    "text": "娄底市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4313.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "433100000000",
+    "text": "湘西土家族苗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/43/4331.html",
+    "parent": [
+      "湖南省"
+    ]
+  },
+  {
+    "code": "440100000000",
+    "text": "广州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4401.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440200000000",
+    "text": "韶关市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4402.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440300000000",
+    "text": "深圳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4403.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440400000000",
+    "text": "珠海市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4404.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440500000000",
+    "text": "汕头市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4405.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440600000000",
+    "text": "佛山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4406.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440700000000",
+    "text": "江门市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4407.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440800000000",
+    "text": "湛江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4408.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "440900000000",
+    "text": "茂名市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4409.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441200000000",
+    "text": "肇庆市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4412.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441300000000",
+    "text": "惠州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4413.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441400000000",
+    "text": "梅州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4414.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441500000000",
+    "text": "汕尾市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4415.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441600000000",
+    "text": "河源市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4416.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441700000000",
+    "text": "阳江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4417.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441800000000",
+    "text": "清远市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4418.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "441900000000",
+    "text": "东莞市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4419.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "442000000000",
+    "text": "中山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4420.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "445100000000",
+    "text": "潮州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4451.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "445200000000",
+    "text": "揭阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4452.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "445300000000",
+    "text": "云浮市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/44/4453.html",
+    "parent": [
+      "广东省"
+    ]
+  },
+  {
+    "code": "450100000000",
+    "text": "南宁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4501.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450200000000",
+    "text": "柳州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4502.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450300000000",
+    "text": "桂林市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4503.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450400000000",
+    "text": "梧州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4504.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450500000000",
+    "text": "北海市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4505.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450600000000",
+    "text": "防城港市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4506.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450700000000",
+    "text": "钦州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4507.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450800000000",
+    "text": "贵港市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4508.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "450900000000",
+    "text": "玉林市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4509.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "451000000000",
+    "text": "百色市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4510.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "451100000000",
+    "text": "贺州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4511.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "451200000000",
+    "text": "河池市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4512.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "451300000000",
+    "text": "来宾市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4513.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "451400000000",
+    "text": "崇左市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/45/4514.html",
+    "parent": [
+      "广西壮族自治区"
+    ]
+  },
+  {
+    "code": "460100000000",
+    "text": "海口市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46/4601.html",
+    "parent": [
+      "海南省"
+    ]
+  },
+  {
+    "code": "460200000000",
+    "text": "三亚市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46/4602.html",
+    "parent": [
+      "海南省"
+    ]
+  },
+  {
+    "code": "460300000000",
+    "text": "三沙市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46/4603.html",
+    "parent": [
+      "海南省"
+    ]
+  },
+  {
+    "code": "460400000000",
+    "text": "儋州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46/4604.html",
+    "parent": [
+      "海南省"
+    ]
+  },
+  {
+    "code": "469000000000",
+    "text": "省直辖县级行政区划",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/46/4690.html",
+    "parent": [
+      "海南省"
+    ]
+  },
+  {
+    "code": "500100000000",
+    "text": "市辖区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/50/5001.html",
+    "parent": [
+      "重庆市"
+    ]
+  },
+  {
+    "code": "500200000000",
+    "text": "县",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/50/5002.html",
+    "parent": [
+      "重庆市"
+    ]
+  },
+  {
+    "code": "510100000000",
+    "text": "成都市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5101.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510300000000",
+    "text": "自贡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5103.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510400000000",
+    "text": "攀枝花市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5104.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510500000000",
+    "text": "泸州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5105.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510600000000",
+    "text": "德阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5106.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510700000000",
+    "text": "绵阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5107.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510800000000",
+    "text": "广元市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5108.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "510900000000",
+    "text": "遂宁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5109.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511000000000",
+    "text": "内江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5110.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511100000000",
+    "text": "乐山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5111.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511300000000",
+    "text": "南充市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5113.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511400000000",
+    "text": "眉山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5114.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511500000000",
+    "text": "宜宾市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5115.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511600000000",
+    "text": "广安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5116.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511700000000",
+    "text": "达州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5117.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511800000000",
+    "text": "雅安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5118.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "511900000000",
+    "text": "巴中市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5119.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "512000000000",
+    "text": "资阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5120.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "513200000000",
+    "text": "阿坝藏族羌族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5132.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "513300000000",
+    "text": "甘孜藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5133.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "513400000000",
+    "text": "凉山彝族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/51/5134.html",
+    "parent": [
+      "四川省"
+    ]
+  },
+  {
+    "code": "520100000000",
+    "text": "贵阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5201.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "520200000000",
+    "text": "六盘水市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5202.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "520300000000",
+    "text": "遵义市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5203.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "520400000000",
+    "text": "安顺市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5204.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "520500000000",
+    "text": "毕节市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5205.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "520600000000",
+    "text": "铜仁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5206.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "522300000000",
+    "text": "黔西南布依族苗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5223.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "522600000000",
+    "text": "黔东南苗族侗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5226.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "522700000000",
+    "text": "黔南布依族苗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/52/5227.html",
+    "parent": [
+      "贵州省"
+    ]
+  },
+  {
+    "code": "530100000000",
+    "text": "昆明市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5301.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530300000000",
+    "text": "曲靖市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5303.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530400000000",
+    "text": "玉溪市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5304.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530500000000",
+    "text": "保山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5305.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530600000000",
+    "text": "昭通市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5306.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530700000000",
+    "text": "丽江市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5307.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530800000000",
+    "text": "普洱市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5308.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "530900000000",
+    "text": "临沧市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5309.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "532300000000",
+    "text": "楚雄彝族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5323.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "532500000000",
+    "text": "红河哈尼族彝族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5325.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "532600000000",
+    "text": "文山壮族苗族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5326.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "532800000000",
+    "text": "西双版纳傣族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5328.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "532900000000",
+    "text": "大理白族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5329.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "533100000000",
+    "text": "德宏傣族景颇族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5331.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "533300000000",
+    "text": "怒江傈僳族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5333.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "533400000000",
+    "text": "迪庆藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/53/5334.html",
+    "parent": [
+      "云南省"
+    ]
+  },
+  {
+    "code": "540100000000",
+    "text": "拉萨市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5401.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "540200000000",
+    "text": "日喀则市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5402.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "540300000000",
+    "text": "昌都市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5403.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "540400000000",
+    "text": "林芝市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5404.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "540500000000",
+    "text": "山南市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5405.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "540600000000",
+    "text": "那曲市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5406.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "542500000000",
+    "text": "阿里地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/54/5425.html",
+    "parent": [
+      "西藏自治区"
+    ]
+  },
+  {
+    "code": "610100000000",
+    "text": "西安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6101.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610200000000",
+    "text": "铜川市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6102.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610300000000",
+    "text": "宝鸡市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6103.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610400000000",
+    "text": "咸阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6104.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610500000000",
+    "text": "渭南市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6105.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610600000000",
+    "text": "延安市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6106.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610700000000",
+    "text": "汉中市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6107.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610800000000",
+    "text": "榆林市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6108.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "610900000000",
+    "text": "安康市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6109.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "611000000000",
+    "text": "商洛市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/61/6110.html",
+    "parent": [
+      "陕西省"
+    ]
+  },
+  {
+    "code": "620100000000",
+    "text": "兰州市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6201.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620200000000",
+    "text": "嘉峪关市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6202.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620300000000",
+    "text": "金昌市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6203.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620400000000",
+    "text": "白银市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6204.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620500000000",
+    "text": "天水市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6205.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620600000000",
+    "text": "武威市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6206.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620700000000",
+    "text": "张掖市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6207.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620800000000",
+    "text": "平凉市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6208.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "620900000000",
+    "text": "酒泉市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6209.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "621000000000",
+    "text": "庆阳市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6210.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "621100000000",
+    "text": "定西市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6211.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "621200000000",
+    "text": "陇南市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6212.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "622900000000",
+    "text": "临夏回族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6229.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "623000000000",
+    "text": "甘南藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/62/6230.html",
+    "parent": [
+      "甘肃省"
+    ]
+  },
+  {
+    "code": "630100000000",
+    "text": "西宁市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6301.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "630200000000",
+    "text": "海东市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6302.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632200000000",
+    "text": "海北藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6322.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632300000000",
+    "text": "黄南藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6323.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632500000000",
+    "text": "海南藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6325.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632600000000",
+    "text": "果洛藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6326.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632700000000",
+    "text": "玉树藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6327.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "632800000000",
+    "text": "海西蒙古族藏族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/6328.html",
+    "parent": [
+      "青海省"
+    ]
+  },
+  {
+    "code": "640100000000",
+    "text": "银川市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64/6401.html",
+    "parent": [
+      "宁夏回族自治区"
+    ]
+  },
+  {
+    "code": "640200000000",
+    "text": "石嘴山市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64/6402.html",
+    "parent": [
+      "宁夏回族自治区"
+    ]
+  },
+  {
+    "code": "640300000000",
+    "text": "吴忠市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64/6403.html",
+    "parent": [
+      "宁夏回族自治区"
+    ]
+  },
+  {
+    "code": "640400000000",
+    "text": "固原市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64/6404.html",
+    "parent": [
+      "宁夏回族自治区"
+    ]
+  },
+  {
+    "code": "640500000000",
+    "text": "中卫市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/64/6405.html",
+    "parent": [
+      "宁夏回族自治区"
+    ]
+  },
+  {
+    "code": "650100000000",
+    "text": "乌鲁木齐市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6501.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "650200000000",
+    "text": "克拉玛依市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6502.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "650400000000",
+    "text": "吐鲁番市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6504.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "650500000000",
+    "text": "哈密市",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6505.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "652300000000",
+    "text": "昌吉回族自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6523.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "652700000000",
+    "text": "博尔塔拉蒙古自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6527.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "652800000000",
+    "text": "巴音郭楞蒙古自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6528.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "652900000000",
+    "text": "阿克苏地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6529.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "653000000000",
+    "text": "克孜勒苏柯尔克孜自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6530.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "653100000000",
+    "text": "喀什地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6531.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "653200000000",
+    "text": "和田地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6532.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "654000000000",
+    "text": "伊犁哈萨克自治州",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6540.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "654200000000",
+    "text": "塔城地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6542.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "654300000000",
+    "text": "阿勒泰地区",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6543.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  },
+  {
+    "code": "659000000000",
+    "text": "自治区直辖县级行政区划",
+    "href": "https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/65/6590.html",
+    "parent": [
+      "新疆维吾尔自治区"
+    ]
+  }
+]

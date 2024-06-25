@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { timeStampFormat } from 't-comm';
-import { saveJsonToLog } from '../../helper';
-import type { IRefMap } from './types';
+import { saveJsonToLog, removeFirstSlash, getUniCliCache } from '../../helper';
+import type { IRefMap, IReplaceRefList } from './types';
 
 
 export function savingUsingComponentMap(name: string, map: Record<string, any>) {
@@ -10,7 +10,7 @@ export function savingUsingComponentMap(name: string, map: Record<string, any>) 
     acc[item] = [...map[item]];
     return acc;
   }, {});
-  saveJsonToLog(res, name);
+  saveJsonToLog(res, name, true);
 }
 
 function strMapToObj(strMap: Array<any>) {
@@ -50,33 +50,46 @@ export function mapToJson(map: any) {
  * }
  */
 
-export function flattenUsingComponentMap(map: Record<string, Array<string>>) {
+export function flattenUsingComponentMap(rawMap: Record<string, any>) {
   const res: Record<string, Array<string>> = {};
 
-  function cursive(obj = {}, list: Array<string> = []) {
-    Object.keys(obj).map((key) => {
-      const value = map[key];
-      if (value) {
-        list.push(...Object.keys(value));
-
-        cursive(value, list);
+  function cursive(componentsMap = {}, components: Array<string> = [], fathers: Array<string>) {
+    const keys = Object.keys(componentsMap);
+    for (const key of keys) {
+      if (fathers.includes(key)) {
+        // 防止递归调用，即防止子孙和祖先相同
+        continue;
       }
-    });
+
+      const subComponentsMap = rawMap[key];
+
+      if (subComponentsMap) {
+        const innerKeys = Object.keys(subComponentsMap);
+
+        innerKeys.forEach((innerKey) => {
+          if (!fathers.includes(innerKey)) {
+            // 防止递归调用
+            components.push(innerKey);
+          }
+        });
+
+        cursive(subComponentsMap, components, [...fathers, key]);
+      }
+    }
   }
 
-  Object.keys(map).map((key) => {
-    const temp: Array<string> = [];
-    const value = map[key];
+  Object.keys(rawMap).map((key) => {
+    const components: Array<string> = [];
+    const componentsMap = rawMap[key];
 
-    if (value) {
-      temp.push(...Object.keys(value));
+    if (componentsMap) {
+      components.push(...Object.keys(componentsMap));
     }
-    cursive(value, temp);
+    cursive(componentsMap, components, [key]);
 
-    res[key] = temp;
+    res[key] = components;
   });
 
-  saveJsonToLog(res, 'dispatch-vue.flatten-using-component-map.json');
   return res;
 }
 
@@ -197,7 +210,7 @@ export function genIterativeComponentMap(usingComponentsMap: Record<string, any>
  * }
  *
  */
-export function formatComponentPath(comps = [], curPath: string) {
+export function formatComponentPath(comps: Array<string> = [], curPath: string) {
   return comps.reduce((acc: {
     [key: string]: string
   }, item) => {
@@ -239,7 +252,7 @@ export function getNewPosName(component: string) {
 }
 
 
-export function getMoveComponents({
+export function genMoveComponents({
   component,
   subPackage,
   outputDir,
@@ -253,13 +266,10 @@ export function getMoveComponents({
 
   const sourceRef = `/${component.replace('../../', '')}`;
 
-  // const comp = path.resolve(outputDir, `./${sourceRef}`);
-
   const targetRef = path.join(target.replace(outputDir, ''), fileName)
     .split(path.sep)
     .join('/');
 
-  // console.log(`[Dispatch Vue] 正在移动组件 ${getRelativePath(comp)} 到 ${getRelativePath(target)} 中`);
 
   return {
     sourceRef,
@@ -287,10 +297,17 @@ export function findSubPackages(pages: Array<string>, subPackageRoots: Array<str
     }
     pkgs.push(...pkgRoot);
   }
-  return pkgs;
+
+  return Array.from(new Set(pkgs));
 }
 
-
+/**
+ * 获取所有全局组件，包括已声明的全局组件的子组件
+ * @param {object} param 参数对象
+ * @param {object} param.globalComps 声明的全局组件
+ * @param {object} param.flattenUsingComponent 拉平的组件列表
+ * @returns 全局组件列表
+ */
 export function getAllGlobalComps({
   globalComps,
   flattenUsingComponent,
@@ -354,3 +371,21 @@ export function replaceAllPolyfill() {
     return this.replace(new RegExp(newStr, 'gm'), s2 as string);
   };
 }
+
+
+export function formatReplaceRefList(replaceRefList: IReplaceRefList) {
+  const refMap = replaceRefList.reduce((acc: Record<string, IReplaceRefList>, item) => {
+    const { 0: origin, 1: target, 2: subPackage } = item;
+    const list = [removeFirstSlash(origin), removeFirstSlash(target)];
+
+    if (acc[subPackage]) {
+      acc[subPackage].push(list);
+    } else {
+      acc[subPackage] = [list];
+    }
+    return acc;
+  }, {});
+  return refMap;
+}
+
+export const getPageSet = () => getUniCliCache('getPageSet')();

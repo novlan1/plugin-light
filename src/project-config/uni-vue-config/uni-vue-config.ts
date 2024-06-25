@@ -10,33 +10,13 @@ import { chainWebpack } from './chain-webpack';
 import { DEFAULT_TRANSPILE_DEPENDENCIES, DEFAULT_ADAPTER_DIRS } from './config';
 import type { GetUniVueConfig } from './types';
 import { optimizationH5 } from './optimization-h5';
+import { getExternals } from './external';
 
 import { checkH5 } from '../helper/h5';
 import { checkDebugMode } from '../helper/bundle-analyze';
 
 const curDirname = getRootDir();
 
-function getExternals({
-  aegisWebSdkExternal,
-  uniSimpleRouterExternal,
-}: {
-  aegisWebSdkExternal?: boolean | string;
-  uniSimpleRouterExternal?: boolean | string;
-}) {
-  const externals: Record<string, string> = {};
-
-  if (checkH5()) {
-    if (aegisWebSdkExternal) {
-      externals['aegis-web-sdk'] = 'window Aegis';
-    }
-    if (uniSimpleRouterExternal) {
-      externals['uni-simple-router'] = 'Router';
-    }
-  }
-
-
-  return externals;
-}
 
 function getDefaultNeedSourceMap() {
   const needSourceMap = checkH5() && process.env.NODE_ENV === 'production' && getGitCurBranch(__dirname) === 'release';
@@ -46,7 +26,7 @@ function getDefaultNeedSourceMap() {
 
 
 // 获取目下所有项目文件夹名称并创建webpack别名
-function getAllAppNameAlias() {
+function getAllAppNameAlias(usePMDBusinessAlias = false) {
   const files = fs.readdirSync(path.resolve(curDirname, 'src'));
   const result: Record<string, Array<any>> = {
     foldername: [], // 文件夹名字
@@ -70,6 +50,12 @@ function getAllAppNameAlias() {
   result.foldername.forEach((dir) => {
     alias[dir] = path.resolve(curDirname, rootDir, dir);
   });
+  if (usePMDBusinessAlias) {
+    return {
+      ...alias,
+      'src/component': 'pmd-business',
+    };
+  }
   return alias;
 }
 
@@ -90,9 +76,13 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
     remToRpxPluginMpOptions,
     genVersionWebPluginOptions,
     useFixMiniCssPlugin,
+
     aegisWebSdkExternal = true,
     uniSimpleRouterExternal = false,
+    axiosExternal = false,
+
     customPreload = false,
+    usePMDBusinessAlias = false,
   } = options || {};
 
   let transpileDependencies = DEFAULT_TRANSPILE_DEPENDENCIES;
@@ -110,7 +100,7 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
     needSourceMap = options.needSourceMap;
   }
 
-  const useH5SplitChunks = checkH5() && options?.useH5SplitChunks;
+  const useH5SplitChunks = checkH5() && options?.useH5SplitChunks && process.env.NODE_ENV === 'production';
   const optimization: Record<string, any> = {};
   if (useH5SplitChunks) {
     optimization.runtimeChunk = { name: 'runtime' };
@@ -119,7 +109,6 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
     optimization.minimize = false;
   }
 
-
   return {
     parallel: process.env.NODE_ENV !== 'production',
     lintOnSave: options.lintOnSave || false, // 忽略编译时候的eslint报错
@@ -127,12 +116,14 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
       resolve: {
         alias: {
         // 添加游戏人生alias
-          ...getAllAppNameAlias(),
+          ...getAllAppNameAlias(usePMDBusinessAlias),
         },
       },
       externals: getExternals({
         aegisWebSdkExternal,
         uniSimpleRouterExternal,
+        axiosExternal,
+        vueLazyloadExternal: options.vueLazyloadExternal,
       }),
       plugins: getPlugins({
         adapterDirs,
@@ -150,9 +141,16 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
         remToRpxPluginMpOptions,
         genVersionWebPluginOptions,
         useFixMiniCssPlugin,
+
         aegisWebSdkExternal,
         uniSimpleRouterExternal,
+        axiosExternal,
+        vueLazyloadExternal: options.vueLazyloadExternal,
+
         customPreload,
+
+        useWorkBoxPlugin: options.useWorkBoxPlugin,
+        saveBundleAnalyzeHtml: options.saveBundleAnalyzeHtml,
       }),
       module: {
         rules: [

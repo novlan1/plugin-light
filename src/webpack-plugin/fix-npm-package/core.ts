@@ -1,6 +1,8 @@
 import * as path from 'path';
 import { updateAssetSource, saveJsonToLog } from '../../helper/index';
 
+let called = false;
+
 export function replaceAbsolutePath({
   source,
   path,
@@ -31,8 +33,14 @@ export function findKey(obj: Record<string, any>) {
 
 
 export function fixNpmPackage(assets: Record<string, any>) {
+  if (called) {
+    return;
+  }
+  called = true;
+
   const keys = Object.keys(assets);
   const handlesAssets: Array<{asset: string, hash: string}> = [];
+
 
   for (const item of keys) {
     if (item.indexOf('node-modules') > -1 && item.endsWith('.js')) {
@@ -59,7 +67,6 @@ export function fixNpmPackage(assets: Record<string, any>) {
         key,
       });
 
-      // console.log(`[FIX NPM PACKAGE] 将 ${item} 中的绝对路径替换为${key}`);
       handlesAssets.push({
         asset: item,
         hash: key,
@@ -68,5 +75,5 @@ export function fixNpmPackage(assets: Record<string, any>) {
     }
   }
 
-  saveJsonToLog(handlesAssets, 'fix-npm-package.json');
+  saveJsonToLog(handlesAssets, 'fix-npm-package.result.json');
 }

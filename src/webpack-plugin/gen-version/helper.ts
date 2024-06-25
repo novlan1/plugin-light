@@ -1,6 +1,9 @@
 import { getGitCommitInfo, timeStampFormat, getGitCurBranch, getGitAuthor } from 't-comm';
 import type { IGenVersionOptions } from './types';
 
+function parseQuote(str = '') {
+  return str.replace(/'/g, '"');
+}
 
 export function getVersionCode(versionName?: string) {
   let author = '';
@@ -70,7 +73,7 @@ window.${versionName} = {
 
   code = `
 console.info('[system]', '');
-console.info('[system]', 'Last Commit Message: ${commitInfo.message || ''}');
+console.info('[system]', 'Last Commit Message: ${parseQuote(commitInfo.message) || ''}');
 console.info('[system]', 'Last Commit Author: ${commitInfo.author || ''}');
 console.info('[system]', 'Last Commit Time: ${commitInfo.date || ''}');
 console.info('[system]', 'Last Commit Hash: ${commitInfo.hash || ''}');

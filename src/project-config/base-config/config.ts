@@ -34,4 +34,4 @@ export const DEFAULT_PROJECT_MAP = {
 };
 
 
-export const DEFAULT_HANDLE_IF_DEF_FILES = /(press-ui|component|press-plus).*(\.vue|\.ts|\.js|\.css|\.scss)$/;
+export const DEFAULT_HANDLE_IF_DEF_FILES = /(press-ui|component|press-plus|@tencent\/pmd-).*(\.vue|\.ts|\.js|\.css|\.scss)$/;

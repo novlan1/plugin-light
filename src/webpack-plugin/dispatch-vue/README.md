@@ -50,6 +50,26 @@ export type IDispatchVueOptions = {
 };
 ```
 
+### 日志
+
+组件分发是比较复杂的插件，执行时会在 `log` 目录下输出一些日志，下面是日志文件的说明。
+
+| 文件名                                       | 说明                                 |
+| -------------------------------------------- | ------------------------------------ |
+| dispatch-vue.inner-global-components-all     | 所有全局组件，包含递归引用的         |
+| dispatch-vue.inner-using-component-flatten   | 组件引用关系，已拉平                 |
+| dispatch-vue.inner-using-component-map       | 组件引用关系，未拉平                 |
+| dispatch-vue.inner-using-component-pages     | 组件引用关系，已拉平，`value` 是页面 |
+| dispatch-vue.raw-get-component-set           | 原始值，`getComponentSet()`          |
+| dispatch-vue.raw-get-global-using-components | 原始值，`getGlobalUsingComponents()` |
+| dispatch-vue.raw-get-json-file               | 原始值，`getJsonFile()`              |
+| dispatch-vue.raw-get-wx-components           | 原始值，`getWXComponents()`          |
+| dispatch-vue.raw-json-file-map               | 原始值，`getJsonFileMap()`           |
+| dispatch-vue.raw-output-dir                  | 原始值，`process.env.UNI_OUTPUT_DIR` |
+| dispatch-vue.raw-UNI_SUBPACKAGES             | 原始值，`process.UNI_SUBPACKAGES`    |
+| dispatch-vue.result-moving-components        | 移动关系                             |
+| dispatch-vue.result-replace-ref-list         | 替换引用关系                         |
+
 
 ### 文章
 

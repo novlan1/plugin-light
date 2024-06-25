@@ -5,9 +5,9 @@ export interface ICustomPreloadOptions {
   list?: Array<{
     condition: {
       hash?: IHash;
-      href?: IHash;
+      path?: IHash;
     };
-    pages: string | Array<string | Array<string>>;
+    pages?: string | Array<string | Array<string>>;
   }>
 }
 
@@ -15,10 +15,15 @@ export interface ICustomPreloadOptions {
 export interface IParsedCustomPreloadOption {
   condition?: {
     hash?: IHash;
-    href?: IHash;
+    path?: IHash;
   };
   pages?: Array<{
     page: Array<string>;
     delay?: number;
   }>;
+}
+
+export interface IUniRoutes {
+  path: string;
+  name: string;
 }

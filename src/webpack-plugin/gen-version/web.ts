@@ -26,7 +26,7 @@ export class GenVersionWebPlugin {
 
         updateAssetSource(assets, key, newSource);
       } catch (err) {
-        console.log('[GenVersionMpPlugin] err: ', err);
+        console.warn('[GenVersionMpPlugin] err: ', err);
       }
     });
   }

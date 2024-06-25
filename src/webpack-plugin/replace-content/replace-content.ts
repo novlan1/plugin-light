@@ -5,15 +5,6 @@ import type { IReplaceContentOptions, IReplaceList } from './types';
 
 replaceAllPolyfill();
 
-// function replaceContent({ content, reg, fileName }) {
-//   if (reg.test(content)) {
-//     console.log('[ReplaceContentPlugin] 处理了文件：', fileName);
-//     return content.replaceAll(reg, '');
-//   }
-
-//   return content;
-// }
-
 function getReplaceMap(replaceList: IReplaceList) {
   return replaceList.reduce((acc: Record<any, any>, item) => {
     const { from, to, files = [] } = item;
@@ -64,7 +55,7 @@ export class ReplaceContentPlugin {
       try {
         this.doReplace(compilation, cb);
       } catch (err) {
-        console.log('[ReplaceContentPlugin] err: ', err);
+        console.warn('[ReplaceContentPlugin] err: ', err);
       }
     });
   }

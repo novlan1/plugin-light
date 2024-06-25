@@ -17,8 +17,6 @@ module.exports = merge(WEBPACK_BASE_CONFIG, {
 
 或者使用 `getWebpackBaseConfig` 方法：
 
-
-
 ```js
 const { getWebpackBaseConfig } = require('plugin-light/lib/webpack-base-config');
 const { merge } = require('webpack-merge');
@@ -70,7 +68,6 @@ export type IBaseConfigOptions = {
 /(press-ui|component|press-plus).*(\.vue|\.ts|\.js|\.css|\.scss)$/;
 ```
 
-
 #### transpileDependencies
 
 `transpileDependencies` 默认值如下：
@@ -105,6 +102,8 @@ export type IBaseConfigOptions = {
 ### 打包产物分析
 
 当 `process.env.npm_config_report` 不为 `falsy` 时，本工具会使用 `webpack-bundle-analyzer` 插件，开发者可用来进行打包分析。
+
+否则，在 `production` 模式下，保存打包分析产物到 `my-bundle-analyze.html` 文件中，可以在流水线中进行归档。
 
 ### 调试模式
 

@@ -28,7 +28,7 @@ function handleTemplate(fileContent: string) {
 
   function getElementsByTagName(dom: any, name: string) {
     const result: Array<any> = [];
-    // console.log('dom.children',dom.children)
+
     for (const child of dom.children) {
       if (child.name == name) {
         result.push(child);

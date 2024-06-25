@@ -32,6 +32,8 @@ export function optimizationH5(useH5SplitChunks: GetUniVueConfig['useH5SplitChun
           'chunk-vendors',
           'index',
           'runtime',
+          // 'tencent-cloud-chat',
+          'pmd-vue',
         ],
       },
     },
@@ -39,7 +41,7 @@ export function optimizationH5(useH5SplitChunks: GetUniVueConfig['useH5SplitChun
       config.optimization.splitChunks({
         // chunks: 'all',
         minChunks: 1,
-        maxInitialRequests: 12,
+        maxInitialRequests: 20,
         // maxAsyncRequests: 30,
 
         cacheGroups: {
@@ -64,6 +66,20 @@ export function optimizationH5(useH5SplitChunks: GetUniVueConfig['useH5SplitChun
             priority: 15,
             chunks: 'all',
             // minSize: 0,
+            reuseExistingChunk: true,
+          },
+          tencent_cloud_chat: {
+            name: 'tencent-cloud-chat',
+            test: /node_modules[\\/]_?@tencentcloud[\\/]_?chat/,
+            chunks: 'all',
+            priority: 30,
+            reuseExistingChunk: true,
+          },
+          pmd_vue: {
+            name: 'pmd-vue',
+            test: /node_modules[\\/]_?@tencent[\\/]_?pmd-vue/,
+            chunks: 'all',
+            priority: 30,
             reuseExistingChunk: true,
           },
           uni_h5: {

@@ -126,7 +126,7 @@ export const USING_COMPONENT_PAGES = {
   'views/index/local-component/ui/pages/user/home/components/guide-simulate/index': [
     'views/index/index-home',
   ],
-  '../../node-modules/.pnpm/@tencent+press-ui@1.3.37/node-modules/@tencent/press-ui/press-popover/press-popover': [
+  '../../node-modules/.pnpm/@tt+press-ui@1.3.37/node-modules/@tt/press-ui/press-popover/press-popover': [
     'views/index/index-home',
     'views/webview/webview',
     'views/match/match-detail-index',

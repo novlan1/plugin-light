@@ -45,21 +45,6 @@ export function optimizationH5(useH5SplitChunks: GetUniVueConfig['useH5SplitChun
         // maxAsyncRequests: 30,
 
         cacheGroups: {
-          // press_ui: {
-          //   name: 'press-ui',
-          //   test: /[\\/]node_modules[\\/]_?@tencent[\\/]_?press-ui(.*)/,
-          //   priority: 10,
-          //   chunks: 'initial',
-          //   reuseExistingChunk: true,
-          //   // minSize: 0,
-          // },
-          // vant: {
-          //   name: 'vant',
-          //   test: /[\\/]node_modules[\\/]_??vant(.*)/,
-          //   priority: 11,
-          //   chunks: 'initial',
-          //   reuseExistingChunk: true,
-          // },
           tim_js_sdk: {
             name: 'tim-js-sdk',
             test: /[\\/]node_modules[\\/]_?tim-js-sdk(.*)/,

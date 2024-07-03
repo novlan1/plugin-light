@@ -1,6 +1,6 @@
 import { traverseDeps } from '../../../src/webpack-plugin/dispatch-script/traverse-deps';
 import path from 'path';
-import { readFileSync, writeFileSync } from '@tencent/t-comm';
+import { readFileSync, writeFileSync } from 't-comm';
 
 
 describe('traverseDeps', () => {

@@ -11,7 +11,7 @@ const PROJECT_MAP = {
 const LINK_CONFIG = {
   target: getTargetDir(PROJECT_MAP.DZS_MATCH),
   npmList: [
-    '@tencent/plugin-light',
+    'plugin-light',
   ],
   npmRoot: '/Users/yang/Documents/git-woa/tx-uni-plugin-light/lib',
 };

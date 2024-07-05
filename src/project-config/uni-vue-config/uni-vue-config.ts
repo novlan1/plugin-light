@@ -100,7 +100,9 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
     needSourceMap = options.needSourceMap;
   }
 
-  const useH5SplitChunks = checkH5() && options?.useH5SplitChunks && process.env.NODE_ENV === 'production';
+  const useH5SplitChunks = checkH5() && process.env.NODE_ENV === 'production'
+    ? options?.useH5SplitChunks
+    : false;
   const optimization: Record<string, any> = {};
   if (useH5SplitChunks) {
     optimization.runtimeChunk = { name: 'runtime' };

@@ -28,5 +28,8 @@ export type IBaseConfigOptions = {
 
   // 是否使用 work-box
   useWorkBoxPlugin?: {}
+
+  // 不加额外的 alias
+  lessAlias?: boolean;
 };
 

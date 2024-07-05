@@ -38,6 +38,32 @@
 
 
 
+### [1.3.12](https://github.com/novlan1/uni-plugin-light/compare/v1.3.11...v1.3.12) (2024-07-05)
+
+
+### Features 🎉
+
+* **base-config:** add lessAlias ([4c02e28](https://github.com/novlan1/uni-plugin-light/commit/4c02e289ab093dabd630d8d7c4e6acbd5adc4107))
+
+### [1.3.11](https://github.com/novlan1/uni-plugin-light/compare/v1.3.10...v1.3.11) (2024-07-04)
+
+
+### Bug Fixes 🐞
+
+* **splitChunks:** 修复useH5SplitChunks传入对象，会被替换为boolean值的问题 ([fb00069](https://github.com/novlan1/uni-plugin-light/commit/fb00069c6c2dc75c8e0cb159b300805fc419ae40))
+
+### [1.3.10](https://github.com/novlan1/uni-plugin-light/compare/v1.3.9...v1.3.10) (2024-07-04)
+
+
+### Tests ✅
+
+* update tests ([82c03b0](https://github.com/novlan1/uni-plugin-light/commit/82c03b0362605f8d4b769594695443dccf1acfe1))
+
+
+### Chore 🚀 
+
+* remove ast ([33d6d4e](https://github.com/novlan1/uni-plugin-light/commit/33d6d4ed7a39539fb991c38048ce11593275ff48))
+
 ### [1.3.9](https://github.com/novlan1/uni-plugin-light/compare/v1.3.8...v1.3.9) (2024-06-21)
 
 

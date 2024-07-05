@@ -63,7 +63,7 @@ function getEntry(shadowProjectMap: Record<string, string>) {
 }
 
 // 获取目下所有项目文件夹名称并创建webpack别名
-function getAllAppNameAlias(shadowProjectMap: Record<string, string>, usePMDBusinessAlias = false) {
+function getAllAppNameAlias(shadowProjectMap: Record<string, string>, usePMDBusinessAlias = false, lessAlias = false) {
   const files = fs.readdirSync(path.resolve(curDirname, 'src'));
   const result: Record<string, any> = {
     foldername: [], // 文件夹名字
@@ -82,9 +82,12 @@ function getAllAppNameAlias(shadowProjectMap: Record<string, string>, usePMDBusi
     src: path.resolve(curDirname, 'src'),
     '@': path.resolve(curDirname, 'src', getRealVueAppDir(shadowProjectMap)), // 由环境变量确定当前的项目
   };
-  result.foldername.forEach((dir: string) => {
-    alias[dir] = path.resolve(curDirname, 'src', dir);
-  });
+
+  if (!lessAlias) {
+    result.foldername.forEach((dir: string) => {
+      alias[dir] = path.resolve(curDirname, 'src', dir);
+    });
+  }
 
   if (usePMDBusinessAlias) {
     return {
@@ -186,7 +189,7 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
       entry: getEntry(shadowProjectMap),
       name: getAppName(),
       resolve: {
-        alias: getAllAppNameAlias(shadowProjectMap, options?.usePMDBusinessAlias),
+        alias: getAllAppNameAlias(shadowProjectMap, options?.usePMDBusinessAlias, options?.lessAlias),
         extensions: ['js', 'vue', 'json', 'ts'],
       },
       // 可用来测试webpack运行时机制

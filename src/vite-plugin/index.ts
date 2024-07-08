@@ -1,4 +1,5 @@
 export * from './add-code-at-end';
+export * from './alias-for-library';
 export * from './cross-game-style';
 export * from './cross-platform';
 export * from './gen-version';

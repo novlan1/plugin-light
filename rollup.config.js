@@ -77,6 +77,15 @@ const EXTERNALS =  [
   '@vitejs/plugin-legacy',
 
   'workbox-webpack-plugin',
+
+  '@babel/parser',
+  '@babel/generator',
+  '@babel/traverse',
+
+  'copy',
+  'del',
+
+  'fs-extra',
 ];
 
 function getLoaderFiles() {

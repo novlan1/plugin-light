@@ -27,6 +27,8 @@ import {
   InsertScriptPlugin,
   ManifestExposePlugin,
   CustomPreloadPlugin,
+  CheckLongConstantPlugin,
+  ReplaceUniH5Plugin,
   // @ts-ignore
 } from 'plugin-light/lib/plugin';
 
@@ -69,6 +71,7 @@ export function getPlugins({
 
   useWorkBoxPlugin,
   saveBundleAnalyzeHtml,
+  useReplaceUniH5Plugin,
 }: GetUniVueConfig) {
   const plugins: Array<any> = [];
   const isProduction = process.env.NODE_ENV === 'production';
@@ -147,6 +150,10 @@ export function getPlugins({
       'dist/project',
     )}/static`;
     plugins.push(new GenVersionWebPlugin(genVersionWebPluginOptions));
+
+    if (isProduction) {
+      plugins.push(new CheckLongConstantPlugin());
+    }
   }
 
   if (useCopyDirPlugin) {
@@ -206,6 +213,10 @@ export function getPlugins({
         inline: /runtime/,
       }),
     ]);
+  }
+
+  if (useReplaceUniH5Plugin && checkH5()) {
+    plugins.push(new ReplaceUniH5Plugin(useReplaceUniH5Plugin));
   }
 
   if (checkH5() && useWorkBoxPlugin && isProduction) {

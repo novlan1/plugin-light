@@ -1,4 +1,4 @@
-import { updateAssetSource } from '../../helper/index';
+import { saveJsonToLog, updateAssetSource } from '../../helper/index';
 import { extractComponentDeps, extractUniRoutes, stringifyJson, paresPreloadOptions } from './helper';
 
 import type { ICustomPreloadOptions, IUniRoutes } from './types';
@@ -55,6 +55,7 @@ export class CustomPreloadPlugin {
 
       return acc;
     }, []);
+    saveJsonToLog(preloadPageList, 'custom-preload.preload-page-list.json');
 
     const chunkMap = this.pageChunkList.filter(item => preloadPageList?.includes(item.name))
       .reduce((acc: any, item) => {

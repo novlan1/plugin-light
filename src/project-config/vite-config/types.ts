@@ -34,4 +34,5 @@ export type GetViteConfigOptions = {
 
   // 三方库是否使用 cdn 链接，比如 vue，vue-router
   useCdn?: boolean;
+  useElementPlusCDN?: boolean;
 };

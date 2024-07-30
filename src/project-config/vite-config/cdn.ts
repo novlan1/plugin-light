@@ -13,8 +13,17 @@ export function enableCDN(isEnabled: string) {
   }
 }
 
-export const CDN_LIST = {
-  modules: [
+export const getCdnList = ({
+  useElementPlusCDN,
+}: {
+  useElementPlusCDN?: Boolean
+}) => {
+  const modules: Array<{
+    name: string;
+    var: string;
+    path: string;
+    css?: string;
+  }> = [
     {
       name: 'vue',
       var: 'Vue',
@@ -40,5 +49,19 @@ export const CDN_LIST = {
       var: 'Pinia',
       path: 'https://image-1251917893.file.myqcloud.com/igame/npm/pinia@2.1.7/pinia.iife.min.js',
     },
-  ],
+
+  ];
+
+  if (useElementPlusCDN) {
+    modules.push({
+      name: 'element-plus',
+      var: 'ElementPlus',
+      css: 'https://image-1251917893.cos.ap-guangzhou.myqcloud.com/igame/npm/element-plus/element-plus%402.7.8.css',
+      path: 'https://image-1251917893.cos.ap-guangzhou.myqcloud.com/igame/npm/element-plus/element-plus%402.7.8.js',
+    });
+  }
+
+  return {
+    modules,
+  };
 };

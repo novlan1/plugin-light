@@ -26,7 +26,7 @@ export function extractComponentDeps(source: string) {
   source = source.replace(/\s/g, '').replace(/\.default\.component/g, '["default"].component');
   // eslint-disable-next-line max-len
   // const reg = new RegExp('vue__WEBPACK_IMPORTED_MODULE_4__\\["default"\\].component\\(\'(.*?)\', function \\(resolve\\)\\s+{\\s+var component = {\\s+component: Promise.all\\(([\\s\\S]*)\\[(.*?)\\]\\).then', 'g');
-  const reg = new RegExp('\\w\\["default"\\].component\\([\'|"](.*?)[\'|"],\\(function\\(\\w\\){var\\w={component:(.*?).then', 'g');
+  const reg = new RegExp('\\w\\["default"\\].component\\([\'|"]([\\w-]+)[\'|"],\\(function\\(\\w\\){var\\w={component:(.*?).then', 'g');
 
   const eventList = [];
   let match = reg.exec(source);

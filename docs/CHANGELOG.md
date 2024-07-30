@@ -38,6 +38,78 @@
 
 
 
+### [1.3.19](https://github.com/novlan1/uni-plugin-light/compare/v1.3.18...v1.3.19) (2024-07-29)
+
+
+### Documentation 📖
+
+* **replace-uni-h5:** update docs ([8044359](https://github.com/novlan1/uni-plugin-light/commit/80443596aeaba4d8d091466844d6c4df89064206))
+
+
+### Features 🎉
+
+* **vite-config:** add useElementPlusCDN prop ([884aeca](https://github.com/novlan1/uni-plugin-light/commit/884aeca6385801bb2c8eccdc07b4806c2de14f70))
+
+### [1.3.18](https://github.com/novlan1/uni-plugin-light/compare/v1.3.17...v1.3.18) (2024-07-20)
+
+
+### Bug Fixes 🐞
+
+* **del:** update del ([88341ad](https://github.com/novlan1/uni-plugin-light/commit/88341ad2472167f669c431fe3be65bef4511112e))
+
+
+### Features 🎉
+
+* **replace-uni-h5:** use fs-extra ([0037f41](https://github.com/novlan1/uni-plugin-light/commit/0037f411fc0fa67f328922d6172d6792cc41b384))
+
+### [1.3.17](https://github.com/novlan1/uni-plugin-light/compare/v1.3.16...v1.3.17) (2024-07-20)
+
+
+### Bug Fixes 🐞
+
+* **uni-config:** 去掉uni-h5 alias ([dc7f44a](https://github.com/novlan1/uni-plugin-light/commit/dc7f44ae9ceb96e391dfe044c070a1a60e91865a))
+
+### [1.3.16](https://github.com/novlan1/uni-plugin-light/compare/v1.3.15...v1.3.16) (2024-07-20)
+
+
+### Features 🎉
+
+* **replace-uni-h5:** 导出 replace-uni-h5 ([e15a503](https://github.com/novlan1/uni-plugin-light/commit/e15a503631d48dfe39e2ac8e52eec82a097125e4))
+
+### [1.3.15](https://github.com/novlan1/uni-plugin-light/compare/v1.3.14...v1.3.15) (2024-07-20)
+
+
+### Features 🎉
+
+* **check-long-constant:** 检查长常量 ([3d23b90](https://github.com/novlan1/uni-plugin-light/commit/3d23b90b7bb294ef216bc3375971c6e0ac7dcc6d))
+* **replace-uni-h5:** add replace-uni-h5 plugin ([a5da082](https://github.com/novlan1/uni-plugin-light/commit/a5da082dde3425c02c22a0c72c23d8c4b944b97d))
+
+### [1.3.14](https://github.com/novlan1/uni-plugin-light/compare/v1.3.13...v1.3.14) (2024-07-19)
+
+
+### Tests ✅
+
+* 增加 auto-placeholder 测试用例 ([d03e0dd](https://github.com/novlan1/uni-plugin-light/commit/d03e0dd148b14cf31e5efc52615efd8b5322f238))
+* 增加 cross-game-style 测试用例 ([e82eb49](https://github.com/novlan1/uni-plugin-light/commit/e82eb49f1ea2b79d15d0d28fecdf316d4a411ec6))
+* 增加 cross-module-style 测试用例 ([1b7bb36](https://github.com/novlan1/uni-plugin-light/commit/1b7bb36f8e12c8ead565009ed5ff83523b083f34))
+* 增加 cross-platform 和 css-url-blank-space 测试用例 ([030651c](https://github.com/novlan1/uni-plugin-light/commit/030651c86b553fe9ccf18c3b770ea68f4d7e3dcd))
+* 增加 replace-content 测试用例 ([16284ff](https://github.com/novlan1/uni-plugin-light/commit/16284ffb5963f7ad6edb80c5eacff6b8b57fefc2))
+* add replaceAllPolyfill ([dae0a57](https://github.com/novlan1/uni-plugin-light/commit/dae0a57b0eb359a82e066ea79e169e509a86fe88))
+* use snapshot ([5b785c8](https://github.com/novlan1/uni-plugin-light/commit/5b785c85899a30ec205d85aaf8f254d93f36c0cd))
+
+
+### Features 🎉
+
+* **alias-for-library:** 防止复制软连接失效 ([5e4adf2](https://github.com/novlan1/uni-plugin-light/commit/5e4adf2726d3da65ec540eb0d18a5f14ad8e9ed9))
+* **custom-preload:** 优化预加载 ([837d332](https://github.com/novlan1/uni-plugin-light/commit/837d3322b07a4fc52d480d790f3ef1ab68746c60))
+
+### [1.3.13](https://github.com/novlan1/uni-plugin-light/compare/v1.3.12...v1.3.13) (2024-07-09)
+
+
+### Bug Fixes 🐞
+
+* **called:** 修复重新编译 ([8ff96cb](https://github.com/novlan1/uni-plugin-light/commit/8ff96cb31294118b11fea636c1e9744e8af83934))
+
 ### [1.3.12](https://github.com/novlan1/uni-plugin-light/compare/v1.3.11...v1.3.12) (2024-07-05)
 
 

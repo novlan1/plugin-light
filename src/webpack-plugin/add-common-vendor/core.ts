@@ -37,7 +37,7 @@ export function addCommonVendorCore({
   outputDir: string;
   postFix?: string;
 }) {
-  if (called) {
+  if (called && process.env.NODE_ENV === 'production') {
     return ;
   }
   called = true;

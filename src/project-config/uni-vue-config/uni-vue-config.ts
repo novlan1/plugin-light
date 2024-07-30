@@ -153,6 +153,7 @@ export function getUniVueConfig(options: GetUniVueConfig = {}) {
 
         useWorkBoxPlugin: options.useWorkBoxPlugin,
         saveBundleAnalyzeHtml: options.saveBundleAnalyzeHtml,
+        useReplaceUniH5Plugin: options.useReplaceUniH5Plugin,
       }),
       module: {
         rules: [

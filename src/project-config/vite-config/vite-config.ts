@@ -24,7 +24,7 @@ import viteCompression from 'vite-plugin-compression';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import commonjs from 'vite-plugin-commonjs';
-import { enableCDN, CDN_LIST } from './cdn';
+import { enableCDN, getCdnList } from './cdn';
 
 import type { GetViteConfigOptions } from './types';
 import { ifdefVitePlugin } from '../../vite-plugin/ifdef';
@@ -102,6 +102,7 @@ export function getViteBaseConfig({
   customElements = [],
 
   useCdn = true,
+  useElementPlusCDN = false,
 }: GetViteConfigOptions) {
   // 环境变量
   const env = loadEnv(mode, root, ENV_PREFIX);
@@ -187,7 +188,9 @@ export function getViteBaseConfig({
       targets: ['> 1%, last 1 version, ie >= 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'], // 面向IE11时需要此插件
     }),
-    isProduction && useCdn ? importToCDN(CDN_LIST) : null,
+    isProduction && useCdn ? importToCDN(getCdnList({
+      useElementPlusCDN,
+    })) : null,
     isProduction ? visualizer({
       open: !!env.VITE_VISUALIZER,
       filename: path.resolve(subProjectRoot, 'dist', 'stats.html'), // 分析图生成的文件名

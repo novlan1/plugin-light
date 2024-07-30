@@ -33,7 +33,7 @@ export function findKey(obj: Record<string, any>) {
 
 
 export function fixNpmPackage(assets: Record<string, any>) {
-  if (called) {
+  if (called && process.env.NODE_ENV === 'production') {
     return;
   }
   called = true;

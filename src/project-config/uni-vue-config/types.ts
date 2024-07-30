@@ -6,6 +6,7 @@ import type { IDispatchVueOptions } from '../../webpack-plugin/dispatch-vue/type
 import type { IRemToRpxOptions } from '../../webpack-plugin/rem-to-rpx/types';
 import type { IGenVersionOptions } from '../../webpack-plugin/gen-version/types';
 import type { ICustomPreloadOptions } from '../../webpack-plugin/custom-preload/types';
+import type { IReplaceUniH5PluginOption } from '../../webpack-plugin/replace-uni-h5/types';
 
 
 export type GetUniVueConfig = {
@@ -105,4 +106,8 @@ export type GetUniVueConfig = {
 
   // 是否保存 bundle-analyze 结果到 html 中
   saveBundleAnalyzeHtml?: boolean | Record<string, any>;
+
+
+  // 是否使用 replaceUniH5Plugin
+  useReplaceUniH5Plugin?: IReplaceUniH5PluginOption;
 };

@@ -38,8 +38,6 @@ function getRealVueAppDir(shadowProjectMap: Record<string, string> = {}) {
 const publishPara = process.env.publish;
 
 
-const port = process.env.port || process.env.npm_config_port || 443;
-
 function getAppName() {
   const arr = (process.env.VUE_APP_DIR || '').split('/');
   return arr[arr.length - 1];
@@ -169,8 +167,8 @@ export function getWebpackBaseConfig(options?: IBaseConfigOptions) {
       extract: false,
     }, // css文件强制内联
     devServer: {
-      port, // 开发运行时的端口
-      https: true, // 是否启用https
+      port: options?.port ?? (process.env.port || process.env.npm_config_port || 443), // 开发运行时的端口
+      https: options?.https ?? true, // 是否启用https
       proxy: {
         '/pvp/share/getsharecfg': {
           target: 'https://igame.qq.com',

@@ -45,3 +45,17 @@ export type IAliasForLibraryOptions = {
   root?: string;
 };
 ```
+
+### 其他
+
+设置 `alias` 示例：
+
+```ts
+export default defineConfig({
+  resolve: {
+    alias: {
+      'press-ui': path.resolve(__dirname, 'src/library/press-ui')
+    }
+  },
+})
+```

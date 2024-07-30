@@ -23,7 +23,9 @@ export function aliasForLibrary(options?: IAliasForLibraryOptions) {
         const folder = folderList[folderList.length - 1];
 
         // cp -L 复制软链接对应的真实内容
-        tExecCommand(`rm -rf ${target}/${folder} && cp -rL node_modules/${item} ${target} || true`, innerRoot);
+        const command = `rm -rf ${target}/${folder} && cp -rL node_modules/${item} ${target} || cp -r node_modules/${item} ${target} || true`;
+
+        tExecCommand(command, innerRoot);
         console.log(`[Done] Copied ${item} success!`);
       });
     },

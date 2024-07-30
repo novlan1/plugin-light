@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseLongConstant parseLongConstant 1`] = `
+[
+  {
+    "name": "YYYYYY",
+    "start": 5,
+    "value": "YYYYYY = [{
+  name: "见习主理人",
+  level: 0,
+  matchNum: 1,
+  peopleNum: 0
+}]",
+  },
+  {
+    "name": "z",
+    "start": 81,
+    "value": "z = {
+  a: '1'
+}",
+  },
+]
+`;

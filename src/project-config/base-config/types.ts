@@ -1,4 +1,7 @@
 export type IBaseConfigOptions = {
+  port?: number;
+  https?: boolean;
+
   // 是否使用 vue-loader，默认 true
   isUseVueLoader?: boolean;
 

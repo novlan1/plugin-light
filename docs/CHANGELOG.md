@@ -38,6 +38,19 @@
 
 
 
+### [1.3.20](https://github.com/novlan1/uni-plugin-light/compare/v1.3.19...v1.3.20) (2024-07-30)
+
+
+### Features 🎉
+
+* **base-config:** support port and https ([9be1335](https://github.com/novlan1/uni-plugin-light/commit/9be1335293532bf8c3b3c24d07ac520bed2837e1))
+
+
+### Chore 🚀 
+
+* add workflow action ([44a2ed8](https://github.com/novlan1/uni-plugin-light/commit/44a2ed82c0b7b8f9a9f672578c034500bab4e28a))
+* update t-comm ([b47d059](https://github.com/novlan1/uni-plugin-light/commit/b47d059f60aabd013e986be938a1f3584226df4d))
+
 ### [1.3.19](https://github.com/novlan1/uni-plugin-light/compare/v1.3.18...v1.3.19) (2024-07-29)
 
 

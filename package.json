@@ -6,12 +6,12 @@
   "main": "lib/plugin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/novlan1/uni-plugin-light"
+    "url": "https://github.com/novlan1/plugin-light"
   },
   "author": "guowangyang",
-  "homepage": "https://novlan1.github.io/uni-plugin-light/",
+  "homepage": "https://novlan1.github.io/plugin-light//",
   "bugs": {
-    "url": "https://github.com/novlan1/uni-plugin-light/issues"
+    "url": "https://github.com/novlan1/plugin-light/issues"
   },
   "scripts": {
     "prepare": "husky install",
@@ -55,7 +55,6 @@
     "plugin",
     "loader",
     "webpack",
-    "uni-plugin-light",
     "plugin-light",
     "cli"
   ],

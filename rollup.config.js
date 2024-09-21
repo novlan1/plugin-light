@@ -48,7 +48,6 @@ const EXTERNALS =  [
   'webpack-hooks-shellscripts',
   'uni-read-pages',
   'webpack',
-  'uni-plugin-light',
   'stylelint',
   'postcss-selector-parser',
 

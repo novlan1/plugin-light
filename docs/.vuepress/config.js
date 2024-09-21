@@ -27,7 +27,7 @@ const changeLogSidebar = SHOW_CHANGE_LOG ? [
 module.exports = {
   title: 'Plugin Light',
   description: 'Webpack 相关插件、Loader、基础配置',
-  base: process.env.PUBLISH_PATH || '/uni-plugin-light/',
+  base: process.env.PUBLISH_PATH || '/plugin-light/',
   head: [
     [
       'link', { rel: 'icon', href: '/images/favicon.ico' },
@@ -54,7 +54,7 @@ module.exports = {
     nav: [
       {
         text: '源码地址',
-        link: 'https://github.com/novlan1/uni-plugin-light',
+        link: 'https://github.com/novlan1/plugin-light',
       },
       {
         text: 'Press UI',

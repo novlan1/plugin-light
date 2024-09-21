@@ -13,7 +13,7 @@ const LINK_CONFIG = {
   npmList: [
     'plugin-light',
   ],
-  npmRoot: '/Users/yang/Documents/xxx/tx-uni-plugin-light/lib',
+  npmRoot: '/Users/yang/Documents/xxx/tx-plugin-light/lib',
 };
 
 module.exports = {

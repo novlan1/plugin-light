@@ -5,7 +5,7 @@ function main() {
   require('dotenv').config({ path: ENV_FILE });
 
   const sourceDir = 'docs/.vuepress/dist';
-  const targetDir = '/root/html/uni-plugin-light';
+  const targetDir = '/root/html/plugin-light';
   const hostName = process.env.HOST_NAME;
   const hostPwd =  process.env.HOST_PWD;
 

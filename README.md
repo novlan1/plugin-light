@@ -121,7 +121,7 @@ module.export = {
 
 ### 详细文档
 
-[点此查看](https://novlan1.github.io/uni-plugin-light/)
+[点此查看](https://novlan1.github.io/plugin-light//)
 
 
 ### 迁移至 monorepo 

@@ -2,7 +2,7 @@ const { execSync } = require('child_process');
 
 
 const ENV_FILE = '.env.local';
-const REPO = 'uni-plugin-light';
+const REPO = 'plugin-light';
 const TARGET_DIR = 'docs/.vuepress/dist';
 
 

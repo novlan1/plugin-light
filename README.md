@@ -4,7 +4,7 @@
 `Plugin Light` 是一个丰富、易用的工具集。包含一些 `Webpack` 相关插件，比如
 
 - [依赖分析 (webpack-plugin-analyze-deps)](./packages/webpack-plugin-analyze-deps/)
-- [JS分发 (webpack-plugin-dispatch-script)](./packages/webpack-plugin-dispatch-script/)
+- [脚本分发 (webpack-plugin-dispatch-script)](./packages/webpack-plugin-dispatch-script/)
 - [组件分发 (webpack-plugin-dispatch-vue)](./packages/webpack-plugin-dispatch-vue/)
 - [npm包打包失败修复 (webpack-plugin-fix-npm-package)](./packages/webpack-plugin-fix-npm-package/)
 - [生成版本号 (webpack-plugin-gen-version)](./packages/webpack-plugin-gen-version/)

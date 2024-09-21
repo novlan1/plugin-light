@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fixImportPath should work correctly 1`] = `
+[
+  {
+    "origin": "require('../common/vendor.js')",
+    "target": "require('../../common/vendor.js')",
+    "targetFile": "/Users/user/dzs-match/dist/build/mp-weixin/common/vendor.js",
+  },
+]
+`;
+
+exports[`fixImportPath should work correctly if there are multiple matches 1`] = `
+[
+  {
+    "curTargetRelative": "common/vendor.js",
+    "hold": true,
+    "origin": "require('./common/vendor.js')",
+  },
+  {
+    "origin": "require('../common/vendor.js')",
+    "target": "require('../../common/vendor.js')",
+    "targetFile": "/Users/user/dzs-match/dist/build/mp-weixin/common/vendor.js",
+  },
+]
+`;

@@ -3,11 +3,12 @@ const { readFileSync, writeFileSync, execCommand, camelize } = require('t-comm')
 const { REMOVE_VUE_SYNC_FILES, PROJECT_ROOT } = require('./config');
 
 const dotSyncReg = /:([\w-]+)\.sync\s*=\s*(?:"([^"]*)"+|'([^']*)'+)/g;
+// const vModelMoreReg = /v-model:([\w]+)="([\w]+)"/;
 
-
-function removeVueSync(source) {
+function removeVueSync(source, file) {
   const match = source.match(dotSyncReg);
   if (!match) return '';
+  console.log('file', file);
 
   const result = source.replace(dotSyncReg, (match, name, value) => {
     const propStr = `:${name}="${value}"`;
@@ -28,7 +29,7 @@ function main() {
 
   list.forEach((item) => {
     const content = readFileSync(item, false);
-    const newContent = removeVueSync(content);
+    const newContent = removeVueSync(content, item);
 
     if (newContent) {
       writeFileSync(item, newContent, false);
@@ -38,10 +39,8 @@ function main() {
           lint(item, PROJECT_ROOT);
         } catch (err) {}
       }
+      console.log(`[Done] ${item}`);
     }
-
-
-    console.log(`[Done] ${item}`);
   });
 }
 

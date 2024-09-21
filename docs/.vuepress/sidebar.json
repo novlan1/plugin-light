@@ -6,59 +6,71 @@
       "children": [
         {
           "title": "动态组件转为用时注入",
-          "path": "/zh/webpack-plugin/add-placeholder.md"
+          "path": "/zh/webpack-plugin-add-placeholder.md"
         },
         {
           "title": "依赖分析",
-          "path": "/zh/webpack-plugin/analyze-deps.md"
+          "path": "/zh/webpack-plugin-analyze-deps.md"
         },
         {
           "title": "JS 分发",
-          "path": "/zh/webpack-plugin/dispatch-script.md"
+          "path": "/zh/webpack-plugin-dispatch-script.md"
         },
         {
           "title": "组件分发",
-          "path": "/zh/webpack-plugin/dispatch-vue.md"
+          "path": "/zh/webpack-plugin-dispatch-vue.md"
+        },
+        {
+          "title": "修复引用路径错误",
+          "path": "/zh/webpack-plugin-fix-import-path.md"
         },
         {
           "title": "修复 mini-css-extract-plugin",
-          "path": "/zh/webpack-plugin/fix-mini-css-plugin.md"
+          "path": "/zh/webpack-plugin-fix-mini-css-plugin.md"
         },
         {
           "title": "三方库打包修复",
-          "path": "/zh/webpack-plugin/fix-npm-package.md"
+          "path": "/zh/webpack-plugin-fix-npm-package.md"
+        },
+        {
+          "title": "生成小程序插件演练场",
+          "path": "/zh/webpack-plugin-gen-mp-plugin-playground.md"
         },
         {
           "title": "版本输出",
-          "path": "/zh/webpack-plugin/gen-version.md"
+          "path": "/zh/webpack-plugin-gen-version.md"
         },
         {
           "title": "GlobalThis 垫片",
-          "path": "/zh/webpack-plugin/global-this-polyfill.md"
+          "path": "/zh/webpack-plugin-global-this-polyfill.md"
         },
         {
           "title": "HTML 修改",
-          "path": "/zh/webpack-plugin/modify-html.md"
+          "path": "/zh/webpack-plugin-modify-html.md"
         },
         {
           "title": "Rem 转换",
-          "path": "/zh/webpack-plugin/rem-to-rpx.md"
+          "path": "/zh/webpack-plugin-rem-to-rpx.md"
         },
         {
           "title": "小程序 AppId 转换",
-          "path": "/zh/webpack-plugin/replace-app-id.md"
+          "path": "/zh/webpack-plugin-replace-app-id.md"
         },
         {
           "title": "打包内容转换",
-          "path": "/zh/webpack-plugin/replace-content.md"
+          "path": "/zh/webpack-plugin-replace-content.md"
+        },
+        {
+          "title": "替换 uni-h5",
+          "path": "/zh/webpack-plugin-replace-uni-h5.md"
         },
         {
           "title": "Loader 日志保存",
-          "path": "/zh/webpack-plugin/save-loader-log.md"
+          "path": "/zh/webpack-plugin-save-loader-log.md"
         },
         {
           "title": "打包后外层文件转移",
-          "path": "/zh/webpack-plugin/transfer-local-file.md"
+          "path": "/zh/webpack-plugin-transfer-local-file.md"
         }
       ]
     },
@@ -68,59 +80,59 @@
       "children": [
         {
           "title": "样式关键词编译",
-          "path": "/zh/webpack-loader/cross-game-style.md"
+          "path": "/zh/webpack-loader-cross-game-style.md"
         },
         {
           "title": "跨平台关键词编译",
-          "path": "/zh/webpack-loader/cross-platform.md"
+          "path": "/zh/webpack-loader-cross-platform.md"
         },
         {
           "title": "CSS 中 URL 前空格修复",
-          "path": "/zh/webpack-loader/css-url-blank-space.md"
+          "path": "/zh/webpack-loader-css-url-blank-space.md"
         },
         {
           "title": "条件编译",
-          "path": "/zh/webpack-loader/ifdef-loader.md"
+          "path": "/zh/webpack-loader-ifdef.md"
         },
         {
           "title": "动态样式注入 - 小程序",
-          "path": "/zh/webpack-loader/inject-dynamic-style-mp.md"
+          "path": "/zh/webpack-loader-inject-dynamic-style-mp.md"
         },
         {
           "title": "动态样式注入 - H5",
-          "path": "/zh/webpack-loader/inject-dynamic-style-web.md"
+          "path": "/zh/webpack-loader-inject-dynamic-style-web.md"
         },
         {
           "title": "全局组件注入",
-          "path": "/zh/webpack-loader/insert-global-comp.md"
+          "path": "/zh/webpack-loader-insert-global-comp.md"
         },
         {
           "title": "Page Meta 注入",
-          "path": "/zh/webpack-loader/insert-page-meta.md"
+          "path": "/zh/webpack-loader-insert-page-meta.md"
         },
         {
           "title": "三方库转换",
-          "path": "/zh/webpack-loader/replace-library.md"
+          "path": "/zh/webpack-loader-replace-library.md"
         },
         {
           "title": "Vue 模板标签转换",
-          "path": "/zh/webpack-loader/replace-template-tag.md"
+          "path": "/zh/webpack-loader-replace-template-tag.md"
         },
         {
           "title": "Vue 中 key 转换",
-          "path": "/zh/webpack-loader/replace-vue-key.md"
+          "path": "/zh/webpack-loader-replace-vue-key.md"
         },
         {
           "title": "动态引入组件转换",
-          "path": "/zh/webpack-loader/transform-dynamic-comp.md"
+          "path": "/zh/webpack-loader-transform-dynamic-comp.md"
         },
         {
           "title": "Vue v-lazy 转换",
-          "path": "/zh/webpack-loader/v-lazy.md"
+          "path": "/zh/webpack-loader-v-lazy.md"
         },
         {
           "title": "Vue 指令转换",
-          "path": "/zh/webpack-loader/vue-directive.md"
+          "path": "/zh/webpack-loader-vue-directive.md"
         }
       ]
     },
@@ -130,39 +142,49 @@
       "children": [
         {
           "title": "文件后增加代码",
-          "path": "/zh/vite/add-code-at-end.md"
+          "path": "/zh/vite-plugin-add-code-at-end.md"
         },
         {
           "title": "三方库别名处理",
-          "path": "/zh/vite/alias-for-library.md"
+          "path": "/zh/vite-plugin-alias-for-library.md"
         },
         {
           "title": "样式关键词编译",
-          "path": "/zh/vite/cross-game-style.md"
+          "path": "/zh/vite-plugin-cross-game-style.md"
         },
         {
           "title": "跨平台关键词编译",
-          "path": "/zh/vite/cross-platform.md"
+          "path": "/zh/vite-plugin-cross-platform.md"
         },
         {
           "title": "版本输出",
-          "path": "/zh/vite/gen-version.md"
+          "path": "/zh/vite-plugin-gen-version.md"
         },
         {
           "title": "条件编译",
-          "path": "/zh/vite/ifdef.md"
+          "path": "/zh/vite-plugin-ifdef.md"
         },
         {
           "title": "Rem 转换",
-          "path": "/zh/vite/rem-to-rpx.md"
+          "path": "/zh/vite-plugin-rem-to-rpx.md"
         },
         {
           "title": "动态导入组件语法替换",
-          "path": "/zh/vite/replace-require-dynamic.md"
+          "path": "/zh/vite-plugin-replace-require-dynamic.md"
         },
         {
           "title": "Vue v-lazy 转换",
-          "path": "/zh/vite/transform-v-lazy.md"
+          "path": "/zh/vite-plugin-transform-v-lazy.md"
+        }
+      ]
+    },
+    {
+      "title": "Postcss 插件",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "移除选择器",
+          "path": "/zh/postcss-plugin-remove-selector.md"
         }
       ]
     },
@@ -171,40 +193,42 @@
       "collapsable": false,
       "children": [
         {
-          "title": "Vue 项目基础配置",
-          "path": "/zh/project-config/base-config.md"
+          "title": "Uni App Vite 项目基础配置",
+          "path": "/zh/project-config-uni-vite.md"
         },
         {
-          "title": "uni-app 项目基础配置",
-          "path": "/zh/project-config/uni-vue-config.md"
+          "title": "Uni App Vue 项目基础配置",
+          "path": "/zh/project-config-uni-vue.md"
         },
         {
           "title": "Vite 项目基础配置",
-          "path": "/zh/project-config/vite-config.md"
-        }
-      ]
-    },
-    {
-      "title": "CLI 命令",
-      "collapsable": false,
-      "children": [
-        {
-          "title": "发布脚本",
-          "path": "/zh/cli/publish.md"
+          "path": "/zh/project-config-vite.md"
         },
         {
-          "title": "仓库同步",
-          "path": "/zh/cli/sync-repo.md"
+          "title": "Vue 项目基础配置",
+          "path": "/zh/project-config-vue.md"
         }
       ]
     },
     {
-      "title": "Stylelint 插件",
+      "title": "底层依赖",
       "collapsable": false,
       "children": [
         {
-          "title": "无用样式检测",
-          "path": "/zh/stylelint-plugin/useless-css.md"
+          "title": "预处理器",
+          "path": "/zh/plugin-light-preprocess.md"
+        },
+        {
+          "title": "Vue2 公共包",
+          "path": "/zh/plugin-light-shared-vue2.md"
+        },
+        {
+          "title": "公共包",
+          "path": "/zh/plugin-light-shared.md"
+        },
+        {
+          "title": "Vite 版本的路由读取",
+          "path": "/zh/uni-read-pages-vite.md"
         }
       ]
     }

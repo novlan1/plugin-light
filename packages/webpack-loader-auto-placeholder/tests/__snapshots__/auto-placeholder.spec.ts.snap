@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`autoPlaceLoader should work correctly 1`] = `
+[
+  {
+    "filePath": "/components/popup",
+    "name": "Popup",
+  },
+  {
+    "filePath": "/components/dialog",
+    "name": "Dialog",
+  },
+  {
+    "filePath": "/local-components/list",
+    "name": "List",
+  },
+  {
+    "filePath": "/local-components/item",
+    "name": "Item",
+  },
+]
+`;

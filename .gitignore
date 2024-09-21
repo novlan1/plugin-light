@@ -4,7 +4,7 @@ node_modules
 .env.local
 /coverage/
 /dist/
-/lib/
+lib/
 # docs/zh/
 docs/.vuepress/dist
 
@@ -12,3 +12,5 @@ docs/.vuepress/dist
 /temp/
 .DS_Store
 /log
+
+tsconfig.tsbuildinfo

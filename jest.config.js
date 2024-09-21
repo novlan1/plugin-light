@@ -10,6 +10,10 @@ module.exports = {
       },
     ],
   },
+  moduleNameMapper: {
+    '^plugin-light-(.*)$': '<rootDir>/packages/plugin-light-$1',
+    '^webpack-loader-(.*)$': '<rootDir>/packages/webpack-loader-$1',
+  },
   testMatch: [
     '**/tests/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
   ],

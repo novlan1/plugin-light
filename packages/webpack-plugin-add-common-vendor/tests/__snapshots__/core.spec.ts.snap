@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addCommonVendorCore should execute only once in production 1`] = `
+[
+  {
+    "file": "views/index/index.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/index",
+  },
+  {
+    "file": "views/index/debug.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/index",
+  },
+  {
+    "file": "views/setting/setting.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/setting",
+  },
+]
+`;
+
+exports[`addCommonVendorCore should work correctly 1`] = `
+[
+  {
+    "file": "views/index/index.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/index",
+  },
+  {
+    "file": "views/index/debug.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/index",
+  },
+  {
+    "file": "views/setting/setting.js",
+    "insertCode": "require('common/vendor.js');",
+    "subPackage": "views/setting",
+  },
+]
+`;
+
+exports[`insetSpecialContent should work correctly 1`] = `
+[
+  {
+    "file": "views/search/history.js",
+    "insertCode": "require('../../views/search/common/vendor.js');",
+  },
+]
+`;

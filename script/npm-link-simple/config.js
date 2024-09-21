@@ -1,4 +1,4 @@
-const ROOT_DIR = '/Users/yang/Documents/git-woa/';
+const ROOT_DIR = '/Users/yang/Documents/xxx/';
 
 function getTargetDir(dir) {
   return `${ROOT_DIR}${dir}`;
@@ -13,7 +13,7 @@ const LINK_CONFIG = {
   npmList: [
     'plugin-light',
   ],
-  npmRoot: '/Users/yang/Documents/git-woa/tx-uni-plugin-light/lib',
+  npmRoot: '/Users/yang/Documents/xxx/tx-uni-plugin-light/lib',
 };
 
 module.exports = {

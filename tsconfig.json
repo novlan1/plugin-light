@@ -15,7 +15,32 @@
     "noEmit": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "paths": {},
+    "paths": {
+      "plugin-light-shared": [
+        "packages/plugin-light-shared"
+      ],
+      "plugin-light-shared-vue2": [
+        "packages/plugin-light-shared-vue2"
+      ],
+      "webpack-plugin-dispatch-vue": [
+        "packages/webpack-plugin-dispatch-vue"
+      ],
+      "webpack-plugin-gen-version": [
+        "packages/webpack-plugin-gen-version"
+      ],
+      "webpack-plugin-rem-to-rpx": [
+        "packages/webpack-plugin-rem-to-rpx"
+      ],
+      "webpack-plugin-add-common-vendor": [
+        "packages/webpack-plugin-add-common-vendor"
+      ],
+      "webpack-loader-ifdef": [
+        "packages/webpack-loader-ifdef"
+      ],
+      "webpack-loader-v-lazy": [
+        "packages/webpack-loader-v-lazy"
+      ]
+    },
     "lib": [
       "esnext",
       "dom",
@@ -29,6 +54,7 @@
     "types"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib/"
   ]
 }

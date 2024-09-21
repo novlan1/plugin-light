@@ -1,0 +1,36 @@
+const DEFAULT_KEYS = [
+  'UNI_APP_X',
+  'APP',
+  'APP_UVUE',
+  'APP_NVUE',
+  'APP_PLUS',
+  'APP_PLUS_NVUE',
+  'APP_VUE',
+  'APP_ANDROID',
+  'APP_IOS',
+  'APP_HARMONY',
+  'H5',
+  'MP',
+  'MP_360',
+  'MP_ALIPAY',
+  'MP_BAIDU',
+  'MP_QQ',
+  'MP_LARK',
+  'MP_TOUTIAO',
+  'MP_WEIXIN',
+  'MP_KUAISHOU',
+  'MP_JD',
+  'QUICKAPP_NATIVE',
+  'QUICKAPP_WEBVIEW',
+  'QUICKAPP_WEBVIEW_HUAWEI',
+  'QUICKAPP_WEBVIEW_UNION',
+  'VUE2',
+  'VUE3',
+  'WEB',
+] as const;
+
+
+export const DEFAULT_CONTEXT_OBJECT = DEFAULT_KEYS.reduce((acc, key) => ({
+  ...acc,
+  [key]: false,
+}), {});

@@ -2,8 +2,8 @@ const fs = require('fs');
 const glob = require('glob');
 const { camelize } = require('t-comm/lib/base/string');
 
-const LOADER_GOLB =  'src/loader/*/index.ts';
-const CONFIG_JSON = 'src/loader/config.json';
+const LOADER_GLOB =  'src/webpack-loader/*/index.ts';
+const CONFIG_JSON = 'src/webpack-loader/config.json';
 const INIT_LOADER_CONFIG = {
   publishUtil: './webpack-publish.js',
 };
@@ -31,8 +31,8 @@ function parseLoaderList(list) {
 }
 
 function getLoaderList() {
-  const list = glob.sync(LOADER_GOLB);
-  const reg = /src\/loader\/([^/]+)/;
+  const list = glob.sync(LOADER_GLOB);
+  const reg = /src\/webpack-loader\/([^/]+)/;
   const loaderList = [];
 
 

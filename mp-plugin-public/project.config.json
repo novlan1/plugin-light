@@ -1,0 +1,25 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "pluginRoot": "PLUGIN_ROOT/",
+  "compileType": "plugin",
+  "libVersion": "latest",
+  "srcMiniprogramRoot": "miniprogram/",
+  "appid": "wx94057b049312ffec",
+  "pluginAppid": "wx94057b049312ffec",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 4
+  }
+}

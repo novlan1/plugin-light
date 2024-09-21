@@ -3,7 +3,7 @@ const axios = require('axios');
 function main() {
   axios({
     method: 'POST',
-    url: 'https://devops.woa.com/ms/process/api/external/pipelines/7fc6e8ff3b2b4c7697f361b3eba75ca8/build',
+    url: 'https://xxx.com/ms/process/api/external/pipelines/7fc6e8ff3b2b4c7697f361b3eba75ca8/build',
     headers: {
       'X-DEVOPS-PROJECT-ID': 'tip-h5',
       'X-DEVOPS-UID': 'guowangyang',

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`injectDynamicStyleWeb should set topElement correctly 1`] = `
+".tip-btn-primary{
+    color: #212124;
+    background-size: 100% 100%;
+}
+
+#container.tip-match-notice {
+  
+  &--type-dialog {
+    @import './dialog.scss';
+  }
+
+  &--type-icon {
+    @import './icon.scss';
+  }
+}
+"
+`;
+
+exports[`injectDynamicStyleWeb should work correctly 1`] = `
+".tip-btn-primary{
+    color: #212124;
+    background-size: 100% 100%;
+}
+
+body.tip-match-notice {
+  
+  &--type-dialog {
+    @import './dialog.scss';
+  }
+
+  &--type-icon {
+    @import './icon.scss';
+  }
+}
+"
+`;

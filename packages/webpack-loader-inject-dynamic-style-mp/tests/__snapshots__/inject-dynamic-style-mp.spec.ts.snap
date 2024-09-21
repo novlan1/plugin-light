@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`injectDynamicStyleMp should set topElement correctly 1`] = `
+"<style lang="scss" >
+#container.tip-match-notice {
+  
+  &--type-dialog {
+    @import './css/dialog.scss';
+  }
+
+  &--type-icon {
+    @import './css/icon.scss';
+  }
+}
+</style>"
+`;
+
+exports[`injectDynamicStyleMp should work correctly 1`] = `
+"<style lang="scss" >
+body.tip-match-notice {
+  
+  &--type-dialog {
+    @import './css/dialog.scss';
+  }
+
+  &--type-icon {
+    @import './css/icon.scss';
+  }
+}
+</style>"
+`;

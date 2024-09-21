@@ -1,0 +1,29 @@
+{
+  "name": "webpack-loader-inject-dynamic-style-web",
+  "version": "0.0.7",
+  "main": "./lib/index",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/uni-plugin-light"
+  },
+  "author": "guowangyang",
+  "homepage": "https://novlan1.github.io/uni-plugin-light/",
+  "bugs": {
+    "url": "https://github.com/novlan1/uni-plugin-light/issues"
+  },
+  "scripts": {
+    "build": "rm -rf lib && rollup -c",
+    "changelog": "node ../../script/monorepo/changelog $PWD",
+    "bump": "node ../../script/monorepo/version-simple $PWD",
+    "release": "node ../../script/monorepo/release $PWD"
+  },
+  "dependencies": {
+    "plugin-light-shared": "workspace:^0.0.11",
+    "plugin-light-shared-vue2": "workspace:^0.0.6",
+    "t-comm": "^1.3.104",
+    "loader-utils": "^2.0.4"
+  }
+}

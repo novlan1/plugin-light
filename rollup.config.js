@@ -5,12 +5,14 @@ import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
+
 import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
+
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import dts from 'rollup-plugin-dts';
-
+import copy from 'rollup-plugin-copy';
 
 const LOADER_DIR = './src/webpack-loader';
 const BUNDLE_DIR = 'lib';
@@ -86,6 +88,7 @@ const EXTERNALS =  [
   'del',
 
   'fs-extra',
+  '@dcloudio/vite-plugin-uni',
 ];
 
 function getLoaderFiles() {
@@ -238,6 +241,21 @@ const rollUpConfigList = [
     ],
   },
   {
+    input: './src/project-config/uni-vite-config/index.ts',
+    output: {
+      dir: BUNDLE_DIR,
+      format: 'cjs',
+      entryFileNames: 'uni-vite-config.js',
+    },
+    external: [
+      ...EXTERNALS,
+    ],
+    plugins: [
+      json(),
+      ...DEFAULT_PLUGINS,
+    ],
+  },
+  {
     input: './src/project-config/base-config/publish.ts',
     output: {
       dir: BUNDLE_DIR,
@@ -292,6 +310,11 @@ const rollUpConfigList = [
     ],
     plugins: [
       ...DEFAULT_PLUGINS,
+      copy({
+        targets: [
+          { src: 'src/postcss-plugin/**/*', dest: 'lib' },
+        ],
+      }),
     ],
   },
 ];

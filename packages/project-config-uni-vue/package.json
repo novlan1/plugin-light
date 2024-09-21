@@ -1,0 +1,64 @@
+{
+  "name": "project-config-uni-vue",
+  "version": "0.0.2",
+  "main": "./lib/index",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/novlan1/uni-plugin-light"
+  },
+  "author": "guowangyang",
+  "homepage": "https://novlan1.github.io/uni-plugin-light/",
+  "bugs": {
+    "url": "https://github.com/novlan1/uni-plugin-light/issues"
+  },
+  "scripts": {
+    "build": "rm -rf lib && rollup -c",
+    "changelog": "node ../../script/monorepo/changelog $PWD",
+    "bump": "node ../../script/monorepo/version-simple $PWD",
+    "release": "node ../../script/monorepo/release $PWD"
+  },
+  "dependencies": {
+    "plugin-light-shared": "workspace:^0.0.11",
+    "t-comm": "^1.3.104",
+    "webpack-loader-auto-placeholder": "workspace:^0.0.7",
+    "webpack-loader-cross-game-style": "workspace:^0.0.7",
+    "webpack-loader-cross-module-style": "workspace:^0.0.8",
+    "webpack-loader-cross-platform": "workspace:^0.0.7",
+    "webpack-loader-css-url-blank-space": "workspace:^0.0.7",
+    "webpack-loader-insert-global-comp": "workspace:^0.0.10",
+    "webpack-loader-insert-page-meta": "workspace:^0.0.7",
+    "webpack-loader-remove-scoped": "workspace:^0.0.7",
+    "webpack-loader-replace-library": "workspace:^0.0.7",
+    "webpack-loader-replace-template-tag": "workspace:^0.0.7",
+    "webpack-loader-replace-vue-key": "workspace:^0.0.7",
+    "webpack-loader-swipe-component": "workspace:^0.0.7",
+    "webpack-loader-transform-dynamic-comp": "workspace:^0.0.8",
+    "webpack-loader-v-lazy": "workspace:^0.0.8",
+    "webpack-plugin-add-placeholder": "workspace:^0.0.4",
+    "webpack-plugin-check-long-constant": "workspace:^0.0.4",
+    "webpack-plugin-copy-dir": "workspace:^0.0.5",
+    "webpack-plugin-custom-preload": "workspace:^0.0.5",
+    "webpack-plugin-dispatch-script": "workspace:^0.0.5",
+    "webpack-plugin-dispatch-vue": "workspace:^0.0.4",
+    "webpack-plugin-fix-import-path": "workspace:^0.0.4",
+    "webpack-plugin-fix-mini-css-plugin": "workspace:^0.0.4",
+    "webpack-plugin-fix-npm-package": "workspace:^0.0.5",
+    "webpack-plugin-gen-mp-plugin-playground": "workspace:^0.0.4",
+    "webpack-plugin-gen-version": "workspace:^0.0.5",
+    "webpack-plugin-global-this-polyfill": "workspace:^0.0.4",
+    "webpack-plugin-insert-script": "workspace:^0.0.4",
+    "webpack-plugin-manifest-expose": "workspace:^0.0.5",
+    "webpack-plugin-rem-to-rpx": "workspace:^0.0.4",
+    "webpack-plugin-replace-uni-h5": "workspace:^0.0.5",
+    "webpack-plugin-transfer-local-file": "workspace:^0.0.4",
+    "chalk": "4",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.5",
+    "uni-read-pages": "^1.0.5",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "workbox-webpack-plugin": "6"
+  }
+}

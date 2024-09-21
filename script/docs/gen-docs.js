@@ -45,6 +45,7 @@ function getDocsList() {
   traverseEveryFolder('./src/cli', 'cli', list);
   traverseEveryFolder('./src/project-config', 'project-config', list);
   traverseEveryFolder('./src/stylelint-plugin', 'stylelint-plugin', list);
+  traverseEveryFolder('./src/postcss-plugin', 'postcss-plugin', list);
   return list;
 }
 
@@ -75,6 +76,11 @@ function genSidebarJson(list) {
       title: 'Vite 插件',
       collapsable: false,
       children: filterList('vite'),
+    },
+    {
+      title: 'Postcss 插件',
+      collapsable: false,
+      children: filterList('postcss-plugin'),
     },
     {
       title: '项目配置',

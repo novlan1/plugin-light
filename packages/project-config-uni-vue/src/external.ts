@@ -1,5 +1,4 @@
-import { checkH5 } from '@plugin-light/shared';
-import { EXTERNAL_LINK_MAP } from './config';
+import { checkH5, EXTERNAL_LINK_MAP } from '@plugin-light/shared';
 import type { GetUniVueConfig } from './types';
 
 export function getExternals({

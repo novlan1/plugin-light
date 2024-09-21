@@ -7,3 +7,4 @@ declare module 'xregexp';
 declare module 'progress-bar-webpack-plugin';
 declare module 'script-ext-html-webpack-plugin';
 declare module '@dcloudio/vite-plugin-uni';
+declare module 'webpack';

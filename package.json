@@ -35,7 +35,8 @@
     "init:loader": "node script/docs/init-loader",
     "spider:area": "node script/spider-area/index",
     "link": "node script/npm-link-simple/index",
-    "check": "tsc --incremental --noEmit"
+    "check": "tsc --incremental --noEmit",
+    "init": "sh script/init/init.sh"
   },
   "bin": {
     "light-cli": "./bin/cli.js"
@@ -140,6 +141,7 @@
     "vite-plugin-mock-dev-server": "^0.3.21",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
+    "webpack": "^4.46.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-hooks-shellscripts": "^1.0.2",
     "workbox-webpack-plugin": "6",

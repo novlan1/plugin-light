@@ -15,7 +15,6 @@ import {
   checkBundleAnalyze,
   checkDebugMode,
   DEFAULT_TRANSPILE_DEPENDENCIES } from '@plugin-light/shared';
-// import { LOADER_MAP } from '../../webpack-loader/index';
 
 import { DEFAULT_CDN_URLS, VUE3_CDN_URLS, DEFAULT_PROJECT_MAP, DEFAULT_HANDLE_IF_DEF_FILES } from './config';
 import type { IBaseConfigOptions } from './types';

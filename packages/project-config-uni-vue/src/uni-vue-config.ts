@@ -2,12 +2,17 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { getGitCurBranch } from 't-comm';
 
-import { getRootDir, checkH5, checkDebugMode } from '@plugin-light/shared';
+import {
+  getRootDir,
+  checkH5,
+  checkDebugMode,
+  DEFAULT_TRANSPILE_DEPENDENCIES,
+  DEFAULT_ADAPTER_DIRS,
+} from '@plugin-light/shared';
 import { LOADER as cssUrlBlankSpaceLoader } from '@plugin-light/webpack-loader-css-url-blank-space';
 import { getPlugins } from './plugin';
 import { chainWebpack } from './chain-webpack';
 
-import { DEFAULT_TRANSPILE_DEPENDENCIES, DEFAULT_ADAPTER_DIRS } from './config';
 import type { GetUniVueConfig } from './types';
 import { optimizationH5 } from './optimization-h5';
 import { getExternals } from './external';

@@ -34,7 +34,7 @@ pnpm add @plugin-light/webpack-loader-transform-dynamic-comp -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as transformDynamicComp } = require('webpack-loader-transform-dynamic-comp')';
+const { LOADER: transformDynamicComp } = require('webpack-loader-transform-dynamic-comp')';
 
 module.export = {
   chainWebpack(config) {

@@ -20,7 +20,7 @@ pnpm add @plugin-light/webpack-loader-ifdef -D
 在 `vue.config.js` 中配置如下：
 
 ```js
-const { LOADER as ifdef } = require('webpack-loader-ifdef')';
+const { LOADER: ifdef } = require('webpack-loader-ifdef')';
 
 module.export = {
   chainWebpack(config) {

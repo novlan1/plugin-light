@@ -8,7 +8,7 @@
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const { LOADER as insertPageMeta } = require('webpack-loader-insert-page-meta')';
+const { LOADER: insertPageMeta } = require('webpack-loader-insert-page-meta')';
 
 module.exports = {
   chainWebpack(config) {

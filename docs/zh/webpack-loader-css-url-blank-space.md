@@ -22,7 +22,7 @@ pnpm add @plugin-light/webpack-loader-css-url-blank-space -D
 在 `vue.config.js` 中配置如下：
 
 ```js
-const { LOADER as cssUrlBlankSpace } = require('webpack-loader-css-url-blank-space')';
+const { LOADER: cssUrlBlankSpace } = require('webpack-loader-css-url-blank-space')';
 
 module.export = {
   configureWebpack: {

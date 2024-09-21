@@ -15,7 +15,7 @@ pnpm add @plugin-light/webpack-loader-inject-dynamic-style-mp -D
 在 `vue.config.js` 中配置如下：
 
 ```js
-const { LOADER as injectDynamicStyleMp } = require('webpack-loader-inject-dynamic-style-mp')';
+const { LOADER: injectDynamicStyleMp } = require('webpack-loader-inject-dynamic-style-mp')';
 
 module.export = {
   chainWebpack(config) {

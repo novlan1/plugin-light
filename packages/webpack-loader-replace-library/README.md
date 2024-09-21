@@ -7,7 +7,7 @@
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { LOADER as replaceLibrary } = require('webpack-loader-replace-library')';
+const { LOADER: replaceLibrary } = require('webpack-loader-replace-library')';
 
 const defaultReplaceLibConfig = {
   replaceLibraryList: [

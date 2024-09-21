@@ -14,8 +14,8 @@ pnpm add @plugin-light/webpack-plugin-add-placeholder -D
 
 ```ts
 const { AddPlaceHolderPlugin } = require('@plugin-light/webpack-plugin-add-placeholder');
-const { LOADER as transformDynamicComp } = require('@plugin-light/webpack-loader-transform-dynamic-comp');
-const { LOADER as autoPlaceholder } = require('@plugin-light/webpack-loader-auto-placeholder');
+const { LOADER: transformDynamicComp } = require('@plugin-light/webpack-loader-transform-dynamic-comp');
+const { LOADER: autoPlaceholder } = require('@plugin-light/webpack-loader-auto-placeholder');
 
 
 module.exports = {

@@ -14,7 +14,7 @@ pnpm add @plugin-light/webpack-loader-cross-game-style -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as crossGameStyle } = require('webpack-loader-cross-game-style')';
+const { LOADER: crossGameStyle } = require('webpack-loader-cross-game-style')';
 
 module.export = {
   chainWebpack(config) {

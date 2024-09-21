@@ -19,7 +19,7 @@ Vue.component('GlobalComponent', GlobalComponent);
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const { LOADER as insertGlobalComp } = require('webpack-loader-insert-global-comp')';
+const { LOADER: insertGlobalComp } = require('webpack-loader-insert-global-comp')';
 
 module.exports = {
   chainWebpack(config) {

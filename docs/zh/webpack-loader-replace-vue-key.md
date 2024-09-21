@@ -28,7 +28,7 @@ pnpm add @plugin-light/webpack-loader-replace-vue-key -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as replaceVueKey } = require('webpack-loader-replace-vue-key')';
+const { LOADER: replaceVueKey } = require('webpack-loader-replace-vue-key')';
 
 module.export = {
   chainWebpack(config) {

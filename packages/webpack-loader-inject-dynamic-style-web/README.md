@@ -13,7 +13,7 @@ pnpm add @plugin-light/webpack-loader-inject-dynamic-style-web -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as injectDynamicStyleWeb } = require('webpack-loader-inject-dynamic-style-web')';
+const { LOADER: injectDynamicStyleWeb } = require('webpack-loader-inject-dynamic-style-web')';
 
 module.export = {
   chainWebpack(config) {

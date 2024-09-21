@@ -28,7 +28,7 @@ pnpm add @plugin-light/webpack-loader-vue-directive -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as vueDirective } = require('webpack-loader-vue-directive')';
+const { LOADER: vueDirective } = require('webpack-loader-vue-directive')';
 
 module.export = {
   chainWebpack(config) {

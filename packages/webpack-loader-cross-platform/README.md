@@ -14,7 +14,7 @@ pnpm add @plugin-light/webpack-loader-cross-platform -D
 在 `vue.config.js` 中配置如下：
 
 ```js
-const { LOADER as crossPlatform, LOADER_PROD as crossPlatformProd } = require('webpack-loader-cross-platform')';
+const { LOADER: crossPlatform, LOADER_PROD: crossPlatformProd } = require('webpack-loader-cross-platform')';
 
 module.export = {
   chainWebpack(config) {

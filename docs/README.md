@@ -97,7 +97,7 @@ module.exports = {
 ```js
 // vue.config.js
 
-const { LOADER as ifdef } = '@plugin-light/webpack-loader-ifdef';
+const { LOADER: ifdef } = require('@plugin-light/webpack-loader-ifdef');
 
 module.export = {
   chainWebpack(config) {

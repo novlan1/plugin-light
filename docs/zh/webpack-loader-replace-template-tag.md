@@ -14,7 +14,7 @@ pnpm add @plugin-light/webpack-loader-replace-template-tag -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as replaceTemplateTag } = require('webpack-loader-replace-template-tag')';
+const { LOADER: replaceTemplateTag } = require('webpack-loader-replace-template-tag')';
 
 module.export = {
   chainWebpack(config) {

@@ -49,7 +49,7 @@ pnpm add @plugin-light/webpack-loader-v-lazy -D
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { LOADER as vLazy } = require('webpack-loader-v-lazy')';
+const { LOADER: vLazy } = require('webpack-loader-v-lazy')';
 
 module.export = {
   chainWebpack(config) {

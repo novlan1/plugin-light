@@ -1,4 +1,4 @@
-import { preprocess } from 'packages/plugin-light-preprocess/lib';
+import { preprocess } from '@plugin-light/preprocess';
 import type { IIfdefOptions } from '@plugin-light/shared';
 
 

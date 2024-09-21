@@ -1,6 +1,6 @@
 {
   "name": "@plugin-light/project-config-vite",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./lib/index",
   "files": [
     "lib/"
@@ -28,7 +28,7 @@
     "@plugin-light/vite-plugin-cross-game-style": "workspace:^0.0.8",
     "@plugin-light/vite-plugin-cross-platform": "workspace:^0.0.7",
     "@plugin-light/vite-plugin-gen-version": "workspace:^0.0.7",
-    "@plugin-light/vite-plugin-ifdef": "workspace:^0.0.6",
+    "@plugin-light/vite-plugin-ifdef": "workspace:^0.0.7",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-legacy": "^5.4.2",
     "@vitejs/plugin-vue": "^4.6.2",

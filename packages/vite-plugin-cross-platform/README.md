@@ -10,7 +10,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-cross-platform -D
+pnpm add @plugin-light/vite-plugin-cross-platform -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -18,7 +18,7 @@ pnpm add vite-plugin-cross-platform -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { crossPlatformVitePlugin } from 'vite-plugin-cross-platform';
+import { crossPlatformVitePlugin } from '@plugin-light/vite-plugin-cross-platform';
 
 
 export default defineConfig({

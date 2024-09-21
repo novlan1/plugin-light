@@ -3,14 +3,14 @@
 安装
 
 ```bash
-pnpm add postcss-plugin-remove-selector -D
+pnpm add @plugin-light/postcss-plugin-remove-selector -D
 ```
 
 `postcss.config.js` 中新增配置：
 
 ```ts
 module.exports = {
-  require('postcss-plugin-remove-selector/lib/index')({
+  require('@plugin-light/postcss-plugin-remove-selector/lib/index')({
     list: [{
       file: new RegExp('press-ui/press-icon-plus/css/icon.scss'),
       excludes: {

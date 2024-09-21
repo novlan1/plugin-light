@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-save-loader-log -D
+pnpm add @plugin-light/webpack-plugin-save-loader-log -D
 ```
 
 1. 在 `loader` 中 使用 `recordLoaderLog` 记录日志。
 
 
 ```ts
-const { recordLoaderLog } = require('webpack-plugin-save-loader-log');
+const { recordLoaderLog } = require('@plugin-light/webpack-plugin-save-loader-log');
 
 
 function someLoader(source) {
@@ -29,7 +29,7 @@ function someLoader(source) {
 
 
 ```ts
-const { SaveLoaderLogPlugin } = require('webpack-plugin-save-loader-log');
+const { SaveLoaderLogPlugin } = require('@plugin-light/webpack-plugin-save-loader-log');
 
 module.exports = {
   configureWebpack: {

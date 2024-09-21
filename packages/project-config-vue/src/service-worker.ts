@@ -1,5 +1,5 @@
 import WorkboxPlugin from 'workbox-webpack-plugin';
-import { getProjectName, getSubProjectName } from 'plugin-light-shared';
+import { getProjectName, getSubProjectName } from '@plugin-light/shared';
 
 
 export function initWorkboxPlugin(useWorkBoxPlugin: Record<string, any> = {}) {

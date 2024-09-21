@@ -9,7 +9,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-inject-dynamic-style-mp -D
+pnpm add @plugin-light/webpack-loader-inject-dynamic-style-mp -D
 ```
 
 在 `vue.config.js` 中配置如下：

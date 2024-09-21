@@ -2,7 +2,7 @@
 import * as path from 'path';
 import { normalizePath } from 't-comm';
 
-import { createLogDir, saveJsonToLog, parseSetDeps, getRelativePath } from 'plugin-light-shared';
+import { createLogDir, saveJsonToLog, parseSetDeps, getRelativePath } from '@plugin-light/shared';
 import { traverseDeps } from './traverse-deps';
 import { getScriptSubPackages }  from './script-sub-packages';
 import {
@@ -16,8 +16,8 @@ import {
   getPagesList,
 } from './helper';
 import type { IDispatchScriptOptions, IChunks, IModule } from './types';
-import { addCommonVendorCore } from 'webpack-plugin-add-common-vendor';
-import { getPageSet } from 'webpack-plugin-dispatch-vue';
+import { addCommonVendorCore } from '@plugin-light/webpack-plugin-add-common-vendor';
+import { getPageSet } from '@plugin-light/webpack-plugin-dispatch-vue';
 
 
 const resourceResolveDataList: Array<any> = [];

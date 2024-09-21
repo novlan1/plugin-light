@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { getOptions } from 'loader-utils';
-import { PLATFORMS_MP } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { PLATFORMS_MP } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 import type { IInsertPageMetaOptions } from './types';
 
 const htmlReg = /<template>[\s\n]*<page-meta([\s\S]+)<\/page-meta>[\s\n]*<\/template>/;

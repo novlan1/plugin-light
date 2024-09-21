@@ -1,6 +1,6 @@
 import { getOptions } from 'loader-utils';
-import { ALL_PLATFORM, crossGameStyle, type ICrossGameStyleOptions } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { ALL_PLATFORM, crossGameStyle, type ICrossGameStyleOptions } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 
 export function crossGameStyleLoader(this: any, source: string) {

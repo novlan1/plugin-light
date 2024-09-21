@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-gen-mp-plugin-playground -D
+pnpm add @plugin-light/webpack-plugin-gen-mp-plugin-playground -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const { GenMpPluginPlaygroundPlugin } = require('webpack-plugin-gen-mp-plugin-playground');
+const { GenMpPluginPlaygroundPlugin } = require('@plugin-light/webpack-plugin-gen-mp-plugin-playground');
 
 
 module.exports = {

@@ -8,7 +8,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-cross-game-style -D
+pnpm add @plugin-light/webpack-loader-cross-game-style -D
 ```
 
 在 `vue.config.js` 中添加如下设置：

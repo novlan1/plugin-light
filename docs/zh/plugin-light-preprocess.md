@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add plugin-light-preprocess -D
+pnpm add @plugin-light/preprocess -D
 ```
 
 使用
 
 ```js
-import { preprocessFile, preprocessFileSync, preprocess } from 'plugin-light-preprocess';
+import { preprocessFile, preprocessFileSync, preprocess } from '@plugin-light/preprocess';
 
 reprocess(content, context, {
   type,

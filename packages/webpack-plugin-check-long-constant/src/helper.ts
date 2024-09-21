@@ -1,4 +1,4 @@
-import { saveJsonToLog } from 'plugin-light-shared';
+import { saveJsonToLog } from '@plugin-light/shared';
 import type { FoundItem } from './types';
 
 

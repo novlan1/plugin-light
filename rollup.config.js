@@ -49,7 +49,6 @@ const EXTERNALS =  [
   'uni-read-pages',
   'webpack',
   'uni-plugin-light',
-  'plugin-light',
   'stylelint',
   'postcss-selector-parser',
 

@@ -7,9 +7,9 @@ import {
   BASE_SCSS,
   PLATFORMS_MP,
   type IInjectDynamicStyleWebOptions,
-} from 'plugin-light-shared';
+} from '@plugin-light/shared';
 
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 
 // 某些组件不一定存在 @TIP_STYLE_NAME

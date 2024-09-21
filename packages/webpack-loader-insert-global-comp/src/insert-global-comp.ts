@@ -1,8 +1,8 @@
 import { replaceAllPolyfill, hyphenate } from 't-comm';
 import { getOptions } from 'loader-utils';
 import { getPagePath } from './page-path';
-import { PLATFORMS_MP } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { PLATFORMS_MP } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 
 const oneTagReg = /(?<=<template>\s*)(<[^>]+\/?>)(?=\s*<\/template>)/;

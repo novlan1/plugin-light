@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add project-config-vue -D
+pnpm add @plugin-light/project-config-vue -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { WEBPACK_BASE_CONFIG } = require('project-config-vue');
+const { WEBPACK_BASE_CONFIG } = require('@plugin-light/project-config-vue');
 const { merge } = require('webpack-merge');
 
 module.exports = merge(WEBPACK_BASE_CONFIG, {
@@ -24,7 +24,7 @@ module.exports = merge(WEBPACK_BASE_CONFIG, {
 或者使用 `getWebpackBaseConfig` 方法：
 
 ```js
-const { getWebpackBaseConfig } = require('project-config-vue');
+const { getWebpackBaseConfig } = require('@plugin-light/project-config-vue');
 const { merge } = require('webpack-merge');
 
 module.exports = merge(getWebpackBaseConfig({

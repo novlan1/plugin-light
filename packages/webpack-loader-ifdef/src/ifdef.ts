@@ -1,7 +1,7 @@
 import * as path from 'path';
 import utils from 'loader-utils';
-import { preprocess } from 'plugin-light-preprocess';
-import type { IIfdefOptions } from 'plugin-light-shared';
+import { preprocess } from '@plugin-light/preprocess';
+import type { IIfdefOptions } from '@plugin-light/shared';
 
 const ERRORS = {
   html: `条件编译失败,参考示例(注意 ifdef 与 endif 必须配对使用):

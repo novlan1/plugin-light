@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-analyze-deps -D
+pnpm add @plugin-light/webpack-plugin-analyze-deps -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { DepAnalysisPlugin } = require('webpack-plugin-analyze-deps');
+const { DepAnalysisPlugin } = require('@plugin-light/webpack-plugin-analyze-deps');
 
 module.exports = {
   configureWebpack: {

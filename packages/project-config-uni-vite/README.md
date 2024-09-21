@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add project-config-uni-vite -D
+pnpm add @plugin-light/project-config-uni-vite -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
 
 
 ```js
-import { getUniVue3ViteConfig } from 'project-config-uni-vite';
+import { getUniVue3ViteConfig } from '@plugin-light/project-config-uni-vite';
 
 import { defineConfig } from 'vite';
 

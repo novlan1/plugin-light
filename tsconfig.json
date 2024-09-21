@@ -16,28 +16,28 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "paths": {
-      "plugin-light-shared": [
+      "@plugin-light/shared": [
         "packages/plugin-light-shared"
       ],
-      "plugin-light-shared-vue2": [
+      "@plugin-light/shared-vue2": [
         "packages/plugin-light-shared-vue2"
       ],
-      "webpack-plugin-dispatch-vue": [
+      "@plugin-light/webpack-plugin-dispatch-vue": [
         "packages/webpack-plugin-dispatch-vue"
       ],
-      "webpack-plugin-gen-version": [
+      "@plugin-light/webpack-plugin-gen-version": [
         "packages/webpack-plugin-gen-version"
       ],
-      "webpack-plugin-rem-to-rpx": [
+      "@plugin-light/webpack-plugin-rem-to-rpx": [
         "packages/webpack-plugin-rem-to-rpx"
       ],
-      "webpack-plugin-add-common-vendor": [
+      "@plugin-light/webpack-plugin-add-common-vendor": [
         "packages/webpack-plugin-add-common-vendor"
       ],
-      "webpack-loader-ifdef": [
+      "@plugin-light/webpack-loader-ifdef": [
         "packages/webpack-loader-ifdef"
       ],
-      "webpack-loader-v-lazy": [
+      "@plugin-light/webpack-loader-v-lazy": [
         "packages/webpack-loader-v-lazy"
       ]
     },

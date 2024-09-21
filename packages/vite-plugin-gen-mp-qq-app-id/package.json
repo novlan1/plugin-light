@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-gen-mp-qq-app-id",
+  "name": "@plugin-light/vite-plugin-gen-mp-qq-app-id",
   "version": "0.0.6",
   "main": "./lib/index",
   "files": [
@@ -21,7 +21,7 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11",
+    "@plugin-light/shared": "workspace:^0.0.11",
     "t-comm": "^1.3.104"
   }
 }

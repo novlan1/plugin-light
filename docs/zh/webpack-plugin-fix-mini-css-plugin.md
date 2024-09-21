@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-fix-mini-css-plugin -D
+pnpm add @plugin-light/webpack-plugin-fix-mini-css-plugin -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { FixMiniCssPlugin } = require('webpack-plugin-fix-mini-css-plugin');
+const { FixMiniCssPlugin } = require('@plugin-light/webpack-plugin-fix-mini-css-plugin');
 
 module.exports = {
   configureWebpack: {

@@ -5,8 +5,8 @@ import {
   getComponentName,
   PLATFORM_MAP,
   type IInjectDynamicStyleWebOptions,
-} from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+} from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 
 export function injectDynamicStyleWeb(this: any, source: string) {

@@ -25,14 +25,14 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-transfer-local-file -D
+pnpm add @plugin-light/webpack-plugin-transfer-local-file -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const { TransferLocalFilePlugin } = require('webpack-plugin-transfer-local-file');
+const { TransferLocalFilePlugin } = require('@plugin-light/webpack-plugin-transfer-local-file');
 
 
 module.exports = {

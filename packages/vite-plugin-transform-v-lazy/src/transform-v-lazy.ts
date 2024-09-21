@@ -1,4 +1,4 @@
-import { vLazyCore } from 'plugin-light-shared';
+import { vLazyCore } from '@plugin-light/shared';
 
 export function transformVLazyVitePlugin() {
   return {

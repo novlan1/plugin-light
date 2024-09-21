@@ -1,5 +1,5 @@
 import { getOptions } from 'loader-utils';
-import { ALL_PLATFORM } from 'plugin-light-shared';
+import { ALL_PLATFORM } from '@plugin-light/shared';
 
 
 export function shouldUseLoader(this: any, defaultPlatforms: Array<string> = []) {

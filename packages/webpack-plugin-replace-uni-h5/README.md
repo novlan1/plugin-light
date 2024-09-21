@@ -37,13 +37,13 @@ uni-app 核心组件
 安装
 
 ```bash
-pnpm add webpack-plugin-replace-uni-h5 -D
+pnpm add @plugin-light/webpack-plugin-replace-uni-h5 -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { ReplaceUniH5Plugin } = require('webpack-plugin-replace-uni-h5');
+const { ReplaceUniH5Plugin } = require('@plugin-light/webpack-plugin-replace-uni-h5');
 
 const plugins = []
 

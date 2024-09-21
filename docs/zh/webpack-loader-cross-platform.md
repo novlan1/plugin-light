@@ -8,7 +8,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-cross-platform -D
+pnpm add @plugin-light/webpack-loader-cross-platform -D
 ```
 
 在 `vue.config.js` 中配置如下：

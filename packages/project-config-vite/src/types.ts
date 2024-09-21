@@ -1,5 +1,5 @@
-import type { IAddCodeAtEndOptions } from 'vite-plugin-add-code-at-end';
-import type { IAliasForLibraryOptions } from 'vite-plugin-alias-for-library';
+import type { IAddCodeAtEndOptions } from '@plugin-light/vite-plugin-add-code-at-end';
+import type { IAliasForLibraryOptions } from '@plugin-light/vite-plugin-alias-for-library';
 
 export type GetViteConfigOptions = {
   // 模式，对应 Vite 中 defineConfig 的 mode 参数

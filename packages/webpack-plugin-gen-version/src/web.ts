@@ -1,4 +1,4 @@
-import { updateAssetSource, getWebInsertCode, type IGenVersionOptions } from 'plugin-light-shared';
+import { updateAssetSource, getWebInsertCode, type IGenVersionOptions } from '@plugin-light/shared';
 
 
 export class GenVersionWebPlugin {

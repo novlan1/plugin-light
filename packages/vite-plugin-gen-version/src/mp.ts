@@ -1,4 +1,4 @@
-import { getMpInsertCode } from 'plugin-light-shared';
+import { getMpInsertCode } from '@plugin-light/shared';
 
 
 export function genVersionMpVitePlugin() {

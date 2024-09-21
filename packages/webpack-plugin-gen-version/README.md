@@ -7,7 +7,7 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-gen-version -D
+pnpm add @plugin-light/webpack-plugin-gen-version -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
@@ -16,7 +16,7 @@ pnpm add webpack-plugin-gen-version -D
 const {
   GenVersionWebPlugin,
   GenVersionMpPlugin,
-} = require('webpack-plugin-gen-version');
+} = require('@plugin-light/webpack-plugin-gen-version');
 
 const plugins = []
 

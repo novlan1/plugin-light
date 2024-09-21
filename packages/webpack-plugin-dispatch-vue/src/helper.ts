@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { timeStampFormat } from 't-comm';
-import { saveJsonToLog, removeFirstSlash, getUniCliCache } from 'plugin-light-shared';
+import { saveJsonToLog, removeFirstSlash, getUniCliCache } from '@plugin-light/shared';
 import type { IRefMap, IReplaceRefList } from './types';
 
 

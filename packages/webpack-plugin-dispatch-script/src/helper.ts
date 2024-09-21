@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { normalizePath } from 't-comm';
 
-import { getRelativePath, getUniCliCache } from 'plugin-light-shared';
+import { getRelativePath, getUniCliCache } from '@plugin-light/shared';
 import type { IDispatchScriptOptions, IChunks, IModule } from './types';
 
 

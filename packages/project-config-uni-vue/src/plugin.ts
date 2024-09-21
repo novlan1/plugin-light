@@ -14,7 +14,7 @@ import {
   checkBundleAnalyze,
   CSS_POSTFIX_MAP,
   checkH5,
-} from 'plugin-light-shared';
+} from '@plugin-light/shared';
 import { getExternalScripts } from './external';
 
 // import {
@@ -40,28 +40,28 @@ import { getExternalScripts } from './external';
 //   // @ts-ignore
 // } from 'plugin-light/lib/plugin';
 
-import { RemToRpxPlugin } from 'webpack-plugin-rem-to-rpx';
-import { CopyDirPlugin } from 'webpack-plugin-copy-dir';
-import { GenVersionMpPlugin, GenVersionWebPlugin } from 'webpack-plugin-gen-version';
+import { RemToRpxPlugin } from '@plugin-light/webpack-plugin-rem-to-rpx';
+import { CopyDirPlugin } from '@plugin-light/webpack-plugin-copy-dir';
+import { GenVersionMpPlugin, GenVersionWebPlugin } from '@plugin-light/webpack-plugin-gen-version';
 
-import { ReplaceUniH5Plugin } from 'webpack-plugin-replace-uni-h5';
-import { DispatchScriptPlugin } from 'webpack-plugin-dispatch-script';
-import { DispatchVuePlugin } from 'webpack-plugin-dispatch-vue';
+import { ReplaceUniH5Plugin } from '@plugin-light/webpack-plugin-replace-uni-h5';
+import { DispatchScriptPlugin } from '@plugin-light/webpack-plugin-dispatch-script';
+import { DispatchVuePlugin } from '@plugin-light/webpack-plugin-dispatch-vue';
 
-import { TransferLocalFilePlugin } from 'webpack-plugin-transfer-local-file';
-import { GlobalThisPolyfillPlugin } from 'webpack-plugin-global-this-polyfill';
-import { FixNpmPackagePlugin } from 'webpack-plugin-fix-npm-package';
+import { TransferLocalFilePlugin } from '@plugin-light/webpack-plugin-transfer-local-file';
+import { GlobalThisPolyfillPlugin } from '@plugin-light/webpack-plugin-global-this-polyfill';
+import { FixNpmPackagePlugin } from '@plugin-light/webpack-plugin-fix-npm-package';
 
-import { AddPlaceHolderPlugin } from 'webpack-plugin-add-placeholder';
-import { FixMiniCssPlugin } from 'webpack-plugin-fix-mini-css-plugin';
-import { InsertScriptPlugin } from 'webpack-plugin-insert-script';
+import { AddPlaceHolderPlugin } from '@plugin-light/webpack-plugin-add-placeholder';
+import { FixMiniCssPlugin } from '@plugin-light/webpack-plugin-fix-mini-css-plugin';
+import { InsertScriptPlugin } from '@plugin-light/webpack-plugin-insert-script';
 
-import { ManifestExposePlugin } from 'webpack-plugin-manifest-expose';
-import { CustomPreloadPlugin } from 'webpack-plugin-custom-preload';
-import { CheckLongConstantPlugin } from 'webpack-plugin-check-long-constant';
+import { ManifestExposePlugin } from '@plugin-light/webpack-plugin-manifest-expose';
+import { CustomPreloadPlugin } from '@plugin-light/webpack-plugin-custom-preload';
+import { CheckLongConstantPlugin } from '@plugin-light/webpack-plugin-check-long-constant';
 
-import { FixImportPathPlugin } from 'webpack-plugin-fix-import-path';
-import { GenMpPluginPlaygroundPlugin } from 'webpack-plugin-gen-mp-plugin-playground';
+import { FixImportPathPlugin } from '@plugin-light/webpack-plugin-fix-import-path';
+import { GenMpPluginPlaygroundPlugin } from '@plugin-light/webpack-plugin-gen-mp-plugin-playground';
 
 
 import { updateManifest } from './replace-manifest';

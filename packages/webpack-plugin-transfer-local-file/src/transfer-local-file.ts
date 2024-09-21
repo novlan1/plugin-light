@@ -1,5 +1,5 @@
 import { replaceAllPolyfill } from 't-comm';
-import { createLogDir, saveJsonToLog, updateAssetSource } from 'plugin-light-shared';
+import { createLogDir, saveJsonToLog, updateAssetSource } from '@plugin-light/shared';
 import { replaceSource } from './core';
 import type { ITransferLocalFileOptions } from './types';
 

@@ -1,4 +1,4 @@
-import { updateAssetSource, getMpInsertCode, type IGenVersionOptions } from 'plugin-light-shared';
+import { updateAssetSource, getMpInsertCode, type IGenVersionOptions } from '@plugin-light/shared';
 
 const insertCode = getMpInsertCode();
 

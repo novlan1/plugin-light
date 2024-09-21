@@ -9,7 +9,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-ifdef -D
+pnpm add @plugin-light/vite-plugin-ifdef -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -17,7 +17,7 @@ pnpm add vite-plugin-ifdef -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { ifdefVitePlugin } from 'vite-plugin-ifdef';
+import { ifdefVitePlugin } from '@plugin-light/vite-plugin-ifdef';
 
 
 export default defineConfig({

@@ -1,4 +1,4 @@
-import { replaceDirective } from 'plugin-light-shared';
+import { replaceDirective } from '@plugin-light/shared';
 import type { IRemoveVueDirectionOptions } from './types';
 
 

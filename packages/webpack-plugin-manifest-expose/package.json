@@ -1,5 +1,5 @@
 {
-  "name": "webpack-plugin-manifest-expose",
+  "name": "@plugin-light/webpack-plugin-manifest-expose",
   "version": "0.0.5",
   "main": "./lib/index",
   "files": [
@@ -21,6 +21,6 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.11"
   }
 }

@@ -1,5 +1,5 @@
 import { transFormRem } from 't-comm/lib/rem/rem';
-import { PLATFORM_MAP, CSS_POSTFIX_MAP } from 'plugin-light-shared';
+import { PLATFORM_MAP, CSS_POSTFIX_MAP } from '@plugin-light/shared';
 
 function isInWhiteList(whiteList: Array<string>, fileName: string) {
   for (const item of whiteList) {

@@ -21,26 +21,26 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 //   transformVLazyVitePlugin,
 // // @ts-ignore
 // } from 'plugin-light/lib/plugin';
-import { addCodeAtEndVitePlugin } from 'vite-plugin-add-code-at-end';
-import { crossPlatformVitePlugin } from 'vite-plugin-cross-platform';
-import { crossGameStyleVitePlugin } from 'vite-plugin-cross-game-style';
-import { fixUniDirVitePlugin } from 'vite-plugin-fix-uni-dir';
-import { genMpQQAppIdVitePlugin } from 'vite-plugin-gen-mp-qq-app-id';
-import { globalThisPolyfillVitePlugin } from 'vite-plugin-global-this-polyfill';
-import { genVersionMpVitePlugin, genVersionWebVitePlugin } from 'vite-plugin-gen-version';
-import { removeUseRemVitePlugin } from 'vite-plugin-remove-use-rem';
-import { remToRpxVitePlugin  } from 'vite-plugin-rem-to-rpx';
-import { removeVueDirectiveVitePlugin } from 'vite-plugin-remove-vue-directive';
-import { transformVLazyVitePlugin } from 'vite-plugin-transform-v-lazy';
+import { addCodeAtEndVitePlugin } from '@plugin-light/vite-plugin-add-code-at-end';
+import { crossPlatformVitePlugin } from '@plugin-light/vite-plugin-cross-platform';
+import { crossGameStyleVitePlugin } from '@plugin-light/vite-plugin-cross-game-style';
+import { fixUniDirVitePlugin } from '@plugin-light/vite-plugin-fix-uni-dir';
+import { genMpQQAppIdVitePlugin } from '@plugin-light/vite-plugin-gen-mp-qq-app-id';
+import { globalThisPolyfillVitePlugin } from '@plugin-light/vite-plugin-global-this-polyfill';
+import { genVersionMpVitePlugin, genVersionWebVitePlugin } from '@plugin-light/vite-plugin-gen-version';
+import { removeUseRemVitePlugin } from '@plugin-light/vite-plugin-remove-use-rem';
+import { remToRpxVitePlugin  } from '@plugin-light/vite-plugin-rem-to-rpx';
+import { removeVueDirectiveVitePlugin } from '@plugin-light/vite-plugin-remove-vue-directive';
+import { transformVLazyVitePlugin } from '@plugin-light/vite-plugin-transform-v-lazy';
 
 
 import { BUILD_NAME_MAP } from 't-comm/lib/v-console/config';
-import { TransformPages } from 'uni-read-pages-vite';
+import { TransformPages } from '@plugin-light/uni-read-pages-vite';
 import {
   updateManifest,
   getSubProjectConfig,
   getSubProjectRoot,
-} from 'plugin-light-shared';
+} from '@plugin-light/shared';
 
 
 import type { IUniViteConfigOptions } from './types';

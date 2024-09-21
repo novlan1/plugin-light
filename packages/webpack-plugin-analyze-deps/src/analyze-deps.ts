@@ -5,7 +5,7 @@ import {
   createLogDir,
   parseSetDeps,
   getRelativePath,
-} from 'plugin-light-shared';
+} from '@plugin-light/shared';
 
 export class DepAnalysisPlugin {
   depsMap: Record<string, Set<string>>;

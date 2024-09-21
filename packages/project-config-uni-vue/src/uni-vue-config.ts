@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { getGitCurBranch } from 't-comm';
 
-import { getRootDir, checkH5, checkDebugMode } from 'plugin-light-shared';
-import { LOADER as cssUrlBlankSpaceLoader } from 'webpack-loader-css-url-blank-space';
+import { getRootDir, checkH5, checkDebugMode } from '@plugin-light/shared';
+import { LOADER as cssUrlBlankSpaceLoader } from '@plugin-light/webpack-loader-css-url-blank-space';
 import { getPlugins } from './plugin';
 import { chainWebpack } from './chain-webpack';
 

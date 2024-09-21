@@ -2,8 +2,8 @@
 // import { addCommonVendorCore } from '../src/core';
 
 
-jest.mock('plugin-light-shared', () => {
-  const originalModule = jest.requireActual('plugin-light-shared');
+jest.mock('@plugin-light/shared', () => {
+  const originalModule = jest.requireActual('@plugin-light/shared');
 
   return { ...originalModule, saveJsonToLog(content: any) {
     logOutput = content;

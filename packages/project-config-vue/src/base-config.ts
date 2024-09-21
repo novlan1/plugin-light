@@ -7,24 +7,24 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import PrerenderSpaPlugin from 'prerender-spa-plugin';
 import HooksScriptPlugin from 'webpack-hooks-shellscripts';
 
-import { HtmlModifyPlugin } from 'webpack-plugin-modify-html';
+import { HtmlModifyPlugin } from '@plugin-light/webpack-plugin-modify-html';
 import {
   getRootDir,
   CDN_MAP,
   DEFAULT_CONTEXT_OBJECT,
   checkBundleAnalyze,
   checkDebugMode,
-  DEFAULT_TRANSPILE_DEPENDENCIES } from 'plugin-light-shared';
+  DEFAULT_TRANSPILE_DEPENDENCIES } from '@plugin-light/shared';
 // import { LOADER_MAP } from '../../webpack-loader/index';
 
 import { DEFAULT_CDN_URLS, VUE3_CDN_URLS, DEFAULT_PROJECT_MAP, DEFAULT_HANDLE_IF_DEF_FILES } from './config';
 import type { IBaseConfigOptions } from './types';
 import { initWorkboxPlugin } from './service-worker';
 
-import { LOADER as ifdef } from 'webpack-loader-ifdef';
-import { LOADER as crossGameStyle } from 'webpack-loader-cross-game-style';
-import { LOADER as crossPlatform, LOADER_PROD as crossPlatformProd } from 'webpack-loader-cross-platform';
-import { LOADER as publishUtil } from 'webpack-loader-publish';
+import { LOADER as ifdef } from '@plugin-light/webpack-loader-ifdef';
+import { LOADER as crossGameStyle } from '@plugin-light/webpack-loader-cross-game-style';
+import { LOADER as crossPlatform, LOADER_PROD as crossPlatformProd } from '@plugin-light/webpack-loader-cross-platform';
+import { LOADER as publishUtil } from '@plugin-light/webpack-loader-publish';
 
 const LOADER_MAP = {
   ifdef,

@@ -1,4 +1,4 @@
-import { createLogDir } from 'plugin-light-shared';
+import { createLogDir } from '@plugin-light/shared';
 import { parseLongConstant } from './core';
 import { saveData } from './helper';
 import type { FoundItem } from './types';

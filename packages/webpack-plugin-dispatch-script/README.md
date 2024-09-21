@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-dispatch-script -D
+pnpm add @plugin-light/webpack-plugin-dispatch-script -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { DispatchScriptPlugin } = require('webpack-plugin-dispatch-script');
+const { DispatchScriptPlugin } = require('@plugin-light/webpack-plugin-dispatch-script');
 
 module.exports = {
   configureWebpack: {

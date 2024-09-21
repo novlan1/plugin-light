@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-replace-content -D
+pnpm add @plugin-light/webpack-plugin-replace-content -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const { ReplaceContentPlugin } = require('webpack-plugin-replace-content');
+const { ReplaceContentPlugin } = require('@plugin-light/webpack-plugin-replace-content');
 
 const plugins = []
 

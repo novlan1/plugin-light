@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add uni-read-pages-vite -D
+pnpm add @plugin-light/uni-read-pages-vite -D
 ```
 
 使用
 
 ```js
-import { TransformPages } from 'uni-read-pages-vite';
+import { TransformPages } from '@plugin-light/uni-read-pages-vite';
 
 const { routes } = new TransformPages();
 ```

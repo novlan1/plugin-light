@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { analyzeComponent } from 'webpack-plugin-dispatch-vue';
+import { analyzeComponent } from '@plugin-light/webpack-plugin-dispatch-vue';
 import {
   getMainPackagePages,
   getMainJSPath,
@@ -8,7 +8,7 @@ import {
   getPageSubPackages,
   ROOT_NAME,
 } from './helper';
-import { saveJsonToLog, getRelativePath } from 'plugin-light-shared';
+import { saveJsonToLog, getRelativePath } from '@plugin-light/shared';
 
 const sourceDir = path.resolve(process.env.UNI_INPUT_DIR || '');
 let scriptSubPackagesMap: Record<string, Array<string>>;

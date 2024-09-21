@@ -1,6 +1,6 @@
 import path from 'path';
 import type { ICrossGameStyleOptions } from './types';
-import { crossGameStyle } from 'plugin-light-shared';
+import { crossGameStyle } from '@plugin-light/shared';
 
 function genWarn(source: string, id: string, warnList: Array<string> = []) {
   warnList.forEach((item) => {

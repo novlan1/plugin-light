@@ -61,7 +61,7 @@ Postcss Plugin
 每个包名称不同，下面是一个示例：
 
 ```bash
-npm install -D project-config-vite
+npm install -D @plugin-light/project-config-vite
 ```
 
 ### 插件使用示例
@@ -69,7 +69,7 @@ npm install -D project-config-vite
 ```js
 // vue.config.js
 
-const { DispatchScriptPlugin } = require('webpack-plugin-dispatch-vue');
+const { DispatchScriptPlugin } = require('@plugin-light/webpack-plugin-dispatch-vue');
 
 let plugins = []
 
@@ -97,7 +97,7 @@ module.exports = {
 ```js
 // vue.config.js
 
-const { LOADER as ifdef } = 'webpack-loader-ifdef';
+const { LOADER as ifdef } = '@plugin-light/webpack-loader-ifdef';
 
 module.export = {
   chainWebpack(config) {

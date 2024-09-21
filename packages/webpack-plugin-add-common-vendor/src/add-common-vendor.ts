@@ -1,8 +1,8 @@
-import { createLogDir } from 'plugin-light-shared';
+import { createLogDir } from '@plugin-light/shared';
 
 import type { IAddCommonVendorOptions } from './types';
 import { addCommonVendorCore, insetSpecialContent } from './core';
-import { getPageSet } from 'webpack-plugin-dispatch-vue';
+import { getPageSet } from '@plugin-light/webpack-plugin-dispatch-vue';
 
 
 export class AddCommonVendorPlugin {

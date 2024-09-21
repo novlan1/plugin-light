@@ -1,4 +1,4 @@
-import { saveLoaderLog  } from 'plugin-light-shared';
+import { saveLoaderLog  } from '@plugin-light/shared';
 
 export class SaveLoaderLogPlugin {
   options: object;

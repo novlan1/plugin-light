@@ -1,19 +1,19 @@
-import { LOADER as crossModuleStyle } from 'webpack-loader-cross-module-style';
-import { LOADER as crossGameStyle } from 'webpack-loader-cross-game-style';
-import { LOADER as crossPlatform, LOADER_PROD as crossPlatformProd } from 'webpack-loader-cross-platform';
+import { LOADER as crossModuleStyle } from '@plugin-light/webpack-loader-cross-module-style';
+import { LOADER as crossGameStyle } from '@plugin-light/webpack-loader-cross-game-style';
+import { LOADER as crossPlatform, LOADER_PROD as crossPlatformProd } from '@plugin-light/webpack-loader-cross-platform';
 
-import { LOADER as insertGlobalComp } from 'webpack-loader-insert-global-comp';
-import { LOADER as transformDynamicComp } from 'webpack-loader-transform-dynamic-comp';
-import { LOADER as insertPageMeta } from 'webpack-loader-insert-page-meta';
+import { LOADER as insertGlobalComp } from '@plugin-light/webpack-loader-insert-global-comp';
+import { LOADER as transformDynamicComp } from '@plugin-light/webpack-loader-transform-dynamic-comp';
+import { LOADER as insertPageMeta } from '@plugin-light/webpack-loader-insert-page-meta';
 
-import { LOADER as autoPlaceholder } from 'webpack-loader-auto-placeholder';
-import { LOADER as replaceVueKey } from 'webpack-loader-replace-vue-key';
-import { LOADER as replaceTemplateTag } from 'webpack-loader-replace-template-tag';
+import { LOADER as autoPlaceholder } from '@plugin-light/webpack-loader-auto-placeholder';
+import { LOADER as replaceVueKey } from '@plugin-light/webpack-loader-replace-vue-key';
+import { LOADER as replaceTemplateTag } from '@plugin-light/webpack-loader-replace-template-tag';
 
-import { LOADER as vLazy } from 'webpack-loader-v-lazy';
-import { LOADER as swipeComponent } from 'webpack-loader-swipe-component';
-import { LOADER as removeScoped } from 'webpack-loader-remove-scoped';
-import { LOADER as replaceLibrary } from 'webpack-loader-replace-library';
+import { LOADER as vLazy } from '@plugin-light/webpack-loader-v-lazy';
+import { LOADER as swipeComponent } from '@plugin-light/webpack-loader-swipe-component';
+import { LOADER as removeScoped } from '@plugin-light/webpack-loader-remove-scoped';
+import { LOADER as replaceLibrary } from '@plugin-light/webpack-loader-replace-library';
 
 
 import type { GetUniVueConfig } from './types';

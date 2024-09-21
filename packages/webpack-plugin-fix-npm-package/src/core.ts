@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { updateAssetSource, saveJsonToLog } from 'plugin-light-shared';
+import { updateAssetSource, saveJsonToLog } from '@plugin-light/shared';
 
 const HANDLE_LIST = [
   'common/vendor.js',

@@ -1,4 +1,4 @@
-import { saveJsonToLog  } from 'plugin-light-shared';
+import { saveJsonToLog  } from '@plugin-light/shared';
 import type { ICustomPreloadOptions, IParsedCustomPreloadOption, IUniRoutes } from './types';
 
 // e.__uniConfig.__webpack_chunk_load__=n.e,t["default"]

@@ -1,5 +1,5 @@
-import { PLATFORMS_MP } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { PLATFORMS_MP } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 
 /**

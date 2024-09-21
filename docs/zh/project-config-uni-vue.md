@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add project-config-uni-vue -D
+pnpm add @plugin-light/project-config-uni-vue -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```js
-const { getUniVueConfig } = require('project-config-uni-vue');
+const { getUniVueConfig } = require('@plugin-light/project-config-uni-vue');
 const { merge } = require('webpack-merge');
 
 module.exports = merge(getUniVueConfig(), {});

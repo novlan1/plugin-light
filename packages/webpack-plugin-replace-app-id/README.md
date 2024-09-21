@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-replace-app-id -D
+pnpm add @plugin-light/webpack-plugin-replace-app-id -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { ReplaceAppIdPlugin } = require('webpack-plugin-replace-app-id');
+const { ReplaceAppIdPlugin } = require('@plugin-light/webpack-plugin-replace-app-id');
 
 
 module.exports = {

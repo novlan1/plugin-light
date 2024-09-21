@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-fix-import-path -D
+pnpm add @plugin-light/webpack-plugin-fix-import-path -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 
 ```ts
-const { FixImportPathPlugin } = require('webpack-plugin-fix-import-path');
+const { FixImportPathPlugin } = require('@plugin-light/webpack-plugin-fix-import-path');
 
 
 module.exports = {

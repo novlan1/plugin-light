@@ -7,7 +7,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-add-code-at-end -D
+pnpm add @plugin-light/vite-plugin-add-code-at-end -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -15,7 +15,7 @@ pnpm add vite-plugin-add-code-at-end -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { addCodeAtEndVitePlugin } from 'vite-plugin-add-code-at-end';
+import { addCodeAtEndVitePlugin } from '@plugin-light/vite-plugin-add-code-at-end';
 
 
 export default defineConfig({

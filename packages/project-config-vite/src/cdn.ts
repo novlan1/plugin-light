@@ -1,5 +1,5 @@
 import { cdn } from 'vite-plugin-cdn2';
-import { AEGIS_EXTERNAL_SCRIPT_LINK } from 'plugin-light-shared';
+import { AEGIS_EXTERNAL_SCRIPT_LINK } from '@plugin-light/shared';
 
 
 export function enableCDN(isEnabled: string) {

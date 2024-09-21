@@ -11,13 +11,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-fix-npm-package -D
+pnpm add @plugin-light/webpack-plugin-fix-npm-package -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { FixNpmPackagePlugin } = require('webpack-plugin-fix-npm-package');
+const { FixNpmPackagePlugin } = require('@plugin-light/webpack-plugin-fix-npm-package');
 
 module.exports = {
   configureWebpack: {

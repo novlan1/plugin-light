@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-remove-vue-directive",
+  "name": "@plugin-light/vite-plugin-remove-vue-directive",
   "version": "0.0.6",
   "main": "./lib/index",
   "files": [
@@ -21,6 +21,6 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.11"
   }
 }

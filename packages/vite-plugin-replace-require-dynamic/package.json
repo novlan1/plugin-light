@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-replace-require-dynamic",
+  "name": "@plugin-light/vite-plugin-replace-require-dynamic",
   "version": "0.0.6",
   "main": "./lib/index",
   "files": [
@@ -21,6 +21,6 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.11"
   }
 }

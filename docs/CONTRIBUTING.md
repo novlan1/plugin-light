@@ -9,17 +9,17 @@
 以 `project-config-vite` 为例：
 
 ```bash
-pnpm --filter=project-config-vite build
+pnpm --filter=@plugin-light/project-config-vite build
 ```
 
 升级依赖
 
 ```bash
 # 在某个包中升级 一些依赖
-pnpm --filter=project-config-vite up "plugin-light-*"
+pnpm --filter=@plugin-light/project-config-vite up "@plugin-light/*"
 
 # 在所有包中只升级 某个依赖
-pnpm --filter="./packages/*" up "plugin-light-shared-vue2"
+pnpm --filter="./packages/*" up "@plugin-light/shared-vue2"
 ```
 
 ## 文档

@@ -1,4 +1,4 @@
-import { getWebInsertCode, type IGenVersionOptions } from 'plugin-light-shared';
+import { getWebInsertCode, type IGenVersionOptions } from '@plugin-light/shared';
 
 
 export function genVersionWebVitePlugin(options: IGenVersionOptions) {

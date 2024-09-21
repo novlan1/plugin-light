@@ -15,7 +15,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-alias-for-library -D
+pnpm add @plugin-light/vite-plugin-alias-for-library -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -23,7 +23,7 @@ pnpm add vite-plugin-alias-for-library -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { aliasForLibrary } from 'vite-plugin-alias-for-library';
+import { aliasForLibrary } from '@plugin-light/vite-plugin-alias-for-library';
 
 
 export default defineConfig({

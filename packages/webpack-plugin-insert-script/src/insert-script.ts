@@ -1,4 +1,4 @@
-import { updateAssetSource } from 'plugin-light-shared';
+import { updateAssetSource } from '@plugin-light/shared';
 import { getScriptHtml } from './helper';
 import type { InsertScriptOptions } from './types';
 

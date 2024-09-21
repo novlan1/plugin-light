@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-rem-to-rpx -D
+pnpm add @plugin-light/webpack-plugin-rem-to-rpx -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { RemToRpxPlugin } = require('webpack-plugin-rem-to-rpx');
+const { RemToRpxPlugin } = require('@plugin-light/webpack-plugin-rem-to-rpx');
 
 
 module.exports = {

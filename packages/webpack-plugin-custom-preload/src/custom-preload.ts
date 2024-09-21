@@ -1,4 +1,4 @@
-import { saveJsonToLog, updateAssetSource } from 'plugin-light-shared';
+import { saveJsonToLog, updateAssetSource } from '@plugin-light/shared';
 import { extractComponentDeps, extractUniRoutes, stringifyJson, paresPreloadOptions } from './helper';
 
 import type { ICustomPreloadOptions, IUniRoutes } from './types';

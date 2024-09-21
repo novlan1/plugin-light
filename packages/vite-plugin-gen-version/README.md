@@ -9,7 +9,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-gen-version -D
+pnpm add @plugin-light/vite-plugin-gen-version -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -20,7 +20,7 @@ import { defineConfig } from 'vite';
 import { 
   genVersionMpVitePlugin,
   genVersionWebVitePlugin,
- } from 'vite-plugin-gen-version';
+ } from '@plugin-light/vite-plugin-gen-version';
 import { BUILD_NAME_MAP } from 't-comm/lib/v-console/config';
 
 

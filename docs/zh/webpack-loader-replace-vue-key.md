@@ -22,7 +22,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-replace-vue-key -D
+pnpm add @plugin-light/webpack-loader-replace-vue-key -D
 ```
 
 在 `vue.config.js` 中添加如下设置：

@@ -10,7 +10,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-cross-game-style -D
+pnpm add @plugin-light/vite-plugin-cross-game-style -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -18,7 +18,7 @@ pnpm add vite-plugin-cross-game-style -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { crossGameStyleVitePlugin } from 'vite-plugin-cross-game-style';
+import { crossGameStyleVitePlugin } from '@plugin-light/vite-plugin-cross-game-style';
 
 
 export default defineConfig({

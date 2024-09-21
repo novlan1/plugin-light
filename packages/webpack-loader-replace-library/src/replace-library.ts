@@ -1,7 +1,7 @@
 import { replaceAllPolyfill } from 't-comm';
 import { getOptions } from 'loader-utils';
-import { recordLoaderLog, getRelativePath, PLATFORMS_MP } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { recordLoaderLog, getRelativePath, PLATFORMS_MP } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 import type { IReplaceLibraryOptions } from './types';
 
 /**

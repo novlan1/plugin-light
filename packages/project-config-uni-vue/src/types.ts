@@ -1,14 +1,14 @@
-import type { ICrossModuleStyleOptions } from 'webpack-loader-cross-module-style';
-import type { IInsertGlobalCompOptions } from 'webpack-loader-insert-global-comp';
-import type { ICopyDirOptions } from 'webpack-plugin-copy-dir';
+import type { ICrossModuleStyleOptions } from '@plugin-light/webpack-loader-cross-module-style';
+import type { IInsertGlobalCompOptions } from '@plugin-light/webpack-loader-insert-global-comp';
+import type { ICopyDirOptions } from '@plugin-light/webpack-plugin-copy-dir';
 
-import type { IDispatchScriptOptions } from 'webpack-plugin-dispatch-script';
-import type { IDispatchVueOptions } from 'webpack-plugin-dispatch-vue';
-import type { IRemToRpxOptions } from 'webpack-plugin-rem-to-rpx';
+import type { IDispatchScriptOptions } from '@plugin-light/webpack-plugin-dispatch-script';
+import type { IDispatchVueOptions } from '@plugin-light/webpack-plugin-dispatch-vue';
+import type { IRemToRpxOptions } from '@plugin-light/webpack-plugin-rem-to-rpx';
 
-import type { IGenVersionOptions } from 'webpack-plugin-gen-version';
-import type { ICustomPreloadOptions } from 'webpack-plugin-custom-preload';
-import type { IReplaceUniH5PluginOption } from 'webpack-plugin-replace-uni-h5';
+import type { IGenVersionOptions } from '@plugin-light/webpack-plugin-gen-version';
+import type { ICustomPreloadOptions } from '@plugin-light/webpack-plugin-custom-preload';
+import type { IReplaceUniH5PluginOption } from '@plugin-light/webpack-plugin-replace-uni-h5';
 
 
 export type GetUniVueConfig = {

@@ -1,7 +1,7 @@
 import type { Plugin, ServerOptions, CommonServerOptions } from 'vite';
-import type { IRemoveVueDirectionOptions } from 'vite-plugin-remove-vue-directive';
+import type { IRemoveVueDirectionOptions } from '@plugin-light/vite-plugin-remove-vue-directive';
 import type { Server } from 'node:https';
-import type { ICrossGameStyleOptions } from 'vite-plugin-cross-game-style';
+import type { ICrossGameStyleOptions } from '@plugin-light/vite-plugin-cross-game-style';
 
 export interface IUniViteConfigOptions {
   mode: string;

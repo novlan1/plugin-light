@@ -1,5 +1,5 @@
 import { preprocess } from 'packages/plugin-light-preprocess/lib';
-import type { IIfdefOptions } from 'plugin-light-shared';
+import type { IIfdefOptions } from '@plugin-light/shared';
 
 
 export function ifdefVitePlugin(options?: IIfdefOptions) {

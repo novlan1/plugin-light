@@ -8,7 +8,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-rem-to-rpx -D
+pnpm add @plugin-light/vite-plugin-rem-to-rpx -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -16,7 +16,7 @@ pnpm add vite-plugin-rem-to-rpx -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { remToRpxVitePlugin } from 'vite-plugin-rem-to-rpx';
+import { remToRpxVitePlugin } from '@plugin-light/vite-plugin-rem-to-rpx';
 
 
 export default defineConfig({

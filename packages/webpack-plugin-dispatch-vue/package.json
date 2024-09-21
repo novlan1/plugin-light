@@ -1,5 +1,5 @@
 {
-  "name": "webpack-plugin-dispatch-vue",
+  "name": "@plugin-light/webpack-plugin-dispatch-vue",
   "version": "0.0.4",
   "main": "./lib/index",
   "files": [
@@ -21,8 +21,8 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:*",
+    "@plugin-light/shared": "workspace:*",
     "t-comm": "^1.3.104",
-    "webpack-plugin-fix-npm-package": "workspace:^0.0.5"
+    "@plugin-light/webpack-plugin-fix-npm-package": "workspace:^0.0.5"
   }
 }

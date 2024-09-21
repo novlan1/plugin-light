@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-global-this-polyfill -D
+pnpm add @plugin-light/webpack-plugin-global-this-polyfill -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { GlobalThisPolyfillPlugin } = require('webpack-plugin-global-this-polyfill');
+const { GlobalThisPolyfillPlugin } = require('@plugin-light/webpack-plugin-global-this-polyfill');
 
 
 module.exports = {

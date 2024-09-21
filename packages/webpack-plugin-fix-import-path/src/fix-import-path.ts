@@ -2,7 +2,7 @@ import path from 'path';
 import { replaceAllPolyfill } from 't-comm';
 
 import { fixImportPath } from './core';
-import { createLogDir, saveJsonToLog,  updateAssetSource } from 'plugin-light-shared';
+import { createLogDir, saveJsonToLog,  updateAssetSource } from '@plugin-light/shared';
 import type { IFixImportPathOptions } from './types';
 
 

@@ -27,12 +27,12 @@ import commonjs from 'vite-plugin-commonjs';
 import { enableCDN, getCdnList } from './cdn';
 
 import type { GetViteConfigOptions } from './types';
-import { ifdefVitePlugin } from 'vite-plugin-ifdef';
-import { crossPlatformVitePlugin } from 'vite-plugin-cross-platform';
-import { addCodeAtEndVitePlugin } from 'vite-plugin-add-code-at-end';
-import { aliasForLibrary } from 'vite-plugin-alias-for-library';
-import { crossGameStyleVitePlugin } from 'vite-plugin-cross-game-style';
-import { genVersionWebVitePlugin } from 'vite-plugin-gen-version';
+import { ifdefVitePlugin } from '@plugin-light/vite-plugin-ifdef';
+import { crossPlatformVitePlugin } from '@plugin-light/vite-plugin-cross-platform';
+import { addCodeAtEndVitePlugin } from '@plugin-light/vite-plugin-add-code-at-end';
+import { aliasForLibrary } from '@plugin-light/vite-plugin-alias-for-library';
+import { crossGameStyleVitePlugin } from '@plugin-light/vite-plugin-cross-game-style';
+import { genVersionWebVitePlugin } from '@plugin-light/vite-plugin-gen-version';
 import {
   DEFAULT_OPTIMIZE_DEPS_INCLUDES,
   DEFAULT_OPTIMIZE_DEPS_EXCLUDES,
@@ -44,7 +44,7 @@ import {
 import {
   getSubProjectRoot,
   getSubProjectConfig,
-  DEFAULT_CONTEXT_OBJECT } from 'plugin-light-shared';
+  DEFAULT_CONTEXT_OBJECT } from '@plugin-light/shared';
 
 
 const ENV_PREFIX = ['VITE_', 'VUE_APP'];

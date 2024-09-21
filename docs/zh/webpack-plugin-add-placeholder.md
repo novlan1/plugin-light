@@ -7,15 +7,15 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-add-placeholder -D
+pnpm add @plugin-light/webpack-plugin-add-placeholder -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { AddPlaceHolderPlugin } = require('webpack-plugin-add-placeholder');
-const { LOADER as transformDynamicComp } = require('webpack-loader-transform-dynamic-comp');
-const { LOADER as autoPlaceholder } = require('webpack-loader-auto-placeholder');
+const { AddPlaceHolderPlugin } = require('@plugin-light/webpack-plugin-add-placeholder');
+const { LOADER as transformDynamicComp } = require('@plugin-light/webpack-loader-transform-dynamic-comp');
+const { LOADER as autoPlaceholder } = require('@plugin-light/webpack-loader-auto-placeholder');
 
 
 module.exports = {

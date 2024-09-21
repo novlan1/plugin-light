@@ -8,7 +8,7 @@
 安装
 
 ```bash
-pnpm add vite-plugin-transform-v-lazy -D
+pnpm add @plugin-light/vite-plugin-transform-v-lazy -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
@@ -16,7 +16,7 @@ pnpm add vite-plugin-transform-v-lazy -D
 
 ```ts
 import { defineConfig } from 'vite';
-import { transformVLazyVitePlugin } from 'vite-plugin-transform-v-lazy';
+import { transformVLazyVitePlugin } from '@plugin-light/vite-plugin-transform-v-lazy';
 
 
 export default defineConfig({

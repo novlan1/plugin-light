@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add vite-plugin-replace-require-dynamic -D
+pnpm add @plugin-light/vite-plugin-replace-require-dynamic -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
 
 ```ts
 import { defineConfig } from 'vite';
-import { replaceRequireDynamicVitePlugin } from 'vite-plugin-replace-require-dynamic';
+import { replaceRequireDynamicVitePlugin } from '@plugin-light/vite-plugin-replace-require-dynamic';
 
 
 export default defineConfig({

@@ -7,14 +7,14 @@
 安装
 
 ```bash
-pnpm add project-config-vite -D
+pnpm add @plugin-light/project-config-vite -D
 ```
 
 在 `vite.config.ts` 中添加如下设置：
 
 
 ```js
-import { getViteBaseConfig } from "project-config-vite";
+import { getViteBaseConfig } from "@plugin-light/project-config-vite";
 
 import { defineConfig } from "vite";
 

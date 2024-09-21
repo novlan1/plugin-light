@@ -10,7 +10,7 @@ import {
   getAllGlobalComps,
   getPageSet,
 } from './helper';
-import { saveJsonToLog, getUniCliCache } from 'plugin-light-shared';
+import { saveJsonToLog, getUniCliCache } from '@plugin-light/shared';
 import { getMovingComponents } from './core';
 import type { IMovingComponents, IReplaceRefList, IDispatchVueOptions } from './types';
 

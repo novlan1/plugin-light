@@ -22,7 +22,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-vue-directive -D
+pnpm add @plugin-light/webpack-loader-vue-directive -D
 ```
 
 在 `vue.config.js` 中添加如下设置：

@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add webpack-plugin-modify-html -D
+pnpm add @plugin-light/webpack-plugin-modify-html -D
 ```
 
 在 `vue.config.js` 中添加如下设置：
 
 ```ts
-const { HtmlModifyPlugin } = require('webpack-plugin-modify-html');
+const { HtmlModifyPlugin } = require('@plugin-light/webpack-plugin-modify-html');
 
 
 module.exports = {

@@ -14,7 +14,7 @@
 安装
 
 ```bash
-pnpm add webpack-loader-ifdef -D
+pnpm add @plugin-light/webpack-loader-ifdef -D
 ```
 
 在 `vue.config.js` 中配置如下：

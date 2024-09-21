@@ -28,7 +28,7 @@ components: {
 安装
 
 ```bash
-pnpm add webpack-loader-transform-dynamic-comp -D
+pnpm add @plugin-light/webpack-loader-transform-dynamic-comp -D
 ```
 
 在 `vue.config.js` 中添加如下设置：

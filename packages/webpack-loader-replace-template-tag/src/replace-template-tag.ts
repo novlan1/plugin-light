@@ -1,7 +1,7 @@
 import { replaceAllPolyfill } from 't-comm';
 import { getOptions } from 'loader-utils';
-import { PLATFORMS_ALL, PLATFORMS_MP } from 'plugin-light-shared';
-import { shouldUseLoader } from 'plugin-light-shared-vue2';
+import { PLATFORMS_ALL, PLATFORMS_MP } from '@plugin-light/shared';
+import { shouldUseLoader } from '@plugin-light/shared-vue2';
 
 import type { IReplaceTemplateTagOptions } from './types';
 

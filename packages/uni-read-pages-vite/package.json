@@ -1,5 +1,5 @@
 {
-  "name": "uni-read-pages-vite",
+  "name": "@plugin-light/uni-read-pages-vite",
   "version": "0.0.4",
   "main": "./lib/index",
   "files": [
@@ -21,6 +21,6 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.11"
   }
 }

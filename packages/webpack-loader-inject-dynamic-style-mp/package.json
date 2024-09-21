@@ -1,5 +1,5 @@
 {
-  "name": "webpack-loader-inject-dynamic-style-mp",
+  "name": "@plugin-light/webpack-loader-inject-dynamic-style-mp",
   "version": "0.0.7",
   "main": "./lib/index",
   "files": [
@@ -21,10 +21,10 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "plugin-light-shared": "workspace:^0.0.11",
-    "plugin-light-shared-vue2": "workspace:^0.0.6",
+    "@plugin-light/shared": "workspace:^0.0.11",
+    "@plugin-light/shared-vue2": "workspace:^0.0.6",
     "t-comm": "^1.3.104",
-    "webpack-loader-inject-dynamic-style-web": "workspace:^0.0.7",
+    "@plugin-light/webpack-loader-inject-dynamic-style-web": "workspace:^0.0.7",
     "loader-utils": "^2.0.4"
   }
 }

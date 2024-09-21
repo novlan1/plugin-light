@@ -1,7 +1,7 @@
 
 import * as path from 'path';
 import { analyzeComponent } from './analyze-component';
-import { fixNpmPackage } from 'webpack-plugin-fix-npm-package';
+import { fixNpmPackage } from '@plugin-light/webpack-plugin-fix-npm-package';
 import { formatTime, findReplaceMap, replaceAllPolyfill, formatReplaceRefList } from './helper';
 
 import {
@@ -12,7 +12,7 @@ import {
   createLogDir,
   updateAssetSource,
   removeFirstSlash,
-} from 'plugin-light-shared';
+} from '@plugin-light/shared';
 
 import type { IDispatchVueOptions, IMovingComponents, IReplaceRefList } from './types';
 

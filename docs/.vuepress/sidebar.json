@@ -111,6 +111,10 @@
           "path": "/zh/webpack-loader-insert-page-meta.md"
         },
         {
+          "title": "本地发布",
+          "path": "/zh/webpack-loader-publish.md"
+        },
+        {
           "title": "三方库转换",
           "path": "/zh/webpack-loader-replace-library.md"
         },
@@ -185,6 +189,10 @@
         {
           "title": "移除选择器",
           "path": "/zh/postcss-plugin-remove-selector.md"
+        },
+        {
+          "title": "转换 Web 标签",
+          "path": "/zh/postcss-plugin-transform-web-tag.md"
         }
       ]
     },

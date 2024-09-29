@@ -7,13 +7,13 @@ Vue2 中的公共包
 安装
 
 ```bash
-pnpm add plugin-light-shared-vue2 -D
+pnpm add @plugin-light/shared-vue2 -D
 ```
 
 使用
 
 ```js
-import { parseSFC } from 'plugin-light-shared-vue2';
+import { parseSFC } from '@plugin-light/shared-vue2';
 
 parseSFC(content);
 ```

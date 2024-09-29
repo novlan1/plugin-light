@@ -2,7 +2,14 @@
 
 替换一些小程序用不到的库，避免产物体积过大。
 
-## 使用方法
+## 如何使用
+
+安装
+
+```bash
+pnpm add @plugin-light/webpack-loader-replace-library -D
+```
+
 
 在 `vue.config.js` 中添加如下设置：
 

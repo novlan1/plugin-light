@@ -7,13 +7,13 @@
 安装
 
 ```bash
-pnpm add plugin-light-shared -D
+pnpm add @plugin-light/shared -D
 ```
 
 使用
 
 ```js
-import { getDeps } from 'plugin-light-shared';
+import { getDeps } from '@plugin-light/shared';
 
 getDeps(__dirname);
 ```

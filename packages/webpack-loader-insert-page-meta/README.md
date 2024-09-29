@@ -2,13 +2,18 @@
 
 在小程序产物中插入`page-meta`标签。
 
+## 如何使用
 
-## 使用方法
+安装
+
+```bash
+pnpm add @plugin-light/webpack-loader-insert-page-meta -D
+```
 
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const { LOADER: insertPageMeta } = require('webpack-loader-insert-page-meta')';
+const { LOADER: insertPageMeta } = require('@plugin-light/webpack-loader-insert-page-meta')';
 
 module.exports = {
   chainWebpack(config) {

@@ -3,10 +3,15 @@
 插入公共组件的`loader`，比如`dialog`、`header`，这些几乎所有页面都会用到的组件，适合用这个`loader`。
 
 
-## 使用方法
+## 如何使用
 
-首先需要在`main.js`中将组件全局注册下：
+安装
 
+```bash
+pnpm add @plugin-light/webpack-loader-insert-global-comp -D
+```
+
+提前在业务库的 `main.js` 中将组件全局注册下：
 
 ```ts
 import MatchCommDialog from 'press-ui/press-dialog/press-dialog.vue';
@@ -19,7 +24,7 @@ Vue.component('GlobalComponent', GlobalComponent);
 在 `vue.config.js` 中配置如下：
 
 ```ts
-const { LOADER: insertGlobalComp } = require('webpack-loader-insert-global-comp')';
+const { LOADER: insertGlobalComp } = require('@plugin-light/webpack-loader-insert-global-comp')';
 
 module.exports = {
   chainWebpack(config) {

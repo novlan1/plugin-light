@@ -54,7 +54,7 @@ export type IDispatchScriptOptions = {
 
 ### 文章
 
-[uni-app分包优化——JS分发](https://juejin.cn/post/7134873335301128229)
+[uni-app分包优化——脚本分发](https://juejin.cn/post/7134873335301128229)
 
 ### 常见问题
 

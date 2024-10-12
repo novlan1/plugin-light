@@ -87,3 +87,27 @@ export {
   getSubProjectConfig,
   getSubProjectRoot,
 } from './sub-project';
+
+export {
+  getPlatform,
+  getUtsPlatform,
+  getAppPlatform,
+
+  isH5,
+  isApp,
+  isAppAndroid,
+  isAppIOS,
+
+  isMp,
+  isMpWeixin,
+  isMpAlipay,
+  isMpBaidu,
+
+  isMpKuaishou,
+  isMpQQ,
+  isMpToutiao,
+
+  isQuickapp,
+  isQuickappUnion,
+  isQuickappHuawei,
+} from './uni-env';

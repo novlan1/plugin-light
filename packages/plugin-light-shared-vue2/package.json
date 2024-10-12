@@ -21,7 +21,7 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "@plugin-light/shared": "workspace:^0.0.11",
+    "@plugin-light/shared": "workspace:^0.0.12",
     "loader-utils": "^2.0.4"
   },
   "devDependencies": {

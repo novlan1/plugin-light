@@ -21,7 +21,7 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "@plugin-light/shared": "workspace:^0.0.11",
+    "@plugin-light/shared": "workspace:^0.0.12",
     "t-comm": "^1.3.104"
   }
 }

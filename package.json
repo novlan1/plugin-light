@@ -71,6 +71,7 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^9.0.2",
+    "@types/babel__core": "^7.20.5",
     "@types/copy": "^0.3.5",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.2.1",

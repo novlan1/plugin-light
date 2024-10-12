@@ -16,10 +16,10 @@ pnpm --filter=@plugin-light/project-config-vite build
 
 ```bash
 # 在某个包中升级 一些依赖
-pnpm --filter=@plugin-light/project-config-vite up "plugin-light-*"
+pnpm --filter=@plugin-light/project-config-vite up "@plugin-light/*"
 
 # 在所有包中只升级 某个依赖
-pnpm --filter="./packages/*" up "plugin-light-shared-vue2"
+pnpm --filter="./packages/*" up "@plugin-light/shared-vue2"
 ```
 
 ## 文档

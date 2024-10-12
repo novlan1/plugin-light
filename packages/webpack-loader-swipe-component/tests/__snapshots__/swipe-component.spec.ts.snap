@@ -48,7 +48,6 @@ export default {
       loop: false // 轮播是否循环
     };
   },
-
   computed: {
     rewardList() {
       const rewards = [];

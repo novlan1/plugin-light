@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "@plugin-light/preprocess": "workspace:^0.0.3",
-    "@plugin-light/shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.12"
   }
 }

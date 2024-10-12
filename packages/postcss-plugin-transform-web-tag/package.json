@@ -1,6 +1,6 @@
 {
   "name": "@plugin-light/postcss-plugin-transform-web-tag",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index",
   "files": [
     "lib/"
@@ -21,6 +21,6 @@
     "release": "node ../../script/monorepo/release $PWD"
   },
   "dependencies": {
-    "@plugin-light/shared": "workspace:^0.0.11"
+    "@plugin-light/shared": "workspace:^0.0.12"
   }
 }

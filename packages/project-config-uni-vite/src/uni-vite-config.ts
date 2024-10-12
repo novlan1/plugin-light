@@ -4,34 +4,27 @@ import { loadEnv } from 'vite';
 import { visualizer } from 'rollup-plugin-visualizer';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import commonjs from 'vite-plugin-commonjs';
-
 import vueJsx from '@vitejs/plugin-vue-jsx';
-// import {
-//   addCodeAtEndVitePlugin,
-//   crossPlatformVitePlugin,
-//   crossGameStyleVitePlugin,
-//   fixUniDirVitePlugin,
-//   genMpQQAppIdVitePlugin,
-//   globalThisPolyfillVitePlugin,
-//   genVersionMpVitePlugin,
-//   genVersionWebVitePlugin,
-//   removeUseRemVitePlugin,
-//   remToRpxVitePlugin,
-//   removeVueDirectiveVitePlugin,
-//   transformVLazyVitePlugin,
-// // @ts-ignore
-// } from 'plugin-light/lib/plugin';
+
+
+import tailwindcss from 'tailwindcss';
+import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
+
 import { addCodeAtEndVitePlugin } from '@plugin-light/vite-plugin-add-code-at-end';
 import { crossPlatformVitePlugin } from '@plugin-light/vite-plugin-cross-platform';
 import { crossGameStyleVitePlugin } from '@plugin-light/vite-plugin-cross-game-style';
 import { fixUniDirVitePlugin } from '@plugin-light/vite-plugin-fix-uni-dir';
+
 import { genMpQQAppIdVitePlugin } from '@plugin-light/vite-plugin-gen-mp-qq-app-id';
 import { globalThisPolyfillVitePlugin } from '@plugin-light/vite-plugin-global-this-polyfill';
 import { genVersionMpVitePlugin, genVersionWebVitePlugin } from '@plugin-light/vite-plugin-gen-version';
+
 import { removeUseRemVitePlugin } from '@plugin-light/vite-plugin-remove-use-rem';
 import { remToRpxVitePlugin  } from '@plugin-light/vite-plugin-rem-to-rpx';
 import { removeVueDirectiveVitePlugin } from '@plugin-light/vite-plugin-remove-vue-directive';
 import { transformVLazyVitePlugin } from '@plugin-light/vite-plugin-transform-v-lazy';
+
+import transformWebTag from '@plugin-light/postcss-plugin-transform-web-tag/lib/index';
 
 
 import { BUILD_NAME_MAP } from 't-comm/lib/v-console/config';
@@ -40,6 +33,8 @@ import {
   updateManifest,
   getSubProjectConfig,
   getSubProjectRoot,
+  isH5 as rawIsH5,
+  isMpQQ as rawIsMpQQ,
 } from '@plugin-light/shared';
 
 
@@ -82,14 +77,18 @@ export function getUniVue3ViteConfig({
     timeout: 1000 * 60 * 5,
   },
   warnList,
+
+  transformWebTagOptions,
+  tailwindcssOptions,
+  uniTailwindOptions,
 }: IUniViteConfigOptions) {
   const env = loadEnv(mode, root, ENV_PREFIX);
   const isProduction = mode === 'production';
   const appDir = env.VUE_APP_DIR || '';
 
   const vueAppBase = env.VUE_APP_PUBLICPATH;
-  const isH5 = process.env.UNI_PLATFORM === 'h5';
-  const isMpQQ = process.env.UNI_PLATFORM === 'mp-qq';
+  const isH5 = rawIsH5() ;
+  const isMpQQ = rawIsMpQQ();
   const subProjectRoot = getSubProjectRoot({
     root,
     appDir,
@@ -126,10 +125,32 @@ export function getUniVue3ViteConfig({
     delay: 10,
   }) : genVersionMpVitePlugin();
 
+  const postcssPlugins = [];
+  let cssConfig = {};
+
+  if (!isH5 && transformWebTagOptions) {
+    postcssPlugins.push(transformWebTag(typeof transformWebTagOptions === 'boolean' ? undefined : transformWebTagOptions));
+  }
+  if (tailwindcssOptions) {
+    postcssPlugins.push(tailwindcss(typeof tailwindcssOptions === 'boolean' ? undefined : tailwindcssOptions));
+  }
+
+  if (postcssPlugins.length) {
+    cssConfig = {
+      css: {
+        postcss: {
+          plugins: postcssPlugins,
+        },
+      },
+    };
+  }
+
+
   return {
     root: subProjectRoot,
     envDir: process.cwd(),
     base: vueAppBase || './',
+    ...cssConfig,
     plugins: [
       ...prePlugins,
       isH5 ? null : remToRpxVitePlugin(),
@@ -152,6 +173,7 @@ export function getUniVue3ViteConfig({
       }),
       basicSsl(),
       commonjs(),
+      uniTailwindOptions ? uniTailwind(typeof uniTailwindOptions === 'boolean' ? undefined : uniTailwindOptions) : null,
       uni({
         vueOptions: {
           template: {

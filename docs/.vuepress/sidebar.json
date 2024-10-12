@@ -69,6 +69,10 @@
           "path": "/zh/webpack-plugin-save-loader-log.md"
         },
         {
+          "title": "TailwindCSS 适配小程序",
+          "path": "/zh/webpack-plugin-tailwind.md"
+        },
+        {
           "title": "打包后外层文件转移",
           "path": "/zh/webpack-plugin-transfer-local-file.md"
         }
